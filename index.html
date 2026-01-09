@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/shepherd-icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- iPhone Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Shepherd" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- SEO and Sharing -->
+    <meta name="description" content="Learn the Bible through interactive lessons, quizzes, and thematic studies. Gamified Bible learning app." />
+    <meta property="og:title" content="Shepherd - Bible Learning App" />
+    <meta property="og:description" content="Master Bible knowledge through engaging lessons and quizzes" />
+    <meta property="og:type" content="website" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <title>Shepherd - Learn the Bible</title>
+
+    <style>
+      /* Prevent bounce effect on iOS */
+      html, body {
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Loading screen */
+      #loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        z-index: 9999;
+        transition: opacity 0.3s;
+      }
+
+      #loading-content {
+        text-align: center;
+        color: white;
+      }
+
+      .loader {
+        font-size: 4rem;
+        animation: bounce 1s infinite;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <div id="loading-content">
+        <div class="loader">🐑</div>
+        <h2 style="margin-top: 1rem; font-size: 1.5rem; font-weight: bold;">Shepherd</h2>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Loading your Bible journey...</p>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // Hide loading screen when app is ready
+      window.addEventListener('load', () => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          setTimeout(() => {
+            loading.style.opacity = '0';
+            setTimeout(() => loading.remove(), 300);
+          }, 500);
+        }
+      });
+
+      // Prevent pull-to-refresh on iOS
+      let lastTouchY = 0;
+      let preventPullToRefresh = false;
+
+      document.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        lastTouchY = e.touches[0].clientY;
+        preventPullToRefresh = window.pageYOffset === 0;
+      }, { passive: false });
+
+      document.addEventListener('touchmove', (e) => {
+        const touchY = e.touches[0].clientY;
+        const touchYDelta = touchY - lastTouchY;
+        lastTouchY = touchY;
+
+        if (preventPullToRefresh && touchYDelta > 0) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    </script>
+  </body>
+</html>

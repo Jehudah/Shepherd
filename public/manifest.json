@@ -1,0 +1,32 @@
+{
+  "name": "Shepherd - Bible Learning App",
+  "short_name": "Shepherd",
+  "description": "Learn the Bible through interactive lessons, quizzes, and thematic studies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "lifestyle", "books"],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ]
+}
