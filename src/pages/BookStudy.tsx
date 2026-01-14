@@ -18,7 +18,7 @@ export default function BookStudy() {
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           Book not found
         </h2>
-        <Link to="/bible-books" className="text-primary-600 hover:underline">
+        <Link to="/learn/books" className="text-primary-600 hover:underline">
           Back to Bible Books
         </Link>
       </div>
@@ -52,7 +52,7 @@ export default function BookStudy() {
     <div className="space-y-6 pb-8">
       {/* Back Button */}
       <Link
-        to="/bible-books"
+        to="/learn/books"
         className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline"
       >
         <ArrowLeft size={20} className="mr-2" />

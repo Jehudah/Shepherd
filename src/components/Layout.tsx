@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Home, BookOpen, Target, User, Book } from 'lucide-react';
+import { BookOpen, Zap, Users, BookMarked, User } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { motion } from 'framer-motion';
 
@@ -8,10 +8,10 @@ export default function Layout() {
   const { userProgress } = useStore();
 
   const navItems = [
-    { path: '/', icon: Home, label: 'Home' },
     { path: '/learn', icon: BookOpen, label: 'Learn' },
-    { path: '/themes', icon: Target, label: 'Themes' },
-    { path: '/bible-books', icon: Book, label: 'Books' },
+    { path: '/challenge', icon: Zap, label: 'Challenge' },
+    { path: '/community', icon: Users, label: 'Community' },
+    { path: '/study', icon: BookMarked, label: 'Study' },
     { path: '/profile', icon: User, label: 'Profile' }
   ];
 
@@ -20,7 +20,7 @@ export default function Layout() {
       {/* Header - iPhone optimized */}
       <header className="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/learn" className="flex items-center space-x-2">
             <motion.span
               className="text-3xl"
               animate={{

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Book, BookOpen, ChevronRight } from 'lucide-react';
+import { Book, BookOpen, ChevronRight, ArrowLeft } from 'lucide-react';
 import { bibleBooks } from '../data/bibleBooks';
 import { hasBookQuestions } from '../data/bookQuestions';
 import { motion } from 'framer-motion';
@@ -14,6 +14,15 @@ export default function BibleBooks() {
 
   return (
     <div className="space-y-6 pb-8">
+      {/* Back Button */}
+      <Link
+        to="/learn"
+        className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline"
+      >
+        <ArrowLeft size={20} className="mr-2" />
+        Back to Learn
+      </Link>
+
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-3xl p-6 sm:p-8 shadow-xl">
         <div className="flex items-center space-x-4">

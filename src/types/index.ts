@@ -16,15 +16,15 @@ export type LearningCategory =
 export interface Question {
   id: string;
   type: QuestionType;
-  category: LearningCategory;
+  category?: LearningCategory;
   subcategory?: string;
   question: string;
   options?: string[];
   correctAnswer: string | string[];
   explanation?: string;
   verse?: string;
-  difficulty: 1 | 2 | 3 | 4 | 5;
-  xpReward: number;
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  xpReward?: number;
 }
 
 export interface Lesson {
