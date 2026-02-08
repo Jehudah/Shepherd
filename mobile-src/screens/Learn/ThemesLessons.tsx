@@ -26,39 +26,19 @@ interface Lesson {
 
 const lessonsByTheme: Record<string, Lesson[]> = {
   love: [
-    { id: 'love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 12, xpReward: 120 },
-    { id: 'love-2', title: 'Loving God', description: 'How to love God with all our heart', questionCount: 12, xpReward: 120 },
-    { id: 'love-3', title: 'Loving Others', description: 'The command to love our neighbors', questionCount: 12, xpReward: 120 },
-    { id: 'love-4', title: 'Love in Action', description: 'Demonstrating love through deeds', questionCount: 12, xpReward: 120 },
-    { id: 'love-5', title: 'Perfect Love', description: 'How love casts out fear', questionCount: 12, xpReward: 120 },
+    { id: 'theme-love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 12, xpReward: 120 },
   ],
   faith: [
-    { id: 'faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 12, xpReward: 120 },
-    { id: 'faith-2', title: 'Faith Heroes', description: 'Examples from Hebrews 11', questionCount: 12, xpReward: 120 },
-    { id: 'faith-3', title: 'Growing in Faith', description: 'How faith develops and strengthens', questionCount: 12, xpReward: 120 },
-    { id: 'faith-4', title: 'Faith and Works', description: 'Faith demonstrated through action', questionCount: 12, xpReward: 120 },
-    { id: 'faith-5', title: 'Faith in Trials', description: 'Trusting God in difficult times', questionCount: 12, xpReward: 120 },
+    { id: 'theme-faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 12, xpReward: 120 },
   ],
   hope: [
-    { id: 'hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 12, xpReward: 120 },
-    { id: 'hope-2', title: 'Eternal Perspective', description: 'Looking beyond this world', questionCount: 12, xpReward: 120 },
-    { id: 'hope-3', title: 'Hope in Suffering', description: 'Finding hope in hardship', questionCount: 12, xpReward: 120 },
-    { id: 'hope-4', title: 'The Blessed Hope', description: 'Awaiting Christ\'s return', questionCount: 12, xpReward: 120 },
-    { id: 'hope-5', title: 'Sharing Hope', description: 'Giving an answer for our hope', questionCount: 12, xpReward: 120 },
+    { id: 'theme-hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 12, xpReward: 120 },
   ],
   peace: [
-    { id: 'peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 12, xpReward: 120 },
-    { id: 'peace-2', title: 'The Peace of God', description: 'Peace that surpasses understanding', questionCount: 12, xpReward: 120 },
-    { id: 'peace-3', title: 'Living in Peace', description: 'Peace in daily life', questionCount: 12, xpReward: 120 },
-    { id: 'peace-4', title: 'Peacemakers', description: 'Blessed are the peacemakers', questionCount: 12, xpReward: 120 },
-    { id: 'peace-5', title: 'Perfect Peace', description: 'Trusting in the Prince of Peace', questionCount: 12, xpReward: 120 },
+    { id: 'theme-peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 12, xpReward: 120 },
   ],
   wisdom: [
-    { id: 'wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-2', title: 'Asking for Wisdom', description: 'God\'s promise to give wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-3', title: 'Wisdom from Above', description: 'Heavenly vs earthly wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-4', title: 'Wise Living', description: 'Applying wisdom daily', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-5', title: 'Christ Our Wisdom', description: 'Jesus as the wisdom of God', questionCount: 12, xpReward: 120 },
+    { id: 'theme-wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 12, xpReward: 120 },
   ],
 };
 

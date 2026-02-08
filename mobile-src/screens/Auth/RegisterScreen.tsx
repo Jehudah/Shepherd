@@ -11,7 +11,7 @@ import {
   ActivityIndicator,
   ScrollView,
 } from 'react-native';
-import { AuthService } from '../../services/firebase';
+import { AuthService, ProgressService } from '../../services/firebase';
 import { useStore } from '../../store/useStore';
 
 interface Props {
@@ -70,7 +70,7 @@ export default function RegisterScreen({ navigation }: Props) {
       setUser(user);
 
       // Load initial progress
-      const progress = await AuthService.getUserProgress(user.uid);
+      const progress = await ProgressService.getUserProgress(user.uid);
       if (progress) {
         setUserProgress(progress);
       }

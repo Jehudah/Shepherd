@@ -10,7 +10,7 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
-import { AuthService } from '../../services/firebase';
+import { AuthService, ProgressService } from '../../services/firebase';
 import { useStore } from '../../store/useStore';
 
 interface Props {
@@ -36,7 +36,7 @@ export default function LoginScreen({ navigation }: Props) {
       setUser(user);
 
       // Load user progress
-      const progress = await AuthService.getUserProgress(user.uid);
+      const progress = await ProgressService.getUserProgress(user.uid);
       if (progress) {
         setUserProgress(progress);
       }

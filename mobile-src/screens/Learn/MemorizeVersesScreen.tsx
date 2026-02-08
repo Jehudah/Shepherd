@@ -27,49 +27,13 @@ interface VerseLesson {
 
 const verseLessons: VerseLesson[] = [
   {
-    id: 'salvation-1',
+    id: 'verses-salvation-1',
     title: 'Salvation Foundations',
     description: 'Core verses about being saved',
-    verses: ['John 3:16', 'Romans 3:23', 'Romans 6:23'],
+    verses: ['John 3:16', 'Romans 3:23', 'Romans 6:23', 'Ephesians 2:8-9'],
     difficulty: 1,
     questionCount: 12,
     xpReward: 120,
-  },
-  {
-    id: 'salvation-2',
-    title: 'Salvation Deep Dive',
-    description: 'Understanding God\'s gift',
-    verses: ['Ephesians 2:8-9', 'Romans 10:9-10', 'Acts 4:12'],
-    difficulty: 2,
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'salvation-3',
-    title: 'Assurance & Peace',
-    description: 'Knowing you are saved',
-    verses: ['1 John 5:11-13', 'Romans 8:38-39', 'John 10:28-29'],
-    difficulty: 2,
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'salvation-4',
-    title: 'Living by Faith',
-    description: 'Walking in your salvation',
-    verses: ['Galatians 2:20', '2 Corinthians 5:17', 'Philippians 1:6'],
-    difficulty: 3,
-    questionCount: 12,
-    xpReward: 200,
-  },
-  {
-    id: 'salvation-5',
-    title: 'Master Challenge',
-    description: 'All salvation verses together',
-    verses: ['All Previous Verses'],
-    difficulty: 3,
-    questionCount: 12,
-    xpReward: 250,
   },
 ];
 

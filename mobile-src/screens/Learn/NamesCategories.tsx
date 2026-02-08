@@ -30,7 +30,7 @@ const categories: Category[] = [
     description: 'Moses, Elijah, Isaiah, and more',
     icon: 'message-circle',
     color: '#3B82F6',
-    lessonCount: 4,
+    lessonCount: 1,
   },
   {
     id: 'kings',
@@ -38,39 +38,23 @@ const categories: Category[] = [
     description: 'David, Solomon, Saul',
     icon: 'award',
     color: '#8B5CF6',
-    lessonCount: 4,
+    lessonCount: 1,
   },
   {
-    id: 'disciples',
-    name: 'Disciples',
-    description: 'Peter, John, Paul',
+    id: 'apostles',
+    name: 'Apostles',
+    description: 'Peter, John, Paul, and the twelve',
     icon: 'users',
     color: '#10B981',
-    lessonCount: 4,
+    lessonCount: 1,
   },
   {
     id: 'women',
     name: 'Women of Faith',
-    description: 'Ruth, Esther, Mary',
+    description: 'Ruth, Esther, Mary, and more',
     icon: 'star',
     color: '#EC4899',
-    lessonCount: 4,
-  },
-  {
-    id: 'patriarchs',
-    name: 'Patriarchs',
-    description: 'Abraham, Isaac, Jacob',
-    icon: 'home',
-    color: '#F59E0B',
-    lessonCount: 4,
-  },
-  {
-    id: 'judges',
-    name: 'Judges',
-    description: 'Gideon, Samson, Deborah',
-    icon: 'shield',
-    color: '#EF4444',
-    lessonCount: 4,
+    lessonCount: 1,
   },
 ];
 
@@ -154,12 +138,12 @@ export default function NamesCategories() {
           </Text>
           <View style={styles.statsGrid}>
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>24</Text>
+              <Text style={styles.statValue}>4</Text>
               <Text style={styles.statLabel}>Total Lessons</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>240</Text>
+              <Text style={styles.statValue}>40</Text>
               <Text style={styles.statLabel}>Questions</Text>
             </View>
           </View>

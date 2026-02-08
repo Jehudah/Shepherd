@@ -26,44 +26,12 @@ interface ParableLesson {
 
 const parableLessons: ParableLesson[] = [
   {
-    id: 'kingdom-1',
-    title: 'Kingdom Parables Foundations',
-    description: 'Understanding the Kingdom of God',
-    parables: ['The Sower', 'The Mustard Seed', 'The Yeast'],
+    id: 'parables-kingdom-1',
+    title: 'Kingdom Parables',
+    description: 'Understanding the Kingdom through Jesus\' parables',
+    parables: ['The Sower', 'The Mustard Seed', 'The Yeast', 'Lost Sheep', 'Prodigal Son'],
     questionCount: 12,
     xpReward: 120,
-  },
-  {
-    id: 'kingdom-2',
-    title: 'Readiness & Faithfulness',
-    description: 'Being prepared for Christ\'s return',
-    parables: ['Ten Virgins', 'The Talents', 'Faithful Servant'],
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'kingdom-3',
-    title: 'Grace & Obedience',
-    description: 'God\'s grace and our response',
-    parables: ['Workers in Vineyard', 'Two Sons', 'Wedding Feast'],
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'kingdom-4',
-    title: 'Judgment & Mercy',
-    description: 'Divine justice and compassion',
-    parables: ['Unmerciful Servant', 'Rich Man & Lazarus', 'Pharisee & Tax Collector'],
-    questionCount: 12,
-    xpReward: 200,
-  },
-  {
-    id: 'kingdom-5',
-    title: 'Lost & Found',
-    description: 'God\'s love for the lost',
-    parables: ['Lost Sheep', 'Lost Coin', 'Prodigal Son'],
-    questionCount: 12,
-    xpReward: 200,
   },
 ];
 
