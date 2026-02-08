@@ -8,12 +8,26 @@ import { StatusBar, LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Feather';
-import auth from '@react-native-firebase/auth';
+import { Feather } from '@expo/vector-icons';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
 
 // Store
 import { useStore } from './store/useStore';
-import { AuthService, ProgressService, subscribeToProgress } from './services/firebase';
+
+// Firebase configuration - Replace with your config from Firebase Console
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 // Auth Screens
 import LoginScreen from './screens/Auth/LoginScreen';
@@ -87,7 +101,7 @@ function MainTabs() {
           else if (route.name === 'Study') iconName = 'bookmark';
           else if (route.name === 'Profile') iconName = 'user';
 
-          return <Icon name={iconName} size={size} color={color} />;
+          return <Feather name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: '#3B82F6',
         tabBarInactiveTintColor: '#9CA3AF',
@@ -139,37 +153,15 @@ export default function App() {
 
   // Handle Firebase auth state changes
   useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(async (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
-        // User is signed in
-        try {
-          const userProfile = await AuthService.getCurrentUser();
-          if (userProfile) {
-            setUser(userProfile);
-
-            // Load and subscribe to user progress
-            const progress = await ProgressService.getUserProgress(firebaseUser.uid);
-            if (progress) {
-              setUserProgress(progress);
-
-              // Subscribe to real-time progress updates
-              const unsubscribeProgress = subscribeToProgress(
-                firebaseUser.uid,
-                (updatedProgress) => {
-                  setUserProgress(updatedProgress);
-                },
-                (error) => {
-                  console.error('Progress subscription error:', error);
-                }
-              );
-
-              // Cleanup subscription on unmount
-              return () => unsubscribeProgress();
-            }
-          }
-        } catch (error) {
-          console.error('Error loading user:', error);
-        }
+        // User is signed in - create a basic user profile
+        const userProfile = {
+          uid: firebaseUser.uid,
+          email: firebaseUser.email || '',
+          displayName: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'User',
+        };
+        setUser(userProfile);
       } else {
         // User is signed out
         setUser(null);

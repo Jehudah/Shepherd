@@ -1,5 +1,8 @@
 {
   "android": {
     "package": "com.anonymous.shepherd"
+  },
+  "ios": {
+    "bundleIdentifier": "com.anonymous.shepherd"
   }
 }

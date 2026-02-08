@@ -1,7 +1,25 @@
 {
   "permissions": {
     "allow": [
-      "Bash(if exist nul del nul)"
+      "Bash(if exist nul del nul)",
+      "Bash(pod install:*)",
+      "Bash(/opt/homebrew/bin/pod install:*)",
+      "Bash(npm install)",
+      "Bash(npm run ios:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(RCT_NEW_ARCH_ENABLED=0 /opt/homebrew/bin/pod install:*)",
+      "Bash(find:*)",
+      "Bash(npx expo prebuild:*)",
+      "Bash(test:*)",
+      "Bash(npx expo run:ios:*)",
+      "Bash(PATH=$PATH:/opt/homebrew/bin /opt/homebrew/bin/pod install:*)",
+      "Bash(open:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(ln:*)",
+      "Bash(tee:*)",
+      "Bash(xcrun simctl install:*)",
+      "Bash(xcrun simctl launch:*)"
     ]
   }
 }
