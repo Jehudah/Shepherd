@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -29,9 +29,41 @@ const lessonsByCategory: Record<string, Lesson[]> = {
   prophets: [
     {
       id: 'prophets-1',
-      title: 'Moses & The Prophets',
-      description: 'Learn about God\'s messengers',
+      title: 'Moses & The Burning Bush',
+      description: 'God calls Moses to deliver Israel',
       difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'prophets-2',
+      title: 'Elijah & The Prophets of Baal',
+      description: 'Standing strong for the one true God',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'prophets-3',
+      title: 'Isaiah\'s Vision',
+      description: 'Seeing God\'s glory and responding',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'prophets-4',
+      title: 'Jeremiah\'s Call',
+      description: 'The weeping prophet\'s mission',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'prophets-5',
+      title: 'Daniel in Babylon',
+      description: 'Faithfulness in a foreign land',
+      difficulty: 3,
       questionCount: 10,
       xpReward: 100,
     },
@@ -39,9 +71,41 @@ const lessonsByCategory: Record<string, Lesson[]> = {
   kings: [
     {
       id: 'kings-1',
-      title: 'Kings of Israel',
-      description: 'Leaders after God\'s heart',
+      title: 'King Saul',
+      description: 'Israel\'s first king',
       difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'kings-2',
+      title: 'King David',
+      description: 'A man after God\'s own heart',
+      difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'kings-3',
+      title: 'King Solomon',
+      description: 'The wisest king of Israel',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'kings-4',
+      title: 'King Hezekiah',
+      description: 'A faithful reformer',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'kings-5',
+      title: 'King Josiah',
+      description: 'Rediscovering God\'s word',
+      difficulty: 2,
       questionCount: 10,
       xpReward: 100,
     },
@@ -49,9 +113,41 @@ const lessonsByCategory: Record<string, Lesson[]> = {
   apostles: [
     {
       id: 'apostles-1',
-      title: 'The Twelve Apostles',
-      description: 'Followers of Jesus',
+      title: 'Peter - The Rock',
+      description: 'From fisherman to apostle',
       difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'apostles-2',
+      title: 'John - The Beloved',
+      description: 'The disciple Jesus loved',
+      difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'apostles-3',
+      title: 'Paul - The Apostle',
+      description: 'From persecutor to preacher',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'apostles-4',
+      title: 'The Twelve',
+      description: 'Jesus\' chosen disciples',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'apostles-5',
+      title: 'Stephen - The First Martyr',
+      description: 'Standing firm in faith',
+      difficulty: 2,
       questionCount: 10,
       xpReward: 100,
     },
@@ -59,9 +155,41 @@ const lessonsByCategory: Record<string, Lesson[]> = {
   women: [
     {
       id: 'women-1',
-      title: 'Women of Faith',
-      description: 'Courageous women in the Bible',
+      title: 'Ruth - Faithful Devotion',
+      description: 'A beautiful story of loyalty',
       difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'women-2',
+      title: 'Esther - For Such a Time',
+      description: 'Courage to save her people',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'women-3',
+      title: 'Mary - Mother of Jesus',
+      description: 'Blessed among women',
+      difficulty: 1,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'women-4',
+      title: 'Deborah - Judge & Leader',
+      description: 'A woman of strength and wisdom',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'women-5',
+      title: 'Priscilla - Teacher',
+      description: 'Explaining the way of God',
+      difficulty: 2,
       questionCount: 10,
       xpReward: 100,
     },

@@ -1,4 +1,4 @@
-package com.shepherd
+package com.anonymous.shepherd
 
 import android.os.Build
 import android.os.Bundle

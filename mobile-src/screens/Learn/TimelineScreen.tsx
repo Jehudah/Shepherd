@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -30,8 +30,40 @@ const timelineLessons: TimelineLesson[] = [
     title: 'Creation & Early History',
     description: 'From the beginning to the first humans',
     period: 'Genesis 1-11',
-    questionCount: 12,
-    xpReward: 120,
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'timeline-creation-2',
+    title: 'The Patriarchs',
+    description: 'Abraham, Isaac, and Jacob',
+    period: 'Genesis 12-50',
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'timeline-creation-3',
+    title: 'Exodus & Wilderness',
+    description: 'Freedom from Egypt and journey to Canaan',
+    period: 'Exodus - Deuteronomy',
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'timeline-creation-4',
+    title: 'Judges & Kings',
+    description: 'From chaos to monarchy',
+    period: 'Joshua - 2 Chronicles',
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'timeline-creation-5',
+    title: 'Exile & Return',
+    description: 'Babylon and rebuilding',
+    period: 'Ezra - Nehemiah',
+    questionCount: 10,
+    xpReward: 100,
   },
 ];
 

@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useRoute, useNavigation, type RouteProp } from '@react-navigation/native';
 import type { RootStackParamList } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import {
   getStudyGroup,
   getGroupMembers,

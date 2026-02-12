@@ -1,8 +1,20 @@
 {
-  "android": {
-    "package": "com.anonymous.shepherd"
-  },
-  "ios": {
-    "bundleIdentifier": "com.anonymous.shepherd"
+  "expo": {
+    "name": "Shepherd",
+    "slug": "shepherd",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "shepherd",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.shepherd",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.anonymous.shepherd"
+    },
+    "plugins": []
   }
 }

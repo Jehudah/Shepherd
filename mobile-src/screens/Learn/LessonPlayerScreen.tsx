@@ -5,15 +5,18 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
 import { Question, RootStackParamList } from '../../types';
 import { shuffleArray, shuffleOptions } from '../../utils/shuffle';
+
+// Icon alias for consistency
+const Icon = Feather;
 
 // Import question data
 import {

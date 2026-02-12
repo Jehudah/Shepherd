@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { getFriendsLeaderboard, type FriendProfile } from '../../services/friendsService';
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../../services/firebase';

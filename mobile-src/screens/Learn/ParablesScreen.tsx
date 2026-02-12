@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -27,11 +27,43 @@ interface ParableLesson {
 const parableLessons: ParableLesson[] = [
   {
     id: 'parables-kingdom-1',
-    title: 'Kingdom Parables',
-    description: 'Understanding the Kingdom through Jesus\' parables',
-    parables: ['The Sower', 'The Mustard Seed', 'The Yeast', 'Lost Sheep', 'Prodigal Son'],
-    questionCount: 12,
-    xpReward: 120,
+    title: 'The Sower & Seeds',
+    description: 'Understanding how God\'s word grows',
+    parables: ['The Sower', 'The Mustard Seed', 'The Growing Seed'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-2',
+    title: 'Lost & Found',
+    description: 'God\'s joy over the lost',
+    parables: ['Lost Sheep', 'Lost Coin', 'Prodigal Son'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-3',
+    title: 'The Good Samaritan',
+    description: 'Love your neighbor',
+    parables: ['Good Samaritan', 'Good Shepherd'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-4',
+    title: 'Wise & Foolish',
+    description: 'Building on the right foundation',
+    parables: ['Wise & Foolish Builders', 'Ten Virgins', 'Talents'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-5',
+    title: 'The Kingdom\'s Value',
+    description: 'Worth more than everything',
+    parables: ['Hidden Treasure', 'Pearl of Great Price', 'The Net'],
+    questionCount: 10,
+    xpReward: 100,
   },
 ];
 

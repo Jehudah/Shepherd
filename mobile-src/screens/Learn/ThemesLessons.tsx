@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -26,19 +26,39 @@ interface Lesson {
 
 const lessonsByTheme: Record<string, Lesson[]> = {
   love: [
-    { id: 'theme-love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 12, xpReward: 120 },
+    { id: 'theme-love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-2', title: 'Love One Another', description: 'Jesus\' command to love', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-3', title: 'Love Your Enemies', description: 'Radical love that transforms', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-4', title: 'The Love Chapter', description: '1 Corinthians 13 explored', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-5', title: 'Perfect Love Casts Out Fear', description: 'Living in God\'s love', questionCount: 10, xpReward: 100 },
   ],
   faith: [
-    { id: 'theme-faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 12, xpReward: 120 },
+    { id: 'theme-faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-2', title: 'Faith of Abraham', description: 'The father of faith', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-3', title: 'Faith Like a Mustard Seed', description: 'Small faith, big results', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-4', title: 'Heroes of Faith', description: 'Hebrews 11 hall of fame', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-5', title: 'Living by Faith', description: 'Walking in faith daily', questionCount: 10, xpReward: 100 },
   ],
   hope: [
-    { id: 'theme-hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 12, xpReward: 120 },
+    { id: 'theme-hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-2', title: 'Hope as an Anchor', description: 'Steadfast and sure', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-3', title: 'Hope in Suffering', description: 'Joy through trials', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-4', title: 'Future Hope', description: 'Eternal promises', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-5', title: 'Hope Does Not Disappoint', description: 'God\'s faithful character', questionCount: 10, xpReward: 100 },
   ],
   peace: [
-    { id: 'theme-peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 12, xpReward: 120 },
+    { id: 'theme-peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-2', title: 'Peace of God', description: 'Guarding hearts and minds', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-3', title: 'Prince of Peace', description: 'Jesus our peacemaker', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-4', title: 'Peace in the Storm', description: 'Calm in chaos', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-5', title: 'Peacemakers', description: 'Blessed are those who make peace', questionCount: 10, xpReward: 100 },
   ],
   wisdom: [
-    { id: 'theme-wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 12, xpReward: 120 },
+    { id: 'theme-wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-2', title: 'Solomon\'s Wisdom', description: 'The wisest man', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-3', title: 'Wisdom from Above', description: 'Pure, peaceful, gentle', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-4', title: 'Proverbs of Wisdom', description: 'Practical wisdom for life', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-5', title: 'Christ Our Wisdom', description: 'True wisdom in Jesus', questionCount: 10, xpReward: 100 },
   ],
 };
 

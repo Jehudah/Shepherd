@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
 
@@ -30,7 +30,7 @@ const categories: Category[] = [
     description: 'Moses, Elijah, Isaiah, and more',
     icon: 'message-circle',
     color: '#3B82F6',
-    lessonCount: 1,
+    lessonCount: 5,
   },
   {
     id: 'kings',
@@ -38,7 +38,7 @@ const categories: Category[] = [
     description: 'David, Solomon, Saul',
     icon: 'award',
     color: '#8B5CF6',
-    lessonCount: 1,
+    lessonCount: 5,
   },
   {
     id: 'apostles',
@@ -46,7 +46,7 @@ const categories: Category[] = [
     description: 'Peter, John, Paul, and the twelve',
     icon: 'users',
     color: '#10B981',
-    lessonCount: 1,
+    lessonCount: 5,
   },
   {
     id: 'women',
@@ -54,7 +54,7 @@ const categories: Category[] = [
     description: 'Ruth, Esther, Mary, and more',
     icon: 'star',
     color: '#EC4899',
-    lessonCount: 1,
+    lessonCount: 5,
   },
 ];
 
@@ -138,12 +138,12 @@ export default function NamesCategories() {
           </Text>
           <View style={styles.statsGrid}>
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>4</Text>
+              <Text style={styles.statValue}>20</Text>
               <Text style={styles.statLabel}>Total Lessons</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>40</Text>
+              <Text style={styles.statValue}>200</Text>
               <Text style={styles.statLabel}>Questions</Text>
             </View>
           </View>
