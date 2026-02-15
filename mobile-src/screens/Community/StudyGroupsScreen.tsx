@@ -8,11 +8,13 @@ import {
   RefreshControl,
   Alert,
   Modal,
-  TextInput
-} from 'react-native';
+  TextInput,
+  KeyboardAvoidingView,
+  Platform} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import {
   getPublicStudyGroups,
   getUserStudyGroups,
@@ -209,7 +211,7 @@ export default function StudyGroupsScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -301,16 +303,20 @@ export default function StudyGroupsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Create Study Group</Text>
-              <TouchableOpacity onPress={() => setShowCreateModal(false)}>
-                <Icon name="x" size={24} color="#6B7280" />
-              </TouchableOpacity>
-            </View>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              <View style={styles.modalHeader}>
+                <Text style={styles.modalTitle}>Create Study Group</Text>
+                <TouchableOpacity onPress={() => setShowCreateModal(false)}>
+                  <Icon name="x" size={24} color="#6B7280" />
+                </TouchableOpacity>
+              </View>
 
-            <ScrollView style={styles.modalBody}>
+              <ScrollView style={styles.modalBody}>
               <Text style={styles.label}>Group Name *</Text>
               <TextInput
                 style={styles.input}
@@ -364,18 +370,19 @@ export default function StudyGroupsScreen() {
                   {creating ? 'Creating...' : 'Create Group'}
                 </Text>
               </TouchableOpacity>
-            </ScrollView>
+              </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
   },
   scrollView: {
     flex: 1
@@ -573,7 +580,7 @@ const styles = StyleSheet.create({
     marginTop: 12
   },
   input: {
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,
@@ -597,10 +604,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 20,
     borderWidth: 2,
-    borderColor: '#E5E7EB'
+    borderColor: '#E5E7EB',
+    backgroundColor: '#FFF'
   },
   categoryButtonActive: {
-    backgroundColor: '#F9FAFB'
+    borderWidth: 2
   },
   categoryButtonText: {
     fontSize: 14,

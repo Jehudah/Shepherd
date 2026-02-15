@@ -8,9 +8,11 @@ import {
   RefreshControl,
   Modal,
   TextInput,
-  Alert
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+  Alert,
+  KeyboardAvoidingView,
+  Platform} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Feather as Icon } from '@expo/vector-icons';
 import {
   getActivePrayerRequests,
   getUserPrayerRequests,
@@ -149,6 +151,31 @@ export default function PrayerRequestsScreen() {
     );
   };
 
+  const handleDelete = (prayer: PrayerRequest) => {
+    Alert.alert(
+      'Delete Prayer Request',
+      'Are you sure you want to delete this prayer request? This cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: async () => {
+            if (!currentUser) return;
+            try {
+              await deletePrayerRequest(prayer.id, currentUser.uid);
+              Alert.alert('Deleted', 'Prayer request has been deleted');
+              await loadPrayers();
+            } catch (error: any) {
+              console.error('Error deleting prayer:', error);
+              Alert.alert('Error', error.message || 'Failed to delete prayer request');
+            }
+          }
+        }
+      ]
+    );
+  };
+
   const renderPrayerCard = (prayer: PrayerRequest) => (
     <View key={prayer.id} style={styles.prayerCard}>
       <View style={styles.prayerHeader}>
@@ -180,30 +207,41 @@ export default function PrayerRequestsScreen() {
           </Text>
         </View>
 
-        {prayer.userId === currentUser?.uid && !prayer.isAnswered && (
-          <TouchableOpacity
-            style={styles.answeredButton}
-            onPress={() => handleMarkAnswered(prayer)}
-          >
-            <Text style={styles.answeredButtonText}>Mark Answered</Text>
-          </TouchableOpacity>
-        )}
+        <View style={styles.actionButtons}>
+          {prayer.userId === currentUser?.uid && !prayer.isAnswered && (
+            <TouchableOpacity
+              style={styles.answeredButton}
+              onPress={() => handleMarkAnswered(prayer)}
+            >
+              <Text style={styles.answeredButtonText}>Mark Answered</Text>
+            </TouchableOpacity>
+          )}
 
-        {prayer.userId !== currentUser?.uid && (
-          <TouchableOpacity
-            style={styles.prayButton}
-            onPress={() => handlePray(prayer)}
-          >
-            <Icon name="heart" size={16} color="#EC4899" />
-            <Text style={styles.prayButtonText}>I'm Praying</Text>
-          </TouchableOpacity>
-        )}
+          {prayer.userId === currentUser?.uid && (
+            <TouchableOpacity
+              style={styles.deleteButton}
+              onPress={() => handleDelete(prayer)}
+            >
+              <Icon name="trash-2" size={16} color="#EF4444" />
+            </TouchableOpacity>
+          )}
+
+          {prayer.userId !== currentUser?.uid && (
+            <TouchableOpacity
+              style={styles.prayButton}
+              onPress={() => handlePray(prayer)}
+            >
+              <Icon name="heart" size={16} color="#EC4899" />
+              <Text style={styles.prayButtonText}>I'm Praying</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
     </View>
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       >
@@ -298,8 +336,12 @@ export default function PrayerRequestsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Share Prayer Request</Text>
               <TouchableOpacity onPress={() => setShowCreateModal(false)}>
@@ -354,16 +396,17 @@ export default function PrayerRequestsScreen() {
                 </Text>
               </TouchableOpacity>
             </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
 // Styles similar to StudyGroupsScreen
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F9FAFB' },
+  container: { flex: 1, backgroundColor: '#E8E3FF' },
   header: { padding: 20, paddingTop: 10 },
   title: { fontSize: 32, fontWeight: 'bold', color: '#111827', marginBottom: 4 },
   subtitle: { fontSize: 16, color: '#6B7280' },
@@ -422,6 +465,7 @@ const styles = StyleSheet.create({
   prayerFooter: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   prayerStat: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   prayerStatText: { fontSize: 13, color: '#6B7280', fontWeight: '500' },
+  actionButtons: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   prayButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -439,6 +483,14 @@ const styles = StyleSheet.create({
     borderRadius: 16
   },
   answeredButtonText: { fontSize: 13, fontWeight: '600', color: '#10B981' },
+  deleteButton: {
+    backgroundColor: '#FEE2E2',
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   emptyState: { alignItems: 'center', paddingVertical: 60 },
   emptyTitle: { fontSize: 20, fontWeight: 'bold', color: '#111827', marginTop: 16, marginBottom: 8 },
   emptyText: { fontSize: 14, color: '#6B7280', textAlign: 'center' },
@@ -456,7 +508,7 @@ const styles = StyleSheet.create({
   modalBody: { padding: 20 },
   label: { fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 8, marginTop: 12 },
   input: {
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,

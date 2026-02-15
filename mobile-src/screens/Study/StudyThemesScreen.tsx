@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
 
@@ -44,6 +45,55 @@ const themesArticles: StudyArticle[] = [
     introduction: 'Learn about the amazing grace of God, how it differs from works, and why it\'s central to the Christian message of salvation and sanctification.',
     readTime: 9,
   },
+  {
+    id: 'hope',
+    title: 'Hope in Christ',
+    subtitle: 'A living hope through resurrection',
+    introduction: 'Explore the biblical concept of hope - not wishful thinking, but confident expectation based on God\'s promises and the resurrection of Jesus.',
+    readTime: 7,
+  },
+  {
+    id: 'peace',
+    title: 'Peace of God',
+    subtitle: 'Shalom in a broken world',
+    introduction: 'Study the multi-faceted biblical concept of peace (shalom) - encompassing wholeness, harmony with God, and inner tranquility that surpasses understanding.',
+    readTime: 8,
+  },
+  {
+    id: 'wisdom',
+    title: 'Biblical Wisdom',
+    subtitle: 'The fear of the Lord',
+    introduction: 'Understand what the Bible means by wisdom - not mere knowledge, but godly insight for living life well, rooted in reverence for God.',
+    readTime: 8,
+  },
+  {
+    id: 'redemption',
+    title: 'Redemption Through Christ',
+    subtitle: 'Bought back by His blood',
+    introduction: 'Examine the powerful theme of redemption throughout Scripture - from the kinsman-redeemer to Christ\'s ultimate payment for our sins.',
+    readTime: 9,
+  },
+  {
+    id: 'covenant',
+    title: 'God\'s Covenant Promises',
+    subtitle: 'Faithful through the ages',
+    introduction: 'Trace God\'s covenant relationships from Noah to the New Covenant in Christ\'s blood - discovering His unchanging faithfulness.',
+    readTime: 10,
+  },
+  {
+    id: 'holiness',
+    title: 'The Holiness of God',
+    subtitle: 'Set apart and calling us',
+    introduction: 'Marvel at God\'s perfect holiness and what it means for us to be called to be holy as He is holy in daily life and worship.',
+    readTime: 8,
+  },
+  {
+    id: 'prayer',
+    title: 'The Power of Prayer',
+    subtitle: 'Conversation with the Almighty',
+    introduction: 'Learn biblical principles of prayer from Jesus\' teachings and examples throughout Scripture - from the Lord\'s Prayer to persistent faith.',
+    readTime: 7,
+  },
 ];
 
 export default function StudyThemesScreen() {
@@ -61,7 +111,7 @@ export default function StudyThemesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -138,14 +188,14 @@ export default function StudyThemesScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     paddingHorizontal: 16,
@@ -191,7 +241,7 @@ const styles = StyleSheet.create({
   articleCard: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

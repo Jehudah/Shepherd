@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -26,44 +27,44 @@ interface ParableLesson {
 
 const parableLessons: ParableLesson[] = [
   {
-    id: 'kingdom-1',
-    title: 'Kingdom Parables Foundations',
-    description: 'Understanding the Kingdom of God',
-    parables: ['The Sower', 'The Mustard Seed', 'The Yeast'],
-    questionCount: 12,
-    xpReward: 120,
+    id: 'parables-kingdom-1',
+    title: 'The Sower & Seeds',
+    description: 'Understanding how God\'s word grows',
+    parables: ['The Sower', 'The Mustard Seed', 'The Growing Seed'],
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'kingdom-2',
-    title: 'Readiness & Faithfulness',
-    description: 'Being prepared for Christ\'s return',
-    parables: ['Ten Virgins', 'The Talents', 'Faithful Servant'],
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'kingdom-3',
-    title: 'Grace & Obedience',
-    description: 'God\'s grace and our response',
-    parables: ['Workers in Vineyard', 'Two Sons', 'Wedding Feast'],
-    questionCount: 12,
-    xpReward: 150,
-  },
-  {
-    id: 'kingdom-4',
-    title: 'Judgment & Mercy',
-    description: 'Divine justice and compassion',
-    parables: ['Unmerciful Servant', 'Rich Man & Lazarus', 'Pharisee & Tax Collector'],
-    questionCount: 12,
-    xpReward: 200,
-  },
-  {
-    id: 'kingdom-5',
+    id: 'parables-kingdom-2',
     title: 'Lost & Found',
-    description: 'God\'s love for the lost',
+    description: 'God\'s joy over the lost',
     parables: ['Lost Sheep', 'Lost Coin', 'Prodigal Son'],
-    questionCount: 12,
-    xpReward: 200,
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-3',
+    title: 'The Good Samaritan',
+    description: 'Love your neighbor',
+    parables: ['Good Samaritan', 'Good Shepherd'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-4',
+    title: 'Wise & Foolish',
+    description: 'Building on the right foundation',
+    parables: ['Wise & Foolish Builders', 'Ten Virgins', 'Talents'],
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'parables-kingdom-5',
+    title: 'The Kingdom\'s Value',
+    description: 'Worth more than everything',
+    parables: ['Hidden Treasure', 'Pearl of Great Price', 'The Net'],
+    questionCount: 10,
+    xpReward: 100,
   },
 ];
 
@@ -94,7 +95,7 @@ export default function ParablesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -206,14 +207,14 @@ export default function ParablesScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -253,7 +254,7 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   lessonCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -309,7 +310,7 @@ const styles = StyleSheet.create({
   parableBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 8,

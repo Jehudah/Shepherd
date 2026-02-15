@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
 
@@ -78,7 +79,7 @@ export default function ThemesSelection() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -144,14 +145,14 @@ export default function ThemesSelection() {
           </Text>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 60,
     paddingBottom: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
   },
@@ -194,7 +195,7 @@ const styles = StyleSheet.create({
   themeCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

@@ -8,11 +8,12 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
-  Alert
+  Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation, type RouteProp } from '@react-navigation/native';
 import type { RootStackParamList } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import {
   getStudyGroup,
   getGroupMembers,
@@ -163,18 +164,19 @@ export default function GroupDetailScreen() {
 
   if (loading || !group) {
     return (
-      <View style={[styles.container, styles.centerContent]}>
+      <SafeAreaView style={[styles.container, styles.centerContent]}>
         <Text style={styles.loadingText}>Loading...</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-      keyboardVerticalOffset={90}
-    >
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+        style={styles.keyboardView}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={90}
+      >
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerTop}>
@@ -321,14 +323,18 @@ export default function GroupDetailScreen() {
           </View>
         </ScrollView>
       )}
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
+  },
+  keyboardView: {
+    flex: 1,
   },
   centerContent: {
     alignItems: 'center',
@@ -387,7 +393,7 @@ const styles = StyleSheet.create({
   },
   chatContainer: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
   },
   chatContent: {
     padding: 16,
@@ -456,7 +462,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 10,

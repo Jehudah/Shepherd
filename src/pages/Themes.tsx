@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Book, ChevronDown, ChevronUp, Heart } from 'lucide-react';
+import { Book, ChevronDown, Heart } from 'lucide-react';
 import { expandedThemes } from '../data/expandedThemes';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Themes() {
   const [expandedTheme, setExpandedTheme] = useState<string | null>(null);

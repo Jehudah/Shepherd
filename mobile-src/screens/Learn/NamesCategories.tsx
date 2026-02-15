@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
 
@@ -30,7 +31,7 @@ const categories: Category[] = [
     description: 'Moses, Elijah, Isaiah, and more',
     icon: 'message-circle',
     color: '#3B82F6',
-    lessonCount: 4,
+    lessonCount: 5,
   },
   {
     id: 'kings',
@@ -38,39 +39,23 @@ const categories: Category[] = [
     description: 'David, Solomon, Saul',
     icon: 'award',
     color: '#8B5CF6',
-    lessonCount: 4,
+    lessonCount: 5,
   },
   {
-    id: 'disciples',
-    name: 'Disciples',
-    description: 'Peter, John, Paul',
+    id: 'apostles',
+    name: 'Apostles',
+    description: 'Peter, John, Paul, and the twelve',
     icon: 'users',
     color: '#10B981',
-    lessonCount: 4,
+    lessonCount: 5,
   },
   {
     id: 'women',
     name: 'Women of Faith',
-    description: 'Ruth, Esther, Mary',
+    description: 'Ruth, Esther, Mary, and more',
     icon: 'star',
     color: '#EC4899',
-    lessonCount: 4,
-  },
-  {
-    id: 'patriarchs',
-    name: 'Patriarchs',
-    description: 'Abraham, Isaac, Jacob',
-    icon: 'home',
-    color: '#F59E0B',
-    lessonCount: 4,
-  },
-  {
-    id: 'judges',
-    name: 'Judges',
-    description: 'Gideon, Samson, Deborah',
-    icon: 'shield',
-    color: '#EF4444',
-    lessonCount: 4,
+    lessonCount: 5,
   },
 ];
 
@@ -86,7 +71,7 @@ export default function NamesCategories() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -154,25 +139,25 @@ export default function NamesCategories() {
           </Text>
           <View style={styles.statsGrid}>
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>24</Text>
+              <Text style={styles.statValue}>20</Text>
               <Text style={styles.statLabel}>Total Lessons</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
-              <Text style={styles.statValue}>240</Text>
+              <Text style={styles.statValue}>200</Text>
               <Text style={styles.statLabel}>Questions</Text>
             </View>
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -180,7 +165,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 60,
     paddingBottom: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
   },
@@ -215,7 +200,7 @@ const styles = StyleSheet.create({
   categoryCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -257,7 +242,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   statsCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 20,
     marginTop: 24,

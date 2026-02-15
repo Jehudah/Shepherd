@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -26,44 +27,44 @@ interface TimelineLesson {
 
 const timelineLessons: TimelineLesson[] = [
   {
-    id: 'creation-1',
+    id: 'timeline-creation-1',
     title: 'Creation & Early History',
     description: 'From the beginning to the first humans',
-    period: 'Genesis 1-2',
-    questionCount: 12,
-    xpReward: 120,
+    period: 'Genesis 1-11',
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'creation-2',
-    title: 'Noah & the Flood',
-    description: 'The great flood and God\'s covenant',
-    period: 'Genesis 6-9',
-    questionCount: 12,
-    xpReward: 120,
+    id: 'timeline-creation-2',
+    title: 'The Patriarchs',
+    description: 'Abraham, Isaac, and Jacob',
+    period: 'Genesis 12-50',
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'creation-3',
-    title: 'Abraham & the Patriarchs',
-    description: 'God\'s promise to Abraham',
-    period: 'Genesis 12-25',
-    questionCount: 12,
-    xpReward: 120,
+    id: 'timeline-creation-3',
+    title: 'Exodus & Wilderness',
+    description: 'Freedom from Egypt and journey to Canaan',
+    period: 'Exodus - Deuteronomy',
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'creation-4',
-    title: 'Isaac & Jacob',
-    description: 'The promise continues',
-    period: 'Genesis 21-36',
-    questionCount: 12,
-    xpReward: 120,
+    id: 'timeline-creation-4',
+    title: 'Judges & Kings',
+    description: 'From chaos to monarchy',
+    period: 'Joshua - 2 Chronicles',
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'creation-5',
-    title: 'Joseph in Egypt',
-    description: 'From pit to palace',
-    period: 'Genesis 37-50',
-    questionCount: 12,
-    xpReward: 120,
+    id: 'timeline-creation-5',
+    title: 'Exile & Return',
+    description: 'Babylon and rebuilding',
+    period: 'Ezra - Nehemiah',
+    questionCount: 10,
+    xpReward: 100,
   },
 ];
 
@@ -89,7 +90,7 @@ export default function TimelineScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -186,14 +187,14 @@ export default function TimelineScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -265,7 +266,7 @@ const styles = StyleSheet.create({
   },
   lessonCard: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     marginBottom: 8,

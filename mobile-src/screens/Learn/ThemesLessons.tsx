@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -26,39 +27,39 @@ interface Lesson {
 
 const lessonsByTheme: Record<string, Lesson[]> = {
   love: [
-    { id: 'love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 12, xpReward: 120 },
-    { id: 'love-2', title: 'Loving God', description: 'How to love God with all our heart', questionCount: 12, xpReward: 120 },
-    { id: 'love-3', title: 'Loving Others', description: 'The command to love our neighbors', questionCount: 12, xpReward: 120 },
-    { id: 'love-4', title: 'Love in Action', description: 'Demonstrating love through deeds', questionCount: 12, xpReward: 120 },
-    { id: 'love-5', title: 'Perfect Love', description: 'How love casts out fear', questionCount: 12, xpReward: 120 },
+    { id: 'theme-love-1', title: 'God\'s Love for Us', description: 'Understanding the depth of God\'s love', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-2', title: 'Love One Another', description: 'Jesus\' command to love', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-3', title: 'Love Your Enemies', description: 'Radical love that transforms', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-4', title: 'The Love Chapter', description: '1 Corinthians 13 explored', questionCount: 10, xpReward: 100 },
+    { id: 'theme-love-5', title: 'Perfect Love Casts Out Fear', description: 'Living in God\'s love', questionCount: 10, xpReward: 100 },
   ],
   faith: [
-    { id: 'faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 12, xpReward: 120 },
-    { id: 'faith-2', title: 'Faith Heroes', description: 'Examples from Hebrews 11', questionCount: 12, xpReward: 120 },
-    { id: 'faith-3', title: 'Growing in Faith', description: 'How faith develops and strengthens', questionCount: 12, xpReward: 120 },
-    { id: 'faith-4', title: 'Faith and Works', description: 'Faith demonstrated through action', questionCount: 12, xpReward: 120 },
-    { id: 'faith-5', title: 'Faith in Trials', description: 'Trusting God in difficult times', questionCount: 12, xpReward: 120 },
+    { id: 'theme-faith-1', title: 'What is Faith?', description: 'The foundation of our belief', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-2', title: 'Faith of Abraham', description: 'The father of faith', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-3', title: 'Faith Like a Mustard Seed', description: 'Small faith, big results', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-4', title: 'Heroes of Faith', description: 'Hebrews 11 hall of fame', questionCount: 10, xpReward: 100 },
+    { id: 'theme-faith-5', title: 'Living by Faith', description: 'Walking in faith daily', questionCount: 10, xpReward: 100 },
   ],
   hope: [
-    { id: 'hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 12, xpReward: 120 },
-    { id: 'hope-2', title: 'Eternal Perspective', description: 'Looking beyond this world', questionCount: 12, xpReward: 120 },
-    { id: 'hope-3', title: 'Hope in Suffering', description: 'Finding hope in hardship', questionCount: 12, xpReward: 120 },
-    { id: 'hope-4', title: 'The Blessed Hope', description: 'Awaiting Christ\'s return', questionCount: 12, xpReward: 120 },
-    { id: 'hope-5', title: 'Sharing Hope', description: 'Giving an answer for our hope', questionCount: 12, xpReward: 120 },
+    { id: 'theme-hope-1', title: 'Hope in Christ', description: 'Our living hope through resurrection', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-2', title: 'Hope as an Anchor', description: 'Steadfast and sure', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-3', title: 'Hope in Suffering', description: 'Joy through trials', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-4', title: 'Future Hope', description: 'Eternal promises', questionCount: 10, xpReward: 100 },
+    { id: 'theme-hope-5', title: 'Hope Does Not Disappoint', description: 'God\'s faithful character', questionCount: 10, xpReward: 100 },
   ],
   peace: [
-    { id: 'peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 12, xpReward: 120 },
-    { id: 'peace-2', title: 'The Peace of God', description: 'Peace that surpasses understanding', questionCount: 12, xpReward: 120 },
-    { id: 'peace-3', title: 'Living in Peace', description: 'Peace in daily life', questionCount: 12, xpReward: 120 },
-    { id: 'peace-4', title: 'Peacemakers', description: 'Blessed are the peacemakers', questionCount: 12, xpReward: 120 },
-    { id: 'peace-5', title: 'Perfect Peace', description: 'Trusting in the Prince of Peace', questionCount: 12, xpReward: 120 },
+    { id: 'theme-peace-1', title: 'Peace with God', description: 'Reconciliation through Christ', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-2', title: 'Peace of God', description: 'Guarding hearts and minds', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-3', title: 'Prince of Peace', description: 'Jesus our peacemaker', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-4', title: 'Peace in the Storm', description: 'Calm in chaos', questionCount: 10, xpReward: 100 },
+    { id: 'theme-peace-5', title: 'Peacemakers', description: 'Blessed are those who make peace', questionCount: 10, xpReward: 100 },
   ],
   wisdom: [
-    { id: 'wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-2', title: 'Asking for Wisdom', description: 'God\'s promise to give wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-3', title: 'Wisdom from Above', description: 'Heavenly vs earthly wisdom', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-4', title: 'Wise Living', description: 'Applying wisdom daily', questionCount: 12, xpReward: 120 },
-    { id: 'wisdom-5', title: 'Christ Our Wisdom', description: 'Jesus as the wisdom of God', questionCount: 12, xpReward: 120 },
+    { id: 'theme-wisdom-1', title: 'Fear of the Lord', description: 'The beginning of wisdom', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-2', title: 'Solomon\'s Wisdom', description: 'The wisest man', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-3', title: 'Wisdom from Above', description: 'Pure, peaceful, gentle', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-4', title: 'Proverbs of Wisdom', description: 'Practical wisdom for life', questionCount: 10, xpReward: 100 },
+    { id: 'theme-wisdom-5', title: 'Christ Our Wisdom', description: 'True wisdom in Jesus', questionCount: 10, xpReward: 100 },
   ],
 };
 
@@ -109,7 +110,7 @@ export default function ThemesLessons() {
   const progressPercentage = (completedCount / lessons.length) * 100;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={[styles.header, { backgroundColor: themeColor }]}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -208,14 +209,14 @@ export default function ThemesLessons() {
           </View>
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -247,7 +248,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
   },
@@ -282,7 +283,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   lessonCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

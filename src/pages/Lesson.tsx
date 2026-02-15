@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, XCircle, Trophy, Star } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { lessons } from '../data/lessons';
-import { Question } from '../types';
 import QuestionCard from '../components/QuestionCard';
 
 export default function Lesson() {
@@ -62,7 +61,7 @@ export default function Lesson() {
 
     if (correct) {
       setCorrectAnswers(prev => prev + 1);
-      updateXP(currentQuestion.xpReward);
+      updateXP(currentQuestion.xpReward || 10);
     }
   };
 
@@ -74,7 +73,7 @@ export default function Lesson() {
       setIsCorrect(false);
     } else {
       const totalXP = lesson.questions.reduce((sum, q) => {
-        return sum + (correctAnswers >= lesson.questions.indexOf(q) ? q.xpReward : 0);
+        return sum + (correctAnswers >= lesson.questions.indexOf(q) ? (q.xpReward || 10) : 0);
       }, 0);
 
       endSession(lesson.questions.length, correctAnswers, totalXP);
@@ -91,7 +90,7 @@ export default function Lesson() {
     const percentage = Math.round((correctAnswers / lesson.questions.length) * 100);
     const passed = percentage >= 70;
     const totalXP = lesson.questions.reduce((sum, q, index) => {
-      return sum + (index < correctAnswers ? q.xpReward : 0);
+      return sum + (index < correctAnswers ? (q.xpReward || 10) : 0);
     }, 0);
 
     return (

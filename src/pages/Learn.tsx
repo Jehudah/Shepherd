@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BookOpen, Users, Book, Clock, Star, BookText } from 'lucide-react';
-import { useStore } from '../store/useStore';
 
 export default function Learn() {
-  const { userProgress } = useStore();
 
   const categories = [
     {

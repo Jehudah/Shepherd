@@ -14,6 +14,8 @@ import {
 } from 'firebase/firestore';
 import { db } from './firebase';
 
+export type PrayerStatus = 'active' | 'answered' | 'in-progress' | 'archived';
+
 export interface PrayerRequest {
   id: string;
   userId: string;
@@ -23,6 +25,7 @@ export interface PrayerRequest {
   category: string;
   isActive: boolean;
   isAnswered: boolean;
+  status: PrayerStatus;
   prayerCount: number;
   createdAt: Date;
   updatedAt: Date;
@@ -56,6 +59,7 @@ export async function createPrayerRequest(
       category,
       isActive: true,
       isAnswered: false,
+      status: 'active' as PrayerStatus,
       prayerCount: 0,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp()
@@ -316,5 +320,82 @@ export async function isUserPraying(requestId: string, userId: string): Promise<
   } catch (error) {
     console.error('Error checking if user is praying:', error);
     return false;
+  }
+}
+
+/**
+ * Update prayer request
+ */
+export async function updatePrayerRequest(
+  requestId: string,
+  userId: string,
+  updates: {
+    title?: string;
+    description?: string;
+    category?: string;
+  }
+): Promise<void> {
+  try {
+    const requestRef = doc(db, 'prayerRequests', requestId);
+    const requestDoc = await getDoc(requestRef);
+
+    if (!requestDoc.exists()) {
+      throw new Error('Prayer request not found');
+    }
+
+    if (requestDoc.data().userId !== userId) {
+      throw new Error('Only the creator can update this prayer request');
+    }
+
+    await updateDoc(requestRef, {
+      ...updates,
+      updatedAt: serverTimestamp()
+    });
+  } catch (error) {
+    console.error('Error updating prayer request:', error);
+    throw error;
+  }
+}
+
+/**
+ * Update prayer request status
+ */
+export async function updatePrayerStatus(
+  requestId: string,
+  userId: string,
+  status: PrayerStatus
+): Promise<void> {
+  try {
+    const requestRef = doc(db, 'prayerRequests', requestId);
+    const requestDoc = await getDoc(requestRef);
+
+    if (!requestDoc.exists()) {
+      throw new Error('Prayer request not found');
+    }
+
+    if (requestDoc.data().userId !== userId) {
+      throw new Error('Only the creator can update the status');
+    }
+
+    const updates: any = {
+      status,
+      updatedAt: serverTimestamp()
+    };
+
+    // Update legacy flags for backward compatibility
+    if (status === 'answered') {
+      updates.isAnswered = true;
+      updates.isActive = false;
+    } else if (status === 'archived') {
+      updates.isActive = false;
+    } else {
+      updates.isActive = true;
+      updates.isAnswered = false;
+    }
+
+    await updateDoc(requestRef, updates);
+  } catch (error) {
+    console.error('Error updating prayer status:', error);
+    throw error;
   }
 }

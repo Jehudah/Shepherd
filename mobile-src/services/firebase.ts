@@ -1,8 +1,35 @@
-// Firebase Configuration and Services for React Native
+// Firebase Configuration and Services for React Native (Web SDK Version)
+// This version uses the web Firebase SDK which is compatible with Expo
 
-import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  sendPasswordResetEmail,
+  User as FirebaseUser
+} from 'firebase/auth';
+import {
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+  query,
+  where,
+  limit,
+  getDocs,
+  runTransaction,
+  onSnapshot,
+  Timestamp,
+  Unsubscribe
+} from 'firebase/firestore';
 import { UserProfile, UserProgress, AuthCredentials } from '../types';
+
+// Import Firebase instances from centralized config
+import { auth, db } from '../config/firebase-config';
+
+// Re-export for use in other services
+export { auth, db };
 
 // Collections
 const USERS_COLLECTION = 'users';
@@ -29,7 +56,7 @@ export class AuthService {
     }
 
     // Create Firebase auth user
-    const userCredential = await auth().createUserWithEmailAndPassword(email, password);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const { uid } = userCredential.user;
 
     // Create user profile
@@ -43,7 +70,7 @@ export class AuthService {
     };
 
     // Save to Firestore
-    await firestore().collection(USERS_COLLECTION).doc(uid).set(userProfile);
+    await setDoc(doc(db, USERS_COLLECTION, uid), userProfile);
 
     // Initialize user progress
     await this.initializeUserProgress(uid, email, username);
@@ -55,16 +82,16 @@ export class AuthService {
    * Login with email and password
    */
   static async login(email: string, password: string): Promise<UserProfile> {
-    const userCredential = await auth().signInWithEmailAndPassword(email, password);
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const { uid } = userCredential.user;
 
     // Update last login
-    await firestore().collection(USERS_COLLECTION).doc(uid).update({
+    await updateDoc(doc(db, USERS_COLLECTION, uid), {
       lastLoginAt: new Date(),
     });
 
     // Get user profile
-    const userDoc = await firestore().collection(USERS_COLLECTION).doc(uid).get();
+    const userDoc = await getDoc(doc(db, USERS_COLLECTION, uid));
     return userDoc.data() as UserProfile;
   }
 
@@ -72,17 +99,17 @@ export class AuthService {
    * Logout current user
    */
   static async logout(): Promise<void> {
-    await auth().signOut();
+    await signOut(auth);
   }
 
   /**
    * Get current user profile
    */
   static async getCurrentUser(): Promise<UserProfile | null> {
-    const currentUser = auth().currentUser;
+    const currentUser = auth.currentUser;
     if (!currentUser) return null;
 
-    const userDoc = await firestore().collection(USERS_COLLECTION).doc(currentUser.uid).get();
+    const userDoc = await getDoc(doc(db, USERS_COLLECTION, currentUser.uid));
     return userDoc.data() as UserProfile;
   }
 
@@ -90,12 +117,12 @@ export class AuthService {
    * Check if username exists
    */
   static async checkUsernameExists(username: string): Promise<boolean> {
-    const snapshot = await firestore()
-      .collection(USERS_COLLECTION)
-      .where('username', '==', username)
-      .limit(1)
-      .get();
-
+    const q = query(
+      collection(db, USERS_COLLECTION),
+      where('username', '==', username),
+      limit(1)
+    );
+    const snapshot = await getDocs(q);
     return !snapshot.empty;
   }
 
@@ -127,21 +154,21 @@ export class AuthService {
       syncedAt: new Date(),
     };
 
-    await firestore().collection(PROGRESS_COLLECTION).doc(uid).set(initialProgress);
+    await setDoc(doc(db, PROGRESS_COLLECTION, uid), initialProgress);
   }
 
   /**
    * Reset password via email
    */
   static async resetPassword(email: string): Promise<void> {
-    await auth().sendPasswordResetEmail(email);
+    await sendPasswordResetEmail(auth, email);
   }
 
   /**
    * Update user profile
    */
   static async updateProfile(uid: string, updates: Partial<UserProfile>): Promise<void> {
-    await firestore().collection(USERS_COLLECTION).doc(uid).update(updates);
+    await updateDoc(doc(db, USERS_COLLECTION, uid), updates);
   }
 }
 
@@ -153,8 +180,9 @@ export class ProgressService {
    * Get user progress
    */
   static async getUserProgress(uid: string): Promise<UserProgress | null> {
-    const doc = await firestore().collection(PROGRESS_COLLECTION).doc(uid).get();
-    return doc.exists ? (doc.data() as UserProgress) : null;
+    const docRef = doc(db, PROGRESS_COLLECTION, uid);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists() ? (docSnap.data() as UserProgress) : null;
   }
 
   /**
@@ -162,7 +190,7 @@ export class ProgressService {
    */
   static async syncProgress(progress: UserProgress): Promise<void> {
     const { userId } = progress;
-    await firestore().collection(PROGRESS_COLLECTION).doc(userId).set({
+    await setDoc(doc(db, PROGRESS_COLLECTION, userId), {
       ...progress,
       syncedAt: new Date(),
     }, { merge: true });
@@ -172,11 +200,11 @@ export class ProgressService {
    * Update XP
    */
   static async updateXP(uid: string, xpToAdd: number): Promise<void> {
-    const progressRef = firestore().collection(PROGRESS_COLLECTION).doc(uid);
+    const progressRef = doc(db, PROGRESS_COLLECTION, uid);
 
-    await firestore().runTransaction(async (transaction) => {
-      const doc = await transaction.get(progressRef);
-      const currentProgress = doc.data() as UserProgress;
+    await runTransaction(db, async (transaction) => {
+      const docSnap = await transaction.get(progressRef);
+      const currentProgress = docSnap.data() as UserProgress;
 
       const newTotalXP = currentProgress.totalXP + xpToAdd;
       const newLevel = Math.floor(newTotalXP / 100) + 1;
@@ -197,11 +225,11 @@ export class ProgressService {
     lessonId: string,
     category: string
   ): Promise<void> {
-    const progressRef = firestore().collection(PROGRESS_COLLECTION).doc(uid);
+    const progressRef = doc(db, PROGRESS_COLLECTION, uid);
 
-    await firestore().runTransaction(async (transaction) => {
-      const doc = await transaction.get(progressRef);
-      const currentProgress = doc.data() as UserProgress;
+    await runTransaction(db, async (transaction) => {
+      const docSnap = await transaction.get(progressRef);
+      const currentProgress = docSnap.data() as UserProgress;
 
       // Add lesson to completed if not already there
       if (!currentProgress.completedLessons.includes(lessonId)) {
@@ -226,11 +254,11 @@ export class ProgressService {
    * Update streak
    */
   static async updateStreak(uid: string): Promise<void> {
-    const progressRef = firestore().collection(PROGRESS_COLLECTION).doc(uid);
+    const progressRef = doc(db, PROGRESS_COLLECTION, uid);
 
-    await firestore().runTransaction(async (transaction) => {
-      const doc = await transaction.get(progressRef);
-      const currentProgress = doc.data() as UserProgress;
+    await runTransaction(db, async (transaction) => {
+      const docSnap = await transaction.get(progressRef);
+      const currentProgress = docSnap.data() as UserProgress;
 
       const today = new Date().toISOString().split('T')[0];
       const lastStudy = currentProgress.lastStudyDate;
@@ -268,20 +296,20 @@ export const subscribeToProgress = (
   uid: string,
   onUpdate: (progress: UserProgress) => void,
   onError?: (error: Error) => void
-) => {
-  return firestore()
-    .collection(PROGRESS_COLLECTION)
-    .doc(uid)
-    .onSnapshot(
-      (doc) => {
-        if (doc.exists) {
-          onUpdate(doc.data() as UserProgress);
-        }
-      },
-      (error) => {
-        if (onError) {
-          onError(error);
-        }
+): Unsubscribe => {
+  const docRef = doc(db, PROGRESS_COLLECTION, uid);
+
+  return onSnapshot(
+    docRef,
+    (docSnap) => {
+      if (docSnap.exists()) {
+        onUpdate(docSnap.data() as UserProgress);
       }
-    );
+    },
+    (error) => {
+      if (onError) {
+        onError(error);
+      }
+    }
+  );
 };

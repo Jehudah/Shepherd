@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -27,49 +28,49 @@ interface VerseLesson {
 
 const verseLessons: VerseLesson[] = [
   {
-    id: 'salvation-1',
+    id: 'verses-salvation-1',
     title: 'Salvation Foundations',
     description: 'Core verses about being saved',
-    verses: ['John 3:16', 'Romans 3:23', 'Romans 6:23'],
+    verses: ['John 3:16', 'Romans 3:23', 'Romans 6:23', 'Ephesians 2:8-9'],
     difficulty: 1,
-    questionCount: 12,
-    xpReward: 120,
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'salvation-2',
-    title: 'Salvation Deep Dive',
-    description: 'Understanding God\'s gift',
-    verses: ['Ephesians 2:8-9', 'Romans 10:9-10', 'Acts 4:12'],
+    id: 'verses-salvation-2',
+    title: 'God\'s Love & Grace',
+    description: 'Amazing grace that saves',
+    verses: ['Romans 5:8', 'Titus 3:5', '1 John 4:10', 'John 1:12'],
+    difficulty: 1,
+    questionCount: 10,
+    xpReward: 100,
+  },
+  {
+    id: 'verses-salvation-3',
+    title: 'Faith & Repentance',
+    description: 'Turning to God',
+    verses: ['Acts 3:19', 'Romans 10:9', 'Hebrews 11:6', 'Mark 1:15'],
     difficulty: 2,
-    questionCount: 12,
-    xpReward: 150,
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'salvation-3',
-    title: 'Assurance & Peace',
-    description: 'Knowing you are saved',
-    verses: ['1 John 5:11-13', 'Romans 8:38-39', 'John 10:28-29'],
+    id: 'verses-salvation-4',
+    title: 'New Life in Christ',
+    description: 'Born again and transformed',
+    verses: ['2 Corinthians 5:17', 'John 3:3', 'Romans 8:1', 'Galatians 2:20'],
     difficulty: 2,
-    questionCount: 12,
-    xpReward: 150,
+    questionCount: 10,
+    xpReward: 100,
   },
   {
-    id: 'salvation-4',
-    title: 'Living by Faith',
-    description: 'Walking in your salvation',
-    verses: ['Galatians 2:20', '2 Corinthians 5:17', 'Philippians 1:6'],
-    difficulty: 3,
-    questionCount: 12,
-    xpReward: 200,
-  },
-  {
-    id: 'salvation-5',
-    title: 'Master Challenge',
-    description: 'All salvation verses together',
-    verses: ['All Previous Verses'],
-    difficulty: 3,
-    questionCount: 12,
-    xpReward: 250,
+    id: 'verses-salvation-5',
+    title: 'Eternal Security',
+    description: 'Safe in Jesus forever',
+    verses: ['John 10:28-29', 'Romans 8:38-39', '1 John 5:13', 'Philippians 1:6'],
+    difficulty: 2,
+    questionCount: 10,
+    xpReward: 100,
   },
 ];
 
@@ -121,7 +122,7 @@ export default function MemorizeVersesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -225,7 +226,7 @@ export default function MemorizeVersesScreen() {
         {/* Tips Card */}
         <View style={styles.tipsCard}>
           <View style={styles.tipsHeader}>
-            <Icon name="lightbulb" size={20} color="#8B5CF6" />
+            <Icon name="zap" size={20} color="#8B5CF6" />
             <Text style={styles.tipsTitle}>Memory Tips</Text>
           </View>
           <View style={styles.tipsList}>
@@ -236,14 +237,14 @@ export default function MemorizeVersesScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -299,7 +300,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   lessonCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -391,7 +392,7 @@ const styles = StyleSheet.create({
     color: '#6B7280',
   },
   tipsCard: {
-    backgroundColor: '#F5F3FF',
+    backgroundColor: '#E8E3FF',
     borderRadius: 16,
     padding: 16,
     marginTop: 24,

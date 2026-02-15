@@ -8,11 +8,13 @@ import {
   RefreshControl,
   Modal,
   TextInput,
-  Alert
-} from 'react-native';
+  Alert,
+  KeyboardAvoidingView,
+  Platform} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import {
   getForumCategories,
   getTopicsByCategory,
@@ -93,7 +95,7 @@ export default function ForumsScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         <View style={styles.header}>
           <Text style={styles.title}>Discussion Forums</Text>
@@ -181,8 +183,12 @@ export default function ForumsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>New Discussion</Text>
               <TouchableOpacity onPress={() => setShowCreateModal(false)}>
@@ -221,15 +227,16 @@ export default function ForumsScreen() {
                 </Text>
               </TouchableOpacity>
             </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F9FAFB' },
+  container: { flex: 1, backgroundColor: '#E8E3FF' },
   header: { padding: 20, paddingTop: 10 },
   title: { fontSize: 32, fontWeight: 'bold', color: '#111827', marginBottom: 4 },
   subtitle: { fontSize: 16, color: '#6B7280' },
@@ -294,7 +301,7 @@ const styles = StyleSheet.create({
   modalBody: { padding: 20 },
   label: { fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 8, marginTop: 12 },
   input: {
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,

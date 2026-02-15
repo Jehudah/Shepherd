@@ -4,11 +4,12 @@ import {
   Text,
   ScrollView,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
 import Wooly from '../../components/Wooly';
 
@@ -21,8 +22,9 @@ export default function CommunityScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Header */}
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
+        {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Community</Text>
         <Text style={styles.headerSubtitle}>
@@ -62,7 +64,7 @@ export default function CommunityScreen() {
           onPress={() => handleNavigate('Leaderboard')}
         >
           <View style={[styles.availableIcon, { backgroundColor: '#FEF3C7' }]}>
-            <Icon name="trophy" size={28} color="#F59E0B" />
+            <Icon name="award" size={28} color="#F59E0B" />
           </View>
           <View style={styles.availableContent}>
             <Text style={styles.availableTitle}>Leaderboard</Text>
@@ -150,7 +152,7 @@ export default function CommunityScreen() {
               <Text style={styles.statLabel}>Completed</Text>
             </View>
             <View style={styles.stat}>
-              <Icon name="flame" size={20} color="#EF4444" />
+              <Icon name="trending-up" size={20} color="#EF4444" />
               <Text style={styles.statValue}>{userProgress.currentStreak}</Text>
               <Text style={styles.statLabel}>Day Streak</Text>
             </View>
@@ -160,14 +162,15 @@ export default function CommunityScreen() {
 
       {/* Bottom Spacing */}
       <View style={styles.bottomSpacing} />
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
   },
   content: {
     paddingBottom: 40
@@ -285,7 +288,7 @@ const styles = StyleSheet.create({
   stat: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     padding: 16
   },

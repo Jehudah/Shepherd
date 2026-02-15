@@ -3,14 +3,18 @@ import {
   View,
   Text,
   ScrollView,
-  TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
+import { theme } from '../../theme';
+import { Card, Badge, GradientCard } from '../../components/ui';
+import Wooly from '../../components/Wooly';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -96,165 +100,155 @@ export default function LearnScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Header */}
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.greeting}>Welcome back!</Text>
-          <Text style={styles.username}>{userProgress.username}</Text>
-        </View>
-        <View style={styles.statsContainer}>
-          <View style={styles.statBadge}>
-            <Icon name="zap" size={16} color="#F59E0B" />
-            <Text style={styles.statText}>{userProgress.totalXP} XP</Text>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
+        {/* Header */}
+        <View style={styles.header}>
+          <View>
+            <Text style={styles.greeting}>Welcome back!</Text>
+            <Text style={styles.username}>{userProgress.username}</Text>
           </View>
-          <View style={styles.statBadge}>
-            <Icon name="award" size={16} color="#8B5CF6" />
-            <Text style={styles.statText}>Lvl {userProgress.level}</Text>
-          </View>
-        </View>
-      </View>
-
-      {/* Streak Card */}
-      {userProgress.streak > 0 && (
-        <View style={styles.streakCard}>
-          <View style={styles.streakContent}>
-            <Text style={styles.streakEmoji}>🔥</Text>
-            <View style={styles.streakTextContainer}>
-              <Text style={styles.streakTitle}>
-                {userProgress.streak} Day Streak!
-              </Text>
-              <Text style={styles.streakSubtitle}>
-                Keep up the amazing work
-              </Text>
-            </View>
+          <View style={styles.statsContainer}>
+            <Badge variant="warning" icon="zap" size="md">
+              {userProgress.totalXP} XP
+            </Badge>
+            <Badge variant="primary" icon="award" size="md">
+              Lvl {userProgress.level}
+            </Badge>
           </View>
         </View>
-      )}
 
-      {/* Categories Grid */}
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>Choose Your Path</Text>
-        <Text style={styles.sectionSubtitle}>
-          Select a category to continue your learning journey
-        </Text>
-      </View>
+        {/* Wooly Welcome */}
+        <Wooly
+          message={`Hi ${userProgress.username}! Ready to learn today? Choose a topic below to get started!`}
+          mood="happy"
+          size="medium"
+        />
 
-      <View style={styles.grid}>
-        {categories.map((category, index) => (
-          <TouchableOpacity
-            key={category.id}
-            style={styles.categoryCard}
-            onPress={() => handleCategoryPress(category)}
-            activeOpacity={0.7}
+        {/* Streak Card */}
+        {userProgress.streak > 0 && (
+          <GradientCard
+            gradient={theme.colors.fire}
+            style={styles.streakCard}
           >
-            <View
-              style={[
-                styles.categoryIconContainer,
-                { backgroundColor: category.color },
-              ]}
-            >
-              <Icon name={category.icon} size={32} color="#FFFFFF" />
+            <View style={styles.streakContent}>
+              <Text style={styles.streakEmoji}>🔥</Text>
+              <View style={styles.streakTextContainer}>
+                <Text style={styles.streakTitle}>
+                  {userProgress.streak} Day Streak!
+                </Text>
+                <Text style={styles.streakSubtitle}>
+                  Keep up the amazing work
+                </Text>
+              </View>
             </View>
-            <View style={styles.categoryContent}>
-              <Text style={styles.categoryTitle}>{category.title}</Text>
-              <Text style={styles.categoryDescription}>
-                {category.description}
-              </Text>
-              {category.comingSoon && (
-                <View style={styles.comingSoonBadge}>
-                  <Text style={styles.comingSoonText}>Coming Soon</Text>
-                </View>
-              )}
-            </View>
-            <Icon name="chevron-right" size={20} color="#9CA3AF" />
-          </TouchableOpacity>
-        ))}
-      </View>
+          </GradientCard>
+        )}
 
-      {/* Progress Summary */}
-      <View style={styles.progressCard}>
-        <Text style={styles.progressTitle}>Your Progress</Text>
-        <View style={styles.progressStats}>
-          <View style={styles.progressStat}>
-            <Text style={styles.progressValue}>
-              {userProgress.completedLessons.length}
-            </Text>
-            <Text style={styles.progressLabel}>Lessons Completed</Text>
-          </View>
-          <View style={styles.progressDivider} />
-          <View style={styles.progressStat}>
-            <Text style={styles.progressValue}>
-              {Object.keys(userProgress.categoryProgress).length}
-            </Text>
-            <Text style={styles.progressLabel}>Categories Started</Text>
-          </View>
+        {/* Categories Grid */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>Choose Your Path</Text>
+          <Text style={styles.sectionSubtitle}>
+            Select a category to continue your learning journey
+          </Text>
         </View>
-      </View>
-    </ScrollView>
+
+        <View style={styles.grid}>
+          {categories.map((category, index) => (
+            <Card
+              key={category.id}
+              variant="elevated"
+              shadowLevel="md"
+              onPress={() => handleCategoryPress(category)}
+              style={styles.categoryCard}
+            >
+              <LinearGradient
+                colors={category.gradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.categoryIconContainer}
+              >
+                <Icon name={category.icon} size={32} color="#FFFFFF" />
+              </LinearGradient>
+              <View style={styles.categoryContent}>
+                <Text style={styles.categoryTitle}>{category.title}</Text>
+                <Text style={styles.categoryDescription}>
+                  {category.description}
+                </Text>
+                {category.comingSoon && (
+                  <Badge variant="warning" size="sm" style={styles.comingSoonBadge}>
+                    Coming Soon
+                  </Badge>
+                )}
+              </View>
+              <Icon name="chevron-right" size={20} color={theme.colors.text.tertiary} />
+            </Card>
+          ))}
+        </View>
+
+        {/* Progress Summary */}
+        <Card variant="elevated" shadowLevel="md" style={styles.progressCard}>
+          <Text style={styles.progressTitle}>Your Progress</Text>
+          <View style={styles.progressStats}>
+            <View style={styles.progressStat}>
+              <Text style={styles.progressValue}>
+                {userProgress.completedLessons.length}
+              </Text>
+              <Text style={styles.progressLabel}>Lessons Completed</Text>
+            </View>
+            <View style={styles.progressDivider} />
+            <View style={styles.progressStat}>
+              <Text style={styles.progressValue}>
+                {Object.keys(userProgress.categoryProgress).length}
+              </Text>
+              <Text style={styles.progressLabel}>Categories Started</Text>
+            </View>
+          </View>
+        </Card>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: theme.colors.background,
+  },
+  scrollView: {
+    flex: 1,
   },
   content: {
-    padding: 16,
-    paddingBottom: 32,
+    padding: theme.spacing[4],
+    paddingBottom: theme.spacing[8],
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: theme.spacing[6],
   },
   greeting: {
-    fontSize: 16,
-    color: '#6B7280',
+    fontSize: theme.typography.fontSize.md,
+    color: theme.colors.text.secondary,
   },
   username: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1F2937',
+    fontSize: theme.typography.fontSize['2xl'],
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.primary,
     marginTop: 4,
   },
   statsContainer: {
     flexDirection: 'row',
-    gap: 8,
-  },
-  statBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 20,
-    gap: 6,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  statText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#1F2937',
+    gap: theme.spacing[2],
   },
   streakCard: {
-    backgroundColor: '#FEF3C7',
-    borderRadius: 16,
-    padding: 16,
-    marginBottom: 24,
-    borderWidth: 2,
-    borderColor: '#FCD34D',
+    marginBottom: theme.spacing[6],
   },
   streakContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: theme.spacing[3],
   },
   streakEmoji: {
     fontSize: 40,
@@ -263,48 +257,44 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   streakTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#78350F',
+    fontSize: theme.typography.fontSize.lg,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.inverse,
   },
   streakSubtitle: {
-    fontSize: 14,
-    color: '#92400E',
+    fontSize: theme.typography.fontSize.sm,
+    color: theme.colors.text.inverse,
     marginTop: 2,
+    opacity: 0.9,
   },
   sectionHeader: {
-    marginBottom: 16,
+    marginBottom: theme.spacing[4],
   },
   sectionTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1F2937',
+    fontSize: theme.typography.fontSize['2xl'],
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.primary,
     marginBottom: 4,
   },
   sectionSubtitle: {
-    fontSize: 14,
-    color: '#6B7280',
+    fontSize: theme.typography.fontSize.sm,
+    color: theme.colors.text.secondary,
   },
   grid: {
-    gap: 12,
+    gap: theme.spacing[3],
   },
   categoryCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 16,
-    gap: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
+    gap: theme.spacing[3],
+    padding: 0, // Override Card's default padding
+    paddingHorizontal: theme.spacing[4],
+    paddingVertical: theme.spacing[4],
   },
   categoryIconContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 12,
+    width: 64,
+    height: 64,
+    borderRadius: theme.radius.md,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -312,44 +302,27 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   categoryTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#1F2937',
+    fontSize: theme.typography.fontSize.lg,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.primary,
     marginBottom: 4,
   },
   categoryDescription: {
-    fontSize: 14,
-    color: '#6B7280',
+    fontSize: theme.typography.fontSize.sm,
+    color: theme.colors.text.secondary,
   },
   comingSoonBadge: {
-    alignSelf: 'flex-start',
-    backgroundColor: '#FEF3C7',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 8,
-    marginTop: 8,
-  },
-  comingSoonText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: '#92400E',
+    marginTop: theme.spacing[2],
   },
   progressCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 20,
-    marginTop: 24,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
+    marginTop: theme.spacing[6],
+    padding: theme.spacing[5],
   },
   progressTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: 16,
+    fontSize: theme.typography.fontSize.lg,
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.primary,
+    marginBottom: theme.spacing[4],
     textAlign: 'center',
   },
   progressStats: {
@@ -361,19 +334,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   progressValue: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#3B82F6',
+    fontSize: theme.typography.fontSize['4xl'],
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.primary[500],
     marginBottom: 4,
   },
   progressLabel: {
-    fontSize: 14,
-    color: '#6B7280',
+    fontSize: theme.typography.fontSize.sm,
+    color: theme.colors.text.secondary,
     textAlign: 'center',
   },
   progressDivider: {
     width: 1,
     height: 60,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: theme.colors.border.light,
   },
 });

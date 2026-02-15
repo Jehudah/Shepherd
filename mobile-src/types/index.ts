@@ -1,4 +1,5 @@
 // React Native Types for Shepherd App
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type QuestionType =
   | 'multiple-choice'
@@ -115,6 +116,9 @@ export type MainTabParamList = {
   Study: undefined;
   Profile: undefined;
 };
+
+// Navigation prop type for use in screens
+export type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 export type LearnStackParamList = {
   LearnHome: undefined;

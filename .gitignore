@@ -22,3 +22,56 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ========================================
+# SECURITY: Environment Variables & Secrets
+# ========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Firebase config is safe to commit (uses environment variables only)
+# mobile-src/config/firebase-config.ts
+GoogleService-Info.plist
+google-services.json
+
+# ========================================
+# Expo & React Native
+# ========================================
+.expo/
+.expo-shared/
+web-build/
+
+# iOS
+ios/Pods/
+ios/.xcode.env.local
+ios/build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Android
+android/app/build/
+android/build/
+*.apk
+*.aab
+
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.swp
+*.swo
+*~
+.tmp/
+
+# ========================================
+# IMPORTANT: Keep these templates
+# ========================================
+!.env.template
+!firebase-config.template.ts

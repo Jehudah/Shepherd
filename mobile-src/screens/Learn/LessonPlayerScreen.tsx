@@ -5,15 +5,21 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
 import { Question, RootStackParamList } from '../../types';
 import { shuffleArray, shuffleOptions } from '../../utils/shuffle';
+import CharacterGuide from '../../components/CharacterGuide';
+import Character from '../../components/Character';
+import { getCharacterForLesson, getCharacterMessage } from '../../data/characterMapping';
+
+// Icon alias for consistency
+const Icon = Feather;
 
 // Import question data
 import {
@@ -163,6 +169,12 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
   const answeredCount = completedQuestions.size;
   const progress = (answeredCount / totalQuestions) * 100;
 
+  // Determine which character to show based on lesson context
+  const lessonCharacter = useMemo(() => {
+    const lessonTitle = lessonId || '';
+    return getCharacterForLesson(lessonTitle, category, subcategory);
+  }, [category, subcategory, lessonId]);
+
   const handleAnswerSelect = (answer: string) => {
     if (isAnswered) return;
     setSelectedAnswer(answer);
@@ -224,8 +236,11 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.resultsContainer}>
-          <Text style={styles.resultsEmoji}>🎉</Text>
-          <Text style={styles.resultsTitle}>Lesson Complete!</Text>
+          <CharacterGuide
+            character={lessonCharacter}
+            message={getCharacterMessage(lessonCharacter, 'complete')}
+            mood="celebrating"
+          />
 
           <View style={styles.xpBadge}>
             <Icon name="award" size={32} color="#FFFFFF" />
@@ -290,16 +305,21 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
         <View style={[styles.progressBar, { width: `${progress}%` }]} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.content}>
-        {/* Question */}
-        <View style={styles.questionCard}>
-          <Text style={styles.questionText}>{currentQuestion.question}</Text>
+      <View style={styles.mainContent}>
+        {/* Top 1/3: Character with Speech Bubble */}
+        <View style={styles.characterSection}>
+          <Character name={lessonCharacter} size={140} style={styles.characterImage} />
+          <View style={styles.speechBubble}>
+            <View style={styles.speechBubbleArrow} />
+            <Text style={styles.questionText}>{currentQuestion.question}</Text>
+          </View>
         </View>
 
-        {/* Options */}
-        <View style={styles.optionsContainer}>
-          {(currentQuestion.shuffledOptions || currentQuestion.options || []).map(
-            (option, index) => {
+        {/* Bottom 2/3: Answer Options */}
+        <ScrollView style={styles.answersSection} contentContainerStyle={styles.answersContent}>
+          <View style={styles.optionsContainer}>
+          {((currentQuestion as QuestionWithShuffled).shuffledOptions || currentQuestion.options || []).map(
+            (option: string, index: number) => {
               const isSelected = selectedAnswer === option;
               const showCorrect = isAnswered && option === currentQuestion.correctAnswer;
               const showWrong = isAnswered && isSelected && !isCorrect;
@@ -331,36 +351,27 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
               );
             }
           )}
-        </View>
-
-        {/* Feedback */}
-        {isAnswered && (
-          <View
-            style={[
-              styles.feedbackContainer,
-              isCorrect ? styles.feedbackCorrect : styles.feedbackWrong,
-            ]}
-          >
-            <View style={styles.feedbackContent}>
-              <Icon
-                name={isCorrect ? 'check-circle' : 'x-circle'}
-                size={24}
-                color={isCorrect ? '#10B981' : '#F59E0B'}
-              />
-              <View style={styles.feedbackTextContainer}>
-                <Text style={styles.feedbackTitle}>
-                  {isCorrect ? 'Correct! Great job! 🎉' : "Not quite! Let's try again later."}
-                </Text>
-                {!isCorrect && (
-                  <Text style={styles.feedbackSubtext}>
-                    The correct answer is: {currentQuestion.correctAnswer}
-                  </Text>
-                )}
-              </View>
-            </View>
           </View>
-        )}
-      </ScrollView>
+
+          {/* Feedback */}
+          {isAnswered && (
+            <View style={styles.feedbackSection}>
+              <Text style={[styles.feedbackText, isCorrect ? styles.feedbackCorrectText : styles.feedbackIncorrectText]}>
+                {isCorrect
+                  ? getCharacterMessage(lessonCharacter, 'correct')
+                  : getCharacterMessage(lessonCharacter, 'incorrect')}
+              </Text>
+              {!isCorrect && (
+                <View style={styles.correctAnswerHint}>
+                  <Text style={styles.correctAnswerText}>
+                    The correct answer is: <Text style={styles.correctAnswerBold}>{currentQuestion.correctAnswer}</Text>
+                  </Text>
+                </View>
+              )}
+            </View>
+          )}
+        </ScrollView>
+      </View>
 
       {/* Action Button */}
       <View style={styles.actionContainer}>
@@ -390,7 +401,7 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -428,22 +439,104 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 100,
   },
-  questionCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 24,
-    marginBottom: 24,
+  mainContent: {
+    flex: 1,
+  },
+  characterSection: {
+    minHeight: '30%',
+    backgroundColor: '#E8E3FF', // Light lilac
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  characterImage: {
+    marginBottom: 10,
+  },
+  speechBubble: {
+    backgroundColor: '#FFFFFF', // White background
+    borderRadius: 20,
+    padding: 20,
+    paddingTop: 25,
+    marginHorizontal: 20,
+    marginTop: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 3,
+    borderWidth: 2,
+    borderColor: '#E5E7EB',
+    position: 'relative',
+    minHeight: 80,
+  },
+  speechBubbleArrow: {
+    position: 'absolute',
+    top: -15,
+    left: '50%',
+    marginLeft: -15,
+    width: 0,
+    height: 0,
+    borderLeftWidth: 15,
+    borderLeftColor: 'transparent',
+    borderRightWidth: 15,
+    borderRightColor: 'transparent',
+    borderBottomWidth: 15,
+    borderBottomColor: '#FFFFFF',
   },
   questionText: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '600',
     color: '#1F2937',
-    lineHeight: 28,
+    lineHeight: 26,
+    textAlign: 'center',
+  },
+  answersSection: {
+    flex: 1,
+    backgroundColor: '#E8E3FF', // Light lilac
+  },
+  answersContent: {
+    padding: 16,
+    paddingBottom: 100,
+  },
+  correctAnswerHint: {
+    backgroundColor: '#FFF7ED',
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 12,
+    borderLeftWidth: 4,
+    borderLeftColor: '#F59E0B',
+  },
+  correctAnswerText: {
+    fontSize: 14,
+    color: '#6B7280',
+  },
+  correctAnswerBold: {
+    fontWeight: '600',
+    color: '#1F2937',
+  },
+  resultsCharacter: {
+    marginBottom: 16,
+  },
+  feedbackSection: {
+    marginTop: 16,
+    padding: 16,
+    backgroundColor: '#FFFFFF', // White background
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#E5E7EB',
+  },
+  feedbackText: {
+    fontSize: 16,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  feedbackCorrectText: {
+    color: '#10B981',
+  },
+  feedbackIncorrectText: {
+    color: '#F59E0B',
   },
   optionsContainer: {
     gap: 12,
@@ -452,7 +545,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 12,
     padding: 16,
     borderWidth: 2,
@@ -519,7 +612,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     padding: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderTopWidth: 1,
     borderTopColor: '#E5E7EB',
   },

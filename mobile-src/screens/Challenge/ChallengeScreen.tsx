@@ -6,8 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
+import Wooly from '../../components/Wooly';
 
 interface Challenge {
   id: string;
@@ -175,14 +177,22 @@ export default function ChallengeScreen() {
   );
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Header */}
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
+        {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Challenges</Text>
         <Text style={styles.headerSubtitle}>
           Complete challenges to earn bonus XP
         </Text>
       </View>
+
+      {/* Wooly Encouragement */}
+      <Wooly
+        message="Challenges are a great way to earn extra XP! Go for the daily challenges for quick rewards! 🌟"
+        mood="excited"
+        size="medium"
+      />
 
       {/* Daily Challenges */}
       <View style={styles.section}>
@@ -221,22 +231,23 @@ export default function ChallengeScreen() {
       </View>
 
       {/* Coming Soon Message */}
-      <View style={styles.comingSoonCard}>
-        <Text style={styles.comingSoonEmoji}>🐑</Text>
-        <Text style={styles.comingSoonTitle}>More Challenges Coming Soon!</Text>
-        <Text style={styles.comingSoonText}>
-          We're working on adding daily rotating challenges, leaderboards, and
-          special events. Stay tuned!
-        </Text>
-      </View>
-    </ScrollView>
+      <Wooly
+        message="More challenges coming soon! We're working on daily rotating challenges, leaderboards, and special events. Stay tuned!"
+        mood="thinking"
+        size="medium"
+      />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
+  },
+  scrollView: {
+    flex: 1,
   },
   content: {
     padding: 16,
@@ -275,7 +286,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   challengeCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,

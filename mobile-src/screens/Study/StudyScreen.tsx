@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { RootStackParamList } from '../../types';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -30,7 +31,7 @@ const studyCategories: StudyCategory[] = [
     description: 'In-depth studies of biblical characters',
     icon: 'users',
     color: '#3B82F6',
-    articlesCount: 3,
+    articlesCount: 10,
     available: true,
   },
   {
@@ -39,7 +40,7 @@ const studyCategories: StudyCategory[] = [
     description: 'Explore key theological concepts',
     icon: 'book-open',
     color: '#8B5CF6',
-    articlesCount: 1,
+    articlesCount: 10,
     available: true,
   },
   {
@@ -48,8 +49,8 @@ const studyCategories: StudyCategory[] = [
     description: 'Comprehensive guides to each book',
     icon: 'bookmark',
     color: '#10B981',
-    articlesCount: 0,
-    available: false,
+    articlesCount: 10,
+    available: true,
   },
   {
     id: 'history',
@@ -57,8 +58,8 @@ const studyCategories: StudyCategory[] = [
     description: 'Understanding the biblical world',
     icon: 'globe',
     color: '#F59E0B',
-    articlesCount: 0,
-    available: false,
+    articlesCount: 10,
+    available: true,
   },
   {
     id: 'prophecy',
@@ -66,8 +67,8 @@ const studyCategories: StudyCategory[] = [
     description: 'From Old Testament to New',
     icon: 'star',
     color: '#EF4444',
-    articlesCount: 0,
-    available: false,
+    articlesCount: 10,
+    available: true,
   },
   {
     id: 'doctrine',
@@ -75,8 +76,8 @@ const studyCategories: StudyCategory[] = [
     description: 'Core beliefs explained',
     icon: 'shield',
     color: '#06B6D4',
-    articlesCount: 0,
-    available: false,
+    articlesCount: 10,
+    available: true,
   },
 ];
 
@@ -96,7 +97,8 @@ export default function StudyScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Study</Text>
@@ -166,7 +168,7 @@ export default function StudyScreen() {
       {/* Study Tips */}
       <View style={styles.tipsCard}>
         <View style={styles.tipsHeader}>
-          <Icon name="lightbulb" size={24} color="#F59E0B" />
+          <Icon name="zap" size={24} color="#F59E0B" />
           <Text style={styles.tipsTitle}>Study Tips</Text>
         </View>
         <View style={styles.tipsList}>
@@ -250,13 +252,17 @@ export default function StudyScreen() {
         </View>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
+  },
+  scrollView: {
+    flex: 1
   },
   content: {
     padding: 16,
@@ -314,7 +320,7 @@ const styles = StyleSheet.create({
   categoryCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
@@ -418,7 +424,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   articlePreview: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,

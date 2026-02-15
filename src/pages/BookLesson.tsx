@@ -94,7 +94,7 @@ export default function BookLesson() {
     if (correct) {
       setTotalCorrect(prev => prev + 1);
       setCompletedQuestions(prev => new Set([...prev, currentQuestion.id]));
-      updateXP(currentQuestion.xpReward);
+      updateXP(currentQuestion.xpReward || 10);
     } else {
       // Add to wrong questions if not already there
       if (!wrongQuestions.find(q => q.id === currentQuestion.id) && !completedQuestions.has(currentQuestion.id)) {
@@ -238,7 +238,7 @@ export default function BookLesson() {
         isAnswered={isAnswered}
         isCorrect={isCorrect}
         onAnswerSelect={handleAnswerSelect}
-        shuffledOptions={currentQuestion.shuffledOptions}
+        shuffledOptions={'shuffledOptions' in currentQuestion ? currentQuestion.shuffledOptions : undefined}
       />
 
       {/* Answer Feedback */}

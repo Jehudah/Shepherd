@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
@@ -28,206 +29,170 @@ interface Lesson {
 const lessonsByCategory: Record<string, Lesson[]> = {
   prophets: [
     {
-      id: 'moses-deliverer',
-      title: 'Moses: The Deliverer',
-      description: 'From the burning bush to the Red Sea',
+      id: 'prophets-1',
+      title: 'Moses & The Burning Bush',
+      description: 'God calls Moses to deliver Israel',
       difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'elijah-champion',
-      title: 'Elijah: Champion of Faith',
-      description: 'Standing against false prophets',
+      id: 'prophets-2',
+      title: 'Elijah & The Prophets of Baal',
+      description: 'Standing strong for the one true God',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'isaiah-prophet',
-      title: 'Isaiah: The Messianic Prophet',
-      description: 'Prophecies of the coming Messiah',
+      id: 'prophets-3',
+      title: 'Isaiah\'s Vision',
+      description: 'Seeing God\'s glory and responding',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'jeremiah-weeping',
-      title: 'Jeremiah: The Weeping Prophet',
-      description: 'Warning and hope for Judah',
+      id: 'prophets-4',
+      title: 'Jeremiah\'s Call',
+      description: 'The weeping prophet\'s mission',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
+    },
+    {
+      id: 'prophets-5',
+      title: 'Daniel in Babylon',
+      description: 'Faithfulness in a foreign land',
       difficulty: 3,
       questionCount: 10,
-      xpReward: 200,
+      xpReward: 100,
     },
   ],
   kings: [
     {
-      id: 'david-king',
-      title: 'David: Man After God\'s Heart',
-      description: 'From shepherd to mighty king',
+      id: 'kings-1',
+      title: 'King Saul',
+      description: 'Israel\'s first king',
       difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'solomon-wisdom',
-      title: 'Solomon: The Wise King',
-      description: 'Wisdom, wealth, and the temple',
-      difficulty: 2,
+      id: 'kings-2',
+      title: 'King David',
+      description: 'A man after God\'s own heart',
+      difficulty: 1,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'saul-first-king',
-      title: 'Saul: The First King',
-      description: 'Rise and fall of Israel\'s first king',
+      id: 'kings-3',
+      title: 'King Solomon',
+      description: 'The wisest king of Israel',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'josiah-reformer',
-      title: 'Josiah: The Reformer King',
-      description: 'Restoring worship in Judah',
-      difficulty: 3,
+      id: 'kings-4',
+      title: 'King Hezekiah',
+      description: 'A faithful reformer',
+      difficulty: 2,
       questionCount: 10,
-      xpReward: 200,
+      xpReward: 100,
+    },
+    {
+      id: 'kings-5',
+      title: 'King Josiah',
+      description: 'Rediscovering God\'s word',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
     },
   ],
-  disciples: [
+  apostles: [
     {
-      id: 'peter-rock',
-      title: 'Peter: The Rock',
-      description: 'From fisherman to church leader',
+      id: 'apostles-1',
+      title: 'Peter - The Rock',
+      description: 'From fisherman to apostle',
       difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'john-beloved',
-      title: 'John: The Beloved Disciple',
-      description: 'Apostle of love and truth',
-      difficulty: 2,
+      id: 'apostles-2',
+      title: 'John - The Beloved',
+      description: 'The disciple Jesus loved',
+      difficulty: 1,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'paul-apostle',
-      title: 'Paul: Apostle to the Gentiles',
+      id: 'apostles-3',
+      title: 'Paul - The Apostle',
       description: 'From persecutor to preacher',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'thomas-doubter',
-      title: 'Thomas: From Doubt to Faith',
-      description: 'My Lord and my God',
-      difficulty: 3,
+      id: 'apostles-4',
+      title: 'The Twelve',
+      description: 'Jesus\' chosen disciples',
+      difficulty: 2,
       questionCount: 10,
-      xpReward: 200,
+      xpReward: 100,
+    },
+    {
+      id: 'apostles-5',
+      title: 'Stephen - The First Martyr',
+      description: 'Standing firm in faith',
+      difficulty: 2,
+      questionCount: 10,
+      xpReward: 100,
     },
   ],
   women: [
     {
-      id: 'ruth-loyalty',
-      title: 'Ruth: A Story of Loyalty',
-      description: 'From Moab to the lineage of Christ',
+      id: 'women-1',
+      title: 'Ruth - Faithful Devotion',
+      description: 'A beautiful story of loyalty',
       difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'esther-courage',
-      title: 'Esther: For Such a Time',
+      id: 'women-2',
+      title: 'Esther - For Such a Time',
       description: 'Courage to save her people',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
+      xpReward: 100,
     },
     {
-      id: 'mary-mother',
-      title: 'Mary: Mother of Jesus',
-      description: 'The most blessed among women',
-      difficulty: 2,
-      questionCount: 10,
-      xpReward: 150,
-    },
-    {
-      id: 'deborah-judge',
-      title: 'Deborah: Judge and Prophetess',
-      description: 'Leading Israel to victory',
-      difficulty: 3,
-      questionCount: 10,
-      xpReward: 200,
-    },
-  ],
-  patriarchs: [
-    {
-      id: 'abraham-faith',
-      title: 'Abraham: Father of Faith',
-      description: 'From Ur to the Promised Land',
+      id: 'women-3',
+      title: 'Mary - Mother of Jesus',
+      description: 'Blessed among women',
       difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'isaac-promise',
-      title: 'Isaac: Child of Promise',
-      description: 'The son who was promised',
+      id: 'women-4',
+      title: 'Deborah - Judge & Leader',
+      description: 'A woman of strength and wisdom',
       difficulty: 2,
-      questionCount: 10,
-      xpReward: 150,
-    },
-    {
-      id: 'jacob-israel',
-      title: 'Jacob: Wrestling with God',
-      description: 'From deceiver to Israel',
-      difficulty: 2,
-      questionCount: 10,
-      xpReward: 150,
-    },
-    {
-      id: 'joseph-dreamer',
-      title: 'Joseph: The Dreamer',
-      description: 'From pit to palace',
-      difficulty: 3,
-      questionCount: 10,
-      xpReward: 200,
-    },
-  ],
-  judges: [
-    {
-      id: 'gideon-warrior',
-      title: 'Gideon: The Reluctant Warrior',
-      description: '300 men defeat an army',
-      difficulty: 1,
       questionCount: 10,
       xpReward: 100,
     },
     {
-      id: 'samson-strength',
-      title: 'Samson: The Strong Man',
-      description: 'Strength and weakness',
+      id: 'women-5',
+      title: 'Priscilla - Teacher',
+      description: 'Explaining the way of God',
       difficulty: 2,
       questionCount: 10,
-      xpReward: 150,
-    },
-    {
-      id: 'deborah-prophetess',
-      title: 'Deborah: Leader of Israel',
-      description: 'Wisdom in leadership',
-      difficulty: 2,
-      questionCount: 10,
-      xpReward: 150,
-    },
-    {
-      id: 'samuel-prophet',
-      title: 'Samuel: The Last Judge',
-      description: 'From childhood call to kingmaker',
-      difficulty: 3,
-      questionCount: 10,
-      xpReward: 200,
+      xpReward: 100,
     },
   ],
 };
@@ -235,10 +200,8 @@ const lessonsByCategory: Record<string, Lesson[]> = {
 const categoryNames: Record<string, string> = {
   prophets: 'Prophets',
   kings: 'Kings & Leaders',
-  disciples: 'Disciples',
+  apostles: 'Apostles',
   women: 'Women of Faith',
-  patriarchs: 'Patriarchs',
-  judges: 'Judges',
 };
 
 export default function NamesLessons() {
@@ -294,7 +257,7 @@ export default function NamesLessons() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -371,14 +334,14 @@ export default function NamesLessons() {
           })}
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
     flexDirection: 'row',
@@ -386,7 +349,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 60,
     paddingBottom: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
   },
@@ -419,7 +382,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   lessonCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

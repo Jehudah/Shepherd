@@ -6,11 +6,12 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
-  Alert
+  Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation, type RouteProp } from '@react-navigation/native';
 import type { RootStackParamList } from '../../types';
-import Icon from 'react-native-vector-icons/Feather';
+import { Feather as Icon } from '@expo/vector-icons';
 import { getUserProfile, removeFriend, type FriendProfile } from '../../services/friendsService';
 import { useStore } from '../../store/useStore';
 import Wooly from '../../components/Wooly';
@@ -70,23 +71,24 @@ export default function FriendProfileScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, styles.centerContent]}>
+      <SafeAreaView style={[styles.container, styles.centerContent]}>
         <ActivityIndicator size="large" color="#3B82F6" />
-      </View>
+      </SafeAreaView>
     );
   }
 
   if (!profile) {
     return (
-      <View style={[styles.container, styles.centerContent]}>
+      <SafeAreaView style={[styles.container, styles.centerContent]}>
         <Icon name="user-x" size={48} color="#D1D5DB" />
         <Text style={styles.errorText}>Profile not found</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
       {/* Profile Header */}
       <View style={styles.header}>
         <View style={styles.avatarLarge}>
@@ -129,7 +131,7 @@ export default function FriendProfileScreen() {
           <Text style={styles.statLabel}>Day Streak</Text>
         </View>
 
-        <View style={[styles.statCard, { backgroundColor: '#F5F3FF' }]}>
+        <View style={[styles.statCard, { backgroundColor: '#E8E3FF' }]}>
           <Icon name="award" size={32} color="#8B5CF6" />
           <Text style={styles.statValue}>{profile.level}</Text>
           <Text style={styles.statLabel}>Level</Text>
@@ -239,7 +241,8 @@ export default function FriendProfileScreen() {
           <Text style={styles.removeButtonText}>Remove Friend</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -288,7 +291,10 @@ function ComparisonCard({ label, yourValue, theirValue, icon, color }: Compariso
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
+  },
+  scrollView: {
+    flex: 1,
   },
   centerContent: {
     alignItems: 'center',
