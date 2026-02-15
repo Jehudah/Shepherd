@@ -33,8 +33,8 @@ dist-ssr
 .env.production.local
 .env*.local
 
-# Firebase config with API keys
-mobile-src/config/firebase-config.ts
+# Firebase config is safe to commit (uses environment variables only)
+# mobile-src/config/firebase-config.ts
 GoogleService-Info.plist
 google-services.json
 

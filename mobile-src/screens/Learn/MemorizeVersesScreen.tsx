@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -121,7 +122,7 @@ export default function MemorizeVersesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -225,7 +226,7 @@ export default function MemorizeVersesScreen() {
         {/* Tips Card */}
         <View style={styles.tipsCard}>
           <View style={styles.tipsHeader}>
-            <Icon name="lightbulb" size={20} color="#8B5CF6" />
+            <Icon name="zap" size={20} color="#8B5CF6" />
             <Text style={styles.tipsTitle}>Memory Tips</Text>
           </View>
           <View style={styles.tipsList}>
@@ -236,7 +237,7 @@ export default function MemorizeVersesScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

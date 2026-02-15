@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
@@ -175,8 +176,9 @@ export default function ChallengeScreen() {
   );
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Header */}
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
+        {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Challenges</Text>
         <Text style={styles.headerSubtitle}>
@@ -229,7 +231,8 @@ export default function ChallengeScreen() {
           special events. Stay tuned!
         </Text>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -237,6 +240,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9FAFB',
+  },
+  scrollView: {
+    flex: 1,
   },
   content: {
     padding: 16,

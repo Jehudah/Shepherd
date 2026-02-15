@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   TextInput,
   RefreshControl,
-  Alert
+  Alert,
+  SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
@@ -304,7 +305,7 @@ export default function FriendsScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -428,7 +429,7 @@ export default function FriendsScreen() {
           </View>
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

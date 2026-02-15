@@ -144,3 +144,79 @@ export async function getTopicReplies(topicId: string): Promise<ForumReply[]> {
     return [];
   }
 }
+
+export async function getTopic(topicId: string): Promise<ForumTopic | null> {
+  try {
+    const topicDoc = await getDoc(doc(db, 'forumTopics', topicId));
+    if (!topicDoc.exists()) return null;
+
+    return {
+      id: topicDoc.id,
+      ...topicDoc.data(),
+      lastActivityAt: topicDoc.data().lastActivityAt?.toDate() || new Date(),
+      createdAt: topicDoc.data().createdAt?.toDate() || new Date()
+    } as ForumTopic;
+  } catch (error) {
+    console.error('Error getting topic:', error);
+    return null;
+  }
+}
+
+export async function deleteTopic(topicId: string, userId: string): Promise<void> {
+  try {
+    const topicRef = doc(db, 'forumTopics', topicId);
+    const topicDoc = await getDoc(topicRef);
+
+    if (!topicDoc.exists()) {
+      throw new Error('Topic not found');
+    }
+
+    if (topicDoc.data().userId !== userId) {
+      throw new Error('Only the topic creator can delete this topic');
+    }
+
+    // Delete all replies
+    const repliesRef = collection(db, 'forumTopics', topicId, 'replies');
+    const repliesSnapshot = await getDocs(repliesRef);
+    for (const replyDoc of repliesSnapshot.docs) {
+      await deleteDoc(replyDoc.ref);
+    }
+
+    // Delete topic
+    await deleteDoc(topicRef);
+  } catch (error) {
+    console.error('Error deleting topic:', error);
+    throw error;
+  }
+}
+
+export async function deleteReply(topicId: string, replyId: string, userId: string): Promise<void> {
+  try {
+    const replyRef = doc(db, 'forumTopics', topicId, 'replies', replyId);
+    const replyDoc = await getDoc(replyRef);
+
+    if (!replyDoc.exists()) {
+      throw new Error('Reply not found');
+    }
+
+    if (replyDoc.data().userId !== userId) {
+      throw new Error('Only the reply author can delete this reply');
+    }
+
+    // Delete reply
+    await deleteDoc(replyRef);
+
+    // Update topic reply count
+    const topicRef = doc(db, 'forumTopics', topicId);
+    const topicDoc = await getDoc(topicRef);
+    const currentCount = topicDoc.data()?.replyCount || 0;
+
+    await updateDoc(topicRef, {
+      replyCount: Math.max(0, currentCount - 1),
+      lastActivityAt: serverTimestamp()
+    });
+  } catch (error) {
+    console.error('Error deleting reply:', error);
+    throw error;
+  }
+}

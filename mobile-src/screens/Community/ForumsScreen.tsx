@@ -8,7 +8,10 @@ import {
   RefreshControl,
   Modal,
   TextInput,
-  Alert
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
@@ -93,7 +96,7 @@ export default function ForumsScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         <View style={styles.header}>
           <Text style={styles.title}>Discussion Forums</Text>
@@ -181,8 +184,12 @@ export default function ForumsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>New Discussion</Text>
               <TouchableOpacity onPress={() => setShowCreateModal(false)}>
@@ -221,10 +228,11 @@ export default function ForumsScreen() {
                 </Text>
               </TouchableOpacity>
             </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -44,6 +45,55 @@ const namesArticles: StudyArticle[] = [
     introduction: 'Learn about Abraham\'s incredible journey of faith, from leaving Ur to becoming the father of many nations through God\'s promise.',
     readTime: 9,
   },
+  {
+    id: 'peter',
+    title: 'Peter: The Rock',
+    subtitle: 'From fisherman to foundation',
+    introduction: 'Follow Peter\'s transformation from impulsive fisherman to bold apostle, leading the early church with courage and conviction.',
+    readTime: 9,
+  },
+  {
+    id: 'paul',
+    title: 'Paul: Apostle to the Gentiles',
+    subtitle: 'From persecutor to preacher',
+    introduction: 'Witness Paul\'s dramatic conversion and his tireless mission to spread the gospel throughout the Roman world.',
+    readTime: 11,
+  },
+  {
+    id: 'joseph',
+    title: 'Joseph: Dreamer and Deliverer',
+    subtitle: 'From pit to palace',
+    introduction: 'See how God used Joseph\'s trials—betrayal, slavery, imprisonment—to position him to save nations.',
+    readTime: 10,
+  },
+  {
+    id: 'esther',
+    title: 'Esther: For Such a Time',
+    subtitle: 'Courage in the palace',
+    introduction: 'Discover how Queen Esther risked her life to save her people, demonstrating that God places us exactly where we need to be.',
+    readTime: 8,
+  },
+  {
+    id: 'daniel',
+    title: 'Daniel: Faithful in Exile',
+    subtitle: 'Integrity in Babylon',
+    introduction: 'Learn from Daniel\'s unwavering faith in a foreign land, from the lion\'s den to interpreting dreams for kings.',
+    readTime: 9,
+  },
+  {
+    id: 'ruth',
+    title: 'Ruth: Loyal Love',
+    subtitle: 'From Moab to Messiah\'s lineage',
+    introduction: 'Experience Ruth\'s beautiful story of loyalty, redemption, and how a foreign widow became part of Jesus\' family tree.',
+    readTime: 7,
+  },
+  {
+    id: 'elijah',
+    title: 'Elijah: Prophet of Fire',
+    subtitle: 'Standing against idolatry',
+    introduction: 'Walk with Elijah through miracles, confrontation with false prophets, and his dramatic departure in a chariot of fire.',
+    readTime: 10,
+  },
 ];
 
 export default function StudyNamesScreen() {
@@ -61,7 +111,7 @@ export default function StudyNamesScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -125,7 +175,7 @@ export default function StudyNamesScreen() {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

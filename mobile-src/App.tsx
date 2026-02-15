@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 import { onAuthStateChanged } from 'firebase/auth';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // Store
 import { useStore } from './store/useStore';
@@ -44,6 +45,16 @@ import StudyNamesScreen from './screens/Study/StudyNamesScreen';
 import StudyThemesScreen from './screens/Study/StudyThemesScreen';
 import StudyArticleScreen from './screens/Study/StudyArticleScreen';
 
+// Community Screens
+import FriendsScreen from './screens/Community/FriendsScreen';
+import FriendProfileScreen from './screens/Community/FriendProfileScreen';
+import LeaderboardScreen from './screens/Community/LeaderboardScreen';
+import StudyGroupsScreen from './screens/Community/StudyGroupsScreen';
+import GroupDetailScreen from './screens/Community/GroupDetailScreen';
+import PrayerRequestsScreen from './screens/Community/PrayerRequestsScreen';
+import ForumsScreen from './screens/Community/ForumsScreen';
+import ForumTopicScreen from './screens/Community/ForumTopicScreen';
+
 // Types
 import { RootStackParamList, MainTabParamList } from './types';
 
@@ -77,6 +88,8 @@ function AuthNavigator() {
  * Main Tab Navigator
  */
 function MainTabs() {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -95,9 +108,9 @@ function MainTabs() {
         tabBarInactiveTintColor: '#9CA3AF',
         headerShown: false,
         tabBarStyle: {
-          paddingBottom: 8,
+          paddingBottom: insets.bottom > 0 ? insets.bottom : 8,
           paddingTop: 8,
-          height: 60,
+          height: 60 + (insets.bottom > 0 ? insets.bottom : 0),
         },
       })}
     >
@@ -237,6 +250,47 @@ export default function App() {
               <Stack.Screen
                 name="StudyArticle"
                 component={StudyArticleScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              {/* Community Stack Screens */}
+              <Stack.Screen
+                name="Friends"
+                component={FriendsScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="FriendProfile"
+                component={FriendProfileScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="Leaderboard"
+                component={LeaderboardScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="StudyGroups"
+                component={StudyGroupsScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="GroupDetail"
+                component={GroupDetailScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="PrayerRequests"
+                component={PrayerRequestsScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="Forums"
+                component={ForumsScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="ForumTopic"
+                component={ForumTopicScreen}
                 options={{ animation: 'slide_from_right' }}
               />
             </>

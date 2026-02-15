@@ -8,7 +8,10 @@ import {
   RefreshControl,
   Modal,
   TextInput,
-  Alert
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView
 } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import {
@@ -203,7 +206,7 @@ export default function PrayerRequestsScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       >
@@ -298,8 +301,12 @@ export default function PrayerRequestsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Share Prayer Request</Text>
               <TouchableOpacity onPress={() => setShowCreateModal(false)}>
@@ -354,10 +361,11 @@ export default function PrayerRequestsScreen() {
                 </Text>
               </TouchableOpacity>
             </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 

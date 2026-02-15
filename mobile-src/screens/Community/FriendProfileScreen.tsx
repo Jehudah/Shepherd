@@ -6,7 +6,8 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
-  Alert
+  Alert,
+  SafeAreaView,
 } from 'react-native';
 import { useRoute, useNavigation, type RouteProp } from '@react-navigation/native';
 import type { RootStackParamList } from '../../types';
@@ -70,23 +71,24 @@ export default function FriendProfileScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, styles.centerContent]}>
+      <SafeAreaView style={[styles.container, styles.centerContent]}>
         <ActivityIndicator size="large" color="#3B82F6" />
-      </View>
+      </SafeAreaView>
     );
   }
 
   if (!profile) {
     return (
-      <View style={[styles.container, styles.centerContent]}>
+      <SafeAreaView style={[styles.container, styles.centerContent]}>
         <Icon name="user-x" size={48} color="#D1D5DB" />
         <Text style={styles.errorText}>Profile not found</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
       {/* Profile Header */}
       <View style={styles.header}>
         <View style={styles.avatarLarge}>
@@ -239,7 +241,8 @@ export default function FriendProfileScreen() {
           <Text style={styles.removeButtonText}>Remove Friend</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -289,6 +292,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9FAFB'
+  },
+  scrollView: {
+    flex: 1,
   },
   centerContent: {
     alignItems: 'center',

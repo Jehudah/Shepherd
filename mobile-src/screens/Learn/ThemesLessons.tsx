@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  SafeAreaView,
 } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -109,7 +110,7 @@ export default function ThemesLessons() {
   const progressPercentage = (completedCount / lessons.length) * 100;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={[styles.header, { backgroundColor: themeColor }]}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
@@ -208,7 +209,7 @@ export default function ThemesLessons() {
           </View>
         )}
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

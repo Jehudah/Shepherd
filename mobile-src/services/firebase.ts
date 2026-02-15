@@ -28,6 +28,9 @@ import { UserProfile, UserProgress, AuthCredentials } from '../types';
 // Import Firebase instances from centralized config
 import { auth, db } from '../config/firebase-config';
 
+// Re-export for use in other services
+export { auth, db };
+
 // Collections
 const USERS_COLLECTION = 'users';
 const PROGRESS_COLLECTION = 'userProgress';

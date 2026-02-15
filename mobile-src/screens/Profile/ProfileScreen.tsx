@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
+  SafeAreaView,
 } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
@@ -70,8 +71,9 @@ export default function ProfileScreen() {
   const xpToNextLevel = userProgress.level * 100 - userProgress.totalXP;
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Profile Header */}
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
+        {/* Profile Header */}
       <View style={styles.profileHeader}>
         <View style={styles.avatarContainer}>
           <View style={styles.avatar}>
@@ -211,7 +213,8 @@ export default function ProfileScreen() {
         <Text style={styles.appInfoText}>Shepherd Bible Learning App</Text>
         <Text style={styles.appInfoText}>Version 1.0.0</Text>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -219,6 +222,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9FAFB',
+  },
+  scrollView: {
+    flex: 1,
   },
   content: {
     padding: 16,

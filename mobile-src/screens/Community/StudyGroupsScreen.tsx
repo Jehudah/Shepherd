@@ -8,7 +8,10 @@ import {
   RefreshControl,
   Alert,
   Modal,
-  TextInput
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
@@ -209,7 +212,7 @@ export default function StudyGroupsScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
@@ -301,16 +304,20 @@ export default function StudyGroupsScreen() {
         transparent={true}
         onRequestClose={() => setShowCreateModal(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Create Study Group</Text>
-              <TouchableOpacity onPress={() => setShowCreateModal(false)}>
-                <Icon name="x" size={24} color="#6B7280" />
-              </TouchableOpacity>
-            </View>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={{ flex: 1 }}
+        >
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              <View style={styles.modalHeader}>
+                <Text style={styles.modalTitle}>Create Study Group</Text>
+                <TouchableOpacity onPress={() => setShowCreateModal(false)}>
+                  <Icon name="x" size={24} color="#6B7280" />
+                </TouchableOpacity>
+              </View>
 
-            <ScrollView style={styles.modalBody}>
+              <ScrollView style={styles.modalBody}>
               <Text style={styles.label}>Group Name *</Text>
               <TextInput
                 style={styles.input}
@@ -364,11 +371,12 @@ export default function StudyGroupsScreen() {
                   {creating ? 'Creating...' : 'Create Group'}
                 </Text>
               </TouchableOpacity>
-            </ScrollView>
+              </ScrollView>
+            </View>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -597,10 +605,11 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 20,
     borderWidth: 2,
-    borderColor: '#E5E7EB'
+    borderColor: '#E5E7EB',
+    backgroundColor: '#FFF'
   },
   categoryButtonActive: {
-    backgroundColor: '#F9FAFB'
+    borderWidth: 2
   },
   categoryButtonText: {
     fontSize: 14,
