@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   lessonCard: {
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

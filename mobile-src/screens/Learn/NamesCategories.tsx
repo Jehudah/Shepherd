@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   categoryCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   statsCard: {
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 20,
     marginTop: 24,

@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   lessonCard: {
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
     color: '#6B7280',
   },
   tipsCard: {
-    backgroundColor: '#E8E3FF',
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     marginTop: 24,
