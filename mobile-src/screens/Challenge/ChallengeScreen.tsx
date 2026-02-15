@@ -5,10 +5,11 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
+import Wooly from '../../components/Wooly';
 
 interface Challenge {
   id: string;
@@ -186,6 +187,13 @@ export default function ChallengeScreen() {
         </Text>
       </View>
 
+      {/* Wooly Encouragement */}
+      <Wooly
+        message="Challenges are a great way to earn extra XP! Go for the daily challenges for quick rewards! 🌟"
+        mood="excited"
+        size="medium"
+      />
+
       {/* Daily Challenges */}
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
@@ -223,14 +231,11 @@ export default function ChallengeScreen() {
       </View>
 
       {/* Coming Soon Message */}
-      <View style={styles.comingSoonCard}>
-        <Text style={styles.comingSoonEmoji}>🐑</Text>
-        <Text style={styles.comingSoonTitle}>More Challenges Coming Soon!</Text>
-        <Text style={styles.comingSoonText}>
-          We're working on adding daily rotating challenges, leaderboards, and
-          special events. Stay tuned!
-        </Text>
-      </View>
+      <Wooly
+        message="More challenges coming soon! We're working on daily rotating challenges, leaderboards, and special events. Stay tuned!"
+        mood="thinking"
+        size="medium"
+      />
       </ScrollView>
     </SafeAreaView>
   );
@@ -239,7 +244,7 @@ export default function ChallengeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   scrollView: {
     flex: 1,
@@ -281,7 +286,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   challengeCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,

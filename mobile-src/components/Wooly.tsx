@@ -1,5 +1,7 @@
-import React from 'react';
-import { View, Text, StyleSheet, ViewStyle } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, ViewStyle, Animated } from 'react-native';
+import Character from './Character';
+import { theme } from '../theme';
 
 interface WoolyProps {
   message: string;
@@ -10,31 +12,69 @@ interface WoolyProps {
 
 /**
  * Wooly - The friendly sheep guide who helps users through their learning journey
+ * Now with actual character image and cute animations!
  */
 export default function Wooly({ message, mood = 'happy', size = 'medium', style }: WoolyProps) {
-  const getSheepEmoji = () => {
-    switch (mood) {
-      case 'excited':
-        return '🐑✨';
-      case 'thinking':
-        return '🐑💭';
-      case 'celebrating':
-        return '🐑🎉';
-      case 'encouraging':
-        return '🐑💪';
-      default:
-        return '🐑';
-    }
-  };
+  // Animation values
+  const bounceAnim = useRef(new Animated.Value(0)).current;
+  const bubbleAnim = useRef(new Animated.Value(0)).current;
+  const wiggleAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    // Initial entrance animation: bounce in
+    Animated.spring(bounceAnim, {
+      toValue: 1,
+      tension: 50,
+      friction: 5,
+      useNativeDriver: true,
+    }).start();
+
+    // Bubble fade and slide in
+    Animated.timing(bubbleAnim, {
+      toValue: 1,
+      duration: 400,
+      delay: 150,
+      useNativeDriver: true,
+    }).start();
+
+    // Continuous gentle wiggle animation
+    const wiggleLoop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(wiggleAnim, {
+          toValue: 1,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+        Animated.timing(wiggleAnim, {
+          toValue: -1,
+          duration: 1200,
+          useNativeDriver: true,
+        }),
+        Animated.timing(wiggleAnim, {
+          toValue: 0,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+      ])
+    );
+
+    // Start wiggle after a brief delay
+    const wiggleTimer = setTimeout(() => wiggleLoop.start(), 800);
+
+    return () => {
+      clearTimeout(wiggleTimer);
+      wiggleLoop.stop();
+    };
+  }, []);
 
   const getSheepSize = () => {
     switch (size) {
       case 'small':
-        return 32;
+        return 40;
       case 'large':
-        return 64;
+        return 80;
       default:
-        return 48;
+        return 60;
     }
   };
 
@@ -49,18 +89,72 @@ export default function Wooly({ message, mood = 'happy', size = 'medium', style 
     }
   };
 
+  const getBubbleColor = () => {
+    switch (mood) {
+      case 'excited':
+        return '#FEF3C7';
+      case 'celebrating':
+        return '#DBEAFE';
+      case 'encouraging':
+        return '#D1FAE5';
+      case 'thinking':
+        return '#EDE9FE';
+      default:
+        return '#FFFFFF';
+    }
+  };
+
+  // Animated transformations
+  const bounceTransform = {
+    transform: [
+      {
+        scale: bounceAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0.3, 1],
+        }),
+      },
+      {
+        translateY: bounceAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [20, 0],
+        }),
+      },
+    ],
+  };
+
+  const wiggleTransform = {
+    transform: [
+      {
+        rotate: wiggleAnim.interpolate({
+          inputRange: [-1, 1],
+          outputRange: ['-5deg', '5deg'],
+        }),
+      },
+    ],
+  };
+
+  const bubbleTransform = {
+    opacity: bubbleAnim,
+    transform: [
+      {
+        translateX: bubbleAnim.interpolate({
+          inputRange: [0, 1],
+          outputRange: [-20, 0],
+        }),
+      },
+    ],
+  };
+
   return (
     <View style={[styles.container, style]}>
-      <View style={styles.sheepContainer}>
-        <Text style={[styles.sheep, { fontSize: getSheepSize() }]}>
-          {getSheepEmoji()}
-        </Text>
-      </View>
-      <View style={styles.bubble}>
-        <View style={styles.bubbleArrow} />
+      <Animated.View style={[styles.sheepContainer, bounceTransform, wiggleTransform]}>
+        <Character name="sheep" size={getSheepSize()} />
+      </Animated.View>
+      <Animated.View style={[styles.bubble, { backgroundColor: getBubbleColor() }, bubbleTransform]}>
+        <View style={[styles.bubbleArrow, { borderRightColor: getBubbleColor() }]} />
         <Text style={[styles.message, getMessageStyle()]}>{message}</Text>
-        <Text style={styles.signature}>- Wooly</Text>
-      </View>
+        <Text style={styles.signature}>- Wooly 🐑</Text>
+      </Animated.View>
     </View>
   );
 }
@@ -69,27 +163,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginVertical: 12,
+    marginVertical: theme.spacing[3],
   },
   sheepContainer: {
-    marginRight: 8,
-    marginTop: 8,
-  },
-  sheep: {
-    fontSize: 48,
+    marginRight: theme.spacing[2],
+    marginTop: theme.spacing[2],
   },
   bubble: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    padding: 16,
+    borderRadius: theme.radius.lg,
+    padding: theme.spacing[4],
     borderWidth: 2,
-    borderColor: '#E5E7EB',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    borderColor: theme.colors.border.light,
+    ...theme.shadows.base,
     position: 'relative',
   },
   bubbleArrow: {
@@ -103,42 +189,60 @@ const styles = StyleSheet.create({
     borderBottomWidth: 10,
     borderBottomColor: 'transparent',
     borderRightWidth: 10,
-    borderRightColor: '#FFFFFF',
   },
   message: {
-    color: '#1F2937',
+    color: theme.colors.text.primary,
     lineHeight: 22,
   },
   messageSmall: {
-    fontSize: 13,
+    fontSize: theme.typography.fontSize.sm,
   },
   messageMedium: {
-    fontSize: 15,
+    fontSize: theme.typography.fontSize.md,
   },
   messageLarge: {
-    fontSize: 17,
+    fontSize: theme.typography.fontSize.lg,
   },
   signature: {
-    fontSize: 12,
+    fontSize: theme.typography.fontSize.xs,
     fontStyle: 'italic',
-    color: '#6B7280',
-    marginTop: 8,
+    color: theme.colors.text.secondary,
+    marginTop: theme.spacing[2],
     textAlign: 'right',
   },
 });
 
 /**
- * WoolyTip - A compact tip from Wooly
+ * WoolyTip - A compact tip from Wooly with a cute bounce
  */
 export function WoolyTip({ message, style }: { message: string; style?: ViewStyle }) {
+  const scaleAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.spring(scaleAnim, {
+      toValue: 1,
+      tension: 80,
+      friction: 6,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+
   return (
-    <View style={[styles.tipContainer, style]}>
-      <Text style={styles.tipSheep}>🐑</Text>
-      <View style={styles.tipContent}>
-        <Text style={styles.tipLabel}>Wooly's Tip:</Text>
-        <Text style={styles.tipMessage}>{message}</Text>
+    <Animated.View
+      style={[
+        tipStyles.tipContainer,
+        style,
+        {
+          transform: [{ scale: scaleAnim }],
+        },
+      ]}
+    >
+      <Character name="sheep" size={32} />
+      <View style={tipStyles.tipContent}>
+        <Text style={tipStyles.tipLabel}>Wooly's Tip:</Text>
+        <Text style={tipStyles.tipMessage}>{message}</Text>
       </View>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -146,31 +250,25 @@ const tipStyles = StyleSheet.create({
   tipContainer: {
     flexDirection: 'row',
     backgroundColor: '#EEF2FF',
-    borderRadius: 12,
-    padding: 12,
+    borderRadius: theme.radius.md,
+    padding: theme.spacing[3],
     borderWidth: 2,
     borderColor: '#C7D2FE',
     alignItems: 'center',
-  },
-  tipSheep: {
-    fontSize: 24,
-    marginRight: 10,
+    gap: theme.spacing[2],
   },
   tipContent: {
     flex: 1,
   },
   tipLabel: {
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: theme.typography.fontSize.xs,
+    fontWeight: theme.typography.fontWeight.bold,
     color: '#4338CA',
     marginBottom: 2,
   },
   tipMessage: {
-    fontSize: 14,
+    fontSize: theme.typography.fontSize.sm,
     color: '#3730A3',
     lineHeight: 18,
   },
 });
-
-// Add tip styles to main styles
-Object.assign(styles, tipStyles);

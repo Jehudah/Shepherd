@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useState } from 'react';
 
 interface CharacterGuideProps {
@@ -45,24 +45,13 @@ export default function CharacterGuide({
     bottom: 'bottom-20'
   };
 
-  const animations = {
-    initial: { scale: 0, opacity: 0 },
-    animate: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 260,
-        damping: 20
-      }
-    },
-    exit: { scale: 0, opacity: 0 }
-  };
-
   return (
     <motion.div
       className={`fixed left-4 right-4 z-40 ${positionClasses[position]}`}
-      {...animations}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0, opacity: 0 }}
+      transition={{ type: 'spring' as const, stiffness: 260, damping: 20 }}
     >
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-2 border-primary-300 dark:border-primary-700 p-4 max-w-md mx-auto">
         <div className="flex items-start space-x-3">

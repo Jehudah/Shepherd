@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Alert,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute, useNavigation, type RouteProp } from '@react-navigation/native';
 import type { RootStackParamList } from '../../types';
 import { Feather as Icon } from '@expo/vector-icons';
@@ -131,7 +131,7 @@ export default function FriendProfileScreen() {
           <Text style={styles.statLabel}>Day Streak</Text>
         </View>
 
-        <View style={[styles.statCard, { backgroundColor: '#F5F3FF' }]}>
+        <View style={[styles.statCard, { backgroundColor: '#E8E3FF' }]}>
           <Icon name="award" size={32} color="#8B5CF6" />
           <Text style={styles.statValue}>{profile.level}</Text>
           <Text style={styles.statLabel}>Level</Text>
@@ -291,7 +291,7 @@ function ComparisonCard({ label, yourValue, theirValue, icon, color }: Compariso
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
   },
   scrollView: {
     flex: 1,

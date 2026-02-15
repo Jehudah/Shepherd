@@ -122,7 +122,7 @@ export default function QuestionCard({
             <div
               key={i}
               className={`w-2 h-6 rounded-full ${
-                i < question.difficulty
+                i < (question.difficulty || 1)
                   ? 'bg-gradient-to-t from-orange-500 to-yellow-400'
                   : 'bg-gray-200 dark:bg-gray-700'
               }`}

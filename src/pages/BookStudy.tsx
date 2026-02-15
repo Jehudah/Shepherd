@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Play, BookOpen, CheckCircle } from 'lucide-react';
 import { bibleBooks } from '../data/bibleBooks';
 import { getBookQuestions, hasBookQuestions } from '../data/bookQuestions';
@@ -7,7 +7,6 @@ import { useStore } from '../store/useStore';
 
 export default function BookStudy() {
   const { bookId } = useParams<{ bookId: string }>();
-  const navigate = useNavigate();
   const { userProgress } = useStore();
 
   const book = bibleBooks.find(b => b.id === bookId);

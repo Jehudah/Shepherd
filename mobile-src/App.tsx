@@ -15,6 +15,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 // Store
 import { useStore } from './store/useStore';
 
+// UI Components
+import { ToastProvider } from './components/ui';
+
 // Firebase (centralized config)
 import { auth } from './config/firebase-config';
 
@@ -180,7 +183,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <ToastProvider>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -299,6 +302,6 @@ export default function App() {
           )}
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </ToastProvider>
   );
 }

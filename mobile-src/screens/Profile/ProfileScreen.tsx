@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,15 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
-  SafeAreaView,
+  
+  Modal,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useStore } from '../../store/useStore';
 import { AuthService } from '../../services/firebase';
+import CharacterGuide from '../../components/CharacterGuide';
+import Wooly from '../../components/Wooly';
 
 export default function ProfileScreen() {
   const user = useStore((state) => state.user);
@@ -18,6 +22,7 @@ export default function ProfileScreen() {
   const resetProgress = useStore((state) => state.resetProgress);
   const setUser = useStore((state) => state.setUser);
   const syncToCloud = useStore((state) => state.syncToCloud);
+  const [showStreakCalendar, setShowStreakCalendar] = useState(false);
 
   const handleLogout = () => {
     Alert.alert(
@@ -87,48 +92,129 @@ export default function ProfileScreen() {
         <Text style={styles.email}>{user?.email}</Text>
       </View>
 
-      {/* Stats Cards */}
-      <View style={styles.statsGrid}>
-        <View style={styles.statCard}>
+      {/* Main Stats Row */}
+      <View style={styles.mainStatsRow}>
+        <View style={styles.mainStatCard}>
           <View style={[styles.statIcon, { backgroundColor: '#FEF3C7' }]}>
             <Icon name="zap" size={24} color="#F59E0B" />
           </View>
           <Text style={styles.statValue}>{userProgress.totalXP}</Text>
           <Text style={styles.statLabel}>Total XP</Text>
-          <Text style={styles.statSubtext}>
-            {xpToNextLevel} to level {userProgress.level + 1}
-          </Text>
         </View>
 
-        <View style={styles.statCard}>
+        <View style={styles.mainStatCard}>
           <View style={[styles.statIcon, { backgroundColor: '#DBEAFE' }]}>
             <Icon name="award" size={24} color="#3B82F6" />
           </View>
           <Text style={styles.statValue}>{userProgress.level}</Text>
           <Text style={styles.statLabel}>Level</Text>
-          <Text style={styles.statSubtext}>Bible Scholar</Text>
         </View>
 
-        <View style={styles.statCard}>
+        <TouchableOpacity
+          style={[
+            styles.mainStatCard,
+            userProgress.streak > 0 && styles.streakActive
+          ]}
+          onPress={() => setShowStreakCalendar(true)}
+        >
+          <View style={[
+            styles.statIcon,
+            { backgroundColor: userProgress.streak > 0 ? '#FEE2E2' : '#F3F4F6' }
+          ]}>
+            <Icon
+              name="flame"
+              size={24}
+              color={userProgress.streak > 0 ? '#EF4444' : '#9CA3AF'}
+            />
+          </View>
+          <Text style={styles.statValue}>{userProgress.streak}</Text>
+          <Text style={styles.statLabel}>Day Streak</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Secondary Stats */}
+      <View style={styles.secondaryStatsRow}>
+        <View style={styles.secondaryStatCard}>
           <View style={[styles.statIcon, { backgroundColor: '#FFEDD5' }]}>
             <Icon name="target" size={24} color="#F97316" />
           </View>
           <Text style={styles.statValue}>
             {userProgress.completedLessons.length}
           </Text>
-          <Text style={styles.statLabel}>Completed</Text>
-          <Text style={styles.statSubtext}>Lessons done</Text>
+          <Text style={styles.statLabel}>Completed Lessons</Text>
         </View>
 
-        <View style={styles.statCard}>
-          <View style={[styles.statIcon, { backgroundColor: '#FEE2E2' }]}>
-            <Icon name="flame" size={24} color="#EF4444" />
+        <View style={styles.secondaryStatCard}>
+          <View style={[styles.statIcon, { backgroundColor: '#E0E7FF' }]}>
+            <Icon name="star" size={24} color="#6366F1" />
           </View>
-          <Text style={styles.statValue}>{userProgress.streak}</Text>
-          <Text style={styles.statLabel}>Day Streak</Text>
-          <Text style={styles.statSubtext}>Keep it up!</Text>
+          <Text style={styles.statValue}>
+            {xpToNextLevel}
+          </Text>
+          <Text style={styles.statLabel}>XP to Next Level</Text>
         </View>
       </View>
+
+      {/* Streak Calendar Modal */}
+      <Modal
+        visible={showStreakCalendar}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setShowStreakCalendar(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Practice Calendar</Text>
+              <TouchableOpacity onPress={() => setShowStreakCalendar(false)}>
+                <Icon name="x" size={24} color="#6B7280" />
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.streakInfo}>
+              <Icon name="flame" size={48} color="#EF4444" />
+              <Text style={styles.streakDays}>{userProgress.streak} Days</Text>
+              <Text style={styles.streakSubtext}>Keep your streak alive!</Text>
+            </View>
+
+            <View style={styles.calendarPlaceholder}>
+              <Icon name="calendar" size={64} color="#D1D5DB" />
+              <Text style={styles.calendarText}>
+                Calendar view coming soon!
+              </Text>
+              <Text style={styles.calendarSubtext}>
+                Track your daily practice history
+              </Text>
+            </View>
+
+            <TouchableOpacity
+              style={styles.closeButton}
+              onPress={() => setShowStreakCalendar(false)}
+            >
+              <Text style={styles.closeButtonText}>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Encouraging Message - Jesus for high achievers, Wooly otherwise */}
+      {userProgress.level >= 5 ? (
+        <CharacterGuide
+          character="jesus"
+          message={
+            userProgress.completedLessons.length >= 20
+              ? "You have studied faithfully and it is good. Keep seeking wisdom and knowledge of My Word."
+              : "You are growing in knowledge. Keep persevering in your study of Scripture."
+          }
+          mood="teaching"
+        />
+      ) : (
+        <Wooly
+          message="You're doing great! Keep learning and you'll grow stronger! 💪"
+          mood="encouraging"
+          size="medium"
+        />
+      )}
 
       {/* Progress by Category */}
       <View style={styles.section}>
@@ -221,7 +307,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
   },
   scrollView: {
     flex: 1,
@@ -233,7 +319,7 @@ const styles = StyleSheet.create({
   profileHeader: {
     alignItems: 'center',
     paddingVertical: 24,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     marginBottom: 16,
     shadowColor: '#000',
@@ -291,7 +377,7 @@ const styles = StyleSheet.create({
   statCard: {
     flex: 1,
     minWidth: '47%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     padding: 16,
     alignItems: 'center',
@@ -324,8 +410,115 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#9CA3AF',
   },
-  section: {
+  mainStatsRow: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 16,
+  },
+  mainStatCard: {
+    flex: 1,
     backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 16,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  streakActive: {
+    borderWidth: 2,
+    borderColor: '#EF4444',
+  },
+  secondaryStatsRow: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 16,
+  },
+  secondaryStatCard: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 12,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  modalContent: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 24,
+    padding: 24,
+    width: '100%',
+    maxWidth: 400,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1F2937',
+  },
+  streakInfo: {
+    alignItems: 'center',
+    marginBottom: 32,
+  },
+  streakDays: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#EF4444',
+    marginTop: 12,
+  },
+  streakSubtext: {
+    fontSize: 16,
+    color: '#6B7280',
+    marginTop: 4,
+  },
+  calendarPlaceholder: {
+    alignItems: 'center',
+    padding: 40,
+    backgroundColor: '#F9FAFB',
+    borderRadius: 16,
+    marginBottom: 24,
+  },
+  calendarText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#4B5563',
+    marginTop: 16,
+  },
+  calendarSubtext: {
+    fontSize: 14,
+    color: '#9CA3AF',
+    marginTop: 4,
+  },
+  closeButton: {
+    backgroundColor: '#3B82F6',
+    borderRadius: 12,
+    padding: 16,
+    alignItems: 'center',
+  },
+  closeButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  section: {
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 16,
     padding: 16,
     marginBottom: 16,

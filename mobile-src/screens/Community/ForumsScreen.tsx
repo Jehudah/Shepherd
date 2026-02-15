@@ -10,9 +10,8 @@ import {
   TextInput,
   Alert,
   KeyboardAvoidingView,
-  Platform,
-  SafeAreaView
-} from 'react-native';
+  Platform} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
 import { Feather as Icon } from '@expo/vector-icons';
@@ -237,7 +236,7 @@ export default function ForumsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F9FAFB' },
+  container: { flex: 1, backgroundColor: '#E8E3FF' },
   header: { padding: 20, paddingTop: 10 },
   title: { fontSize: 32, fontWeight: 'bold', color: '#111827', marginBottom: 4 },
   subtitle: { fontSize: 16, color: '#6B7280' },
@@ -302,7 +301,7 @@ const styles = StyleSheet.create({
   modalBody: { padding: 20 },
   label: { fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 8, marginTop: 12 },
   input: {
-    backgroundColor: '#F9FAFB',
+    backgroundColor: '#E8E3FF', // Light lilac
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 12,

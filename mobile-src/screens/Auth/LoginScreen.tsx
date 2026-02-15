@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
-  Alert,
-  ActivityIndicator,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { AuthService, ProgressService } from '../../services/firebase';
 import { useStore } from '../../store/useStore';
+import { theme } from '../../theme';
+import { Input, Button, useToast } from '../../components/ui';
 
 interface Props {
   navigation: any;
@@ -22,12 +21,47 @@ export default function LoginScreen({ navigation }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
   const setUser = useStore((state) => state.setUser);
   const setUserProgress = useStore((state) => state.setUserProgress);
+  const { show } = useToast();
+
+  const validateEmail = (text: string) => {
+    setEmail(text);
+    if (text && !/\S+@\S+\.\S+/.test(text)) {
+      setEmailError('Please enter a valid email');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const validatePassword = (text: string) => {
+    setPassword(text);
+    if (text && text.length < 6) {
+      setPasswordError('Password must be at least 6 characters');
+    } else {
+      setPasswordError('');
+    }
+  };
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      Alert.alert('Error', 'Please fill in all fields');
+    // Clear previous errors
+    setEmailError('');
+    setPasswordError('');
+
+    // Validate
+    if (!email) {
+      setEmailError('Email is required');
+      return;
+    }
+    if (!password) {
+      setPasswordError('Password is required');
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setEmailError('Please enter a valid email');
       return;
     }
 
@@ -42,9 +76,19 @@ export default function LoginScreen({ navigation }: Props) {
         setUserProgress(progress);
       }
 
+      show({
+        type: 'success',
+        title: 'Welcome back!',
+        message: 'Successfully logged in',
+      });
+
       // Navigation will automatically redirect to Main stack
     } catch (error: any) {
-      Alert.alert('Login Failed', error.message || 'An error occurred');
+      show({
+        type: 'error',
+        title: 'Login Failed',
+        message: error.message || 'Invalid email or password',
+      });
     } finally {
       setIsLoading(false);
     }
@@ -52,15 +96,27 @@ export default function LoginScreen({ navigation }: Props) {
 
   const handleForgotPassword = async () => {
     if (!email) {
-      Alert.alert('Email Required', 'Please enter your email address');
+      show({
+        type: 'warning',
+        title: 'Email Required',
+        message: 'Please enter your email address',
+      });
       return;
     }
 
     try {
       await AuthService.resetPassword(email);
-      Alert.alert('Success', 'Password reset email sent! Check your inbox.');
+      show({
+        type: 'success',
+        title: 'Email Sent',
+        message: 'Check your inbox for password reset instructions',
+      });
     } catch (error: any) {
-      Alert.alert('Error', error.message);
+      show({
+        type: 'error',
+        title: 'Error',
+        message: error.message,
+      });
     }
   };
 
@@ -70,64 +126,68 @@ export default function LoginScreen({ navigation }: Props) {
         style={styles.keyboardView}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-      <View style={styles.content}>
-        {/* Logo/Header */}
-        <View style={styles.header}>
-          <Text style={styles.logo}>🐑</Text>
-          <Text style={styles.title}>Shepherd</Text>
-          <Text style={styles.subtitle}>Bible Learning App</Text>
-        </View>
+        <View style={styles.content}>
+          {/* Logo/Header */}
+          <View style={styles.header}>
+            <Text style={styles.logo}>🐑</Text>
+            <Text style={styles.title}>Shepherd</Text>
+            <Text style={styles.subtitle}>Bible Learning App</Text>
+          </View>
 
-        {/* Input Fields */}
-        <View style={styles.form}>
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            value={email}
-            onChangeText={setEmail}
-            autoCapitalize="none"
-            keyboardType="email-address"
-            editable={!isLoading}
-          />
+          {/* Input Fields */}
+          <View style={styles.form}>
+            <Input
+              label="Email"
+              placeholder="Enter your email"
+              value={email}
+              onChangeText={validateEmail}
+              leftIcon="mail"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              error={emailError}
+              success={email.length > 0 && !emailError}
+              showClearButton
+            />
 
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            editable={!isLoading}
-          />
+            <Input
+              label="Password"
+              placeholder="Enter your password"
+              value={password}
+              onChangeText={validatePassword}
+              leftIcon="lock"
+              secureTextEntry
+              error={passwordError}
+              success={password.length > 0 && !passwordError}
+            />
 
-          <TouchableOpacity onPress={handleForgotPassword} disabled={isLoading}>
-            <Text style={styles.forgotPassword}>Forgot Password?</Text>
-          </TouchableOpacity>
-
-          {/* Login Button */}
-          <TouchableOpacity
-            style={[styles.button, styles.loginButton]}
-            onPress={handleLogin}
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <ActivityIndicator color="#FFFFFF" />
-            ) : (
-              <Text style={styles.buttonText}>Log In</Text>
-            )}
-          </TouchableOpacity>
-
-          {/* Register Link */}
-          <View style={styles.registerContainer}>
-            <Text style={styles.registerText}>Don't have an account? </Text>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('Register')}
-              disabled={isLoading}
-            >
-              <Text style={styles.registerLink}>Sign Up</Text>
+            <TouchableOpacity onPress={handleForgotPassword} disabled={isLoading}>
+              <Text style={styles.forgotPassword}>Forgot Password?</Text>
             </TouchableOpacity>
+
+            {/* Login Button */}
+            <Button
+              variant="primary"
+              size="lg"
+              onPress={handleLogin}
+              loading={isLoading}
+              disabled={isLoading || !!emailError || !!passwordError}
+              style={styles.loginButton}
+            >
+              Log In
+            </Button>
+
+            {/* Register Link */}
+            <View style={styles.registerContainer}>
+              <Text style={styles.registerText}>Don't have an account? </Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Register')}
+                disabled={isLoading}
+              >
+                <Text style={styles.registerLink}>Sign Up</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -136,7 +196,7 @@ export default function LoginScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: theme.colors.surface,
   },
   keyboardView: {
     flex: 1,
@@ -144,71 +204,52 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 24,
+    paddingHorizontal: theme.spacing[6],
   },
   header: {
     alignItems: 'center',
-    marginBottom: 48,
+    marginBottom: theme.spacing[12],
   },
   logo: {
     fontSize: 72,
-    marginBottom: 16,
+    marginBottom: theme.spacing[4],
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: 8,
+    fontSize: theme.typography.fontSize['4xl'],
+    fontWeight: theme.typography.fontWeight.bold,
+    color: theme.colors.text.primary,
+    marginBottom: theme.spacing[2],
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6B7280',
+    fontSize: theme.typography.fontSize.md,
+    color: theme.colors.text.secondary,
   },
   form: {
     width: '100%',
   },
-  input: {
-    backgroundColor: '#F3F4F6',
-    borderRadius: 12,
-    padding: 16,
-    fontSize: 16,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#E5E7EB',
-  },
   forgotPassword: {
-    color: '#3B82F6',
+    color: theme.colors.primary[500],
     textAlign: 'right',
-    marginBottom: 24,
-    fontSize: 14,
-  },
-  button: {
-    borderRadius: 12,
-    padding: 16,
-    alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: theme.spacing[6],
+    fontSize: theme.typography.fontSize.sm,
+    marginTop: -theme.spacing[2],
   },
   loginButton: {
-    backgroundColor: '#3B82F6',
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
+    marginTop: theme.spacing[2],
   },
   registerContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: theme.spacing[4],
   },
   registerText: {
-    color: '#6B7280',
-    fontSize: 14,
+    color: theme.colors.text.secondary,
+    fontSize: theme.typography.fontSize.sm,
   },
   registerLink: {
-    color: '#3B82F6',
-    fontSize: 14,
-    fontWeight: '600',
+    color: theme.colors.primary[500],
+    fontSize: theme.typography.fontSize.sm,
+    fontWeight: theme.typography.fontWeight.semibold,
   },
 });

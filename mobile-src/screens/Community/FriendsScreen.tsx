@@ -8,8 +8,8 @@ import {
   TextInput,
   RefreshControl,
   Alert,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NavigationProp } from '../../types';
 import { Feather as Icon } from '@expo/vector-icons';
@@ -436,7 +436,7 @@ export default function FriendsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB'
+    backgroundColor: '#E8E3FF' // Light lilac
   },
   scrollView: {
     flex: 1
