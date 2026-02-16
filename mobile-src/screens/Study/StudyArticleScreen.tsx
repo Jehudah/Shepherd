@@ -698,7 +698,7 @@ const styles = StyleSheet.create({
     lineHeight: 26,
   },
   takeawaysCard: {
-    backgroundColor: '#E8E3FF',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 20,
     marginBottom: 24,

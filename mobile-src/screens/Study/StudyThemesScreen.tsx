@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
   articleCard: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',

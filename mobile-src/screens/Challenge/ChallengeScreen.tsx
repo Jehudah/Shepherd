@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   challengeCard: {
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
