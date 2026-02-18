@@ -39,7 +39,10 @@ import NamesLessons from './screens/Learn/NamesLessons';
 import ThemesSelection from './screens/Learn/ThemesSelection';
 import ThemesLessons from './screens/Learn/ThemesLessons';
 import TimelineScreen from './screens/Learn/TimelineScreen';
+import TimelineDragScreen from './screens/Learn/TimelineDragScreen';
 import MemorizeVersesScreen from './screens/Learn/MemorizeVersesScreen';
+import VerseLessonsScreen from './screens/Learn/VerseLessonsScreen';
+import ProgressiveVerseScreen from './screens/Learn/ProgressiveVerseScreen';
 import ParablesScreen from './screens/Learn/ParablesScreen';
 import BibleBooksScreen from './screens/Learn/BibleBooksScreen';
 
@@ -225,8 +228,23 @@ export default function App() {
                 options={{ animation: 'slide_from_right' }}
               />
               <Stack.Screen
+                name="TimelineDrag"
+                component={TimelineDragScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
                 name="MemorizeVerses"
                 component={MemorizeVersesScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="VerseLessons"
+                component={VerseLessonsScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="ProgressiveVerse"
+                component={ProgressiveVerseScreen}
                 options={{ animation: 'slide_from_right' }}
               />
               <Stack.Screen

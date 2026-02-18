@@ -85,6 +85,18 @@ export type RootStackParamList = {
     subcategory?: string;
     lessonId: string;
   };
+  TimelineDrag: {
+    lessonId: string;
+  };
+  VerseLessons: {
+    verseReference: string;
+    category: string;
+  };
+  ProgressiveVerse: {
+    verseReference: string;
+    category: string;
+    lessonLevel: number;
+  };
   NamesCategories: undefined;
   NamesLessons: { subcategory: string };
   ThemesSelection: undefined;

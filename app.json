@@ -15,9 +15,7 @@
     "android": {
       "package": "com.shepherd.app"
     },
-    "plugins": [
-      "expo-dev-client"
-    ],
+    "plugins": [],
     "extra": {
       "eas": {
         "projectId": "9c6201bd-d4ce-447e-b8e5-fab6719975b9"

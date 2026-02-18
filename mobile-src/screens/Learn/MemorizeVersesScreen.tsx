@@ -20,57 +20,57 @@ interface VerseLesson {
   id: string;
   title: string;
   description: string;
-  verses: string[];
+  verseReference: string;
   difficulty: 1 | 2 | 3;
-  questionCount: number;
-  xpReward: number;
+  levels: number;
+  xpPerLevel: number;
 }
 
 const verseLessons: VerseLesson[] = [
   {
     id: 'verses-salvation-1',
-    title: 'Salvation Foundations',
-    description: 'Core verses about being saved',
-    verses: ['John 3:16', 'Romans 3:23', 'Romans 6:23', 'Ephesians 2:8-9'],
+    title: 'John 3:16',
+    description: 'For God so loved the world...',
+    verseReference: 'John 3:16',
     difficulty: 1,
-    questionCount: 10,
-    xpReward: 100,
+    levels: 5,
+    xpPerLevel: 20,
   },
   {
     id: 'verses-salvation-2',
-    title: 'God\'s Love & Grace',
-    description: 'Amazing grace that saves',
-    verses: ['Romans 5:8', 'Titus 3:5', '1 John 4:10', 'John 1:12'],
+    title: 'Romans 3:23',
+    description: 'For all have sinned...',
+    verseReference: 'Romans 3:23',
     difficulty: 1,
-    questionCount: 10,
-    xpReward: 100,
+    levels: 5,
+    xpPerLevel: 20,
   },
   {
     id: 'verses-salvation-3',
-    title: 'Faith & Repentance',
-    description: 'Turning to God',
-    verses: ['Acts 3:19', 'Romans 10:9', 'Hebrews 11:6', 'Mark 1:15'],
+    title: 'Romans 6:23',
+    description: 'The wages of sin is death...',
+    verseReference: 'Romans 6:23',
     difficulty: 2,
-    questionCount: 10,
-    xpReward: 100,
+    levels: 5,
+    xpPerLevel: 20,
   },
   {
     id: 'verses-salvation-4',
-    title: 'New Life in Christ',
-    description: 'Born again and transformed',
-    verses: ['2 Corinthians 5:17', 'John 3:3', 'Romans 8:1', 'Galatians 2:20'],
+    title: 'Ephesians 2:8-9',
+    description: 'By grace you have been saved...',
+    verseReference: 'Ephesians 2:8-9',
     difficulty: 2,
-    questionCount: 10,
-    xpReward: 100,
+    levels: 5,
+    xpPerLevel: 20,
   },
   {
     id: 'verses-salvation-5',
-    title: 'Eternal Security',
-    description: 'Safe in Jesus forever',
-    verses: ['John 10:28-29', 'Romans 8:38-39', '1 John 5:13', 'Philippians 1:6'],
+    title: 'Romans 10:9',
+    description: 'If you confess with your mouth...',
+    verseReference: 'Romans 10:9',
     difficulty: 2,
-    questionCount: 10,
-    xpReward: 100,
+    levels: 5,
+    xpPerLevel: 20,
   },
 ];
 
@@ -79,10 +79,9 @@ export default function MemorizeVersesScreen() {
   const userProgress = useStore((state) => state.userProgress);
 
   const handleLessonPress = (lesson: VerseLesson) => {
-    navigation.navigate('LessonPlayer', {
-      category: 'verses',
-      subcategory: 'salvation',
-      lessonId: lesson.id,
+    navigation.navigate('VerseLessons', {
+      verseReference: lesson.verseReference,
+      category: 'salvation',
     });
   };
 
@@ -141,7 +140,7 @@ export default function MemorizeVersesScreen() {
       >
         {/* Wooly's Welcome */}
         <Wooly
-          message="Memorizing Scripture is like storing up treasure! These verses about salvation will strengthen your faith and help you share the good news with others."
+          message="Let's memorize Scripture by placing words in the right order! Each verse has 5 levels (20%, 40%, 60%, 80%, 100% hidden). Start easy and work your way up!"
           mood="encouraging"
         />
 
@@ -193,26 +192,26 @@ export default function MemorizeVersesScreen() {
                       {lesson.description}
                     </Text>
 
-                    {/* Verses Preview */}
+                    {/* Level Badges */}
                     <View style={styles.versesPreview}>
-                      {lesson.verses.map((verse, i) => (
+                      {[20, 40, 60, 80, 100].map((percentage, i) => (
                         <View key={i} style={styles.verseBadge}>
-                          <Icon name="bookmark" size={12} color="#EF4444" />
-                          <Text style={styles.verseText}>{verse}</Text>
+                          <Icon name="layers" size={12} color="#EF4444" />
+                          <Text style={styles.verseText}>{percentage}%</Text>
                         </View>
                       ))}
                     </View>
 
                     <View style={styles.lessonMeta}>
                       <View style={styles.metaItem}>
-                        <Icon name="help-circle" size={14} color="#6B7280" />
+                        <Icon name="target" size={14} color="#6B7280" />
                         <Text style={styles.metaText}>
-                          {lesson.questionCount} questions
+                          {lesson.levels} levels
                         </Text>
                       </View>
                       <View style={styles.metaItem}>
                         <Icon name="zap" size={14} color="#F59E0B" />
-                        <Text style={styles.metaText}>+{lesson.xpReward} XP</Text>
+                        <Text style={styles.metaText}>+{lesson.xpPerLevel} XP/level</Text>
                       </View>
                     </View>
                   </View>
@@ -227,13 +226,13 @@ export default function MemorizeVersesScreen() {
         <View style={styles.tipsCard}>
           <View style={styles.tipsHeader}>
             <Icon name="zap" size={20} color="#8B5CF6" />
-            <Text style={styles.tipsTitle}>Memory Tips</Text>
+            <Text style={styles.tipsTitle}>How it Works</Text>
           </View>
           <View style={styles.tipsList}>
-            <Text style={styles.tipItem}>• Repeat verses out loud</Text>
-            <Text style={styles.tipItem}>• Write them down multiple times</Text>
-            <Text style={styles.tipItem}>• Review daily for best retention</Text>
-            <Text style={styles.tipItem}>• Share them with friends</Text>
+            <Text style={styles.tipItem}>• Tap to reveal words or drag them to the right place</Text>
+            <Text style={styles.tipItem}>• Start with Level 1 (20% hidden)</Text>
+            <Text style={styles.tipItem}>• Each level has 4 exercises</Text>
+            <Text style={styles.tipItem}>• Complete all 5 levels for maximum XP!</Text>
           </View>
         </View>
       </ScrollView>
