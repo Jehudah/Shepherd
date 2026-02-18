@@ -320,7 +320,7 @@ const styles = StyleSheet.create({
   categoryCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   articlePreview: {
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#FFFFFF', // White background
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,

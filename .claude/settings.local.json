@@ -19,7 +19,9 @@
       "Bash(ln:*)",
       "Bash(tee:*)",
       "Bash(xcrun simctl install:*)",
-      "Bash(xcrun simctl launch:*)"
+      "Bash(xcrun simctl launch:*)",
+      "Bash(ls:*)",
+      "Bash(npx expo start:*)"
     ]
   }
 }

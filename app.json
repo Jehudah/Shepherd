@@ -9,13 +9,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.shepherd",
+      "bundleIdentifier": "com.shepherd.app",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.anonymous.shepherd"
+      "package": "com.shepherd.app"
     },
-    "plugins": [],
+    "plugins": [
+      "expo-dev-client"
+    ],
     "extra": {
       "eas": {
         "projectId": "9c6201bd-d4ce-447e-b8e5-fab6719975b9"
