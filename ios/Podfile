@@ -23,10 +23,6 @@ ENV['RCT_USE_PREBUILT_RNCORE'] ||= '1' if podfile_properties['ios.buildReactNati
 platform :ios, podfile_properties['ios.deploymentTarget'] || '15.1'
 
 prepare_react_native_project!
-use_modular_headers!
-
-# Disable modular headers for problematic Firebase dependencies
-$CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = 'YES'
 
 target 'Shepherd' do
   use_expo_modules!
