@@ -1,22 +1,22 @@
 import { Question } from '../types';
 
 // EXTENDED NAMES & PEOPLE QUESTIONS
-// Meer lessen per subcategorie met verschillende moeilijkheidsgraden
+// More lessons per subcategory with different difficulty levels
 
-// PROPHETS - 8 lessen (was 4)
+// PROPHETS - 8 lessons (was 4)
 export const prophetsQuestionsExtended: Record<string, Question[]> = {
-  // Beginner lessen (1-3)
+  // Beginner lessons (1-3)
   'names-prophets-1': [
-    // Bestaande vragen blijven hier
+    // Existing questions remain here
   ],
   'names-prophets-2': [
-    // Bestaande vragen blijven hier
+    // Existing questions remain here
   ],
   'names-prophets-3': [
-    // Bestaande vragen blijven hier
+    // Existing questions remain here
   ],
 
-  // Nieuwe Intermediate lessen (4-6)
+  // New Intermediate lessons (4-6)
   'names-prophets-4': [
     {
       id: 'names-prophets-4-q1',
@@ -54,7 +54,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-4-q4',
       type: 'multiple-choice',
       question: 'Which prophet raised a boy from the dead by lying on him?',
-      options: ['Elisha', 'Elijah', 'Peter', 'Paul'],
+      options: ['Elisha', 'Elijah', 'Samuel', 'Ezekiel'],
       correctAnswer: 'Elisha',
       verse: '2 Kings 4:34-35',
       difficulty: 2,
@@ -64,7 +64,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-4-q5',
       type: 'multiple-choice',
       question: 'Who healed Naaman of leprosy?',
-      options: ['Elisha', 'Moses', 'Jesus', 'Elijah'],
+      options: ['Elisha', 'Elijah', 'Gehazi', 'Isaiah'],
       correctAnswer: 'Elisha',
       verse: '2 Kings 5:14',
       difficulty: 2,
@@ -74,7 +74,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-4-q6',
       type: 'multiple-choice',
       question: 'Which prophet made an axe head float?',
-      options: ['Elisha', 'Elijah', 'Moses', 'Joshua'],
+      options: ['Elisha', 'Elijah', 'Ezekiel', 'Isaiah'],
       correctAnswer: 'Elisha',
       verse: '2 Kings 6:6',
       difficulty: 2,
@@ -114,7 +114,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-4-q10',
       type: 'multiple-choice',
       question: 'Even after death, Elisha\'s bones did what?',
-      options: ['Brought a man back to life', 'Turned to dust', 'Disappeared', 'Became relics'],
+      options: ['Brought a man back to life', 'Healed a leper who touched them', 'Caused the earth to shake', 'Were buried in a foreign land'],
       correctAnswer: 'Brought a man back to life',
       verse: '2 Kings 13:21',
       difficulty: 3,
@@ -354,7 +354,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-6-q9',
       type: 'multiple-choice',
       question: 'Jeremiah bought a field as a sign of what?',
-      options: ['Future restoration', 'God\'s judgment', 'Personal wealth', 'Family inheritance'],
+      options: ['Future restoration', 'Impending judgment on Judah', 'Confidence in Babylon\'s mercy', 'The Levitical law of redemption'],
       correctAnswer: 'Future restoration',
       verse: 'Jeremiah 32:15',
       difficulty: 2,
@@ -396,7 +396,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-6-q13',
       type: 'multiple-choice',
       question: 'The Hebrew "lev chadash" (לֵב חָדָשׁ - new heart) in Jeremiah\'s prophecy means:',
-      options: ['Transformed inner nature', 'New emotions', 'Clean heart', 'Strong heart'],
+      options: ['Transformed inner nature', 'Renewed moral willpower', 'A purified conscience', 'Spiritual understanding'],
       correctAnswer: 'Transformed inner nature',
       explanation: 'Lev (heart) in Hebrew means the whole inner person. God promised to write His law on transformed hearts.',
       verse: 'Jeremiah 31:33',
@@ -405,7 +405,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
     }
   ],
 
-  // Advanced lessen (7-8)
+  // Advanced lessons (7-8)
   'names-prophets-7': [
     {
       id: 'names-prophets-7-q1',
@@ -462,7 +462,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-7-q5',
       type: 'multiple-choice',
       question: 'What did the dry bones represent?',
-      options: ['The house of Israel', 'Dead prophets', 'Gentile nations', 'Angels'],
+      options: ['The house of Israel', 'The exiles who died in Babylon', 'The slain men of war', 'The scattered tribes of Judah'],
       correctAnswer: 'The house of Israel',
       verse: 'Ezekiel 37:11',
       difficulty: 3,
@@ -492,7 +492,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-7-q8',
       type: 'multiple-choice',
       question: 'What happened to Ezekiel\'s wife?',
-      options: ['She died suddenly', 'She left him', 'She became ill', 'Nothing unusual'],
+      options: ['She died suddenly', 'She was taken into exile', 'She became ill for many days', 'She was restored to him'],
       correctAnswer: 'She died suddenly',
       verse: 'Ezekiel 24:18',
       difficulty: 3,
@@ -512,7 +512,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-7-q10',
       type: 'multiple-choice',
       question: 'Ezekiel\'s visions included a detailed description of:',
-      options: ['A future temple', 'Heaven', 'Hell', 'The flood'],
+      options: ['A future temple', 'A restored Jerusalem with new walls', 'A heavenly city descending from the sky', 'The rebuilt altar of the tabernacle'],
       correctAnswer: 'A future temple',
       verse: 'Ezekiel 40-48',
       difficulty: 3,
@@ -557,7 +557,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-8-q2',
       type: 'multiple-choice',
       question: 'What were Daniel and his friends given to eat instead of the king\'s food?',
-      options: ['Vegetables and water', 'Bread and fish', 'Fruit and milk', 'Grain and wine'],
+      options: ['Vegetables and water', 'Bread and lentils', 'Fruit and olive oil', 'Grain and honey'],
       correctAnswer: 'Vegetables and water',
       verse: 'Daniel 1:12',
       difficulty: 2,
@@ -577,7 +577,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-8-q4',
       type: 'multiple-choice',
       question: 'What were the Babylonian names of Daniel\'s three friends?',
-      options: ['Shadrach, Meshach, Abednego', 'Hananiah, Mishael, Azariah', 'Belteshazzar, Daniel, Joseph', 'Michael, Gabriel, Raphael'],
+      options: ['Shadrach, Meshach, Abednego', 'Hananiah, Mishael, Azariah', 'Belteshazzar, Arioch, Ashpenaz', 'Nebuzaradan, Arioch, Nergal-Sharezer'],
       correctAnswer: 'Shadrach, Meshach, Abednego',
       verse: 'Daniel 1:7',
       difficulty: 2,
@@ -597,7 +597,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-8-q6',
       type: 'multiple-choice',
       question: 'Why was Daniel thrown into the lions\' den?',
-      options: ['He prayed to God despite a decree', 'He refused to bow to an idol', 'He interpreted a dream', 'He criticized the king'],
+      options: ['He prayed to God despite a decree', 'He refused to bow to an idol', 'He refused to eat the king\'s food', 'He revealed a secret plot to the king'],
       correctAnswer: 'He prayed to God despite a decree',
       verse: 'Daniel 6:10',
       difficulty: 2,
@@ -637,7 +637,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-prophets-8-q10',
       type: 'multiple-choice',
       question: 'What was the "writing on the wall" at Belshazzar\'s feast?',
-      options: ['MENE, MENE, TEKEL, PARSIN', 'HOLY, HOLY, HOLY', 'KING OF KINGS', 'THE END IS NEAR'],
+      options: ['MENE, MENE, TEKEL, PARSIN', 'MENE, TEKEL, UFARSIN', 'KADOSH, KADOSH, KADOSH', 'EMET, MISHPAT, SHALOM'],
       correctAnswer: 'MENE, MENE, TEKEL, PARSIN',
       verse: 'Daniel 5:25',
       difficulty: 3,
@@ -679,7 +679,7 @@ export const prophetsQuestionsExtended: Record<string, Question[]> = {
   ]
 };
 
-// KINGS - 8 lessen (was 4)
+// KINGS - 8 lessons (was 4)
 export const kingsQuestionsExtended: Record<string, Question[]> = {
   'names-kings-5': [
     {
@@ -716,7 +716,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-5-q4',
       type: 'multiple-choice',
       question: 'The Queen of Sheba visited Solomon to test him with:',
-      options: ['Hard questions', 'Riddles', 'Math problems', 'Battle challenges'],
+      options: ['Hard questions', 'Difficult riddles', 'Tribute and gifts', 'Proposed alliances'],
       correctAnswer: 'Hard questions',
       verse: '1 Kings 10:1',
       difficulty: 2,
@@ -755,7 +755,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-5-q8',
       type: 'multiple-choice',
       question: 'What did Solomon use to settle the dispute between two mothers?',
-      options: ['Threatened to cut the baby in half', 'Flipped a coin', 'Asked the baby', 'Consulted a prophet'],
+      options: ['Threatened to cut the baby in half', 'Ordered both women to take an oath', 'Consulted the priests of the temple', 'Summoned witnesses to testify'],
       correctAnswer: 'Threatened to cut the baby in half',
       verse: '1 Kings 3:25',
       difficulty: 2,
@@ -861,7 +861,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-6-q5',
       type: 'multiple-choice',
       question: 'What did Josiah do to the pagan altars and idols?',
-      options: ['Destroyed them completely', 'Moved them outside Jerusalem', 'Left them alone', 'Converted them'],
+      options: ['Destroyed them completely', 'Moved them outside Jerusalem', 'Sealed them in the temple storage rooms', 'Ordered the priests to stop using them'],
       correctAnswer: 'Destroyed them completely',
       verse: '2 Kings 23:4-14',
       difficulty: 2,
@@ -891,7 +891,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-6-q8',
       type: 'multiple-choice',
       question: 'What did Josiah do when he heard the Book of the Law?',
-      options: ['Tore his clothes in grief', 'Celebrated', 'Ignored it', 'Questioned it'],
+      options: ['Tore his clothes in grief', 'Called for a great feast of thanksgiving', 'Sent the scroll to the priests in Bethel', 'Read it aloud to the people immediately'],
       correctAnswer: 'Tore his clothes in grief',
       verse: '2 Kings 22:11',
       difficulty: 2,
@@ -967,7 +967,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-7-q2',
       type: 'multiple-choice',
       question: 'What happened to the Assyrian army besieging Jerusalem?',
-      options: ['An angel killed them overnight', 'They retreated', 'They surrendered', 'Disease killed them'],
+      options: ['An angel killed them overnight', 'They retreated due to a rumor of war', 'A great storm scattered their camp', 'Hezekiah paid them tribute to leave'],
       correctAnswer: 'An angel killed them overnight',
       verse: '2 Kings 19:35',
       difficulty: 2,
@@ -987,7 +987,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-7-q4',
       type: 'multiple-choice',
       question: 'What sign did God give Hezekiah of his healing?',
-      options: ['The sun\'s shadow went backward', 'A rainbow appeared', 'Fire from heaven', 'Thunder and lightning'],
+      options: ['The sun\'s shadow went backward', 'A new star appeared in the sky', 'An angel stood at his bedside', 'The temple lampstand burned all night'],
       correctAnswer: 'The sun\'s shadow went backward',
       verse: '2 Kings 20:11',
       difficulty: 2,
@@ -1027,7 +1027,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-7-q8',
       type: 'multiple-choice',
       question: 'Hezekiah celebrated what feast that hadn\'t been observed for many years?',
-      options: ['Passover', 'Pentecost', 'Tabernacles', 'Day of Atonement'],
+      options: ['Passover', 'Feast of Tabernacles', 'Day of Atonement', 'Festival of First Fruits'],
       correctAnswer: 'Passover',
       verse: '2 Chronicles 30:26',
       difficulty: 2,
@@ -1047,7 +1047,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-7-q10',
       type: 'multiple-choice',
       question: 'How is Hezekiah described in relation to other kings of Judah?',
-      options: ['Trusted in the Lord more than any other', 'The richest', 'The strongest warrior', 'The longest reigning'],
+      options: ['Trusted in the Lord more than any other', 'The most obedient to the priests', 'The wisest of all the kings', 'The only king who never sinned'],
       correctAnswer: 'Trusted in the Lord more than any other',
       verse: '2 Kings 18:5',
       difficulty: 2,
@@ -1112,7 +1112,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-8-q4',
       type: 'multiple-choice',
       question: 'What was David\'s job before becoming king?',
-      options: ['Shepherd', 'Soldier', 'Priest', 'Tax collector'],
+      options: ['Shepherd', 'Armor-bearer', 'Scribe', 'Farmer'],
       correctAnswer: 'Shepherd',
       verse: '1 Samuel 16:11',
       difficulty: 1,
@@ -1122,7 +1122,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
       id: 'names-kings-8-q5',
       type: 'multiple-choice',
       question: 'David is called "a man after God\'s own":',
-      options: ['Heart', 'Mind', 'Will', 'Purpose'],
+      options: ['Heart', 'Spirit', 'Word', 'Righteousness'],
       correctAnswer: 'Heart',
       verse: '1 Samuel 13:14',
       difficulty: 2,
@@ -1213,7 +1213,7 @@ export const kingsQuestionsExtended: Record<string, Question[]> = {
   ]
 };
 
-// APOSTLES/DISCIPLES - 8 lessen (was 4)
+// APOSTLES/DISCIPLES - 8 lessons (was 4)
 export const disciplesQuestionsExtended: Record<string, Question[]> = {
   'names-disciples-5': [
     {
@@ -1249,7 +1249,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-5-q4',
       type: 'multiple-choice',
       question: 'Matthew\'s Gospel emphasizes Jesus as:',
-      options: ['The King/Messiah', 'The Servant', 'The Son of Man', 'The Word'],
+      options: ['The King/Messiah', 'The Suffering Servant', 'The Son of Man above all', 'The fulfillment of the Mosaic law only'],
       correctAnswer: 'The King/Messiah',
       explanation: 'Matthew wrote primarily for Jewish audience',
       difficulty: 2,
@@ -1259,7 +1259,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-5-q5',
       type: 'multiple-choice',
       question: 'Tax collectors were hated because they:',
-      options: ['Worked for Rome and often cheated', 'Were poor', 'Were foreigners', 'Were Pharisees'],
+      options: ['Worked for Rome and often cheated', 'Were not permitted to enter the synagogue', 'Collected taxes for the temple treasury', 'Were mostly Gentiles from other nations'],
       correctAnswer: 'Worked for Rome and often cheated',
       difficulty: 2,
       xpReward: 15
@@ -1308,7 +1308,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-5-q10',
       type: 'multiple-choice',
       question: 'Matthew\'s Gospel begins with:',
-      options: ['Jesus\' genealogy', 'John the Baptist', 'Jesus\' birth', 'Creation'],
+      options: ['Jesus\' genealogy', 'The preaching of John the Baptist', 'The birth narrative in Bethlehem', 'A prologue about the eternal Word'],
       correctAnswer: 'Jesus\' genealogy',
       verse: 'Matthew 1:1',
       difficulty: 2,
@@ -1364,7 +1364,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-6-q2',
       type: 'multiple-choice',
       question: 'What was Peter\'s original name?',
-      options: ['Simon', 'Saul', 'Simeon', 'Samuel'],
+      options: ['Simon', 'Cephas', 'Simeon', 'Silas'],
       correctAnswer: 'Simon',
       verse: 'Matthew 4:18',
       difficulty: 1,
@@ -1384,7 +1384,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-6-q4',
       type: 'multiple-choice',
       question: 'What did Peter say when Jesus asked "Who do you say I am?"',
-      options: ['You are the Christ, the Son of God', 'You are a prophet', 'You are Elijah', 'You are the Messiah only'],
+      options: ['You are the Christ, the Son of God', 'You are the Prophet foretold by Moses', 'You are Elijah who has returned', 'You are John the Baptist risen again'],
       correctAnswer: 'You are the Christ, the Son of God',
       verse: 'Matthew 16:16',
       difficulty: 2,
@@ -1424,7 +1424,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-6-q8',
       type: 'multiple-choice',
       question: 'What did Jesus tell Peter to do three times after the resurrection?',
-      options: ['Feed my sheep', 'Follow me', 'Go and preach', 'Baptize believers'],
+      options: ['Feed my sheep', 'Tend my lambs and sheep', 'Go and make disciples', 'Lead the other apostles'],
       correctAnswer: 'Feed my sheep',
       verse: 'John 21:17',
       difficulty: 2,
@@ -1444,7 +1444,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-6-q10',
       type: 'multiple-choice',
       question: 'Peter raised which woman from the dead?',
-      options: ['Tabitha/Dorcas', 'Mary', 'Martha', 'Elizabeth'],
+      options: ['Tabitha/Dorcas', 'Lydia of Thyatira', 'Mary of Magdala', 'Sapphira the widow'],
       correctAnswer: 'Tabitha/Dorcas',
       verse: 'Acts 9:40',
       difficulty: 3,
@@ -1520,7 +1520,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-7-q4',
       type: 'multiple-choice',
       question: 'What nickname did Jesus give James and John?',
-      options: ['Sons of Thunder', 'Rock', 'The Twins', 'Beloved'],
+      options: ['Sons of Thunder', 'Sons of Peace', 'Pillars of the church', 'Beloved disciples'],
       correctAnswer: 'Sons of Thunder',
       verse: 'Mark 3:17',
       difficulty: 2,
@@ -1530,7 +1530,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-7-q5',
       type: 'multiple-choice',
       question: 'John wrote the book of Revelation while exiled on which island?',
-      options: ['Patmos', 'Cyprus', 'Crete', 'Malta'],
+      options: ['Patmos', 'Cyprus', 'Ephesus (coastal)', 'Rhodes'],
       correctAnswer: 'Patmos',
       verse: 'Revelation 1:9',
       difficulty: 2,
@@ -1560,7 +1560,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-7-q8',
       type: 'multiple-choice',
       question: 'Which disciple did Jesus entrust his mother Mary to?',
-      options: ['John', 'Peter', 'James', 'Andrew'],
+      options: ['John', 'Peter', 'James the brother of Jesus', 'Philip'],
       correctAnswer: 'John',
       verse: 'John 19:26-27',
       difficulty: 2,
@@ -1580,7 +1580,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-7-q10',
       type: 'multiple-choice',
       question: 'John lived longer than all the other apostles and died of:',
-      options: ['Old age (natural causes)', 'Martyrdom', 'Crucifixion', 'Stoning'],
+      options: ['Old age (natural causes)', 'Being thrown into boiling oil', 'Martyrdom by the sword', 'Crucifixion like Peter'],
       correctAnswer: 'Old age (natural causes)',
       explanation: 'John was the only apostle not martyred',
       difficulty: 3,
@@ -1625,7 +1625,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-8-q2',
       type: 'multiple-choice',
       question: 'What did Thomas say he needed to see to believe?',
-      options: ['The nail marks and spear wound', 'Jesus\' face', 'An angel', 'A miracle'],
+      options: ['The nail marks and spear wound', 'Jesus appear to all twelve disciples together', 'The empty tomb with burial cloths', 'Jesus eat and drink with them again'],
       correctAnswer: 'The nail marks and spear wound',
       verse: 'John 20:25',
       difficulty: 2,
@@ -1645,7 +1645,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-8-q4',
       type: 'multiple-choice',
       question: 'What did Thomas say when Jesus appeared to him?',
-      options: ['My Lord and my God', 'I believe', 'Forgive me', 'You are alive'],
+      options: ['My Lord and my God', 'Truly you are risen from the dead', 'You are the Son of the living God', 'Rabbi, I confess my unbelief'],
       correctAnswer: 'My Lord and my God',
       verse: 'John 20:28',
       difficulty: 2,
@@ -1655,7 +1655,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-8-q5',
       type: 'multiple-choice',
       question: 'Jesus said, "Blessed are those who have not seen and yet have:',
-      options: ['Believed', 'Followed', 'Obeyed', 'Loved'],
+      options: ['Believed', 'Trusted in my resurrection', 'Kept my commandments', 'Followed without sign or wonder'],
       correctAnswer: 'Believed',
       verse: 'John 20:29',
       difficulty: 2,
@@ -1705,7 +1705,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
       id: 'names-disciples-8-q10',
       type: 'multiple-choice',
       question: 'Who replaced Judas as the twelfth apostle?',
-      options: ['Matthias', 'Mark', 'Luke', 'Barnabas'],
+      options: ['Matthias', 'Barsabbas (Joseph)', 'Barnabas', 'Stephen'],
       correctAnswer: 'Matthias',
       verse: 'Acts 1:26',
       difficulty: 3,
@@ -1747,7 +1747,7 @@ export const disciplesQuestionsExtended: Record<string, Question[]> = {
   ]
 };
 
-// WOMEN - 8 lessen (was 4)
+// WOMEN - 8 lessons (was 4)
 export const womenQuestionsExtended: Record<string, Question[]> = {
   'names-women-5': [
     {
@@ -1766,7 +1766,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-5-q2',
       type: 'multiple-choice',
       question: 'What did God make Eve from?',
-      options: ['Adam\'s rib', 'Dust', 'Clay', 'Nothing'],
+      options: ['Adam\'s rib', 'The dust of the ground', 'A portion of Adam\'s breath', 'The same clay as Adam'],
       correctAnswer: 'Adam\'s rib',
       verse: 'Genesis 2:22',
       difficulty: 1,
@@ -1796,7 +1796,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-5-q5',
       type: 'multiple-choice',
       question: 'What does "Eve" mean?',
-      options: ['Mother of all living', 'First woman', 'Helper', 'Beautiful'],
+      options: ['Mother of all living', 'Life-giver and companion', 'Helper and sustainer', 'Bearer of children'],
       correctAnswer: 'Mother of all living',
       verse: 'Genesis 3:20',
       difficulty: 2,
@@ -1846,7 +1846,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-5-q10',
       type: 'multiple-choice',
       question: 'Sarah is praised in the New Testament as an example of:',
-      options: ['Faith and submission', 'Beauty', 'Wealth', 'Wisdom'],
+      options: ['Faith and submission', 'Patience in waiting for God\'s promises', 'Intercession and prayer', 'Hospitality to strangers'],
       correctAnswer: 'Faith and submission',
       verse: '1 Peter 3:5-6',
       difficulty: 2,
@@ -1904,7 +1904,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-6-q2',
       type: 'multiple-choice',
       question: 'Deborah called which man to lead Israel\'s army?',
-      options: ['Barak', 'Gideon', 'Samson', 'Joshua'],
+      options: ['Barak', 'Shamgar', 'Othniel', 'Jephthah'],
       correctAnswer: 'Barak',
       verse: 'Judges 4:6',
       difficulty: 2,
@@ -1934,7 +1934,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-6-q5',
       type: 'multiple-choice',
       question: 'Where did Deborah hold court?',
-      options: ['Under a palm tree', 'In the temple', 'At the city gate', 'In her house'],
+      options: ['Under a palm tree', 'At the city gate of Bethel', 'At the tabernacle of Shiloh', 'In the hill country of Ephraim'],
       correctAnswer: 'Under a palm tree',
       verse: 'Judges 4:5',
       difficulty: 2,
@@ -1983,7 +1983,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-6-q10',
       type: 'multiple-choice',
       question: 'Deborah described herself as a:',
-      options: ['Mother in Israel', 'Prophetess only', 'Judge only', 'Warrior'],
+      options: ['Mother in Israel', 'Servant of the LORD', 'Handmaid of the Most High', 'Judge and deliverer of the tribes'],
       correctAnswer: 'Mother in Israel',
       verse: 'Judges 5:7',
       difficulty: 2,
@@ -2071,7 +2071,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-7-q5',
       type: 'multiple-choice',
       question: 'Who plotted to destroy all the Jews?',
-      options: ['Haman', 'The king', 'Mordecai', 'Vashti'],
+      options: ['Haman', 'Memucan the royal adviser', 'Bigthan and Teresh', 'Ahasuerus after Vashti\'s disgrace'],
       correctAnswer: 'Haman',
       verse: 'Esther 3:6',
       difficulty: 2,
@@ -2101,7 +2101,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-7-q8',
       type: 'multiple-choice',
       question: 'How many days did Esther ask the Jews to fast?',
-      options: ['3', '7', '1', '40'],
+      options: ['3', '7', '10', '1'],
       correctAnswer: '3',
       verse: 'Esther 4:16',
       difficulty: 2,
@@ -2158,7 +2158,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       category: 'names',
       subcategory: 'women',
       question: 'Which prophetess recognized baby Jesus at the temple?',
-      options: ['Anna', 'Mary', 'Elizabeth', 'Mary Magdalene'],
+      options: ['Anna', 'Simeon\'s wife', 'Huldah the prophetess', 'Elizabeth the mother of John'],
       correctAnswer: 'Anna',
       verse: 'Luke 2:36-38',
       difficulty: 2,
@@ -2188,7 +2188,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-8-q4',
       type: 'multiple-choice',
       question: 'Which woman was healed from seven demons?',
-      options: ['Mary Magdalene', 'Mary mother of Jesus', 'Martha', 'Joanna'],
+      options: ['Mary Magdalene', 'Joanna wife of Chuza', 'Susanna of the women disciples', 'The Syrophoenician woman\'s daughter'],
       correctAnswer: 'Mary Magdalene',
       verse: 'Mark 16:9',
       difficulty: 2,
@@ -2198,7 +2198,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-8-q5',
       type: 'multiple-choice',
       question: 'Who was the first person to see the risen Jesus?',
-      options: ['Mary Magdalene', 'Peter', 'John', 'Mary mother of Jesus'],
+      options: ['Mary Magdalene', 'Peter who ran to the tomb first', 'John the beloved disciple', 'The other Mary at the tomb'],
       correctAnswer: 'Mary Magdalene',
       verse: 'John 20:14-16',
       difficulty: 2,
@@ -2218,7 +2218,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
       id: 'names-women-8-q7',
       type: 'multiple-choice',
       question: 'Which woman broke an alabaster jar of perfume on Jesus?',
-      options: ['An unnamed sinful woman', 'Mary Magdalene', 'Martha', 'Mary mother of Jesus'],
+      options: ['An unnamed sinful woman', 'Mary of Bethany (sister of Martha)', 'Mary Magdalene', 'Joanna the wife of Chuza'],
       correctAnswer: 'An unnamed sinful woman',
       verse: 'Luke 7:37-38',
       difficulty: 2,
@@ -2290,7 +2290,7 @@ export const womenQuestionsExtended: Record<string, Question[]> = {
   ]
 };
 
-// PATRIARCHS - 8 lessen (was 4)
+// PATRIARCHS - 8 lessons (was 4)
 export const patriarchsQuestionsExtended: Record<string, Question[]> = {
   'names-patriarchs-5': [
     {
@@ -2834,7 +2834,7 @@ export const patriarchsQuestionsExtended: Record<string, Question[]> = {
   ]
 };
 
-// JUDGES - 8 lessen (was 4)
+// JUDGES - 8 lessons (was 4)
 export const judgesQuestionsExtended: Record<string, Question[]> = {
   'names-judges-5': [
     {
@@ -3311,6 +3311,809 @@ export const judgesQuestionsExtended: Record<string, Question[]> = {
     }
   ]
 };
+
+export const abrahamQuestions: Record<string, Question[]> = {
+  'names-abraham-1': [
+    {
+      id: 'abraham-1-q1',
+      type: 'multiple-choice',
+      question: 'Where did Abraham live when God called him?',
+      options: ['Ur', 'Haran', 'Canaan', 'Egypt'],
+      correctAnswer: 'Ur'
+    },
+    {
+      id: 'abraham-1-q2',
+      type: 'multiple-choice',
+      question: 'What did God promise Abraham?',
+      options: ['A great nation', 'A great army', 'A great city', 'A great temple'],
+      correctAnswer: 'A great nation'
+    },
+    {
+      id: 'abraham-1-q3',
+      type: 'multiple-choice',
+      question: 'What was credited to Abraham because of his faith?',
+      options: ['Righteousness', 'Wisdom', 'Strength', 'Riches'],
+      correctAnswer: 'Righteousness'
+    },
+    {
+      id: 'abraham-1-q4',
+      type: 'multiple-choice',
+      question: 'Who was the son of the promise?',
+      options: ['Isaac', 'Ishmael', 'Jacob', 'Joseph'],
+      correctAnswer: 'Isaac'
+    },
+    {
+      id: 'abraham-1-q5',
+      type: 'multiple-choice',
+      question: 'What did God ask Abraham to sacrifice?',
+      options: ['His son Isaac', 'His livestock', 'His house', 'His land'],
+      correctAnswer: 'His son Isaac'
+    },
+    {
+      id: 'abraham-1-q6',
+      type: 'multiple-choice',
+      question: 'How did Abraham respond to God\'s command?',
+      options: ['He obeyed', 'He fled', 'He refused', 'He asked for a sign'],
+      correctAnswer: 'He obeyed'
+    },
+    {
+      id: 'abraham-1-q7',
+      type: 'multiple-choice',
+      question: 'What did God provide on Mount Moriah?',
+      options: ['A ram', 'An angel', 'An altar', 'A prophet'],
+      correctAnswer: 'A ram'
+    },
+    {
+      id: 'abraham-1-q8',
+      type: 'multiple-choice',
+      question: 'What does the name Abraham mean?',
+      options: ['Father of many nations', 'Father of one nation', 'Blessed man', 'Friend of God'],
+      correctAnswer: 'Father of many nations'
+    },
+    {
+      id: 'abraham-1-q9',
+      type: 'multiple-choice',
+      question: 'Which city did Abraham leave at God\'s command?',
+      options: ['Ur', 'Sodom', 'Jericho', 'Nineveh'],
+      correctAnswer: 'Ur'
+    },
+    {
+      id: 'abraham-1-q10',
+      type: 'multiple-choice',
+      question: 'What was Abraham\'s response to God\'s promises?',
+      options: ['He believed God', 'He constantly doubted', 'He ignored them', 'He set conditions'],
+      correctAnswer: 'He believed God'
+    },
+    {
+      id: 'abraham-1-q11',
+      type: 'multiple-choice',
+      question: 'What covenant sign did God give to Abraham?',
+      options: ['Circumcision', 'Sabbath', 'Sacrifice', 'Fasting'],
+      correctAnswer: 'Circumcision'
+    },
+    {
+      id: 'abraham-1-q12',
+      type: 'multiple-choice',
+      question: 'Which promise applied to all nations?',
+      options: ['In you all nations will be blessed', 'You will never suffer', 'You will always be rich', 'You will never die'],
+      correctAnswer: 'In you all nations will be blessed'
+    }
+  ]
+};
+
+export const josephQuestions: Record<string, Question[]> = {
+  'names-joseph-1': [
+    {
+      id: 'joseph-1-q1',
+      type: 'multiple-choice',
+      question: 'What did Joseph\'s brothers do to him?',
+      options: ['They sold him as a slave', 'They sent him away', 'They hid him', 'They killed him'],
+      correctAnswer: 'They sold him as a slave'
+    },
+    {
+      id: 'joseph-1-q2',
+      type: 'multiple-choice',
+      question: 'Where did Joseph end up after being sold?',
+      options: ['Egypt', 'Canaan', 'Babylon', 'Assyria'],
+      correctAnswer: 'Egypt'
+    },
+    {
+      id: 'joseph-1-q3',
+      type: 'multiple-choice',
+      question: 'Why did Joseph end up in prison?',
+      options: ['A false accusation', 'Theft', 'Rebellion', 'Laziness'],
+      correctAnswer: 'A false accusation'
+    },
+    {
+      id: 'joseph-1-q4',
+      type: 'multiple-choice',
+      question: 'What was Joseph able to do through God?',
+      options: ['Interpret dreams', 'Perform magic', 'Heal people', 'Prophesy'],
+      correctAnswer: 'Interpret dreams'
+    },
+    {
+      id: 'joseph-1-q5',
+      type: 'multiple-choice',
+      question: 'Who had a dream that Joseph interpreted?',
+      options: ['Pharaoh', 'Nebuchadnezzar', 'Aaron', 'David'],
+      correctAnswer: 'Pharaoh'
+    },
+    {
+      id: 'joseph-1-q6',
+      type: 'multiple-choice',
+      question: 'What position did Joseph hold in Egypt?',
+      options: ['Second-in-command', 'Priest', 'General', 'Slave'],
+      correctAnswer: 'Second-in-command'
+    },
+    {
+      id: 'joseph-1-q7',
+      type: 'multiple-choice',
+      question: 'What did Joseph say to his brothers about their evil?',
+      options: ['God turned it for good', 'I will punish you', 'I will never forget this', 'You are lost'],
+      correctAnswer: 'God turned it for good'
+    },
+    {
+      id: 'joseph-1-q8',
+      type: 'multiple-choice',
+      question: 'What did Joseph save through his wisdom?',
+      options: ['Many lives', 'Only his family', 'Only Egypt', 'No one'],
+      correctAnswer: 'Many lives'
+    },
+    {
+      id: 'joseph-1-q9',
+      type: 'multiple-choice',
+      question: 'How did Joseph respond when he saw his brothers?',
+      options: ['He forgave them', 'He punished them', 'He ignored them', 'He fled'],
+      correctAnswer: 'He forgave them'
+    },
+    {
+      id: 'joseph-1-q10',
+      type: 'multiple-choice',
+      question: 'What did Joseph\'s dreams as a boy symbolize?',
+      options: ['His future leadership', 'His downfall', 'His death', 'His weakness'],
+      correctAnswer: 'His future leadership'
+    },
+    {
+      id: 'joseph-1-q11',
+      type: 'multiple-choice',
+      question: 'Who was Joseph\'s father?',
+      options: ['Jacob', 'Isaac', 'Abraham', 'Esau'],
+      correctAnswer: 'Jacob'
+    },
+    {
+      id: 'joseph-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Joseph\'s story mainly show?',
+      options: ['God\'s providence', 'Human strength', 'Luck', 'Coincidence'],
+      correctAnswer: 'God\'s providence'
+    }
+  ]
+};
+
+export const joshuaQuestions: Record<string, Question[]> = {
+  'names-joshua-1': [
+    {
+      id: 'joshua-1-q1',
+      type: 'multiple-choice',
+      question: 'Who was the successor of Moses?',
+      options: ['Joshua', 'Aaron', 'Caleb', 'Samuel'],
+      correctAnswer: 'Joshua'
+    },
+    {
+      id: 'joshua-1-q2',
+      type: 'multiple-choice',
+      question: 'What did God repeatedly say to Joshua?',
+      options: ['Be strong and courageous', 'Be careful', 'Be silent', 'Be afraid'],
+      correctAnswer: 'Be strong and courageous'
+    },
+    {
+      id: 'joshua-1-q3',
+      type: 'multiple-choice',
+      question: 'What miracle happened at the Jordan River?',
+      options: ['The water stopped flowing', 'The water boiled', 'The water turned to blood', 'The water disappeared'],
+      correctAnswer: 'The water stopped flowing'
+    },
+    {
+      id: 'joshua-1-q4',
+      type: 'multiple-choice',
+      question: 'Which city fell by God\'s power?',
+      options: ['Jericho', 'Nineveh', 'Babylon', 'Tyre'],
+      correctAnswer: 'Jericho'
+    },
+    {
+      id: 'joshua-1-q5',
+      type: 'multiple-choice',
+      question: 'How did Jericho fall?',
+      options: ['Through obedience', 'Through warfare', 'Through fire', 'Through famine'],
+      correctAnswer: 'Through obedience'
+    },
+    {
+      id: 'joshua-1-q6',
+      type: 'multiple-choice',
+      question: 'Who deceived Israel at Ai?',
+      options: ['Achan', 'Caleb', 'Gideon', 'Saul'],
+      correctAnswer: 'Achan'
+    },
+    {
+      id: 'joshua-1-q7',
+      type: 'multiple-choice',
+      question: 'What did God promise Joshua?',
+      options: ['I will be with you', 'You will never fail', 'You will become rich', 'You will never have war'],
+      correctAnswer: 'I will be with you'
+    },
+    {
+      id: 'joshua-1-q8',
+      type: 'multiple-choice',
+      question: 'What was Joshua to meditate on day and night?',
+      options: ['The law of God', 'His strategy', 'His feelings', 'His past'],
+      correctAnswer: 'The law of God'
+    },
+    {
+      id: 'joshua-1-q9',
+      type: 'multiple-choice',
+      question: 'What did Joshua say at the end of his life?',
+      options: ['As for me and my house, we will serve the LORD', 'I am tired', 'I have failed', 'I want to go back to Egypt'],
+      correctAnswer: 'As for me and my house, we will serve the LORD'
+    },
+    {
+      id: 'joshua-1-q10',
+      type: 'multiple-choice',
+      question: 'What was Joshua\'s role?',
+      options: ['Leader and conqueror', 'Priest', 'Prophet', 'Judge'],
+      correctAnswer: 'Leader and conqueror'
+    },
+    {
+      id: 'joshua-1-q11',
+      type: 'multiple-choice',
+      question: 'Who helped the spies in Jericho?',
+      options: ['Rahab', 'Deborah', 'Ruth', 'Esther'],
+      correctAnswer: 'Rahab'
+    },
+    {
+      id: 'joshua-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Joshua\'s life mainly show?',
+      options: ['God\'s faithfulness to His promises', 'Human strength', 'Coincidence', 'Luck'],
+      correctAnswer: 'God\'s faithfulness to His promises'
+    }
+  ]
+};
+
+export const elijahQuestions: Record<string, Question[]> = {
+  'names-elijah-1': [
+    {
+      id: 'elijah-1-q1',
+      type: 'multiple-choice',
+      question: 'Which king did Elijah confront?',
+      options: ['Ahab', 'Saul', 'David', 'Hezekiah'],
+      correctAnswer: 'Ahab'
+    },
+    {
+      id: 'elijah-1-q2',
+      type: 'multiple-choice',
+      question: 'What did Elijah\'s prayer cause?',
+      options: ['A drought lasting years', 'A flood', 'An earthquake', 'A plague'],
+      correctAnswer: 'A drought lasting years'
+    },
+    {
+      id: 'elijah-1-q3',
+      type: 'multiple-choice',
+      question: 'Where did the confrontation with the prophets of Baal take place?',
+      options: ['Carmel', 'Zion', 'Moriah', 'Horeb'],
+      correctAnswer: 'Carmel'
+    },
+    {
+      id: 'elijah-1-q4',
+      type: 'multiple-choice',
+      question: 'How did God answer Elijah\'s prayer on the mountain?',
+      options: ['With fire from heaven', 'With rain', 'With wind', 'With silence'],
+      correctAnswer: 'With fire from heaven'
+    },
+    {
+      id: 'elijah-1-q5',
+      type: 'multiple-choice',
+      question: 'Who threatened Elijah after the victory?',
+      options: ['Jezebel', 'Rahab', 'Deborah', 'Miriam'],
+      correctAnswer: 'Jezebel'
+    },
+    {
+      id: 'elijah-1-q6',
+      type: 'multiple-choice',
+      question: 'How did God speak to Elijah at Horeb?',
+      options: ['In a gentle whisper', 'In fire', 'In an earthquake', 'In a storm'],
+      correctAnswer: 'In a gentle whisper'
+    },
+    {
+      id: 'elijah-1-q7',
+      type: 'multiple-choice',
+      question: 'Who became Elijah\'s successor?',
+      options: ['Elisha', 'Samuel', 'Isaiah', 'Jeremiah'],
+      correctAnswer: 'Elisha'
+    },
+    {
+      id: 'elijah-1-q8',
+      type: 'multiple-choice',
+      question: 'How was Elijah taken up to heaven?',
+      options: ['In a fiery chariot', 'Carried by angels', 'He died', 'He disappeared'],
+      correctAnswer: 'In a fiery chariot'
+    },
+    {
+      id: 'elijah-1-q9',
+      type: 'multiple-choice',
+      question: 'What did Elijah\'s life mainly demonstrate?',
+      options: ['God\'s power over false gods', 'Human strength', 'Coincidence', 'Political power'],
+      correctAnswer: 'God\'s power over false gods'
+    },
+    {
+      id: 'elijah-1-q10',
+      type: 'multiple-choice',
+      question: 'Who fed Elijah at the brook Cherith?',
+      options: ['Ravens', 'Angels', 'Fish', 'Priests'],
+      correctAnswer: 'Ravens'
+    },
+    {
+      id: 'elijah-1-q11',
+      type: 'multiple-choice',
+      question: 'What did Elijah do for the widow of Zarephath?',
+      options: ['Raised her son from the dead', 'Made her rich', 'Healed her', 'Relocated her'],
+      correctAnswer: 'Raised her son from the dead'
+    },
+    {
+      id: 'elijah-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Elijah\'s story teach us?',
+      options: ['God answers faith', 'God is silent', 'God is weak', 'God does not change'],
+      correctAnswer: 'God answers faith'
+    }
+  ]
+};
+
+export const elishaQuestions: Record<string, Question[]> = {
+  'names-elisha-1': [
+    {
+      id: 'elisha-1-q1',
+      type: 'multiple-choice',
+      question: 'Who was Elisha\'s mentor?',
+      options: ['Elijah', 'Samuel', 'Isaiah', 'Jeremiah'],
+      correctAnswer: 'Elijah'
+    },
+    {
+      id: 'elisha-1-q2',
+      type: 'multiple-choice',
+      question: 'What did Elisha ask of Elijah?',
+      options: ['A double portion of his spirit', 'Riches', 'Honor', 'Strength'],
+      correctAnswer: 'A double portion of his spirit'
+    },
+    {
+      id: 'elisha-1-q3',
+      type: 'multiple-choice',
+      question: 'What did Elisha do to the water at Jericho?',
+      options: ['He healed it', 'He made it disappear', 'He made it salty', 'He froze it'],
+      correctAnswer: 'He healed it'
+    },
+    {
+      id: 'elisha-1-q4',
+      type: 'multiple-choice',
+      question: 'Who was healed of leprosy by Elisha?',
+      options: ['Naaman', 'Goliath', 'Saul', 'Haman'],
+      correctAnswer: 'Naaman'
+    },
+    {
+      id: 'elisha-1-q5',
+      type: 'multiple-choice',
+      question: 'What did Elisha do for the Shunammite woman?',
+      options: ['Raised her son from the dead', 'Made her rich', 'Healed her', 'Relocated her'],
+      correctAnswer: 'Raised her son from the dead'
+    },
+    {
+      id: 'elisha-1-q6',
+      type: 'multiple-choice',
+      question: 'What did God show Elisha\'s servant in 2 Kings 6?',
+      options: ['Heavenly armies', 'A storm', 'A pillar of fire', 'A rainbow'],
+      correctAnswer: 'Heavenly armies'
+    },
+    {
+      id: 'elisha-1-q7',
+      type: 'multiple-choice',
+      question: 'What happened to the axe head that fell in the water?',
+      options: ['It floated to the surface', 'It disappeared', 'It turned to gold', 'It broke'],
+      correctAnswer: 'It floated to the surface'
+    },
+    {
+      id: 'elisha-1-q8',
+      type: 'multiple-choice',
+      question: 'What did Elisha do for the widow with little oil?',
+      options: ['He multiplied the oil', 'He gave her money', 'He sent her away', 'He gave her bread'],
+      correctAnswer: 'He multiplied the oil'
+    },
+    {
+      id: 'elisha-1-q9',
+      type: 'multiple-choice',
+      question: 'What happened when Naaman washed seven times?',
+      options: ['He was healed', 'He became ill', 'He became angry', 'He went blind'],
+      correctAnswer: 'He was healed'
+    },
+    {
+      id: 'elisha-1-q10',
+      type: 'multiple-choice',
+      question: 'Who was punished with leprosy for lying?',
+      options: ['Gehazi', 'Achan', 'Saul', 'Haman'],
+      correctAnswer: 'Gehazi'
+    },
+    {
+      id: 'elisha-1-q11',
+      type: 'multiple-choice',
+      question: 'What does Elisha\'s ministry mainly show?',
+      options: ['God\'s compassion and power', 'Human wisdom', 'Political power', 'Coincidence'],
+      correctAnswer: 'God\'s compassion and power'
+    },
+    {
+      id: 'elisha-1-q12',
+      type: 'multiple-choice',
+      question: 'What was the sign that Elisha was Elijah\'s successor?',
+      options: ['He received Elijah\'s cloak', 'He received a crown', 'He received a staff', 'He received a scroll'],
+      correctAnswer: 'He received Elijah\'s cloak'
+    }
+  ]
+};
+
+export const ruthQuestions: Record<string, Question[]> = {
+  'names-ruth-1': [
+    {
+      id: 'ruth-1-q1',
+      type: 'multiple-choice',
+      question: 'What country did Ruth originally come from?',
+      options: ['Moab', 'Canaan', 'Egypt', 'Assyria'],
+      correctAnswer: 'Moab'
+    },
+    {
+      id: 'ruth-1-q2',
+      type: 'multiple-choice',
+      question: 'Who was Ruth\'s mother-in-law?',
+      options: ['Naomi', 'Orpah', 'Hannah', 'Deborah'],
+      correctAnswer: 'Naomi'
+    },
+    {
+      id: 'ruth-1-q3',
+      type: 'multiple-choice',
+      question: 'What did Ruth say to Naomi?',
+      options: ['Your people shall be my people', 'I am going back to Moab', 'I will stay here', 'I will follow my own way'],
+      correctAnswer: 'Your people shall be my people'
+    },
+    {
+      id: 'ruth-1-q4',
+      type: 'multiple-choice',
+      question: 'What did Ruth do to get food?',
+      options: ['Glean grain', 'Fish', 'Trade', 'Beg'],
+      correctAnswer: 'Glean grain'
+    },
+    {
+      id: 'ruth-1-q5',
+      type: 'multiple-choice',
+      question: 'In whose field did Ruth work?',
+      options: ['Boaz', 'Elimelech', 'Obed', 'Salmon'],
+      correctAnswer: 'Boaz'
+    },
+    {
+      id: 'ruth-1-q6',
+      type: 'multiple-choice',
+      question: 'What was Boaz to Naomi\'s family?',
+      options: ['Kinsman-redeemer', 'Enemy', 'Stranger', 'Priest'],
+      correctAnswer: 'Kinsman-redeemer'
+    },
+    {
+      id: 'ruth-1-q7',
+      type: 'multiple-choice',
+      question: 'Who married Ruth?',
+      options: ['Boaz', 'Caleb', 'David', 'Saul'],
+      correctAnswer: 'Boaz'
+    },
+    {
+      id: 'ruth-1-q8',
+      type: 'multiple-choice',
+      question: 'Who was Ruth\'s son?',
+      options: ['Obed', 'Jesse', 'David', 'Solomon'],
+      correctAnswer: 'Obed'
+    },
+    {
+      id: 'ruth-1-q9',
+      type: 'multiple-choice',
+      question: 'Who was Ruth\'s grandson?',
+      options: ['David', 'Saul', 'Samuel', 'Elijah'],
+      correctAnswer: 'David'
+    },
+    {
+      id: 'ruth-1-q10',
+      type: 'multiple-choice',
+      question: 'What does Ruth\'s story mainly show?',
+      options: ['Loyalty and God\'s providence', 'War', 'Rebellion', 'Wealth'],
+      correctAnswer: 'Loyalty and God\'s providence'
+    },
+    {
+      id: 'ruth-1-q11',
+      type: 'multiple-choice',
+      question: 'What does the word "kinsman-redeemer" mean?',
+      options: ['Family rescuer/redeemer', 'Judge', 'Priest', 'King'],
+      correctAnswer: 'Family rescuer/redeemer'
+    },
+    {
+      id: 'ruth-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Ruth teach us about God?',
+      options: ['He welcomes foreigners', 'He rejects foreigners', 'He only helps the rich', 'He does not change'],
+      correctAnswer: 'He welcomes foreigners'
+    }
+  ]
+};
+
+export const estherQuestions: Record<string, Question[]> = {
+  'names-esther-1': [
+    {
+      id: 'esther-1-q1',
+      type: 'multiple-choice',
+      question: 'What was Esther before she became queen?',
+      options: ['A Jewish orphan', 'A priestess', 'A wealthy woman', 'A servant'],
+      correctAnswer: 'A Jewish orphan'
+    },
+    {
+      id: 'esther-1-q2',
+      type: 'multiple-choice',
+      question: 'Who was Esther\'s foster father?',
+      options: ['Mordecai', 'Haman', 'Ezra', 'Nehemiah'],
+      correctAnswer: 'Mordecai'
+    },
+    {
+      id: 'esther-1-q3',
+      type: 'multiple-choice',
+      question: 'Who wanted to destroy all the Jews?',
+      options: ['Haman', 'Pharaoh', 'Sanballat', 'Herod'],
+      correctAnswer: 'Haman'
+    },
+    {
+      id: 'esther-1-q4',
+      type: 'multiple-choice',
+      question: 'What did Esther have to do to save her people?',
+      options: ['Go to the king', 'Flee', 'Hide', 'Confront Haman in public'],
+      correctAnswer: 'Go to the king'
+    },
+    {
+      id: 'esther-1-q5',
+      type: 'multiple-choice',
+      question: 'What was the risk for Esther?',
+      options: ['Death penalty', 'Exile', 'Imprisonment', 'Poverty'],
+      correctAnswer: 'Death penalty'
+    },
+    {
+      id: 'esther-1-q6',
+      type: 'multiple-choice',
+      question: 'What did Mordecai say to Esther?',
+      options: ['You have come to the kingdom for such a time as this', 'You must flee', 'You can do nothing', 'God has abandoned you'],
+      correctAnswer: 'You have come to the kingdom for such a time as this'
+    },
+    {
+      id: 'esther-1-q7',
+      type: 'multiple-choice',
+      question: 'What did Esther do before going to the king?',
+      options: ['Fast', 'Feast', 'Travel', 'Sleep'],
+      correctAnswer: 'Fast'
+    },
+    {
+      id: 'esther-1-q8',
+      type: 'multiple-choice',
+      question: 'How did the king respond to Esther?',
+      options: ['He showed her favor', 'He became angry', 'He ignored her', 'He punished her'],
+      correctAnswer: 'He showed her favor'
+    },
+    {
+      id: 'esther-1-q9',
+      type: 'multiple-choice',
+      question: 'What happened to Haman?',
+      options: ['He was hanged', 'He fled', 'He became king', 'He became a priest'],
+      correctAnswer: 'He was hanged'
+    },
+    {
+      id: 'esther-1-q10',
+      type: 'multiple-choice',
+      question: 'Which feast commemorates Esther\'s story?',
+      options: ['Purim', 'Passover', 'Feast of Tabernacles', 'Pentecost'],
+      correctAnswer: 'Purim'
+    },
+    {
+      id: 'esther-1-q11',
+      type: 'multiple-choice',
+      question: 'What does Esther\'s story mainly show?',
+      options: ['God\'s hidden guidance', 'Human strength', 'Coincidence', 'Political power'],
+      correctAnswer: 'God\'s hidden guidance'
+    },
+    {
+      id: 'esther-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Esther teach us?',
+      options: ['Courage and trust in God', 'Revenge', 'Fear', 'Selfishness'],
+      correctAnswer: 'Courage and trust in God'
+    }
+  ]
+};
+
+export const paulQuestions: Record<string, Question[]> = {
+  'names-paul-1': [
+    {
+      id: 'paul-1-q1',
+      type: 'multiple-choice',
+      question: 'What was Paul before he became a Christian?',
+      options: ['A persecutor of the church', 'A priest', 'A Roman soldier', 'A king'],
+      correctAnswer: 'A persecutor of the church'
+    },
+    {
+      id: 'paul-1-q2',
+      type: 'multiple-choice',
+      question: 'Where did Paul encounter Jesus?',
+      options: ['On the road to Damascus', 'In Jerusalem', 'In Rome', 'In Antioch'],
+      correctAnswer: 'On the road to Damascus'
+    },
+    {
+      id: 'paul-1-q3',
+      type: 'multiple-choice',
+      question: 'What happened to Paul during his conversion?',
+      options: ['He became blind', 'He became ill', 'He fell down', 'He became deaf'],
+      correctAnswer: 'He became blind'
+    },
+    {
+      id: 'paul-1-q4',
+      type: 'multiple-choice',
+      question: 'Who prayed for Paul so that he could see again?',
+      options: ['Ananias', 'Barnabas', 'Peter', 'James'],
+      correctAnswer: 'Ananias'
+    },
+    {
+      id: 'paul-1-q5',
+      type: 'multiple-choice',
+      question: 'What was Paul\'s calling?',
+      options: ['Apostle to the Gentiles', 'Priest for Israel', 'King of Judea', 'Prophet for Egypt'],
+      correctAnswer: 'Apostle to the Gentiles'
+    },
+    {
+      id: 'paul-1-q6',
+      type: 'multiple-choice',
+      question: 'How many missionary journeys did Paul make?',
+      options: ['Three', 'One', 'Two', 'Four'],
+      correctAnswer: 'Three'
+    },
+    {
+      id: 'paul-1-q7',
+      type: 'multiple-choice',
+      question: 'Which letters did Paul write?',
+      options: ['Romans, Corinthians, Galatians, etc.', 'Genesis', 'Psalms', 'Revelation'],
+      correctAnswer: 'Romans, Corinthians, Galatians, etc.'
+    },
+    {
+      id: 'paul-1-q8',
+      type: 'multiple-choice',
+      question: 'Where was Paul imprisoned when he wrote his letters?',
+      options: ['Rome', 'Babylon', 'Corinth', 'Athens'],
+      correctAnswer: 'Rome'
+    },
+    {
+      id: 'paul-1-q9',
+      type: 'multiple-choice',
+      question: 'Who often traveled with Paul?',
+      options: ['Barnabas', 'Moses', 'David', 'Elijah'],
+      correctAnswer: 'Barnabas'
+    },
+    {
+      id: 'paul-1-q10',
+      type: 'multiple-choice',
+      question: 'What happened to Paul in Philippi?',
+      options: ['He was imprisoned', 'He became king', 'He became rich', 'He became a priest'],
+      correctAnswer: 'He was imprisoned'
+    },
+    {
+      id: 'paul-1-q11',
+      type: 'multiple-choice',
+      question: 'What did Paul do in prison?',
+      options: ['Pray and sing', 'Complain', 'Sleep', 'Flee'],
+      correctAnswer: 'Pray and sing'
+    },
+    {
+      id: 'paul-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Paul\'s life mainly show?',
+      options: ['The power of God\'s grace', 'Human strength', 'Coincidence', 'Political talent'],
+      correctAnswer: 'The power of God\'s grace'
+    }
+  ]
+};
+
+export const peterQuestions: Record<string, Question[]> = {
+  'names-peter-1': [
+    {
+      id: 'peter-1-q1',
+      type: 'multiple-choice',
+      question: 'What was Peter\'s occupation before he followed Jesus?',
+      options: ['Fisherman', 'Carpenter', 'Shepherd', 'Soldier'],
+      correctAnswer: 'Fisherman'
+    },
+    {
+      id: 'peter-1-q2',
+      type: 'multiple-choice',
+      question: 'What did Peter do when Jesus called him?',
+      options: ['He left everything behind', 'He hesitated', 'He fled', 'He asked for time'],
+      correctAnswer: 'He left everything behind'
+    },
+    {
+      id: 'peter-1-q3',
+      type: 'multiple-choice',
+      question: 'What did Peter do on the water?',
+      options: ['He walked on the water', 'He sank immediately', 'He swam', 'He stayed in the boat'],
+      correctAnswer: 'He walked on the water'
+    },
+    {
+      id: 'peter-1-q4',
+      type: 'multiple-choice',
+      question: 'Why did Peter begin to sink?',
+      options: ['He looked at the wind', 'He could not swim', 'He was tired', 'He was sick'],
+      correctAnswer: 'He looked at the wind'
+    },
+    {
+      id: 'peter-1-q5',
+      type: 'multiple-choice',
+      question: 'How many times did Peter deny Jesus?',
+      options: ['Three times', 'Once', 'Twice', 'Four times'],
+      correctAnswer: 'Three times'
+    },
+    {
+      id: 'peter-1-q6',
+      type: 'multiple-choice',
+      question: 'What did Jesus do for Peter after His resurrection?',
+      options: ['He restored him', 'He punished him', 'He ignored him', 'He cursed him'],
+      correctAnswer: 'He restored him'
+    },
+    {
+      id: 'peter-1-q7',
+      type: 'multiple-choice',
+      question: 'What did Jesus say to Peter after his restoration?',
+      options: ['Feed my sheep', 'Go away', 'You have failed', 'You are not worthy'],
+      correctAnswer: 'Feed my sheep'
+    },
+    {
+      id: 'peter-1-q8',
+      type: 'multiple-choice',
+      question: 'Who preached on the day of Pentecost?',
+      options: ['Peter', 'Paul', 'John', 'James'],
+      correctAnswer: 'Peter'
+    },
+    {
+      id: 'peter-1-q9',
+      type: 'multiple-choice',
+      question: 'How many people came to faith on the day of Pentecost?',
+      options: ['About 3,000', '100', '500', '10,000'],
+      correctAnswer: 'About 3,000'
+    },
+    {
+      id: 'peter-1-q10',
+      type: 'multiple-choice',
+      question: 'What did Peter see in his vision in Acts 10?',
+      options: ['Unclean animals', 'Angels', 'Fire', 'A ladder'],
+      correctAnswer: 'Unclean animals'
+    },
+    {
+      id: 'peter-1-q11',
+      type: 'multiple-choice',
+      question: 'What did Peter learn from that vision?',
+      options: ['The gospel is also for the Gentiles', 'Only Jews are saved', 'He needed to travel', 'He needed to stop'],
+      correctAnswer: 'The gospel is also for the Gentiles'
+    },
+    {
+      id: 'peter-1-q12',
+      type: 'multiple-choice',
+      question: 'What does Peter\'s life mainly show?',
+      options: ['God\'s grace and restoration', 'Human perfection', 'Political power', 'Coincidence'],
+      correctAnswer: 'God\'s grace and restoration'
+    }
+  ]
+};
+
+
 
 // Export all extended questions
 export const allExtendedNamesQuestions = {

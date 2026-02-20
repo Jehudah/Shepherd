@@ -12,102 +12,31 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
+import { themesStudyArticles } from '../../data/studyContent';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
-
-interface StudyArticle {
-  id: string;
-  title: string;
-  subtitle: string;
-  introduction: string;
-  readTime: number;
-}
-
-const themesArticles: StudyArticle[] = [
-  {
-    id: 'love',
-    title: 'Love in Scripture',
-    subtitle: 'The foundation of our faith',
-    introduction: 'Understanding God\'s love and how we\'re called to love others through biblical examples and teachings. Explore agape love and its transformative power.',
-    readTime: 7,
-  },
-  {
-    id: 'faith',
-    title: 'Biblical Faith',
-    subtitle: 'Trust and belief in God',
-    introduction: 'Discover what the Bible teaches about faith - from its definition in Hebrews 11 to practical applications in daily life and examples from Scripture.',
-    readTime: 8,
-  },
-  {
-    id: 'grace',
-    title: 'Grace: God\'s Unmerited Favor',
-    subtitle: 'The heart of the Gospel',
-    introduction: 'Learn about the amazing grace of God, how it differs from works, and why it\'s central to the Christian message of salvation and sanctification.',
-    readTime: 9,
-  },
-  {
-    id: 'hope',
-    title: 'Hope in Christ',
-    subtitle: 'A living hope through resurrection',
-    introduction: 'Explore the biblical concept of hope - not wishful thinking, but confident expectation based on God\'s promises and the resurrection of Jesus.',
-    readTime: 7,
-  },
-  {
-    id: 'peace',
-    title: 'Peace of God',
-    subtitle: 'Shalom in a broken world',
-    introduction: 'Study the multi-faceted biblical concept of peace (shalom) - encompassing wholeness, harmony with God, and inner tranquility that surpasses understanding.',
-    readTime: 8,
-  },
-  {
-    id: 'wisdom',
-    title: 'Biblical Wisdom',
-    subtitle: 'The fear of the Lord',
-    introduction: 'Understand what the Bible means by wisdom - not mere knowledge, but godly insight for living life well, rooted in reverence for God.',
-    readTime: 8,
-  },
-  {
-    id: 'redemption',
-    title: 'Redemption Through Christ',
-    subtitle: 'Bought back by His blood',
-    introduction: 'Examine the powerful theme of redemption throughout Scripture - from the kinsman-redeemer to Christ\'s ultimate payment for our sins.',
-    readTime: 9,
-  },
-  {
-    id: 'covenant',
-    title: 'God\'s Covenant Promises',
-    subtitle: 'Faithful through the ages',
-    introduction: 'Trace God\'s covenant relationships from Noah to the New Covenant in Christ\'s blood - discovering His unchanging faithfulness.',
-    readTime: 10,
-  },
-  {
-    id: 'holiness',
-    title: 'The Holiness of God',
-    subtitle: 'Set apart and calling us',
-    introduction: 'Marvel at God\'s perfect holiness and what it means for us to be called to be holy as He is holy in daily life and worship.',
-    readTime: 8,
-  },
-  {
-    id: 'prayer',
-    title: 'The Power of Prayer',
-    subtitle: 'Conversation with the Almighty',
-    introduction: 'Learn biblical principles of prayer from Jesus\' teachings and examples throughout Scripture - from the Lord\'s Prayer to persistent faith.',
-    readTime: 7,
-  },
-];
 
 export default function StudyThemesScreen() {
   const navigation = useNavigation<NavigationProp>();
 
-  const handleArticlePress = (article: StudyArticle) => {
+  const handleArticlePress = (articleId: string) => {
     navigation.navigate('StudyArticle', {
       category: 'themes',
-      articleId: article.id,
+      articleId: articleId,
     });
   };
 
   const handleBackPress = () => {
     navigation.goBack();
+  };
+
+  // Calculate estimated read time based on content length
+  const getReadTime = (article: typeof themesStudyArticles[0]): number => {
+    const totalWords = article.sections.reduce((total, section) => {
+      const sectionWords = section.paragraphs.join(' ').split(' ').length;
+      return total + sectionWords;
+    }, 0);
+    return Math.max(5, Math.ceil(totalWords / 200)); // ~200 words per minute
   };
 
   return (
@@ -138,8 +67,8 @@ export default function StudyThemesScreen() {
 
         {/* Articles List */}
         <View style={styles.articlesList}>
-          {themesArticles.map((article, index) => {
-            const colors = ['#EF4444', '#3B82F6', '#8B5CF6'];
+          {themesStudyArticles.map((article, index) => {
+            const colors = ['#EF4444', '#3B82F6', '#8B5CF6', '#10B981', '#F59E0B'];
             const color = colors[index % colors.length];
 
             return (
@@ -149,7 +78,7 @@ export default function StudyThemesScreen() {
                   styles.articleCard,
                   { borderLeftColor: color, borderLeftWidth: 4 },
                 ]}
-                onPress={() => handleArticlePress(article)}
+                onPress={() => handleArticlePress(article.id)}
                 activeOpacity={0.7}
               >
                 <View
@@ -168,7 +97,7 @@ export default function StudyThemesScreen() {
                   </Text>
                   <View style={styles.articleMeta}>
                     <Icon name="clock" size={14} color="#6B7280" />
-                    <Text style={styles.metaText}>{article.readTime} min read</Text>
+                    <Text style={styles.metaText}>{getReadTime(article)} min read</Text>
                   </View>
                 </View>
                 <Icon name="chevron-right" size={20} color={color} />
@@ -177,13 +106,15 @@ export default function StudyThemesScreen() {
           })}
         </View>
 
-        {/* Coming Soon */}
-        <View style={styles.comingSoonCard}>
-          <Text style={styles.comingSoonEmoji}>🐑</Text>
-          <View style={styles.comingSoonContent}>
-            <Text style={styles.comingSoonTitle}>More Themes Coming Soon!</Text>
-            <Text style={styles.comingSoonText}>
-              We're working on adding more theological studies covering hope, peace, wisdom, justice, and many other biblical themes. Stay tuned!
+        {/* Stats */}
+        <View style={styles.statsCard}>
+          <Text style={styles.statsEmoji}>💝</Text>
+          <View style={styles.statsContent}>
+            <Text style={styles.statsTitle}>
+              {themesStudyArticles.length} Theological Themes
+            </Text>
+            <Text style={styles.statsText}>
+              Dive deep into love, faith, grace, hope, holiness, prayer, and more foundational biblical themes.
             </Text>
           </View>
         </View>
@@ -198,17 +129,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
-    paddingBottom: 20,
+    paddingTop: 12,
+    paddingBottom: 16,
     backgroundColor: '#8B5CF6',
   },
   backButton: {
     padding: 8,
-    marginBottom: 12,
-    alignSelf: 'flex-start',
+    marginRight: 12,
   },
   headerContent: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 16,
@@ -288,31 +221,31 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#6B7280',
   },
-  comingSoonCard: {
+  statsCard: {
     flexDirection: 'row',
-    backgroundColor: '#FEF3C7',
+    backgroundColor: '#F3E8FF',
     borderRadius: 16,
     padding: 16,
     marginTop: 24,
     borderWidth: 2,
-    borderColor: '#FCD34D',
+    borderColor: '#8B5CF6',
   },
-  comingSoonEmoji: {
+  statsEmoji: {
     fontSize: 40,
     marginRight: 12,
   },
-  comingSoonContent: {
+  statsContent: {
     flex: 1,
   },
-  comingSoonTitle: {
+  statsTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#78350F',
+    color: '#6B21A8',
     marginBottom: 6,
   },
-  comingSoonText: {
+  statsText: {
     fontSize: 14,
-    color: '#92400E',
+    color: '#581C87',
     lineHeight: 20,
   },
 });

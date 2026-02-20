@@ -122,7 +122,7 @@ export default function ProfileScreen() {
             { backgroundColor: userProgress.streak > 0 ? '#FEE2E2' : '#F3F4F6' }
           ]}>
             <Icon
-              name="flame"
+              name="calendar"
               size={24}
               color={userProgress.streak > 0 ? '#EF4444' : '#9CA3AF'}
             />

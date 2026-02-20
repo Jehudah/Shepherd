@@ -21,7 +21,13 @@
       "Bash(xcrun simctl install:*)",
       "Bash(xcrun simctl launch:*)",
       "Bash(ls:*)",
-      "Bash(npx expo start:*)"
+      "Bash(npx expo start:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "Bash(npx expo install:*)",
+      "Bash(for:*)",
+      "Bash(do echo:*)",
+      "Bash(done)"
     ]
   }
 }

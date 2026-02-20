@@ -29,15 +29,30 @@ import {
   womenQuestions,
 } from '../../data/namesQuestions';
 import {
+  prophetsQuestionsExtended,
+  kingsQuestionsExtended,
+  disciplesQuestionsExtended,
+  womenQuestionsExtended,
+} from '../../data/namesQuestionsExtended';
+import {
   loveThemeQuestions,
   faithThemeQuestions,
   hopeThemeQuestions,
   peaceThemeQuestions,
   wisdomThemeQuestions,
+  graceThemeQuestions,
+  forgivenessThemeQuestions,
+  holinessThemeQuestions,
+  obedienceThemeQuestions,
+  prayerThemeQuestions,
+  repentanceThemeQuestions,
+  worshipThemeQuestions,
+  spiritualWarfareThemeQuestions,
 } from '../../data/themesQuestions';
 import { creationQuestions } from '../../data/timelineQuestions';
 import { salvationVersesQuestions } from '../../data/versesQuestions';
 import { parablesQuestions } from '../../data/parablesQuestions';
+import { getBookQuestions } from '../../data/bookQuestions';
 
 type LessonPlayerScreenRouteProp = RouteProp<RootStackParamList, 'LessonPlayer'>;
 type LessonPlayerScreenNavigationProp = NativeStackNavigationProp<
@@ -70,17 +85,50 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
   // Load questions based on category
   const getQuestions = (): Question[] => {
     if (category === 'names' && subcategory && lessonId) {
-      if (subcategory === 'prophets' && prophetsQuestions[lessonId]) {
-        return prophetsQuestions[lessonId];
+      // Construct extended lesson ID (e.g., "prophets-1" -> "names-prophets-1")
+      const extendedId = `names-${subcategory}-${lessonId.split('-').pop()}`;
+
+      if (subcategory === 'prophets') {
+        // Try extended first (has all 8 lessons)
+        if (prophetsQuestionsExtended[extendedId]?.length > 0) {
+          return prophetsQuestionsExtended[extendedId];
+        }
+        // Fall back to base
+        if (prophetsQuestions[lessonId]) {
+          return prophetsQuestions[lessonId];
+        }
       }
-      if (subcategory === 'kings' && kingsQuestions[lessonId]) {
-        return kingsQuestions[lessonId];
+      if (subcategory === 'kings') {
+        // Try extended first (lessons 5-8)
+        if (kingsQuestionsExtended[extendedId]) {
+          return kingsQuestionsExtended[extendedId];
+        }
+        // Fall back to base (lessons 1-4)
+        if (kingsQuestions[lessonId]) {
+          return kingsQuestions[lessonId];
+        }
       }
-      if (subcategory === 'apostles' && apostlesQuestions[lessonId]) {
-        return apostlesQuestions[lessonId];
+      if (subcategory === 'apostles') {
+        // Note: Extended uses 'disciples' but UI uses 'apostles'
+        const disciplesId = `names-disciples-${lessonId.split('-').pop()}`;
+        // Try extended first (lessons 5-8)
+        if (disciplesQuestionsExtended[disciplesId]) {
+          return disciplesQuestionsExtended[disciplesId];
+        }
+        // Fall back to base (lessons 1-4)
+        if (apostlesQuestions[lessonId]) {
+          return apostlesQuestions[lessonId];
+        }
       }
-      if (subcategory === 'women' && womenQuestions[lessonId]) {
-        return womenQuestions[lessonId];
+      if (subcategory === 'women') {
+        // Try extended first (lessons 5-8)
+        if (womenQuestionsExtended[extendedId]) {
+          return womenQuestionsExtended[extendedId];
+        }
+        // Fall back to base (lessons 1-4)
+        if (womenQuestions[lessonId]) {
+          return womenQuestions[lessonId];
+        }
       }
     }
 
@@ -100,6 +148,30 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
       if (subcategory === 'wisdom' && wisdomThemeQuestions[lessonId]) {
         return wisdomThemeQuestions[lessonId];
       }
+      if (subcategory === 'grace' && graceThemeQuestions[lessonId]) {
+        return graceThemeQuestions[lessonId];
+      }
+      if (subcategory === 'forgiveness' && forgivenessThemeQuestions[lessonId]) {
+        return forgivenessThemeQuestions[lessonId];
+      }
+      if (subcategory === 'holiness' && holinessThemeQuestions[lessonId]) {
+        return holinessThemeQuestions[lessonId];
+      }
+      if (subcategory === 'obedience' && obedienceThemeQuestions[lessonId]) {
+        return obedienceThemeQuestions[lessonId];
+      }
+      if (subcategory === 'prayer' && prayerThemeQuestions[lessonId]) {
+        return prayerThemeQuestions[lessonId];
+      }
+      if (subcategory === 'repentance' && repentanceThemeQuestions[lessonId]) {
+        return repentanceThemeQuestions[lessonId];
+      }
+      if (subcategory === 'worship' && worshipThemeQuestions[lessonId]) {
+        return worshipThemeQuestions[lessonId];
+      }
+      if (subcategory === 'spiritual-warfare' && spiritualWarfareThemeQuestions[lessonId]) {
+        return spiritualWarfareThemeQuestions[lessonId];
+      }
     }
 
     if (category === 'timeline' && subcategory && lessonId) {
@@ -117,6 +189,13 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
     if (category === 'parables' && subcategory && lessonId) {
       if (subcategory === 'kingdom' && parablesQuestions[lessonId]) {
         return parablesQuestions[lessonId];
+      }
+    }
+
+    if (category === 'books' && subcategory) {
+      const questions = getBookQuestions(subcategory);
+      if (questions.length > 0) {
+        return questions;
       }
     }
 

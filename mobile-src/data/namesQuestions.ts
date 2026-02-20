@@ -14,7 +14,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-1-q2',
       type: 'multiple-choice',
       question: 'What did Moses use to part the Red Sea?',
-      options: ['His staff', 'His hands', 'A sword', 'A rope'],
+      options: ['His staff', 'His hands', 'His cloak', 'A stone'],
       correctAnswer: 'His staff'
     },
     {
@@ -42,7 +42,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-1-q6',
       type: 'multiple-choice',
       question: 'What special food did God provide for the Israelites in the wilderness?',
-      options: ['Manna', 'Bread', 'Fish', 'Honey'],
+      options: ['Manna', 'Quail only', 'Bread from heaven', 'Honey from the rock'],
       correctAnswer: 'Manna'
     },
     {
@@ -56,7 +56,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-1-q8',
       type: 'multiple-choice',
       question: 'What did Moses strike to bring water in the wilderness?',
-      options: ['A rock', 'The ground', 'A tree', 'The air'],
+      options: ['A rock', 'The Nile River', 'The ground', 'His staff'],
       correctAnswer: 'A rock'
     },
     {
@@ -84,7 +84,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-1-q12',
       type: 'multiple-choice',
       question: 'What golden object did the Israelites make while Moses was on the mountain?',
-      options: ['A calf', 'A lion', 'An eagle', 'A serpent'],
+      options: ['A calf', 'A serpent', 'A cherub', 'An altar'],
       correctAnswer: 'A calf'
     }
   ],
@@ -114,7 +114,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-2-q4',
       type: 'multiple-choice',
       question: 'What birds brought food to Elijah by the brook?',
-      options: ['Ravens', 'Eagles', 'Doves', 'Sparrows'],
+      options: ['Ravens', 'Doves', 'Eagles', 'Storks'],
       correctAnswer: 'Ravens'
     },
     {
@@ -163,14 +163,14 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-2-q11',
       type: 'multiple-choice',
       question: 'What miraculous thing happened to the widow\'s oil and flour?',
-      options: ['They never ran out', 'They multiplied instantly', 'They turned to gold', 'They healed the sick'],
+      options: ['They never ran out', 'They multiplied before her eyes', 'They were replenished by ravens', 'Fresh supply arrived each morning'],
       correctAnswer: 'They never ran out'
     },
     {
       id: 'prophets-2-q12',
       type: 'multiple-choice',
       question: 'What did Elijah tell Ahab would happen because of his sin?',
-      options: ['There would be no rain', 'The kingdom would fall', 'He would die in battle', 'His sons would rebel'],
+      options: ['There would be no rain', 'His dynasty would end immediately', 'Enemies would invade', 'His sons would turn against him'],
       correctAnswer: 'There would be no rain'
     }
   ],
@@ -186,21 +186,21 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-3-q2',
       type: 'multiple-choice',
       question: 'What cleansed Isaiah\'s lips in his vision?',
-      options: ['A burning coal', 'Holy water', 'Fire from heaven', 'An angel\'s hand'],
+      options: ['A burning coal', 'The angel\'s touch', 'Fire from the altar', 'A stream of water'],
       correctAnswer: 'A burning coal'
     },
     {
       id: 'prophets-3-q3',
       type: 'multiple-choice',
       question: 'Isaiah prophesied about a virgin giving birth. What name did he say the child would be called?',
-      options: ['Immanuel', 'Jesus', 'Messiah', 'Prince of Peace'],
+      options: ['Immanuel', 'Wonderful Counselor', 'Prince of Peace', 'The Mighty God'],
       correctAnswer: 'Immanuel'
     },
     {
       id: 'prophets-3-q4',
       type: 'multiple-choice',
       question: 'In Isaiah\'s vision, what creatures surrounded God\'s throne?',
-      options: ['Seraphim', 'Cherubim', 'Angels', 'Eagles'],
+      options: ['Seraphim', 'Cherubim', 'The four living creatures', 'The archangels'],
       correctAnswer: 'Seraphim'
     },
     {
@@ -235,28 +235,28 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-3-q9',
       type: 'multiple-choice',
       question: 'What did Isaiah prophecy would happen to the desert?',
-      options: ['It would blossom like a rose', 'It would become a sea', 'It would be destroyed', 'It would remain forever'],
+      options: ['It would blossom like a rose', 'It would become fruitful fields', 'Rivers would flow through it', 'God\'s people would flee through it'],
       correctAnswer: 'It would blossom like a rose'
     },
     {
       id: 'prophets-3-q10',
       type: 'multiple-choice',
       question: 'According to Isaiah, who was led like a lamb to the slaughter?',
-      options: ['The suffering servant', 'Isaiah', 'King Hezekiah', 'The nation of Israel'],
+      options: ['The suffering servant', 'The nation of Israel', 'The remnant of Judah', 'King Hezekiah\'s son'],
       correctAnswer: 'The suffering servant'
     },
     {
       id: 'prophets-3-q11',
       type: 'multiple-choice',
       question: 'What famous verse says "They will beat their swords into plowshares"?',
-      options: ['Isaiah 2:4', 'Psalm 23:1', 'John 3:16', 'Genesis 1:1'],
+      options: ['Isaiah 2:4', 'Micah 4:3', 'Isaiah 11:6', 'Joel 3:10'],
       correctAnswer: 'Isaiah 2:4'
     },
     {
       id: 'prophets-3-q12',
       type: 'multiple-choice',
       question: 'In the year King Uzziah died, where did Isaiah see the Lord?',
-      options: ['Sitting on a throne, high and exalted', 'In the temple courts', 'On Mount Sinai', 'In a dream'],
+      options: ['Sitting on a throne, high and exalted', 'Walking in the temple courts', 'Standing above the ark of the covenant', 'Appearing in a whirlwind'],
       correctAnswer: 'Sitting on a throne, high and exalted'
     }
   ],
@@ -272,14 +272,14 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-4-q2',
       type: 'multiple-choice',
       question: 'At what age was Jeremiah called to be a prophet?',
-      options: ['As a youth', 'At 30 years old', 'As an old man', 'As a child'],
+      options: ['As a youth', 'At 30 years old', 'At 12 years old', 'When he was an old man'],
       correctAnswer: 'As a youth'
     },
     {
       id: 'prophets-4-q3',
       type: 'multiple-choice',
       question: 'What did God tell Jeremiah He knew him before?',
-      options: ['Before he was formed in the womb', 'Before he could speak', 'Before he was born', 'Before creation'],
+      options: ['Before he was formed in the womb', 'Before he drew his first breath', 'Before he was consecrated', 'Before Israel was a nation'],
       correctAnswer: 'Before he was formed in the womb'
     },
     {
@@ -293,7 +293,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-4-q5',
       type: 'multiple-choice',
       question: 'Where was Jeremiah thrown for prophesying?',
-      options: ['Into a muddy cistern', 'Into prison', 'Into the sea', 'Into exile'],
+      options: ['Into a muddy cistern', 'Into a prison dungeon', 'Into the valley of Hinnom', 'Into the king\'s storehouse'],
       correctAnswer: 'Into a muddy cistern'
     },
     {
@@ -307,14 +307,14 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-4-q7',
       type: 'multiple-choice',
       question: 'What did King Jehoiakim do with Jeremiah\'s scroll?',
-      options: ['Burned it', 'Tore it up', 'Hid it', 'Threw it in water'],
+      options: ['Burned it', 'Cut it with a knife and threw it in the fire', 'Locked it away in the treasury', 'Gave it to his officials to read'],
       correctAnswer: 'Burned it'
     },
     {
       id: 'prophets-4-q8',
       type: 'multiple-choice',
       question: 'Who was Jeremiah\'s faithful scribe?',
-      options: ['Baruch', 'Ezra', 'Nehemiah', 'Daniel'],
+      options: ['Baruch', 'Seraiah', 'Ebed-Melech', 'Hilkiah'],
       correctAnswer: 'Baruch'
     },
     {
@@ -335,14 +335,14 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-4-q11',
       type: 'multiple-choice',
       question: 'What new covenant did Jeremiah prophesy about?',
-      options: ['God would write His law on people\'s hearts', 'God would destroy all nations', 'God would abandon Israel', 'God would send another Moses'],
+      options: ['God would write His law on people\'s hearts', 'God would renew the covenant made at Sinai', 'God would give Israel a new king like David', 'God would rebuild the temple in three days'],
       correctAnswer: 'God would write His law on people\'s hearts'
     },
     {
       id: 'prophets-4-q12',
       type: 'multiple-choice',
       question: 'What was Jeremiah forbidden to do as a sign to the people?',
-      options: ['Marry and have children', 'Eat meat', 'Leave Jerusalem', 'Speak in public'],
+      options: ['Marry and have children', 'Mourn or lament the dead', 'Enter the house of feasting', 'Pray for the people'],
       correctAnswer: 'Marry and have children'
     }
   ],
@@ -351,7 +351,7 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-5-q1',
       type: 'multiple-choice',
       question: 'What did Ezekiel see in his famous vision by the Kebar River?',
-      options: ['Four living creatures and wheels', 'A burning bush', 'Angels ascending and descending', 'A ladder to heaven'],
+      options: ['Four living creatures and wheels', 'A great storm and seraphim', 'The chariot of God surrounded by cherubim only', 'A valley of dry bones'],
       correctAnswer: 'Four living creatures and wheels'
     },
     {
@@ -365,28 +365,28 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-5-q3',
       type: 'multiple-choice',
       question: 'What were the four faces of the creatures?',
-      options: ['Man, lion, ox, and eagle', 'Lion, bear, leopard, and dragon', 'Angel, man, beast, and bird', 'Sun, moon, stars, and clouds'],
+      options: ['Man, lion, ox, and eagle', 'Man, lion, bear, and serpent', 'Lion, ox, eagle, and cherub', 'Man, eagle, ram, and goat'],
       correctAnswer: 'Man, lion, ox, and eagle'
     },
     {
       id: 'prophets-5-q4',
       type: 'multiple-choice',
       question: 'What did God make Ezekiel eat?',
-      options: ['A scroll', 'Bread', 'Honey', 'Locusts'],
+      options: ['A scroll', 'Bread baked over dung', 'A handful of grain', 'Bitter herbs'],
       correctAnswer: 'A scroll'
     },
     {
       id: 'prophets-5-q5',
       type: 'multiple-choice',
       question: 'What did the scroll taste like to Ezekiel?',
-      options: ['As sweet as honey', 'Bitter', 'Like bread', 'Like nothing'],
+      options: ['As sweet as honey', 'Bitter like gall', 'Like unleavened bread', 'Sweet at first, then bitter'],
       correctAnswer: 'As sweet as honey'
     },
     {
       id: 'prophets-5-q6',
       type: 'multiple-choice',
       question: 'What role did God assign to Ezekiel?',
-      options: ['A watchman for Israel', 'A king', 'A priest', 'A warrior'],
+      options: ['A watchman for Israel', 'A shepherd to the exiles', 'An intercessor for Jerusalem', 'A sign and portent to the nations'],
       correctAnswer: 'A watchman for Israel'
     },
     {
@@ -400,35 +400,35 @@ export const prophetsQuestions: Record<string, Question[]> = {
       id: 'prophets-5-q8',
       type: 'multiple-choice',
       question: 'What valley did Ezekiel prophesy to about dry bones?',
-      options: ['A valley of dry bones', 'The Valley of Achor', 'The Valley of Elah', 'The Jordan Valley'],
-      correctAnswer: 'A valley of dry bones'
+      options: ['A valley full of dry bones', 'The Valley of Achor', 'The Valley of Jehoshaphat', 'The Valley of Hinnom'],
+      correctAnswer: 'A valley full of dry bones'
     },
     {
       id: 'prophets-5-q9',
       type: 'multiple-choice',
       question: 'What happened when Ezekiel prophesied to the dry bones?',
-      options: ['They came to life', 'They turned to dust', 'They multiplied', 'Nothing happened'],
+      options: ['They came to life', 'Sinew and flesh covered them, then breath entered them', 'They immediately stood as a great army', 'They crumbled to ashes'],
       correctAnswer: 'They came to life'
     },
     {
       id: 'prophets-5-q10',
       type: 'multiple-choice',
       question: 'What did the vision of dry bones represent?',
-      options: ['The restoration of Israel', 'The resurrection', 'Death and decay', 'Judgment on nations'],
+      options: ['The restoration of Israel', 'The future bodily resurrection of the dead', 'God\'s judgment on Babylon', 'The return of exiles from Egypt'],
       correctAnswer: 'The restoration of Israel'
     },
     {
       id: 'prophets-5-q11',
       type: 'multiple-choice',
       question: 'What significant thing happened to Ezekiel\'s wife?',
-      options: ['She died suddenly', 'She was healed', 'She had a vision', 'She left him'],
+      options: ['She died suddenly', 'She was taken into captivity', 'She was struck with leprosy', 'She became unable to speak'],
       correctAnswer: 'She died suddenly'
     },
     {
       id: 'prophets-5-q12',
       type: 'multiple-choice',
       question: 'What was Ezekiel commanded not to do when his wife died?',
-      options: ['Mourn publicly', 'Bury her', 'Speak of it', 'Leave his house'],
+      options: ['Mourn publicly', 'Tear his garments or eat the bread of mourners', 'Anoint her body for burial', 'Speak to the elders of Israel'],
       correctAnswer: 'Mourn publicly'
     }
   ]
@@ -462,14 +462,14 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-1-q4',
       type: 'multiple-choice',
       question: 'Who anointed Saul as king?',
-      options: ['Samuel', 'Eli', 'Nathan', 'Zadok'],
+      options: ['Samuel', 'Eli', 'Ahijah', 'Zadok'],
       correctAnswer: 'Samuel'
     },
     {
       id: 'kings-1-q5',
       type: 'multiple-choice',
       question: 'What physical feature made Saul stand out?',
-      options: ['He was head and shoulders taller than others', 'He had red hair', 'He was very strong', 'He had a loud voice'],
+      options: ['He was head and shoulders taller than others', 'He had a striking appearance like a warrior', 'He was the most handsome man in Israel', 'He had extraordinary physical strength'],
       correctAnswer: 'He was head and shoulders taller than others'
     },
     {
@@ -483,42 +483,42 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-1-q7',
       type: 'multiple-choice',
       question: 'Which king did God command Saul to completely destroy?',
-      options: ['Agag of the Amalekites', 'Goliath', 'Pharaoh', 'Og of Bashan'],
+      options: ['Agag of the Amalekites', 'Nahash of the Ammonites', 'Achish of the Philistines', 'Hadadezer of Zobah'],
       correctAnswer: 'Agag of the Amalekites'
     },
     {
       id: 'kings-1-q8',
       type: 'multiple-choice',
       question: 'What did Saul keep that God commanded him to destroy?',
-      options: ['The best sheep and cattle', 'Gold and silver', 'Prisoners of war', 'Weapons'],
+      options: ['The best sheep and cattle', 'King Agag and the plunder of gold', 'The captured chariots and horses', 'The Amalekite women and children'],
       correctAnswer: 'The best sheep and cattle'
     },
     {
       id: 'kings-1-q9',
       type: 'multiple-choice',
       question: 'What did Samuel say was better than sacrifice?',
-      options: ['To obey', 'To pray', 'To give offerings', 'To fast'],
+      options: ['To obey', 'To worship wholeheartedly', 'To humble yourself', 'To bring burnt offerings'],
       correctAnswer: 'To obey'
     },
     {
       id: 'kings-1-q10',
       type: 'multiple-choice',
       question: 'What evil spirit troubled Saul?',
-      options: ['A tormenting spirit from the Lord', 'A demon', 'Satan himself', 'A spirit of fear'],
+      options: ['A tormenting spirit from the Lord', 'The spirit of Jezebel', 'A spirit of prophecy', 'The spirit of slumber'],
       correctAnswer: 'A tormenting spirit from the Lord'
     },
     {
       id: 'kings-1-q11',
       type: 'multiple-choice',
       question: 'Who played the harp to soothe Saul?',
-      options: ['David', 'Jonathan', 'Asaph', 'Solomon'],
+      options: ['David', 'Jonathan', 'Asaph', 'Heman the singer'],
       correctAnswer: 'David'
     },
     {
       id: 'kings-1-q12',
       type: 'multiple-choice',
       question: 'How did Saul die?',
-      options: ['He fell on his own sword', 'He was killed in battle', 'He died of illness', 'He was struck by lightning'],
+      options: ['He fell on his own sword', 'He was killed by a Philistine archer', 'An Amalekite struck him down', 'He was captured and executed'],
       correctAnswer: 'He fell on his own sword'
     }
   ],
@@ -541,21 +541,21 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-2-q3',
       type: 'multiple-choice',
       question: 'Which giant did David defeat?',
-      options: ['Goliath', 'Og', 'Anak', 'Rephaim'],
+      options: ['Goliath', 'Ishbi-Benob', 'Saph', 'Lahmi'],
       correctAnswer: 'Goliath'
     },
     {
       id: 'kings-2-q4',
       type: 'multiple-choice',
       question: 'How tall was Goliath?',
-      options: ['Over 9 feet', '7 feet', '8 feet', '10 feet'],
-      correctAnswer: 'Over 9 feet'
+      options: ['Over 9 feet (six cubits and a span)', 'Six cubits tall', 'Seven cubits tall', 'Over 8 feet'],
+      correctAnswer: 'Over 9 feet (six cubits and a span)'
     },
     {
       id: 'kings-2-q5',
       type: 'multiple-choice',
       question: 'What weapons did David use against Goliath?',
-      options: ['A sling and stones', 'A sword and shield', 'A spear', 'A bow and arrow'],
+      options: ['A sling and stones', 'Saul\'s sword and armor', 'A javelin he found', 'A bow taken from the Philistines'],
       correctAnswer: 'A sling and stones'
     },
     {
@@ -569,42 +569,42 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-2-q7',
       type: 'multiple-choice',
       question: 'Who was David\'s best friend, the son of Saul?',
-      options: ['Jonathan', 'Absalom', 'Solomon', 'Nathan'],
+      options: ['Jonathan', 'Ishbosheth', 'Abner', 'Mephibosheth'],
       correctAnswer: 'Jonathan'
     },
     {
       id: 'kings-2-q8',
       type: 'multiple-choice',
       question: 'What city did David capture and make his capital?',
-      options: ['Jerusalem', 'Hebron', 'Bethlehem', 'Jericho'],
+      options: ['Jerusalem', 'Hebron', 'Gibeah', 'Shiloh'],
       correctAnswer: 'Jerusalem'
     },
     {
       id: 'kings-2-q9',
       type: 'multiple-choice',
       question: 'What did David bring to Jerusalem with great celebration?',
-      options: ['The Ark of the Covenant', 'The Ten Commandments', 'Gold from battles', 'A new altar'],
+      options: ['The Ark of the Covenant', 'The bronze altar from Gibeon', 'The tabernacle from Shiloh', 'The sacred lots of the priests'],
       correctAnswer: 'The Ark of the Covenant'
     },
     {
       id: 'kings-2-q10',
       type: 'multiple-choice',
       question: 'With whose wife did David commit adultery?',
-      options: ['Bathsheba', 'Abigail', 'Michal', 'Tamar'],
-      correctAnswer: 'Bathsheba'
+      options: ['Bathsheba, wife of Uriah', 'Abigail, wife of Nabal', 'Michal, daughter of Saul', 'Ahinoam of Jezreel'],
+      correctAnswer: 'Bathsheba, wife of Uriah'
     },
     {
       id: 'kings-2-q11',
       type: 'multiple-choice',
       question: 'Who was Bathsheba\'s husband that David had killed?',
-      options: ['Uriah', 'Joab', 'Ahithophel', 'Benaiah'],
-      correctAnswer: 'Uriah'
+      options: ['Uriah the Hittite', 'Joab the commander', 'Ahithophel the counselor', 'Elhanan of Bethlehem'],
+      correctAnswer: 'Uriah the Hittite'
     },
     {
       id: 'kings-2-q12',
       type: 'multiple-choice',
       question: 'Which prophet confronted David about his sin?',
-      options: ['Nathan', 'Samuel', 'Gad', 'Isaiah'],
+      options: ['Nathan', 'Gad', 'Ahijah', 'Zadok the priest'],
       correctAnswer: 'Nathan'
     }
   ],
@@ -613,7 +613,7 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-3-q1',
       type: 'multiple-choice',
       question: 'Who was David\'s son that became the third king of Israel?',
-      options: ['Solomon', 'Absalom', 'Adonijah', 'Nathan'],
+      options: ['Solomon', 'Absalom', 'Adonijah', 'Amnon'],
       correctAnswer: 'Solomon'
     },
     {
@@ -634,7 +634,7 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-3-q4',
       type: 'multiple-choice',
       question: 'What famous building did Solomon construct?',
-      options: ['The Temple in Jerusalem', 'The Tower of Babel', 'The Great Pyramid', 'The Palace of David'],
+      options: ['The Temple in Jerusalem', 'The Tabernacle of Moses', 'His palace in the City of David', 'The House of the Forest of Lebanon'],
       correctAnswer: 'The Temple in Jerusalem'
     },
     {
@@ -648,28 +648,28 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-3-q6',
       type: 'multiple-choice',
       question: 'Which queen came to test Solomon\'s wisdom?',
-      options: ['Queen of Sheba', 'Queen Esther', 'Queen Jezebel', 'Queen Vashti'],
+      options: ['Queen of Sheba', 'Queen of Egypt', 'Queen of Tyre', 'Queen Nefertari'],
       correctAnswer: 'Queen of Sheba'
     },
     {
       id: 'kings-3-q7',
       type: 'multiple-choice',
       question: 'How many proverbs did Solomon write?',
-      options: ['3,000', '1,000', '500', '10,000'],
+      options: ['3,000', '1,005', '7,000', '10,000'],
       correctAnswer: '3,000'
     },
     {
       id: 'kings-3-q8',
       type: 'multiple-choice',
       question: 'What wise judgment did Solomon make about two women and a baby?',
-      options: ['He proposed to cut the baby in half', 'He gave them both babies', 'He sent them away', 'He asked witnesses'],
+      options: ['He proposed to cut the baby in half', 'He ordered the elders to decide the matter', 'He gave the baby to the older woman', 'He had the women take an oath before God'],
       correctAnswer: 'He proposed to cut the baby in half'
     },
     {
       id: 'kings-3-q9',
       type: 'multiple-choice',
       question: 'How many wives did Solomon have?',
-      options: ['700', '100', '300', '1,000'],
+      options: ['700', '300', '1,000', '500'],
       correctAnswer: '700'
     },
     {
@@ -683,14 +683,14 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-3-q11',
       type: 'multiple-choice',
       question: 'Which book of wisdom is attributed to Solomon?',
-      options: ['Proverbs, Ecclesiastes, and Song of Solomon', 'Psalms and Proverbs', 'Job and Ecclesiastes', 'Wisdom and Sirach'],
+      options: ['Proverbs, Ecclesiastes, and Song of Solomon', 'Psalms, Proverbs, and Ecclesiastes', 'Job, Proverbs, and Song of Solomon', 'Ecclesiastes, Song of Solomon, and Lamentations'],
       correctAnswer: 'Proverbs, Ecclesiastes, and Song of Solomon'
     },
     {
       id: 'kings-3-q12',
       type: 'multiple-choice',
       question: 'What happened to Solomon\'s kingdom after his death?',
-      options: ['It was divided into two kingdoms', 'It was conquered by enemies', 'It became even greater', 'It was given to Egypt'],
+      options: ['It was divided into two kingdoms', 'It fell to the Assyrians within a generation', 'His son Rehoboam lost it to Egypt', 'Jeroboam united it under new leadership'],
       correctAnswer: 'It was divided into two kingdoms'
     }
   ],
@@ -699,7 +699,7 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-4-q1',
       type: 'multiple-choice',
       question: 'Which king of Judah trusted God when surrounded by enemies?',
-      options: ['Hezekiah', 'Ahaz', 'Manasseh', 'Amon'],
+      options: ['Hezekiah', 'Ahaz', 'Josiah', 'Jehoshaphat'],
       correctAnswer: 'Hezekiah'
     },
     {
@@ -713,21 +713,21 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-4-q3',
       type: 'multiple-choice',
       question: 'Which Assyrian king threatened Jerusalem?',
-      options: ['Sennacherib', 'Nebuchadnezzar', 'Cyrus', 'Darius'],
+      options: ['Sennacherib', 'Tiglath-Pileser', 'Shalmaneser', 'Esarhaddon'],
       correctAnswer: 'Sennacherib'
     },
     {
       id: 'kings-4-q4',
       type: 'multiple-choice',
       question: 'How many Assyrian soldiers did God\'s angel kill in one night?',
-      options: ['185,000', '100,000', '50,000', '1,000,000'],
+      options: ['185,000', '150,000', '200,000', '120,000'],
       correctAnswer: '185,000'
     },
     {
       id: 'kings-4-q5',
       type: 'multiple-choice',
       question: 'What illness did Hezekiah have that God healed?',
-      options: ['A terminal illness (boil)', 'Leprosy', 'Blindness', 'Paralysis'],
+      options: ['A terminal illness (boil)', 'A wasting fever like David\'s son', 'Leprosy like Naaman', 'A stroke that left him bedridden'],
       correctAnswer: 'A terminal illness (boil)'
     },
     {
@@ -741,42 +741,42 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-4-q7',
       type: 'multiple-choice',
       question: 'What sign did God give Hezekiah as proof of healing?',
-      options: ['The sun\'s shadow went backward', 'A rainbow appeared', 'It rained in the desert', 'An earthquake occurred'],
+      options: ['The sun\'s shadow went backward', 'A star appeared in the daytime sky', 'The temple lampstand stayed lit for 15 days', 'The shadow moved forward ten steps'],
       correctAnswer: 'The sun\'s shadow went backward'
     },
     {
       id: 'kings-4-q8',
       type: 'multiple-choice',
       question: 'What religious reform did Hezekiah carry out?',
-      options: ['He destroyed idols and high places', 'He built new temples', 'He wrote new laws', 'He appointed new priests'],
+      options: ['He destroyed idols and high places', 'He rebuilt the altar that Ahaz had moved', 'He called a national fast and day of prayer', 'He reinstated the Levites as gatekeepers'],
       correctAnswer: 'He destroyed idols and high places'
     },
     {
       id: 'kings-4-q9',
       type: 'multiple-choice',
       question: 'What did Hezekiah show to Babylon\'s messengers that he shouldn\'t have?',
-      options: ['All his treasures', 'His military plans', 'Secret passages', 'The Ark of the Covenant'],
+      options: ['All his treasures', 'The defensive walls and water tunnel', 'His military commanders and battle plans', 'The temple vessels and the ark'],
       correctAnswer: 'All his treasures'
     },
     {
       id: 'kings-4-q10',
       type: 'multiple-choice',
       question: 'Which prophet advised Hezekiah?',
-      options: ['Isaiah', 'Jeremiah', 'Ezekiel', 'Daniel'],
+      options: ['Isaiah', 'Micah', 'Nahum', 'Zephaniah'],
       correctAnswer: 'Isaiah'
     },
     {
       id: 'kings-4-q11',
       type: 'multiple-choice',
       question: 'What water project did Hezekiah complete in Jerusalem?',
-      options: ['A tunnel to bring water into the city', 'A dam to hold water', 'A well in the palace', 'An aqueduct from the Jordan'],
+      options: ['A tunnel to bring water into the city', 'A reservoir outside the city walls', 'A channel from the Jordan River', 'A system of cisterns on the temple mount'],
       correctAnswer: 'A tunnel to bring water into the city'
     },
     {
       id: 'kings-4-q12',
       type: 'multiple-choice',
       question: 'How is Hezekiah remembered?',
-      options: ['As one of Judah\'s best kings who trusted God', 'As a warrior king', 'As a builder of cities', 'As a prophet king'],
+      options: ['As one of Judah\'s best kings who trusted God', 'As the king who built the second temple', 'As the longest-reigning king of Judah', 'As a king like Josiah who restored the Passover'],
       correctAnswer: 'As one of Judah\'s best kings who trusted God'
     }
   ],
@@ -792,7 +792,7 @@ export const kingsQuestions: Record<string, Question[]> = {
       id: 'kings-5-q2',
       type: 'multiple-choice',
       question: 'What was found during the repair of the Temple?',
-      options: ['The Book of the Law', 'Gold treasures', 'The Ark of the Covenant', 'Ancient weapons'],
+      options: ['The Book of the Law', 'A scroll of the Psalms of David', 'Vessels hidden from the Philistines', 'Silver from the days of Solomon'],
       correctAnswer: 'The Book of the Law'
     },
     {

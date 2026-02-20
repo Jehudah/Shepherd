@@ -73,9 +73,7 @@ export default function TimelineScreen() {
   const userProgress = useStore((state) => state.userProgress);
 
   const handleLessonPress = (lesson: TimelineLesson) => {
-    navigation.navigate('LessonPlayer', {
-      category: 'timeline',
-      subcategory: 'creation',
+    navigation.navigate('TimelineDrag', {
       lessonId: lesson.id,
     });
   };
@@ -109,7 +107,7 @@ export default function TimelineScreen() {
       >
         {/* Wooly's Welcome */}
         <Wooly
-          message="Let's walk through history together! These lessons will help you understand when and how God's plan unfolded. It's quite a journey!"
+          message="Put biblical events in chronological order! Tap two events to swap them until they're in the right sequence. Learn how God's plan unfolded through history!"
           mood="excited"
         />
 
@@ -178,11 +176,11 @@ export default function TimelineScreen() {
 
         {/* Info Card */}
         <View style={styles.infoCard}>
-          <Text style={styles.infoEmoji}>📖</Text>
+          <Text style={styles.infoEmoji}>🔄</Text>
           <View style={styles.infoContent}>
-            <Text style={styles.infoTitle}>Historical Journey</Text>
+            <Text style={styles.infoTitle}>Drag to Order Events</Text>
             <Text style={styles.infoText}>
-              These lessons follow the chronological order of events in Genesis. Complete them in sequence to understand how God's story unfolds!
+              Tap one event, then tap another to swap their positions. Put them in chronological order to see how God's story unfolds through history!
             </Text>
           </View>
         </View>
@@ -200,7 +198,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 12,
     paddingBottom: 16,
     backgroundColor: '#F59E0B',
   },

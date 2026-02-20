@@ -12,102 +12,31 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
+import { namesStudyArticles } from '../../data/studyContent';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
-
-interface StudyArticle {
-  id: string;
-  title: string;
-  subtitle: string;
-  introduction: string;
-  readTime: number;
-}
-
-const namesArticles: StudyArticle[] = [
-  {
-    id: 'moses',
-    title: 'Moses: The Deliverer',
-    subtitle: 'From prince to prophet',
-    introduction: 'Explore the life and leadership of Moses, from his miraculous preservation as a baby to leading Israel out of Egypt and receiving the Ten Commandments.',
-    readTime: 8,
-  },
-  {
-    id: 'david',
-    title: 'David: Man After God\'s Heart',
-    subtitle: 'From shepherd to king',
-    introduction: 'Discover why David was called a man after God\'s own heart, from his victory over Goliath to his reign as Israel\'s greatest king.',
-    readTime: 10,
-  },
-  {
-    id: 'abraham',
-    title: 'Abraham: Father of Faith',
-    subtitle: 'Journey of trust and promise',
-    introduction: 'Learn about Abraham\'s incredible journey of faith, from leaving Ur to becoming the father of many nations through God\'s promise.',
-    readTime: 9,
-  },
-  {
-    id: 'peter',
-    title: 'Peter: The Rock',
-    subtitle: 'From fisherman to foundation',
-    introduction: 'Follow Peter\'s transformation from impulsive fisherman to bold apostle, leading the early church with courage and conviction.',
-    readTime: 9,
-  },
-  {
-    id: 'paul',
-    title: 'Paul: Apostle to the Gentiles',
-    subtitle: 'From persecutor to preacher',
-    introduction: 'Witness Paul\'s dramatic conversion and his tireless mission to spread the gospel throughout the Roman world.',
-    readTime: 11,
-  },
-  {
-    id: 'joseph',
-    title: 'Joseph: Dreamer and Deliverer',
-    subtitle: 'From pit to palace',
-    introduction: 'See how God used Joseph\'s trials—betrayal, slavery, imprisonment—to position him to save nations.',
-    readTime: 10,
-  },
-  {
-    id: 'esther',
-    title: 'Esther: For Such a Time',
-    subtitle: 'Courage in the palace',
-    introduction: 'Discover how Queen Esther risked her life to save her people, demonstrating that God places us exactly where we need to be.',
-    readTime: 8,
-  },
-  {
-    id: 'daniel',
-    title: 'Daniel: Faithful in Exile',
-    subtitle: 'Integrity in Babylon',
-    introduction: 'Learn from Daniel\'s unwavering faith in a foreign land, from the lion\'s den to interpreting dreams for kings.',
-    readTime: 9,
-  },
-  {
-    id: 'ruth',
-    title: 'Ruth: Loyal Love',
-    subtitle: 'From Moab to Messiah\'s lineage',
-    introduction: 'Experience Ruth\'s beautiful story of loyalty, redemption, and how a foreign widow became part of Jesus\' family tree.',
-    readTime: 7,
-  },
-  {
-    id: 'elijah',
-    title: 'Elijah: Prophet of Fire',
-    subtitle: 'Standing against idolatry',
-    introduction: 'Walk with Elijah through miracles, confrontation with false prophets, and his dramatic departure in a chariot of fire.',
-    readTime: 10,
-  },
-];
 
 export default function StudyNamesScreen() {
   const navigation = useNavigation<NavigationProp>();
 
-  const handleArticlePress = (article: StudyArticle) => {
+  const handleArticlePress = (articleId: string) => {
     navigation.navigate('StudyArticle', {
       category: 'names',
-      articleId: article.id,
+      articleId: articleId,
     });
   };
 
   const handleBackPress = () => {
     navigation.goBack();
+  };
+
+  // Calculate estimated read time based on content length
+  const getReadTime = (article: typeof namesStudyArticles[0]): number => {
+    const totalWords = article.sections.reduce((total, section) => {
+      const sectionWords = section.paragraphs.join(' ').split(' ').length;
+      return total + sectionWords;
+    }, 0);
+    return Math.max(5, Math.ceil(totalWords / 200)); // ~200 words per minute
   };
 
   return (
@@ -138,11 +67,11 @@ export default function StudyNamesScreen() {
 
         {/* Articles List */}
         <View style={styles.articlesList}>
-          {namesArticles.map((article, index) => (
+          {namesStudyArticles.map((article, index) => (
             <TouchableOpacity
               key={article.id}
               style={styles.articleCard}
-              onPress={() => handleArticlePress(article)}
+              onPress={() => handleArticlePress(article.id)}
               activeOpacity={0.7}
             >
               <View style={styles.articleIcon}>
@@ -156,7 +85,7 @@ export default function StudyNamesScreen() {
                 </Text>
                 <View style={styles.articleMeta}>
                   <Icon name="clock" size={14} color="#6B7280" />
-                  <Text style={styles.metaText}>{article.readTime} min read</Text>
+                  <Text style={styles.metaText}>{getReadTime(article)} min read</Text>
                 </View>
               </View>
               <Icon name="chevron-right" size={20} color="#9CA3AF" />
@@ -164,13 +93,15 @@ export default function StudyNamesScreen() {
           ))}
         </View>
 
-        {/* Coming Soon */}
-        <View style={styles.comingSoonCard}>
-          <Text style={styles.comingSoonEmoji}>🐑</Text>
-          <View style={styles.comingSoonContent}>
-            <Text style={styles.comingSoonTitle}>More Coming Soon!</Text>
-            <Text style={styles.comingSoonText}>
-              We're working on adding more in-depth study articles for all the biblical figures featured in the Learn section. Check back regularly for new content!
+        {/* Stats */}
+        <View style={styles.statsCard}>
+          <Text style={styles.statsEmoji}>📚</Text>
+          <View style={styles.statsContent}>
+            <Text style={styles.statsTitle}>
+              {namesStudyArticles.length} In-Depth Studies Available
+            </Text>
+            <Text style={styles.statsText}>
+              Explore the lives of prophets, kings, patriarchs, apostles, and faithful women from Scripture.
             </Text>
           </View>
         </View>
@@ -185,17 +116,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#E8E3FF', // Light lilac
   },
   header: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
-    paddingBottom: 20,
+    paddingTop: 12,
+    paddingBottom: 16,
     backgroundColor: '#3B82F6',
   },
   backButton: {
     padding: 8,
-    marginBottom: 12,
-    alignSelf: 'flex-start',
+    marginRight: 12,
   },
   headerContent: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 16,
@@ -276,31 +209,31 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#6B7280',
   },
-  comingSoonCard: {
+  statsCard: {
     flexDirection: 'row',
-    backgroundColor: '#FEF3C7',
+    backgroundColor: '#DBEAFE',
     borderRadius: 16,
     padding: 16,
     marginTop: 24,
     borderWidth: 2,
-    borderColor: '#FCD34D',
+    borderColor: '#3B82F6',
   },
-  comingSoonEmoji: {
+  statsEmoji: {
     fontSize: 40,
     marginRight: 12,
   },
-  comingSoonContent: {
+  statsContent: {
     flex: 1,
   },
-  comingSoonTitle: {
+  statsTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#78350F',
+    color: '#1E40AF',
     marginBottom: 6,
   },
-  comingSoonText: {
+  statsText: {
     fontSize: 14,
-    color: '#92400E',
+    color: '#1E3A8A',
     lineHeight: 20,
   },
 });

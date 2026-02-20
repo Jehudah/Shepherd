@@ -90,18 +90,7 @@ export default function Wooly({ message, mood = 'happy', size = 'medium', style 
   };
 
   const getBubbleColor = () => {
-    switch (mood) {
-      case 'excited':
-        return '#FEF3C7';
-      case 'celebrating':
-        return '#DBEAFE';
-      case 'encouraging':
-        return '#D1FAE5';
-      case 'thinking':
-        return '#EDE9FE';
-      default:
-        return '#FFFFFF';
-    }
+    return '#FFFFFF';
   };
 
   // Animated transformations

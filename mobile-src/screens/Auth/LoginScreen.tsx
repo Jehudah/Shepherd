@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import {
   View,
   Text,
@@ -6,12 +6,21 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
+  TextInput,
+  Image,
+  ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Feather } from '@expo/vector-icons';
 import { AuthService, ProgressService } from '../../services/firebase';
 import { useStore } from '../../store/useStore';
-import { theme } from '../../theme';
-import { Input, Button, useToast } from '../../components/ui';
+import { useToast } from '../../components/ui';
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const jesusImage = require('../../assets/characters/Jesus.png') as number;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const woolyImage = require('../../assets/characters/Wooly.png') as number;
 
 interface Props {
   navigation: any;
@@ -23,66 +32,51 @@ export default function LoginScreen({ navigation }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const passwordRef = useRef<TextInput>(null);
 
   const setUser = useStore((state) => state.setUser);
   const setUserProgress = useStore((state) => state.setUserProgress);
   const { show } = useToast();
 
-  const validateEmail = (text: string) => {
+  const handleEmailChange = useCallback((text: string) => {
     setEmail(text);
-    if (text && !/\S+@\S+\.\S+/.test(text)) {
-      setEmailError('Please enter a valid email');
-    } else {
-      setEmailError('');
-    }
-  };
+    if (emailError) setEmailError('');
+  }, [emailError]);
 
-  const validatePassword = (text: string) => {
+  const handlePasswordChange = useCallback((text: string) => {
     setPassword(text);
-    if (text && text.length < 6) {
-      setPasswordError('Password must be at least 6 characters');
-    } else {
-      setPasswordError('');
-    }
-  };
+    if (passwordError) setPasswordError('');
+  }, [passwordError]);
 
-  const handleLogin = async () => {
-    // Clear previous errors
+  const handleLogin = useCallback(async () => {
+    let valid = true;
     setEmailError('');
     setPasswordError('');
 
-    // Validate
-    if (!email) {
+    if (!email.trim()) {
       setEmailError('Email is required');
-      return;
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      setEmailError('Please enter a valid email');
+      valid = false;
     }
     if (!password) {
       setPasswordError('Password is required');
-      return;
+      valid = false;
     }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setEmailError('Please enter a valid email');
-      return;
-    }
+    if (!valid) return;
 
     setIsLoading(true);
     try {
-      const user = await AuthService.login(email, password);
+      const user = await AuthService.login(email.trim(), password);
       setUser(user);
 
-      // Load user progress
       const progress = await ProgressService.getUserProgress(user.uid);
       if (progress) {
         setUserProgress(progress);
       }
-
-      show({
-        type: 'success',
-        title: 'Welcome back!',
-        message: 'Successfully logged in',
-      });
-
-      // Navigation will automatically redirect to Main stack
     } catch (error: any) {
       show({
         type: 'error',
@@ -92,102 +86,137 @@ export default function LoginScreen({ navigation }: Props) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [email, password, setUser, setUserProgress, show]);
 
-  const handleForgotPassword = async () => {
-    if (!email) {
-      show({
-        type: 'warning',
-        title: 'Email Required',
-        message: 'Please enter your email address',
-      });
+  const handleForgotPassword = useCallback(async () => {
+    if (!email.trim()) {
+      show({ type: 'warning', title: 'Email Required', message: 'Please enter your email address first' });
       return;
     }
-
     try {
-      await AuthService.resetPassword(email);
-      show({
-        type: 'success',
-        title: 'Email Sent',
-        message: 'Check your inbox for password reset instructions',
-      });
+      await AuthService.resetPassword(email.trim());
+      show({ type: 'success', title: 'Email Sent', message: 'Check your inbox for password reset instructions' });
     } catch (error: any) {
-      show({
-        type: 'error',
-        title: 'Error',
-        message: error.message,
-      });
+      show({ type: 'error', title: 'Error', message: error.message });
     }
-  };
+  }, [email, show]);
 
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={styles.keyboardView}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 24}
       >
-        <View style={styles.content}>
-          {/* Logo/Header */}
-          <View style={styles.header}>
-            <Text style={styles.logo}>🐑</Text>
-            <Text style={styles.title}>Shepherd</Text>
-            <Text style={styles.subtitle}>Bible Learning App</Text>
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+          bounces={false}
+        >
+          {/* Characters */}
+          <View style={styles.characters}>
+            <Image source={jesusImage} style={styles.jesusImage} resizeMode="contain" />
+            <Image source={woolyImage} style={styles.woolyImage} resizeMode="contain" />
           </View>
 
-          {/* Input Fields */}
+          {/* Title */}
+          <View style={styles.header}>
+            <Text style={styles.title}>Shepherd</Text>
+            <Text style={styles.subtitle}>Learn the Bible step by step</Text>
+          </View>
+
+          {/* Form */}
           <View style={styles.form}>
-            <Input
-              label="Email"
-              placeholder="Enter your email"
-              value={email}
-              onChangeText={validateEmail}
-              leftIcon="mail"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              error={emailError}
-              success={email.length > 0 && !emailError}
-              showClearButton
-            />
+            {/* Email */}
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Email</Text>
+              <View style={[styles.inputContainer, emailError ? styles.inputContainerError : null]}>
+                <Feather name="mail" size={18} color={emailError ? '#EF4444' : '#9CA3AF'} style={styles.inputIcon} />
+                <TextInput
+                  style={styles.textInput}
+                  placeholder="Enter your email"
+                  placeholderTextColor="#9CA3AF"
+                  value={email}
+                  onChangeText={handleEmailChange}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  autoComplete="email"
+                  returnKeyType="next"
+                  onSubmitEditing={() => passwordRef.current?.focus()}
+                  editable={!isLoading}
+                  textContentType="emailAddress"
+                />
+              </View>
+              {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
+            </View>
 
-            <Input
-              label="Password"
-              placeholder="Enter your password"
-              value={password}
-              onChangeText={validatePassword}
-              leftIcon="lock"
-              secureTextEntry
-              error={passwordError}
-              success={password.length > 0 && !passwordError}
-            />
+            {/* Password */}
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Password</Text>
+              <View style={[styles.inputContainer, passwordError ? styles.inputContainerError : null]}>
+                <Feather name="lock" size={18} color={passwordError ? '#EF4444' : '#9CA3AF'} style={styles.inputIcon} />
+                <TextInput
+                  ref={passwordRef}
+                  style={styles.textInput}
+                  placeholder="Enter your password"
+                  placeholderTextColor="#9CA3AF"
+                  value={password}
+                  onChangeText={handlePasswordChange}
+                  secureTextEntry={!showPassword}
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  autoComplete="password"
+                  returnKeyType="done"
+                  onSubmitEditing={handleLogin}
+                  editable={!isLoading}
+                  textContentType="password"
+                />
+                <TouchableOpacity
+                  onPress={() => setShowPassword(v => !v)}
+                  style={styles.eyeButton}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                >
+                  <Feather name={showPassword ? 'eye-off' : 'eye'} size={18} color="#9CA3AF" />
+                </TouchableOpacity>
+              </View>
+              {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
+            </View>
 
-            <TouchableOpacity onPress={handleForgotPassword} disabled={isLoading}>
+            <TouchableOpacity onPress={handleForgotPassword} disabled={isLoading} style={styles.forgotContainer}>
               <Text style={styles.forgotPassword}>Forgot Password?</Text>
             </TouchableOpacity>
 
-            {/* Login Button */}
-            <Button
-              variant="primary"
-              size="lg"
+            <TouchableOpacity
+              style={[styles.loginButton, isLoading && styles.loginButtonDisabled]}
               onPress={handleLogin}
-              loading={isLoading}
-              disabled={isLoading || !!emailError || !!passwordError}
-              style={styles.loginButton}
+              disabled={isLoading}
+              activeOpacity={0.85}
             >
-              Log In
-            </Button>
+              {isLoading ? (
+                <ActivityIndicator color="#FFFFFF" size="small" />
+              ) : (
+                <Text style={styles.loginButtonText}>Log In</Text>
+              )}
+            </TouchableOpacity>
 
-            {/* Register Link */}
-            <View style={styles.registerContainer}>
-              <Text style={styles.registerText}>Don't have an account? </Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('Register')}
-                disabled={isLoading}
-              >
-                <Text style={styles.registerLink}>Sign Up</Text>
-              </TouchableOpacity>
+            <View style={styles.divider}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>New here?</Text>
+              <View style={styles.dividerLine} />
             </View>
+
+            <TouchableOpacity
+              style={styles.registerButton}
+              onPress={() => navigation.navigate('Register')}
+              disabled={isLoading}
+              activeOpacity={0.85}
+            >
+              <Text style={styles.registerButtonText}>Create an Account</Text>
+            </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -196,60 +225,152 @@ export default function LoginScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.surface,
+    backgroundColor: '#F8F9FF',
   },
   keyboardView: {
     flex: 1,
   },
-  content: {
-    flex: 1,
+  scrollContent: {
+    flexGrow: 1,
+    paddingHorizontal: 24,
+    paddingBottom: 32,
+  },
+  characters: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    paddingHorizontal: theme.spacing[6],
+    alignItems: 'flex-end',
+    marginTop: 24,
+    marginBottom: 8,
+  },
+  jesusImage: {
+    width: 110,
+    height: 160,
+    zIndex: 2,
+    elevation: 2,
+  },
+  woolyImage: {
+    width: 90,
+    height: 130,
+    marginLeft: -16,
+    zIndex: 1,
+    elevation: 1,
   },
   header: {
     alignItems: 'center',
-    marginBottom: theme.spacing[12],
-  },
-  logo: {
-    fontSize: 72,
-    marginBottom: theme.spacing[4],
+    marginBottom: 32,
   },
   title: {
-    fontSize: theme.typography.fontSize['4xl'],
-    fontWeight: theme.typography.fontWeight.bold,
-    color: theme.colors.text.primary,
-    marginBottom: theme.spacing[2],
+    fontSize: 32,
+    fontWeight: '800',
+    color: '#1F2937',
+    letterSpacing: -0.5,
   },
   subtitle: {
-    fontSize: theme.typography.fontSize.md,
-    color: theme.colors.text.secondary,
+    fontSize: 15,
+    color: '#6B7280',
+    marginTop: 4,
   },
   form: {
     width: '100%',
   },
+  inputGroup: {
+    marginBottom: 16,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#374151',
+    marginBottom: 6,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: '#E5E7EB',
+    paddingHorizontal: 12,
+    height: 50,
+  },
+  inputContainerError: {
+    borderColor: '#EF4444',
+  },
+  inputIcon: {
+    marginRight: 10,
+  },
+  textInput: {
+    flex: 1,
+    fontSize: 15,
+    color: '#1F2937',
+    paddingVertical: 0,
+  },
+  eyeButton: {
+    padding: 4,
+    marginLeft: 8,
+  },
+  errorText: {
+    fontSize: 12,
+    color: '#EF4444',
+    marginTop: 4,
+    marginLeft: 2,
+  },
+  forgotContainer: {
+    alignSelf: 'flex-end',
+    marginBottom: 20,
+    marginTop: -4,
+  },
   forgotPassword: {
-    color: theme.colors.primary[500],
-    textAlign: 'right',
-    marginBottom: theme.spacing[6],
-    fontSize: theme.typography.fontSize.sm,
-    marginTop: -theme.spacing[2],
+    color: '#3B82F6',
+    fontSize: 14,
+    fontWeight: '500',
   },
   loginButton: {
-    marginTop: theme.spacing[2],
-  },
-  registerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    backgroundColor: '#3B82F6',
+    borderRadius: 12,
+    height: 50,
     alignItems: 'center',
-    marginTop: theme.spacing[4],
+    justifyContent: 'center',
+    shadowColor: '#3B82F6',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 6,
   },
-  registerText: {
-    color: theme.colors.text.secondary,
-    fontSize: theme.typography.fontSize.sm,
+  loginButtonDisabled: {
+    opacity: 0.65,
   },
-  registerLink: {
-    color: theme.colors.primary[500],
-    fontSize: theme.typography.fontSize.sm,
-    fontWeight: theme.typography.fontWeight.semibold,
+  loginButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#E5E7EB',
+  },
+  dividerText: {
+    fontSize: 13,
+    color: '#9CA3AF',
+    marginHorizontal: 12,
+  },
+  registerButton: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1.5,
+    borderColor: '#E5E7EB',
+  },
+  registerButtonText: {
+    color: '#374151',
+    fontSize: 15,
+    fontWeight: '600',
   },
 });

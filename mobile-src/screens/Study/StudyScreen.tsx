@@ -31,7 +31,7 @@ const studyCategories: StudyCategory[] = [
     description: 'In-depth studies of biblical characters',
     icon: 'users',
     color: '#3B82F6',
-    articlesCount: 10,
+    articlesCount: 11,
     available: true,
   },
   {
@@ -40,7 +40,7 @@ const studyCategories: StudyCategory[] = [
     description: 'Explore key theological concepts',
     icon: 'book-open',
     color: '#8B5CF6',
-    articlesCount: 10,
+    articlesCount: 11,
     available: true,
   },
   {
@@ -49,7 +49,7 @@ const studyCategories: StudyCategory[] = [
     description: 'Comprehensive guides to each book',
     icon: 'bookmark',
     color: '#10B981',
-    articlesCount: 10,
+    articlesCount: 11,
     available: true,
   },
   {
@@ -58,7 +58,7 @@ const studyCategories: StudyCategory[] = [
     description: 'Understanding the biblical world',
     icon: 'globe',
     color: '#F59E0B',
-    articlesCount: 10,
+    articlesCount: 8,
     available: true,
   },
   {
@@ -93,6 +93,14 @@ export default function StudyScreen() {
       navigation.navigate('StudyNames');
     } else if (category.id === 'themes') {
       navigation.navigate('StudyThemes');
+    } else if (category.id === 'books') {
+      navigation.navigate('StudyBooks');
+    } else if (category.id === 'history') {
+      navigation.navigate('StudyHistory');
+    } else if (category.id === 'prophecy') {
+      navigation.navigate('StudyProphecy');
+    } else if (category.id === 'doctrine') {
+      navigation.navigate('StudyDoctrine');
     }
   };
 

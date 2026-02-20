@@ -85,6 +85,18 @@ export type RootStackParamList = {
     subcategory?: string;
     lessonId: string;
   };
+  TimelineDrag: {
+    lessonId: string;
+  };
+  VerseLessons: {
+    verseReference: string;
+    category: string;
+  };
+  ProgressiveVerse: {
+    verseReference: string;
+    category: string;
+    lessonLevel: number;
+  };
   NamesCategories: undefined;
   NamesLessons: { subcategory: string };
   ThemesSelection: undefined;
@@ -95,6 +107,10 @@ export type RootStackParamList = {
   BibleBooks: undefined;
   StudyNames: undefined;
   StudyThemes: undefined;
+  StudyBooks: undefined;
+  StudyHistory: undefined;
+  StudyProphecy: undefined;
+  StudyDoctrine: undefined;
   StudyArticle: {
     category: string;
     articleId: string;
