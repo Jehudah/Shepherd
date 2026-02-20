@@ -13,6 +13,7 @@ import { Feather as Icon } from '@expo/vector-icons';
 import Wooly from '../../components/Wooly';
 import { useStore } from '../../store/useStore';
 import { RootStackParamList } from '../../types';
+import { hasBookQuestions } from '../../data/bookQuestions';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -26,55 +27,37 @@ interface Book {
 }
 
 const books: Book[] = [
-  {
-    id: 'genesis',
-    name: 'Genesis',
-    testament: 'Old',
-    author: 'Moses',
-    lessonCount: 5,
-    description: 'In the beginning - Creation, Fall, and Patriarchs',
-  },
-  {
-    id: 'exodus',
-    name: 'Exodus',
-    testament: 'Old',
-    author: 'Moses',
-    lessonCount: 5,
-    description: 'Deliverance from Egypt and the Law',
-  },
-  {
-    id: 'matthew',
-    name: 'Matthew',
-    testament: 'New',
-    author: 'Matthew',
-    lessonCount: 5,
-    description: 'Jesus the Messiah and King',
-  },
-  {
-    id: 'john',
-    name: 'John',
-    testament: 'New',
-    author: 'John',
-    lessonCount: 5,
-    description: 'Jesus the Son of God',
-  },
-  {
-    id: 'romans',
-    name: 'Romans',
-    testament: 'New',
-    author: 'Paul',
-    lessonCount: 5,
-    description: 'The Gospel and righteousness by faith',
-  },
+  // Old Testament
+  { id: 'genesis', name: 'Genesis', testament: 'Old', author: 'Moses', lessonCount: 6, description: 'In the beginning — Creation, Fall, and the Patriarchs' },
+  { id: 'exodus', name: 'Exodus', testament: 'Old', author: 'Moses', lessonCount: 6, description: 'Deliverance from Egypt and the Ten Commandments' },
+  { id: 'job', name: 'Job', testament: 'Old', author: 'Unknown', lessonCount: 6, description: 'Suffering, faith, and the greatness of God' },
+  { id: 'psalms', name: 'Psalms', testament: 'Old', author: 'David & others', lessonCount: 6, description: 'Songs of praise, lament, and trust in God' },
+  { id: 'proverbs', name: 'Proverbs', testament: 'Old', author: 'Solomon', lessonCount: 6, description: 'Practical wisdom for everyday life' },
+  { id: 'isaiah', name: 'Isaiah', testament: 'Old', author: 'Isaiah', lessonCount: 6, description: 'Messianic prophecies and God\'s salvation' },
+  { id: 'jonah', name: 'Jonah', testament: 'Old', author: 'Jonah', lessonCount: 6, description: "God's mercy extends to all nations" },
+  { id: 'daniel', name: 'Daniel', testament: 'Old', author: 'Daniel', lessonCount: 6, description: 'Faithfulness in exile and prophetic visions' },
+  // New Testament
+  { id: 'matthew', name: 'Matthew', testament: 'New', author: 'Matthew', lessonCount: 4, description: 'Jesus the Messiah and King of Israel' },
+  { id: 'mark', name: 'Mark', testament: 'New', author: 'John Mark', lessonCount: 6, description: 'The servant King — action-packed ministry of Jesus' },
+  { id: 'luke', name: 'Luke', testament: 'New', author: 'Luke', lessonCount: 6, description: 'Jesus the Savior of all people' },
+  { id: 'john', name: 'John', testament: 'New', author: 'John', lessonCount: 6, description: 'Jesus the Son of God — believe and have life' },
+  { id: 'acts', name: 'Acts', testament: 'New', author: 'Luke', lessonCount: 6, description: 'The Holy Spirit and the birth of the church' },
+  { id: '1corinthians', name: '1 Corinthians', testament: 'New', author: 'Paul', lessonCount: 6, description: 'Love, unity, and gifts in the church' },
+  { id: 'galatians', name: 'Galatians', testament: 'New', author: 'Paul', lessonCount: 6, description: 'Freedom in Christ — saved by faith alone' },
+  { id: 'ephesians', name: 'Ephesians', testament: 'New', author: 'Paul', lessonCount: 6, description: 'Riches in Christ and the armor of God' },
+  { id: 'philippians', name: 'Philippians', testament: 'New', author: 'Paul', lessonCount: 6, description: 'Joy in Christ in every circumstance' },
+  { id: 'romans', name: 'Romans', testament: 'New', author: 'Paul', lessonCount: 6, description: 'The Gospel and righteousness by faith' },
+  { id: 'hebrews', name: 'Hebrews', testament: 'New', author: 'Unknown', lessonCount: 6, description: 'Jesus our Great High Priest and the Hall of Faith' },
+  { id: 'revelation', name: 'Revelation', testament: 'New', author: 'John', lessonCount: 6, description: 'The victory of Christ and the end of all things' },
 ];
 
 export default function BibleBooksScreen() {
   const navigation = useNavigation<NavigationProp>();
-  const userProgress = useStore((state) => state.userProgress);
+  useStore((state) => state.userProgress);
   const [selectedTestament, setSelectedTestament] = React.useState<'All' | 'Old' | 'New'>('All');
 
   const handleBookPress = (book: Book) => {
-    // Navigate to book study screen (to be implemented)
+    if (!hasBookQuestions(book.id)) return;
     navigation.navigate('LessonPlayer', {
       category: 'books',
       subcategory: book.id,
@@ -139,25 +122,26 @@ export default function BibleBooksScreen() {
 
         {/* Books List */}
         <View style={styles.booksList}>
-          {filteredBooks.map((book, index) => {
+          {filteredBooks.map((book) => {
             const isOldTestament = book.testament === 'Old';
             const color = isOldTestament ? '#10B981' : '#3B82F6';
+            const available = hasBookQuestions(book.id);
 
             return (
               <TouchableOpacity
                 key={book.id}
-                style={styles.bookCard}
+                style={[styles.bookCard, !available && styles.bookCardDisabled]}
                 onPress={() => handleBookPress(book)}
-                activeOpacity={0.7}
+                activeOpacity={available ? 0.7 : 1}
               >
                 <View style={styles.bookHeader}>
                   <View
                     style={[
                       styles.bookIcon,
-                      { backgroundColor: `${color}20` },
+                      { backgroundColor: available ? `${color}20` : '#F3F4F6' },
                     ]}
                   >
-                    <Icon name="book" size={28} color={color} />
+                    <Icon name="book" size={28} color={available ? color : '#9CA3AF'} />
                   </View>
                   <View style={styles.bookContent}>
                     <View style={styles.bookTitleRow}>
@@ -177,14 +161,20 @@ export default function BibleBooksScreen() {
                     <Text style={styles.bookDescription}>
                       {book.description}
                     </Text>
-                    <View style={styles.bookMeta}>
-                      <Icon name="layers" size={14} color="#6B7280" />
-                      <Text style={styles.metaText}>
-                        {book.lessonCount} lessons available
-                      </Text>
-                    </View>
+                    {available ? (
+                      <View style={styles.bookMeta}>
+                        <Icon name="layers" size={14} color="#6B7280" />
+                        <Text style={styles.metaText}>
+                          {book.lessonCount} questions available
+                        </Text>
+                      </View>
+                    ) : (
+                      <View style={styles.comingSoonBadge}>
+                        <Text style={styles.comingSoonBadgeText}>Coming Soon</Text>
+                      </View>
+                    )}
                   </View>
-                  <Icon name="chevron-right" size={20} color={color} />
+                  {available && <Icon name="chevron-right" size={20} color={color} />}
                 </View>
               </TouchableOpacity>
             );
@@ -213,7 +203,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 12,
     paddingBottom: 16,
     backgroundColor: '#10B981',
   },
@@ -283,6 +273,21 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 8,
     elevation: 3,
+  },
+  bookCardDisabled: {
+    opacity: 0.6,
+  },
+  comingSoonBadge: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#FEF3C7',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  comingSoonBadgeText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#92400E',
   },
   bookHeader: {
     flexDirection: 'row',

@@ -12,16 +12,16 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
-import { themesStudyArticles } from '../../data/studyContent';
+import { christianDoctrineArticles } from '../../data/studyContent';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
-export default function StudyThemesScreen() {
+export default function StudyDoctrineScreen() {
   const navigation = useNavigation<NavigationProp>();
 
   const handleArticlePress = (articleId: string) => {
     navigation.navigate('StudyArticle', {
-      category: 'themes',
+      category: 'doctrine',
       articleId: articleId,
     });
   };
@@ -30,28 +30,28 @@ export default function StudyThemesScreen() {
     navigation.goBack();
   };
 
-  // Calculate estimated read time based on content length
-  const getReadTime = (article: typeof themesStudyArticles[0]): number => {
+  const getReadTime = (article: typeof christianDoctrineArticles[0]): number => {
     const totalWords = article.sections.reduce((total, section) => {
       const sectionWords = section.paragraphs.join(' ').split(' ').length;
       return total + sectionWords;
     }, 0);
-    return Math.max(5, Math.ceil(totalWords / 200)); // ~200 words per minute
+    return Math.max(5, Math.ceil(totalWords / 200));
   };
+
+  const icons = ['triangle', 'heart', 'check-circle', 'trending-up', 'wind', 'book', 'users', 'clock', 'shield', 'flag'] as const;
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
           <Icon name="arrow-left" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <View style={styles.headerContent}>
-          <Icon name="book-open" size={32} color="#FFFFFF" />
+          <Icon name="shield" size={32} color="#FFFFFF" />
           <View style={styles.headerText}>
-            <Text style={styles.headerTitle}>Biblical Themes</Text>
+            <Text style={styles.headerTitle}>Christian Doctrine</Text>
             <Text style={styles.headerSubtitle}>
-              Explore key theological concepts
+              Core beliefs of the Christian faith
             </Text>
           </View>
         </View>
@@ -62,59 +62,43 @@ export default function StudyThemesScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Wooly's Tip */}
-        <WoolyTip message="These thematic studies help you understand key biblical concepts that appear throughout Scripture. They're wool-derful for deepening your theological knowledge!" />
+        <WoolyTip message="Sound doctrine shapes how we think about God, salvation, and the Christian life. These articles explain the core beliefs that Christians have held throughout history!" />
 
-        {/* Articles List */}
         <View style={styles.articlesList}>
-          {themesStudyArticles.map((article, index) => {
-            const colors = ['#EF4444', '#3B82F6', '#8B5CF6', '#10B981', '#F59E0B'];
-            const color = colors[index % colors.length];
-
-            return (
-              <TouchableOpacity
-                key={article.id}
-                style={[
-                  styles.articleCard,
-                  { borderLeftColor: color, borderLeftWidth: 4 },
-                ]}
-                onPress={() => handleArticlePress(article.id)}
-                activeOpacity={0.7}
-              >
-                <View
-                  style={[
-                    styles.articleIcon,
-                    { backgroundColor: `${color}20` },
-                  ]}
-                >
-                  <Icon name="heart" size={24} color={color} />
+          {christianDoctrineArticles.map((article, index) => (
+            <TouchableOpacity
+              key={article.id}
+              style={styles.articleCard}
+              onPress={() => handleArticlePress(article.id)}
+              activeOpacity={0.7}
+            >
+              <View style={styles.articleIcon}>
+                <Icon name={icons[index % icons.length]} size={24} color="#06B6D4" />
+              </View>
+              <View style={styles.articleContent}>
+                <Text style={styles.articleTitle}>{article.title}</Text>
+                <Text style={styles.articleSubtitle}>{article.subtitle}</Text>
+                <Text style={styles.articleIntro} numberOfLines={2}>
+                  {article.introduction}
+                </Text>
+                <View style={styles.articleMeta}>
+                  <Icon name="clock" size={14} color="#6B7280" />
+                  <Text style={styles.metaText}>{getReadTime(article)} min read</Text>
                 </View>
-                <View style={styles.articleContent}>
-                  <Text style={styles.articleTitle}>{article.title}</Text>
-                  <Text style={styles.articleSubtitle}>{article.subtitle}</Text>
-                  <Text style={styles.articleIntro} numberOfLines={2}>
-                    {article.introduction}
-                  </Text>
-                  <View style={styles.articleMeta}>
-                    <Icon name="clock" size={14} color="#6B7280" />
-                    <Text style={styles.metaText}>{getReadTime(article)} min read</Text>
-                  </View>
-                </View>
-                <Icon name="chevron-right" size={20} color={color} />
-              </TouchableOpacity>
-            );
-          })}
+              </View>
+              <Icon name="chevron-right" size={20} color="#9CA3AF" />
+            </TouchableOpacity>
+          ))}
         </View>
 
-        {/* Stats */}
         <View style={styles.statsCard}>
-          <Text style={styles.statsEmoji}>💝</Text>
+          <Text style={styles.statsEmoji}>🛡️</Text>
           <View style={styles.statsContent}>
             <Text style={styles.statsTitle}>
-              {themesStudyArticles.length} Theological Themes
+              {christianDoctrineArticles.length} Core Doctrines
             </Text>
             <Text style={styles.statsText}>
-              Dive deep into love, faith, grace, hope, holiness, prayer, and more foundational biblical themes.
+              Understand the Trinity, salvation, the Holy Spirit, the church, and other foundational Christian beliefs.
             </Text>
           </View>
         </View>
@@ -126,7 +110,7 @@ export default function StudyThemesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#E8E3FF',
   },
   header: {
     flexDirection: 'row',
@@ -134,7 +118,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 12,
     paddingBottom: 16,
-    backgroundColor: '#8B5CF6',
+    backgroundColor: '#06B6D4',
   },
   backButton: {
     padding: 8,
@@ -174,7 +158,7 @@ const styles = StyleSheet.create({
   articleCard: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    backgroundColor: '#FFFFFF', // White background
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -187,6 +171,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
+    backgroundColor: '#CFFAFE',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,
@@ -223,12 +208,12 @@ const styles = StyleSheet.create({
   },
   statsCard: {
     flexDirection: 'row',
-    backgroundColor: '#F3E8FF',
+    backgroundColor: '#CFFAFE',
     borderRadius: 16,
     padding: 16,
     marginTop: 24,
     borderWidth: 2,
-    borderColor: '#8B5CF6',
+    borderColor: '#06B6D4',
   },
   statsEmoji: {
     fontSize: 40,
@@ -240,12 +225,12 @@ const styles = StyleSheet.create({
   statsTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#6B21A8',
+    color: '#164E63',
     marginBottom: 6,
   },
   statsText: {
     fontSize: 14,
-    color: '#581C87',
+    color: '#0E7490',
     lineHeight: 20,
   },
 });

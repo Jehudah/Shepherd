@@ -12,16 +12,16 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { WoolyTip } from '../../components/Wooly';
 import { RootStackParamList } from '../../types';
-import { themesStudyArticles } from '../../data/studyContent';
+import { historicalContextArticles } from '../../data/studyContent';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
-export default function StudyThemesScreen() {
+export default function StudyHistoryScreen() {
   const navigation = useNavigation<NavigationProp>();
 
   const handleArticlePress = (articleId: string) => {
     navigation.navigate('StudyArticle', {
-      category: 'themes',
+      category: 'history',
       articleId: articleId,
     });
   };
@@ -30,28 +30,28 @@ export default function StudyThemesScreen() {
     navigation.goBack();
   };
 
-  // Calculate estimated read time based on content length
-  const getReadTime = (article: typeof themesStudyArticles[0]): number => {
+  const getReadTime = (article: typeof historicalContextArticles[0]): number => {
     const totalWords = article.sections.reduce((total, section) => {
       const sectionWords = section.paragraphs.join(' ').split(' ').length;
       return total + sectionWords;
     }, 0);
-    return Math.max(5, Math.ceil(totalWords / 200)); // ~200 words per minute
+    return Math.max(5, Math.ceil(totalWords / 200));
   };
+
+  const colors = ['#F59E0B', '#EF4444', '#8B5CF6', '#10B981', '#3B82F6', '#06B6D4'];
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
           <Icon name="arrow-left" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <View style={styles.headerContent}>
-          <Icon name="book-open" size={32} color="#FFFFFF" />
+          <Icon name="globe" size={32} color="#FFFFFF" />
           <View style={styles.headerText}>
-            <Text style={styles.headerTitle}>Biblical Themes</Text>
+            <Text style={styles.headerTitle}>Historical Context</Text>
             <Text style={styles.headerSubtitle}>
-              Explore key theological concepts
+              Understanding the world of the Bible
             </Text>
           </View>
         </View>
@@ -62,32 +62,20 @@ export default function StudyThemesScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Wooly's Tip */}
-        <WoolyTip message="These thematic studies help you understand key biblical concepts that appear throughout Scripture. They're wool-derful for deepening your theological knowledge!" />
+        <WoolyTip message="Understanding the historical background makes Scripture come alive! Learn about the cultures, empires, and events that shaped the biblical world." />
 
-        {/* Articles List */}
         <View style={styles.articlesList}>
-          {themesStudyArticles.map((article, index) => {
-            const colors = ['#EF4444', '#3B82F6', '#8B5CF6', '#10B981', '#F59E0B'];
+          {historicalContextArticles.map((article, index) => {
             const color = colors[index % colors.length];
-
             return (
               <TouchableOpacity
                 key={article.id}
-                style={[
-                  styles.articleCard,
-                  { borderLeftColor: color, borderLeftWidth: 4 },
-                ]}
+                style={[styles.articleCard, { borderLeftColor: color, borderLeftWidth: 4 }]}
                 onPress={() => handleArticlePress(article.id)}
                 activeOpacity={0.7}
               >
-                <View
-                  style={[
-                    styles.articleIcon,
-                    { backgroundColor: `${color}20` },
-                  ]}
-                >
-                  <Icon name="heart" size={24} color={color} />
+                <View style={[styles.articleIcon, { backgroundColor: `${color}20` }]}>
+                  <Icon name="map" size={24} color={color} />
                 </View>
                 <View style={styles.articleContent}>
                   <Text style={styles.articleTitle}>{article.title}</Text>
@@ -106,15 +94,14 @@ export default function StudyThemesScreen() {
           })}
         </View>
 
-        {/* Stats */}
         <View style={styles.statsCard}>
-          <Text style={styles.statsEmoji}>💝</Text>
+          <Text style={styles.statsEmoji}>🏛️</Text>
           <View style={styles.statsContent}>
             <Text style={styles.statsTitle}>
-              {themesStudyArticles.length} Theological Themes
+              {historicalContextArticles.length} Historical Studies
             </Text>
             <Text style={styles.statsText}>
-              Dive deep into love, faith, grace, hope, holiness, prayer, and more foundational biblical themes.
+              Explore empires, cultures, and events that shaped the world of the Old and New Testaments.
             </Text>
           </View>
         </View>
@@ -126,7 +113,7 @@ export default function StudyThemesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8E3FF', // Light lilac
+    backgroundColor: '#E8E3FF',
   },
   header: {
     flexDirection: 'row',
@@ -134,7 +121,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 12,
     paddingBottom: 16,
-    backgroundColor: '#8B5CF6',
+    backgroundColor: '#F59E0B',
   },
   backButton: {
     padding: 8,
@@ -174,7 +161,7 @@ const styles = StyleSheet.create({
   articleCard: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    backgroundColor: '#FFFFFF', // White background
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     shadowColor: '#000',
@@ -223,12 +210,12 @@ const styles = StyleSheet.create({
   },
   statsCard: {
     flexDirection: 'row',
-    backgroundColor: '#F3E8FF',
+    backgroundColor: '#FEF3C7',
     borderRadius: 16,
     padding: 16,
     marginTop: 24,
     borderWidth: 2,
-    borderColor: '#8B5CF6',
+    borderColor: '#F59E0B',
   },
   statsEmoji: {
     fontSize: 40,
@@ -240,12 +227,12 @@ const styles = StyleSheet.create({
   statsTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#6B21A8',
+    color: '#78350F',
     marginBottom: 6,
   },
   statsText: {
     fontSize: 14,
-    color: '#581C87',
+    color: '#92400E',
     lineHeight: 20,
   },
 });

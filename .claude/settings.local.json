@@ -24,7 +24,10 @@
       "Bash(npx expo start:*)",
       "Bash(lsof:*)",
       "Bash(kill:*)",
-      "Bash(npx expo install:*)"
+      "Bash(npx expo install:*)",
+      "Bash(for:*)",
+      "Bash(do echo:*)",
+      "Bash(done)"
     ]
   }
 }

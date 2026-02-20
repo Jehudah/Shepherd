@@ -10,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 import { onAuthStateChanged } from 'firebase/auth';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // Store
 import { useStore } from './store/useStore';
@@ -49,6 +49,10 @@ import BibleBooksScreen from './screens/Learn/BibleBooksScreen';
 // Study Screens
 import StudyNamesScreen from './screens/Study/StudyNamesScreen';
 import StudyThemesScreen from './screens/Study/StudyThemesScreen';
+import StudyBooksScreen from './screens/Study/StudyBooksScreen';
+import StudyHistoryScreen from './screens/Study/StudyHistoryScreen';
+import StudyProphecyScreen from './screens/Study/StudyProphecyScreen';
+import StudyDoctrineScreen from './screens/Study/StudyDoctrineScreen';
 import StudyArticleScreen from './screens/Study/StudyArticleScreen';
 
 // Community Screens
@@ -117,6 +121,9 @@ function MainTabs() {
           paddingBottom: insets.bottom > 0 ? insets.bottom : 8,
           paddingTop: 8,
           height: 60 + (insets.bottom > 0 ? insets.bottom : 0),
+          backgroundColor: '#FFFFFF',
+          borderTopWidth: 1,
+          borderTopColor: '#E5E7EB',
         },
       })}
     >
@@ -186,6 +193,7 @@ export default function App() {
   }
 
   return (
+    <SafeAreaProvider>
     <ToastProvider>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <NavigationContainer>
@@ -269,6 +277,26 @@ export default function App() {
                 options={{ animation: 'slide_from_right' }}
               />
               <Stack.Screen
+                name="StudyBooks"
+                component={StudyBooksScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="StudyHistory"
+                component={StudyHistoryScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="StudyProphecy"
+                component={StudyProphecyScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
+                name="StudyDoctrine"
+                component={StudyDoctrineScreen}
+                options={{ animation: 'slide_from_right' }}
+              />
+              <Stack.Screen
                 name="StudyArticle"
                 component={StudyArticleScreen}
                 options={{ animation: 'slide_from_right' }}
@@ -321,5 +349,6 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </ToastProvider>
+    </SafeAreaProvider>
   );
 }

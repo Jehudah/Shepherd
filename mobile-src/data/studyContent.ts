@@ -272,7 +272,481 @@ export const namesStudyArticles: StudyArticle[] = [
       'Matthew 1:1 (Jesus, Son of David)',
       'Luke 1:30-33 (Jesus, heir to David\'s throne)'
     ]
+  },
+  
+  {
+    id: 'abraham-study',
+    category: 'names',
+    subcategory: 'patriarchs',
+    title: 'Abraham: Father of Faith',
+    subtitle: 'The Man Who Believed God and Became the Father of Nations',
+    introduction:
+      'Abraham stands as one of the most influential figures in Scripture. Called from a pagan land, he became the father of Israel, a model of faith, and the recipient of God’s covenant promises that shape the entire biblical story.',
+    sections: [
+      {
+        heading: 'Called Out: Leaving Ur',
+        paragraphs: [
+          'Abraham was living in Ur, a prosperous but idolatrous city, when God called him to leave everything behind.',
+          'God promised to make him into a great nation, bless him, and make his name great.',
+          'Abraham obeyed, demonstrating remarkable trust in God’s word.'
+        ],
+        quote: {
+          text: 'Go from your country… to the land I will show you.',
+          reference: 'Genesis 12:1'
+        }
+      },
+      {
+        heading: 'The Covenant: God’s Unbreakable Promise',
+        paragraphs: [
+          'God made a covenant with Abraham, promising land, descendants, and blessing for all nations.',
+          'Abraham believed God, and it was credited to him as righteousness.',
+          'This covenant becomes the foundation of God’s redemptive plan.'
+        ]
+      },
+      {
+        heading: 'Testing of Faith: Isaac on the Altar',
+        paragraphs: [
+          'God tested Abraham by commanding him to sacrifice Isaac, the son of promise.',
+          'Abraham obeyed, trusting that God could even raise the dead.',
+          'God provided a ram, showing that He Himself would provide the ultimate sacrifice.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Faith means trusting God even when the path is unclear',
+      'God’s promises are sure and unbreakable',
+      'Abraham’s story points forward to Christ, the promised offspring'
+    ],
+    furtherStudy: [
+      'Genesis 12, 15, 17',
+      'Romans 4',
+      'Hebrews 11:8–19'
+    ],
+    crossReferences: [
+      'Genesis 22',
+      'Galatians 3:6–9',
+      'James 2:21–23'
+    ]
+  },
+
+  {
+    id: 'joseph-study',
+    category: 'names',
+    subcategory: 'patriarchs',
+    title: 'Joseph: From Pit to Palace',
+    subtitle: 'How God Used Suffering to Save a Nation',
+    introduction:
+      'Joseph’s life is a powerful testimony of God’s sovereignty. Betrayed, enslaved, and imprisoned, Joseph rose to become Egypt’s second-in-command and saved countless lives.',
+    sections: [
+      {
+        heading: 'Betrayed by His Brothers',
+        paragraphs: [
+          'Joseph was favored by his father Jacob, which stirred jealousy among his brothers.',
+          'They sold him into slavery, intending to erase him from their lives.',
+          'Yet God was with Joseph even in the darkest moments.'
+        ]
+      },
+      {
+        heading: 'Faithful in Temptation and Trial',
+        paragraphs: [
+          'In Egypt, Joseph resisted temptation from Potiphar’s wife and was unjustly imprisoned.',
+          'Even in prison, Joseph remained faithful and God granted him favor.'
+        ]
+      },
+      {
+        heading: 'Raised to Power',
+        paragraphs: [
+          'Joseph interpreted Pharaoh’s dreams and was elevated to rule Egypt.',
+          'He prepared the nation for famine, ultimately saving his family and fulfilling God’s plan.'
+        ],
+        quote: {
+          text: 'You intended to harm me, but God intended it for good.',
+          reference: 'Genesis 50:20'
+        }
+      }
+    ],
+    keyTakeaways: [
+      'God works through suffering to accomplish His purposes',
+      'Faithfulness in small things prepares us for greater responsibility',
+      'Forgiveness reflects God’s heart'
+    ],
+    furtherStudy: [
+      'Genesis 37–50',
+      'Acts 7:9–16',
+      'Psalm 105:16–22'
+    ],
+    crossReferences: [
+      'Romans 8:28',
+      'Genesis 45:5–8',
+      'Hebrews 11:22'
+    ]
+  },
+
+  {
+    id: 'joshua-study',
+    category: 'names',
+    subcategory: 'leaders',
+    title: 'Joshua: Courageous Conqueror',
+    subtitle: 'The Leader Who Brought Israel into the Promised Land',
+    introduction:
+      'Joshua succeeded Moses and led Israel into Canaan. His life demonstrates courage, obedience, and unwavering trust in God’s promises.',
+    sections: [
+      {
+        heading: 'Commissioned by God',
+        paragraphs: [
+          'After Moses’ death, God appointed Joshua to lead Israel.',
+          'God repeatedly told him to be strong and courageous.',
+          'Joshua’s strength came from God’s presence and God’s Word.'
+        ],
+        quote: {
+          text: 'Be strong and courageous… for the LORD your God will be with you wherever you go.',
+          reference: 'Joshua 1:9'
+        }
+      },
+      {
+        heading: 'Crossing the Jordan',
+        paragraphs: [
+          'God miraculously parted the Jordan River as the priests stepped into the water.',
+          'This miracle confirmed Joshua’s leadership and God’s faithfulness.'
+        ]
+      },
+      {
+        heading: 'Conquest of Canaan',
+        paragraphs: [
+          'Joshua led Israel in battles against the Canaanite nations.',
+          'The fall of Jericho demonstrated that victory comes from God, not human strength.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Courage comes from trusting God’s presence',
+      'Obedience brings blessing',
+      'God keeps His promises'
+    ],
+    furtherStudy: [
+      'Joshua 1–6',
+      'Hebrews 11:30',
+      'Joshua 23–24'
+    ],
+    crossReferences: [
+      'Deuteronomy 31:7–8',
+      'Joshua 24:15',
+      'Psalm 44:3'
+    ]
+  },
+
+  {
+    id: 'elijah-study',
+    category: 'names',
+    subcategory: 'prophets',
+    title: 'Elijah: Prophet of Fire',
+    subtitle: 'A Bold Voice for God in a Time of Idolatry',
+    introduction:
+      'Elijah confronted Israel’s idolatry during the reign of Ahab and Jezebel. His ministry was marked by miracles, boldness, and deep dependence on God.',
+    sections: [
+      {
+        heading: 'Confronting Ahab',
+        paragraphs: [
+          'Elijah declared a drought as judgment on Israel’s idolatry.',
+          'He trusted God for provision at the brook Cherith and in the widow’s home.'
+        ]
+      },
+      {
+        heading: 'Mount Carmel Showdown',
+        paragraphs: [
+          'Elijah challenged the prophets of Baal to a contest.',
+          'God answered Elijah’s prayer with fire from heaven, proving He alone is God.'
+        ],
+        quote: {
+          text: 'The LORD—He is God!',
+          reference: '1 Kings 18:39'
+        }
+      },
+      {
+        heading: 'A Still Small Voice',
+        paragraphs: [
+          'After fleeing from Jezebel, Elijah encountered God not in wind, earthquake, or fire, but in a gentle whisper.',
+          'God restored Elijah and gave him new assignments.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God uses ordinary people for extraordinary purposes',
+      'Boldness comes from knowing the true God',
+      'God speaks powerfully even in quiet moments'
+    ],
+    furtherStudy: [
+      '1 Kings 17–19',
+      'James 5:17–18',
+      '2 Kings 2'
+    ],
+    crossReferences: [
+      'Malachi 4:5',
+      'Matthew 17:1–3',
+      'Romans 11:2–4'
+    ]
+  },
+
+  {
+    id: 'elisha-study',
+    category: 'names',
+    subcategory: 'prophets',
+    title: 'Elisha: Prophet of Compassion and Power',
+    subtitle: 'The Successor of Elijah Who Multiplied Miracles',
+    introduction:
+      'Elisha followed Elijah and performed twice as many miracles. His ministry reveals God’s compassion for the poor, the suffering, and the faithful.',
+    sections: [
+      {
+        heading: 'A Double Portion',
+        paragraphs: [
+          'Elisha requested a double portion of Elijah’s spirit.',
+          'God granted this, marking Elisha as Elijah’s true successor.'
+        ]
+      },
+      {
+        heading: 'Miracles of Mercy',
+        paragraphs: [
+          'Elisha purified water, multiplied oil, raised a child from the dead, and healed Naaman’s leprosy.',
+          'His miracles often relieved suffering and demonstrated God’s care.'
+        ]
+      },
+      {
+        heading: 'Faith in Crisis',
+        paragraphs: [
+          'During war, Elisha prayed for his servant’s eyes to be opened.',
+          'God revealed angelic armies surrounding them.'
+        ],
+        quote: {
+          text: 'Those who are with us are more than those who are with them.',
+          reference: '2 Kings 6:16'
+        }
+      }
+    ],
+    keyTakeaways: [
+      'God cares deeply for the hurting',
+      'Faith sees beyond physical circumstances',
+      'God empowers His servants for His purposes'
+    ],
+    furtherStudy: [
+      '2 Kings 2–6',
+      'Luke 4:27',
+      'James 5:14–15'
+    ],
+    crossReferences: [
+      '2 Kings 4',
+      '2 Kings 5',
+      '2 Kings 6:8–23'
+    ]
+  },
+
+  {
+    id: 'ruth-study',
+    category: 'names',
+    subcategory: 'women',
+    title: 'Ruth: Loyal Love in Action',
+    subtitle: 'A Moabite Woman Who Became Part of God’s Redemptive Line',
+    introduction:
+      'Ruth’s story is one of loyalty, faith, and redemption. A foreign widow, she chose to follow the God of Israel and became the great-grandmother of King David.',
+    sections: [
+      {
+        heading: 'A Costly Choice',
+        paragraphs: [
+          'After losing her husband, Ruth chose to stay with Naomi.',
+          'Her famous declaration of loyalty reveals her faith in God.'
+        ],
+        quote: {
+          text: 'Your people will be my people and your God my God.',
+          reference: 'Ruth 1:16'
+        }
+      },
+      {
+        heading: 'Provision in the Fields',
+        paragraphs: [
+          'Ruth gleaned in the fields of Boaz, a relative of Naomi.',
+          'Boaz showed kindness and protection, reflecting God’s heart.'
+        ]
+      },
+      {
+        heading: 'Redemption Through Boaz',
+        paragraphs: [
+          'Boaz acted as a kinsman-redeemer, marrying Ruth and restoring Naomi’s family line.',
+          'Their son Obed became the grandfather of David.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God welcomes outsiders into His family',
+      'Loyal love reflects God’s character',
+      'Ruth’s story points to Christ, our Redeemer'
+    ],
+    furtherStudy: [
+      'Read the book of Ruth',
+      'Study the concept of kinsman-redeemer',
+      'Explore Matthew 1:1–6'
+    ],
+    crossReferences: [
+      'Deuteronomy 25:5–10',
+      'Ruth 4',
+      'Matthew 1:5'
+    ]
+  },
+
+  {
+    id: 'esther-study',
+    category: 'names',
+    subcategory: 'women',
+    title: 'Esther: Courage for Such a Time as This',
+    subtitle: 'A Queen Who Risked Everything to Save Her People',
+    introduction:
+      'Esther’s story shows God’s providence even when His name is not mentioned. Through courage and wisdom, she saved the Jewish people from destruction.',
+    sections: [
+      {
+        heading: 'Chosen as Queen',
+        paragraphs: [
+          'Esther, a Jewish orphan raised by Mordecai, was chosen to be queen of Persia.',
+          'Her rise to royalty positioned her for God’s purpose.'
+        ]
+      },
+      {
+        heading: 'A Deadly Plot',
+        paragraphs: [
+          'Haman plotted to destroy the Jews.',
+          'Mordecai urged Esther to intercede with the king, risking her life.'
+        ],
+        quote: {
+          text: 'Who knows but that you have come to your royal position for such a time as this?',
+          reference: 'Esther 4:14'
+        }
+      },
+      {
+        heading: 'Deliverance',
+        paragraphs: [
+          'Esther boldly approached the king and exposed Haman’s plot.',
+          'God used her courage to save His people.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God works behind the scenes to accomplish His purposes',
+      'Courage often requires risk',
+      'God places His people strategically for His glory'
+    ],
+    furtherStudy: [
+      'Read the book of Esther',
+      'Study Persian history',
+      'Explore God’s providence in Scripture'
+    ],
+    crossReferences: [
+      'Esther 4–7',
+      'Proverbs 21:1',
+      'Romans 8:28'
+    ]
+  },
+
+  {
+    id: 'paul-study',
+    category: 'names',
+    subcategory: 'apostles',
+    title: 'Paul: Apostle to the Nations',
+    subtitle: 'From Persecutor to Preacher of the Gospel',
+    introduction:
+      'Paul’s transformation from persecutor to apostle is one of the most dramatic in Scripture. His missionary journeys and letters shaped the early church and continue to impact believers today.',
+    sections: [
+      {
+        heading: 'A Zealous Pharisee',
+        paragraphs: [
+          'Paul was trained under Gamaliel and was zealous for the law.',
+          'He persecuted Christians, believing he was serving God.'
+        ]
+      },
+      {
+        heading: 'A Dramatic Conversion',
+        paragraphs: [
+          'On the road to Damascus, Paul encountered the risen Christ.',
+          'This moment changed the course of his life and mission.'
+        ],
+        quote: {
+          text: 'Saul, Saul, why do you persecute me?',
+          reference: 'Acts 9:4'
+        }
+      },
+      {
+        heading: 'Mission to the Gentiles',
+        paragraphs: [
+          'Paul traveled across the Roman world preaching the gospel.',
+          'He planted churches, trained leaders, and wrote letters that form much of the New Testament.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'No one is beyond God’s reach',
+      'The gospel transforms lives',
+      'God uses redeemed sinners for His mission'
+    ],
+    furtherStudy: [
+      'Acts 9, 13–28',
+      'Galatians 1',
+      'Philippians 3'
+    ],
+    crossReferences: [
+      '1 Timothy 1:12–16',
+      'Romans 1:1–6',
+      '2 Corinthians 11–12'
+    ]
+  },
+
+  {
+    id: 'peter-study',
+    category: 'names',
+    subcategory: 'apostles',
+    title: 'Peter: From Fisherman to Rock',
+    subtitle: 'A Bold Disciple Transformed by Grace',
+    introduction:
+      'Peter was impulsive, passionate, and deeply devoted to Jesus. Though he failed at times, Jesus restored him and made him a foundational leader in the early church.',
+    sections: [
+      {
+        heading: 'Called from the Nets',
+        paragraphs: [
+          'Peter was a fisherman when Jesus called him to follow.',
+          'He immediately left everything to become a disciple.'
+        ]
+      },
+      {
+        heading: 'Moments of Failure and Faith',
+        paragraphs: [
+          'Peter walked on water, confessed Jesus as Messiah, and witnessed the transfiguration.',
+          'Yet he also denied Jesus three times.'
+        ]
+      },
+      {
+        heading: 'Restored and Commissioned',
+        paragraphs: [
+          'After the resurrection, Jesus restored Peter and commissioned him to shepherd His people.',
+          'Peter became a bold preacher at Pentecost.'
+        ],
+        quote: {
+          text: 'Feed my sheep.',
+          reference: 'John 21:17'
+        }
+      }
+    ],
+    keyTakeaways: [
+      'God uses imperfect people',
+      'Failure is not final with Jesus',
+      'Grace transforms disciples into leaders'
+    ],
+    furtherStudy: [
+      'Matthew 14:22–33',
+      'John 21',
+      'Acts 2–5'
+    ],
+    crossReferences: [
+      'Luke 22:31–34',
+      '1 Peter 5:1–4',
+      'Acts 10'
+    ]
   }
+
 ];
 
 // THEMES STUDY CONTENT
@@ -386,25 +860,534 @@ export const themesStudyArticles: StudyArticle[] = [
       '1 John 4:7-21 (God is love)',
       'Ephesians 3:14-21 (Paul\'s prayer to know Christ\'s love)'
     ]
+  },
+    
+  {
+    id: 'faith-theme',
+    category: 'themes',
+    title: 'Faith: Trusting God Completely',
+    subtitle: 'What It Means to Believe God in Every Circumstance',
+    introduction:
+      'Faith is central to the Christian life. It is more than belief—it is trust, dependence, and confidence in God’s character and promises.',
+    sections: [
+      {
+        heading: 'Faith Defined',
+        paragraphs: [
+          'Biblical faith is trusting God even when we cannot see the outcome.',
+          'It rests on God’s character, not our circumstances.'
+        ],
+        quote: {
+          text: 'Now faith is confidence in what we hope for and assurance about what we do not see.',
+          reference: 'Hebrews 11:1'
+        }
+      },
+      {
+        heading: 'Faith in Action',
+        paragraphs: [
+          'Faith leads to obedience, even when the path is difficult.',
+          'Abraham, Moses, and countless others acted in faith.'
+        ]
+      },
+      {
+        heading: 'Growing in Faith',
+        paragraphs: [
+          'Faith grows through trials, prayer, and God’s Word.',
+          'God strengthens our faith as we walk with Him.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Faith is trusting God’s character',
+      'Faith leads to obedience',
+      'Trials strengthen faith'
+    ],
+    furtherStudy: [
+      'Hebrews 11',
+      'Romans 4',
+      'James 2:14–26'
+    ],
+    crossReferences: [
+      'Romans 1:17',
+      'Galatians 2:20',
+      'Ephesians 2:8–9'
+    ]
+  },
+
+  {
+    id: 'grace-theme',
+    category: 'themes',
+    title: 'Grace: God’s Unmerited Favor',
+    subtitle: 'The Free Gift That Transforms Lives',
+    introduction:
+      'Grace is at the heart of the gospel. It is God’s unearned kindness toward sinners—His decision to save, forgive, and transform us not because of our merit, but because of His love.',
+    sections: [
+      {
+        heading: 'What Is Grace?',
+        paragraphs: [
+          'Grace is God giving us what we do not deserve: forgiveness, salvation, and new life.',
+          'It is not earned by works but freely given through Christ.'
+        ],
+        quote: {
+          text: 'For it is by grace you have been saved, through faith.',
+          reference: 'Ephesians 2:8'
+        }
+      },
+      {
+        heading: 'Grace in Salvation',
+        paragraphs: [
+          'Salvation is entirely a work of God’s grace.',
+          'We contribute nothing but our need; God provides everything through Christ.'
+        ]
+      },
+      {
+        heading: 'Grace for Daily Living',
+        paragraphs: [
+          'Grace not only saves us—it sustains us.',
+          'God’s grace empowers obedience, endurance, and spiritual growth.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Grace is God’s unearned favor',
+      'Salvation is by grace alone',
+      'Grace empowers daily Christian living'
+    ],
+    furtherStudy: [
+      'Ephesians 2:1–10',
+      'Titus 2:11–14',
+      'Romans 5–6'
+    ],
+    crossReferences: [
+      'Romans 3:24',
+      '2 Corinthians 12:9',
+      'Hebrews 4:16'
+    ]
+  },
+
+  {
+    id: 'hope-theme',
+    category: 'themes',
+    title: 'Hope: Confident Expectation in God’s Promises',
+    subtitle: 'A Steadfast Anchor in a Broken World',
+    introduction:
+      'Biblical hope is not wishful thinking—it is confident expectation rooted in God’s character and promises. Hope sustains believers through trials and points them toward eternal glory.',
+    sections: [
+      {
+        heading: 'Hope Defined',
+        paragraphs: [
+          'Hope is certainty about the future because God is faithful.',
+          'It is anchored in Christ’s resurrection and return.'
+        ],
+        quote: {
+          text: 'We have this hope as an anchor for the soul.',
+          reference: 'Hebrews 6:19'
+        }
+      },
+      {
+        heading: 'Hope in Suffering',
+        paragraphs: [
+          'Hope strengthens believers during trials.',
+          'Suffering produces perseverance, character, and deeper hope.'
+        ]
+      },
+      {
+        heading: 'Hope for Eternity',
+        paragraphs: [
+          'Christians look forward to resurrection, restoration, and eternal life.',
+          'This future hope shapes how we live today.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Hope is rooted in God’s promises',
+      'Hope sustains believers in suffering',
+      'Hope looks forward to Christ’s return'
+    ],
+    furtherStudy: [
+      'Romans 5:1–5',
+      '1 Peter 1:3–9',
+      'Revelation 21–22'
+    ],
+    crossReferences: [
+      'Romans 8:18–25',
+      'Titus 2:13',
+      '1 Thessalonians 4:13–18'
+    ]
+  },
+
+  {
+    id: 'forgiveness-theme',
+    category: 'themes',
+    title: 'Forgiveness: The Heart of the Gospel',
+    subtitle: 'Receiving and Extending God’s Mercy',
+    introduction:
+      'Forgiveness is central to the Christian faith. God forgives sinners through Christ, and believers are called to forgive others as they have been forgiven.',
+    sections: [
+      {
+        heading: 'God’s Forgiveness',
+        paragraphs: [
+          'Through Christ’s sacrifice, God removes our sins completely.',
+          'Forgiveness restores relationship and brings peace.'
+        ],
+        quote: {
+          text: 'As far as the east is from the west, so far has he removed our transgressions from us.',
+          reference: 'Psalm 103:12'
+        }
+      },
+      {
+        heading: 'Forgiving Others',
+        paragraphs: [
+          'Jesus teaches that forgiven people must forgive others.',
+          'Unforgiveness harms the heart and hinders spiritual growth.'
+        ]
+      },
+      {
+        heading: 'The Power of Forgiveness',
+        paragraphs: [
+          'Forgiveness breaks cycles of bitterness and revenge.',
+          'It reflects God’s character and brings healing.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God freely forgives through Christ',
+      'Believers are called to forgive others',
+      'Forgiveness brings freedom and healing'
+    ],
+    furtherStudy: [
+      'Matthew 18:21–35',
+      'Colossians 3:12–14',
+      'Psalm 103'
+    ],
+    crossReferences: [
+      'Ephesians 4:32',
+      'Mark 11:25',
+      '1 John 1:9'
+    ]
+  },
+
+  {
+    id: 'holiness-theme',
+    category: 'themes',
+    title: 'Holiness: Set Apart for God',
+    subtitle: 'Living a Life That Reflects God’s Character',
+    introduction:
+      'Holiness means being set apart for God’s purposes. Believers are called to reflect God’s purity, love, and righteousness in every area of life.',
+    sections: [
+      {
+        heading: 'God Is Holy',
+        paragraphs: [
+          'Holiness is central to God’s nature.',
+          'His holiness reveals His purity, perfection, and majesty.'
+        ],
+        quote: {
+          text: 'Be holy, because I am holy.',
+          reference: '1 Peter 1:16'
+        }
+      },
+      {
+        heading: 'Called to Holiness',
+        paragraphs: [
+          'Believers are set apart by God and called to live differently from the world.',
+          'Holiness is both a gift and a pursuit.'
+        ]
+      },
+      {
+        heading: 'Holiness in Practice',
+        paragraphs: [
+          'Holiness involves obedience, purity, love, and integrity.',
+          'The Holy Spirit empowers believers to grow in holiness.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God is perfectly holy',
+      'Believers are called to reflect God’s holiness',
+      'Holiness is empowered by the Spirit'
+    ],
+    furtherStudy: [
+      'Isaiah 6:1–8',
+      '1 Peter 1:13–25',
+      'Hebrews 12:14'
+    ],
+    crossReferences: [
+      'Leviticus 19:2',
+      'Romans 12:1–2',
+      'Galatians 5:16–25'
+    ]
+  },
+
+  {
+    id: 'obedience-theme',
+    category: 'themes',
+    title: 'Obedience: Loving God Through Action',
+    subtitle: 'Following God’s Commands with Joy and Trust',
+    introduction:
+      'Obedience is not legalism—it is the natural response of a heart transformed by God’s love. True obedience flows from faith and expresses devotion to God.',
+    sections: [
+      {
+        heading: 'The Heart of Obedience',
+        paragraphs: [
+          'Obedience begins with love for God.',
+          'Jesus taught that those who love Him will keep His commands.'
+        ],
+        quote: {
+          text: 'If you love me, keep my commands.',
+          reference: 'John 14:15'
+        }
+      },
+      {
+        heading: 'Obedience and Faith',
+        paragraphs: [
+          'Faith and obedience are inseparable.',
+          'Obedience demonstrates trust in God’s wisdom and goodness.'
+        ]
+      },
+      {
+        heading: 'Obedience in Daily Life',
+        paragraphs: [
+          'Obedience touches every area: speech, relationships, purity, generosity, and service.',
+          'The Spirit empowers believers to obey joyfully.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Obedience flows from love for God',
+      'Faith produces obedience',
+      'The Spirit empowers obedience'
+    ],
+    furtherStudy: [
+      'Deuteronomy 10:12–13',
+      'John 14–15',
+      'James 1:22–25'
+    ],
+    crossReferences: [
+      'Romans 1:5',
+      '1 John 2:3–6',
+      'Philippians 2:12–13'
+    ]
+  },
+
+  {
+    id: 'prayer-theme',
+    category: 'themes',
+    title: 'Prayer: Communing with God',
+    subtitle: 'A Lifeline of Dependence, Worship, and Relationship',
+    introduction:
+      'Prayer is the believer’s direct line of communication with God. It expresses dependence, worship, confession, and trust.',
+    sections: [
+      {
+        heading: 'Why We Pray',
+        paragraphs: [
+          'Prayer acknowledges our need for God.',
+          'It deepens our relationship with Him and aligns our hearts with His will.'
+        ],
+        quote: {
+          text: 'Pray without ceasing.',
+          reference: '1 Thessalonians 5:17'
+        }
+      },
+      {
+        heading: 'How We Pray',
+        paragraphs: [
+          'Jesus taught His disciples to pray with sincerity, humility, and faith.',
+          'The Lord’s Prayer provides a model for worship, petition, and surrender.'
+        ]
+      },
+      {
+        heading: 'The Power of Prayer',
+        paragraphs: [
+          'God hears and answers prayer according to His wisdom.',
+          'Prayer brings peace, strength, and spiritual breakthrough.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Prayer is essential for spiritual life',
+      'Jesus teaches us how to pray',
+      'Prayer brings peace and power'
+    ],
+    furtherStudy: [
+      'Matthew 6:5–15',
+      'Philippians 4:6–7',
+      'James 5:13–18'
+    ],
+    crossReferences: [
+      'Psalm 145:18',
+      'Jeremiah 33:3',
+      'Luke 18:1–8'
+    ]
+  },
+
+  {
+    id: 'repentance-theme',
+    category: 'themes',
+    title: 'Repentance: Turning Back to God',
+    subtitle: 'A Change of Heart That Leads to a Changed Life',
+    introduction:
+      'Repentance is more than feeling sorry—it is turning away from sin and turning toward God. It is essential for salvation and ongoing spiritual growth.',
+    sections: [
+      {
+        heading: 'What Is Repentance?',
+        paragraphs: [
+          'Repentance involves a change of mind, heart, and direction.',
+          'It acknowledges sin and seeks God’s mercy.'
+        ],
+        quote: {
+          text: 'Repent, for the kingdom of heaven has come near.',
+          reference: 'Matthew 3:2'
+        }
+      },
+      {
+        heading: 'Repentance and Salvation',
+        paragraphs: [
+          'Repentance is part of responding to the gospel.',
+          'It prepares the heart to receive God’s grace.'
+        ]
+      },
+      {
+        heading: 'Repentance in Daily Life',
+        paragraphs: [
+          'Believers continually turn from sin as the Spirit convicts and transforms.',
+          'Repentance leads to renewed joy and restored fellowship with God.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Repentance is essential for salvation',
+      'It involves turning from sin and turning to God',
+      'Repentance leads to restoration and joy'
+    ],
+    furtherStudy: [
+      'Psalm 51',
+      'Acts 2:38',
+      '1 John 1:8–10'
+    ],
+    crossReferences: [
+      'Luke 15:11–24',
+      '2 Corinthians 7:10',
+      'Revelation 2–3'
+    ]
+  },
+
+  {
+    id: 'worship-theme',
+    category: 'themes',
+    title: 'Worship: Glorifying God with Heart and Life',
+    subtitle: 'More Than Music — A Lifestyle of Devotion',
+    introduction:
+      'Worship is the believer’s response to God’s greatness. It is not limited to singing but encompasses every aspect of life lived for God’s glory.',
+    sections: [
+      {
+        heading: 'What Is Worship?',
+        paragraphs: [
+          'Worship is honoring God for who He is and what He has done.',
+          'It involves awe, gratitude, and surrender.'
+        ],
+        quote: {
+          text: 'Offer your bodies as a living sacrifice… this is your true and proper worship.',
+          reference: 'Romans 12:1'
+        }
+      },
+      {
+        heading: 'Corporate Worship',
+        paragraphs: [
+          'Believers gather to worship through singing, Scripture, prayer, and fellowship.',
+          'Corporate worship strengthens unity and faith.'
+        ]
+      },
+      {
+        heading: 'Worship as a Lifestyle',
+        paragraphs: [
+          'Every action can be an act of worship when done for God’s glory.',
+          'Worship shapes our priorities, decisions, and relationships.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Worship is a response to God’s greatness',
+      'It includes both personal and corporate expression',
+      'Worship is a lifestyle of devotion'
+    ],
+    furtherStudy: [
+      'Psalm 95',
+      'John 4:23–24',
+      'Colossians 3:16–17'
+    ],
+    crossReferences: [
+      'Psalm 100',
+      'Hebrews 13:15',
+      'Revelation 4–5'
+    ]
+  },
+
+  {
+    id: 'spiritual-warfare-theme',
+    category: 'themes',
+    title: 'Spiritual Warfare',
+    subtitle: 'Standing Firm Against the Enemy Through God’s Strength',
+    introduction:
+      'Scripture teaches that believers face spiritual opposition from Satan and his forces. God equips His people with spiritual armor to stand firm in the battle.',
+    sections: [
+      {
+        heading: 'The Reality of the Battle',
+        paragraphs: [
+          'Christians wrestle not against flesh and blood but against spiritual forces of evil.',
+          'The enemy seeks to deceive, tempt, and destroy.'
+        ],
+        quote: {
+          text: 'Put on the full armor of God.',
+          reference: 'Ephesians 6:11'
+        }
+      },
+      {
+        heading: 'The Armor of God',
+        paragraphs: [
+          'God provides truth, righteousness, faith, salvation, the Word, and prayer as spiritual protection.',
+          'Believers must stand firm in God’s strength, not their own.'
+        ]
+      },
+      {
+        heading: 'Victory in Christ',
+        paragraphs: [
+          'Jesus has already defeated Satan through the cross.',
+          'Believers fight from victory, not for victory.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Spiritual warfare is real but God equips believers',
+      'The armor of God protects against the enemy’s schemes',
+      'Christ has already won the ultimate victory'
+    ],
+    furtherStudy: [
+      'Ephesians 6:10–18',
+      '1 Peter 5:8–10',
+      'James 4:7'
+    ],
+    crossReferences: [
+      '2 Corinthians 10:3–5',
+      'Revelation 12:10–11',
+      'Colossians 2:15'
+    ]
   }
 ];
 
-// BOOK OVERVIEWS STUDY CONTENT
-export const booksStudyArticles: StudyArticle[] = [
+export const bookOverviewArticles: StudyArticle[] = [
   {
     id: 'genesis-overview',
-    category: 'books',
-    subcategory: 'pentateuch',
-    title: 'Genesis: In the Beginning',
-    subtitle: 'The Book of Beginnings - Creation, Fall, and God\'s Promise of Redemption',
-    introduction: 'Genesis is the foundation of all Scripture. Its name means "beginning" or "origin," and it records the beginning of creation, humanity, sin, redemption, and God\'s covenant people. Understanding Genesis is essential for understanding the rest of the Bible.',
+    category: 'book-overview',
+    title: 'Genesis: The Book of Beginnings',
+    subtitle: 'Creation, Covenant, and the Foundations of God’s Redemptive Plan',
+    introduction:
+      'Genesis is the first book of the Bible and the foundation for everything that follows. It reveals the origins of the world, humanity, sin, and God’s covenant promises. From creation to the patriarchs, Genesis sets the stage for the entire biblical story.',
     sections: [
       {
-        heading: 'Authorship and Setting',
+        heading: 'Creation: God the Sovereign Creator',
         paragraphs: [
-          'Genesis was written by Moses during Israel\'s wilderness wanderings (approximately 1445-1405 BC), though it records events spanning from creation to about 1805 BC. Moses compiled oral traditions, genealogies, and divine revelation to create this foundational text.',
-          'The book divides into two main sections: primeval history (chapters 1-11) covering creation to Babel, and patriarchal history (chapters 12-50) following Abraham, Isaac, Jacob, and Joseph.',
-          'Genesis was written to teach Israel their origins, explain how they came to Egypt, and establish the theological foundation for their covenant relationship with God.'
+          'Genesis opens with the majestic declaration: “In the beginning, God created the heavens and the earth.” This establishes God as the eternal, all-powerful Creator.',
+          'The creation account reveals God’s order, wisdom, and goodness. Humanity is made in God’s image, given dignity, purpose, and stewardship over creation.',
+          'The seventh day introduces the Sabbath—God’s rest and delight in His completed work.'
         ],
         quote: {
           text: 'In the beginning God created the heavens and the earth.',
@@ -412,1030 +1395,2027 @@ export const booksStudyArticles: StudyArticle[] = [
         }
       },
       {
-        heading: 'Creation and the Image of God',
+        heading: 'The Fall: Humanity’s Rebellion',
         paragraphs: [
-          'Genesis opens with God creating everything from nothing by His word alone. In six days, God created light, sky, land, vegetation, sun and moon, sea creatures and birds, land animals, and finally humanity.',
-          'Humans are unique—created "in the image of God" (Genesis 1:27). This means we reflect God\'s character, have rational and moral capacity, are designed for relationship with God, and are given dominion over creation as God\'s representatives.',
-          'God pronounced His creation "very good" and rested on the seventh day, establishing the pattern for the Sabbath. Everything was in perfect harmony—God with humanity, humans with each other, and all creation at peace.'
+          'Genesis 3 records humanity’s tragic rebellion against God. Adam and Eve disobey God, bringing sin, death, and brokenness into the world.',
+          'Yet even in judgment, God promises a future Redeemer—the offspring who will crush the serpent’s head.',
+          'This promise becomes the backbone of the entire biblical narrative.'
         ],
-        bulletPoints: [
-          'God created through His powerful word',
-          'Creation shows order, purpose, and design',
-          'Humans uniquely bear God\'s image',
-          'We are called to steward creation',
-          'The seventh day rest points to ultimate rest in God'
+        illustration:
+          'The fall explains the brokenness of the world and humanity’s need for salvation.'
+      },
+      {
+        heading: 'The Flood: Judgment and Mercy',
+        paragraphs: [
+          'As wickedness spreads, God judges the world with a global flood. But He preserves Noah and his family, showing both justice and mercy.',
+          'The rainbow becomes a sign of God’s covenant never again to destroy the earth by flood.'
         ]
       },
       {
-        heading: 'The Fall and Its Consequences',
+        heading: 'The Patriarchs: God’s Covenant Family',
         paragraphs: [
-          'Genesis 3 records humanity\'s tragic fall into sin. Satan, disguised as a serpent, tempted Eve to doubt God\'s goodness and disobey His command. Eve ate the forbidden fruit and gave some to Adam, who also ate.',
-          'Immediately, their eyes were opened to their nakedness—they experienced shame for the first time. When God called, they hid. Sin had broken their relationship with God and with each other.',
-          'God pronounced judgment: the serpent was cursed, Eve would have pain in childbirth and conflict in marriage, Adam would face toilsome work, and both would eventually die. Yet in Genesis 3:15, God gave the first promise of redemption—the woman\'s offspring would crush the serpent\'s head.',
-          'Adam and Eve were expelled from Eden, but God showed mercy by clothing them with animal skins (the first sacrifice) and preserving them to continue His redemptive plan.'
-        ],
-        quote: {
-          text: 'And I will put enmity between you and the woman, and between your offspring and hers; he will crush your head, and you will strike his heel.',
-          reference: 'Genesis 3:15'
-        },
-        illustration: 'Genesis 3:15 is called the "protoevangelium" (first gospel), the first promise pointing to Jesus Christ, who would defeat Satan and sin through His death and resurrection.'
-      },
-      {
-        heading: 'From Cain to Noah: Sin\'s Spread',
-        paragraphs: [
-          'Genesis 4-5 shows sin spreading rapidly. Cain murdered his brother Abel out of jealousy. By Genesis 6, "the LORD saw how great the wickedness of the human race had become on the earth, and that every inclination of the thoughts of the human heart was only evil all the time."',
-          'Yet God found one righteous man: Noah. God determined to flood the earth but instructed Noah to build an ark to preserve his family and representatives of all animal kinds.',
-          'The flood came, destroying all land-dwelling, air-breathing life except those on the ark. After the waters receded, God made a covenant with Noah, promising never again to destroy the earth by flood. The rainbow became the sign of this covenant.'
-        ]
-      },
-      {
-        heading: 'Babel and the Scattering of Nations',
-        paragraphs: [
-          'Genesis 10-11 records the Table of Nations and the Tower of Babel. Humanity, speaking one language, attempted to build a tower to heaven to make a name for themselves.',
-          'This was rebellion against God—rejecting His command to spread and fill the earth, seeking glory for themselves rather than God, and attempting to reach heaven through human effort.',
-          'God confused their languages and scattered them across the earth. This explains the diversity of languages and nations. Yet God would later reverse this at Pentecost, when the Holy Spirit enabled people from every nation to hear the gospel in their own language.'
-        ],
-        quote: {
-          text: 'Come, let us go down and confuse their language so they will not understand each other.',
-          reference: 'Genesis 11:7'
-        }
-      },
-      {
-        heading: 'Abraham: The Father of Faith',
-        paragraphs: [
-          'Genesis 12 marks a turning point. God called Abram (later Abraham) to leave his country and go to a land God would show him. God promised to make him into a great nation, bless him, and through him bless all peoples on earth.',
-          'This Abrahamic Covenant is foundational to all Scripture. It promised land (Canaan), descendants (a great nation), and blessing (ultimately through Jesus Christ). God confirmed this covenant multiple times and sealed it with a ceremony in Genesis 15.',
-          'Abraham\'s faith was tested repeatedly—Sarah\'s barrenness, the command to sacrifice Isaac, conflicts over the promised land. Yet Abraham believed God, "and it was credited to him as righteousness" (Genesis 15:6).',
-          'God provided a ram to substitute for Isaac, foreshadowing how God would provide His own Son as a substitute for sinners.'
-        ]
-      },
-      {
-        heading: 'Isaac and Jacob: The Covenant Continues',
-        paragraphs: [
-          'God repeated His covenant promises to Isaac (Genesis 26) and to Jacob (Genesis 28). Jacob, despite being a deceiver, was transformed through wrestling with God. God renamed him Israel, meaning "he struggles with God."',
-          'Jacob had twelve sons who became the twelve tribes of Israel: Reuben, Simeon, Levi, Judah, Dan, Naphtali, Gad, Asher, Issachar, Zebulun, Joseph, and Benjamin.',
-          'The covenant promises would continue through these sons, with the royal line coming through Judah and the priestly line through Levi.'
-        ],
-        illustration: 'Jacob\'s transformation from deceiver to Israel shows God\'s power to change hearts and fulfill His purposes despite human sinfulness.'
-      },
-      {
-        heading: 'Joseph: Providence and Preservation',
-        paragraphs: [
-          'The final section of Genesis (chapters 37-50) focuses on Joseph. His jealous brothers sold him into slavery in Egypt, but God was working through these evil actions for good.',
-          'Joseph rose to become second-in-command of Egypt. When famine struck, his brothers came to Egypt for food. Eventually Joseph revealed himself and brought his entire family to Egypt, preserving them from famine.',
-          'Joseph understood God\'s sovereignty: "You intended to harm me, but God intended it for good to accomplish what is now being done, the saving of many lives" (Genesis 50:20).',
-          'Genesis ends with Israel in Egypt—setting the stage for Exodus. The family of 70 would grow into a nation of millions, enslaved but preserved for God\'s purposes.'
-        ],
-        quote: {
-          text: 'You intended to harm me, but God intended it for good to accomplish what is now being done, the saving of many lives.',
-          reference: 'Genesis 50:20'
-        }
-      },
-      {
-        heading: 'Key Themes and Theological Significance',
-        paragraphs: [
-          'Genesis establishes fundamental truths: God is Creator and sovereign over all. Sin entered through human rebellion but God immediately began His redemption plan. Salvation comes through faith, as demonstrated by Abraham.',
-          'The book shows God working through imperfect people—Abraham lied, Jacob deceived, Joseph\'s brothers sold him into slavery—yet God fulfilled His purposes. This gives hope that God can use anyone.',
-          'Genesis introduces key institutions: marriage (Genesis 2), work (Genesis 2), Sabbath (Genesis 2), sacrifice (Genesis 4), government (Genesis 9), and covenant (Genesis 12).',
-          'Most importantly, Genesis points to Christ. Jesus is the promised offspring who crushes Satan, the true Isaac who was offered as a sacrifice, the greater Joseph who saves His people, and the ultimate fulfillment of God\'s promise to bless all nations through Abraham\'s seed.'
+          'The second half of Genesis focuses on Abraham, Isaac, Jacob, and Joseph—ordinary people through whom God builds a covenant nation.',
+          'God promises Abraham land, descendants, and blessing for all nations through his offspring.',
+          'Genesis ends with Israel in Egypt, setting the stage for the Exodus.'
         ]
       }
     ],
     keyTakeaways: [
-      'God created everything and declared it "very good"',
-      'Human sin broke relationship with God, but God promised redemption',
-      'God chose Abraham and made an eternal covenant with him',
-      'God works through flawed people to accomplish His purposes',
-      'Genesis establishes the foundation for understanding all of Scripture',
-      'Every promise in Genesis points ultimately to Jesus Christ'
+      'Genesis explains the origins of creation, humanity, and sin',
+      'God’s covenant promises begin with Abraham',
+      'The book introduces the need for a Redeemer',
+      'Genesis sets the theological foundation for the entire Bible'
     ],
     furtherStudy: [
-      'Read Genesis 1-3 to understand creation and fall',
-      'Study Genesis 12, 15, 17 for the Abrahamic Covenant',
-      'Explore how Hebrews 11 interprets the faith of Genesis heroes',
-      'Compare Genesis 3:15 with Revelation 12 to see the full arc of redemption'
+      'Study Genesis 1–3 for creation and the fall',
+      'Read Genesis 12, 15, and 17 for the Abrahamic Covenant',
+      'Compare Genesis 3:15 with New Testament fulfillment in Christ'
     ],
     crossReferences: [
-      'Genesis 1-2 (Creation)',
-      'Genesis 3 (The Fall)',
-      'Genesis 12, 15, 17 (Abrahamic Covenant)',
-      'Genesis 22 (Sacrifice of Isaac)',
-      'Genesis 37-50 (Joseph narrative)',
-      'Romans 4 (Abraham\'s faith)',
-      'Hebrews 11:8-22 (Faith of the patriarchs)',
-      'Galatians 3:8 (Gospel preached to Abraham)'
+      'John 1:1–3 (Jesus as Creator)',
+      'Romans 5 (Adam and Christ)',
+      'Galatians 3 (Abraham’s offspring)'
     ]
   },
+
   {
     id: 'exodus-overview',
-    category: 'books',
-    subcategory: 'pentateuch',
+    category: 'book-overview',
     title: 'Exodus: Redemption and Covenant',
-    subtitle: 'God Delivers His People and Establishes His Covenant at Sinai',
-    introduction: 'Exodus means "departure" or "going out" and records Israel\'s dramatic deliverance from Egyptian slavery. This book reveals God as Redeemer, establishes the covenant at Sinai, and provides the pattern for worship through the tabernacle.',
+    subtitle: 'God Rescues His People and Forms a Holy Nation',
+    introduction:
+      'Exodus is the dramatic story of God delivering Israel from slavery and forming them into His covenant people. It reveals God’s power, faithfulness, and desire to dwell among His people.',
     sections: [
       {
-        heading: 'Israel\'s Slavery in Egypt',
+        heading: 'Slavery in Egypt',
         paragraphs: [
-          'Exodus opens approximately 400 years after Genesis ended. The Israelites had multiplied greatly in Egypt, but a new pharaoh "who did not know Joseph" enslaved them and oppressed them with forced labor.',
-          'When Israel\'s population continued to grow, Pharaoh ordered all Hebrew baby boys to be killed. Yet God preserved Moses, the deliverer He had chosen, through the faith of Moses\'s mother and the compassion of Pharaoh\'s daughter.',
-          'This slavery represents humanity\'s bondage to sin. Just as Israel could not free themselves, we cannot save ourselves from sin\'s slavery. We need a deliverer—ultimately Jesus Christ, our Passover Lamb.'
-        ],
-        quote: {
-          text: 'The Israelites groaned in their slavery and cried out, and their cry for help because of their slavery went up to God. God heard their groaning and he remembered his covenant with Abraham, with Isaac and with Jacob.',
-          reference: 'Exodus 2:23-24'
-        }
+          'Exodus opens with Israel oppressed under Pharaoh. Their suffering sets the stage for God’s mighty deliverance.',
+          'God hears their cries and remembers His covenant with Abraham.'
+        ]
       },
       {
         heading: 'The Call of Moses',
         paragraphs: [
-          'God appeared to Moses in a burning bush and revealed Himself as "I AM WHO I AM"—the eternal, self-existent God. He commissioned Moses to return to Egypt and demand Pharaoh release Israel.',
-          'God gave Moses miraculous signs to authenticate his mission and promised, "I will be with you." Despite Moses\'s objections, God equipped him for the task.',
-          'The name "I AM" (Yahweh/LORD) emphasizes God\'s eternal nature, His covenant faithfulness, and His self-sufficiency. Jesus later applied this name to Himself: "Before Abraham was born, I am!" (John 8:58).'
-        ]
-      },
-      {
-        heading: 'The Ten Plagues: Judgment on Egypt',
-        paragraphs: [
-          'Moses and Aaron confronted Pharaoh: "Let my people go!" When Pharaoh refused, God sent ten devastating plagues: water to blood, frogs, gnats, flies, livestock disease, boils, hail, locusts, darkness, and death of the firstborn.',
-          'Each plague demonstrated God\'s power over Egypt\'s false gods. The Nile (turned to blood) was worshiped as a deity. The sun (darkened) was Ra, Egypt\'s chief god. The plagues showed that Israel\'s God is supreme over all.',
-          'The final plague—death of the firstborn—led to Israel\'s deliverance. God instructed each family to sacrifice a lamb and apply its blood to their doorframes. The angel of death would "pass over" homes marked with blood.',
-          'This Passover became Israel\'s most important feast, commemorating their redemption. It also points to Jesus, "the Lamb of God, who takes away the sin of the world!" (John 1:29).'
+          'God appears to Moses in the burning bush and commissions him to confront Pharaoh.',
+          'Moses becomes God’s chosen instrument of deliverance.'
         ],
         quote: {
-          text: 'When I see the blood, I will pass over you. No destructive plague will touch you when I strike Egypt.',
-          reference: 'Exodus 12:13'
-        },
-        illustration: 'The Passover lamb foreshadows Christ perfectly: unblemished (sinless), sacrificed for the household (family of believers), blood applied for protection (His blood covers our sin), and eaten for strength (we feed on Christ through faith).'
-      },
-      {
-        heading: 'The Red Sea Crossing',
-        paragraphs: [
-          'After releasing Israel, Pharaoh changed his mind and pursued them with his army. Israel was trapped between the Egyptian army and the Red Sea. They cried out in fear, but Moses declared, "The LORD will fight for you; you need only to be still."',
-          'God parted the Red Sea, and Israel crossed on dry ground. When Egypt pursued, the waters returned and drowned Pharaoh\'s army. This miracle demonstrated God\'s complete power and salvation.',
-          'Israel celebrated with the Song of Moses (Exodus 15), praising God as warrior, redeemer, and king. This victory defined Israel\'s identity as God\'s redeemed people.',
-          'The Red Sea crossing symbolizes baptism—passing through water from slavery to freedom, from death to life (1 Corinthians 10:1-2).'
-        ]
-      },
-      {
-        heading: 'Journey to Sinai: Testing in the Wilderness',
-        paragraphs: [
-          'Between the Red Sea and Mount Sinai, God tested Israel. They complained about water, food, and leadership. Yet God graciously provided: bitter water made sweet, manna from heaven, quail for meat, and water from a rock.',
-          'These miracles revealed God\'s faithful provision. Paul later wrote that the rock that followed them was Christ (1 Corinthians 10:4). Jesus is the true bread from heaven (John 6) and the living water (John 7).',
-          'Israel\'s wilderness experience teaches us to trust God\'s provision, to remember His past faithfulness, and to avoid the grumbling and unbelief that kept that generation from entering the Promised Land.'
-        ]
-      },
-      {
-        heading: 'Mount Sinai: The Giving of the Law',
-        paragraphs: [
-          'At Mount Sinai, God entered into covenant with Israel. He gave the Ten Commandments—His moral law written on stone tablets. These commandments defined how Israel should relate to God (commandments 1-4) and to others (commandments 5-10).',
-          'The Law served multiple purposes: it revealed God\'s holy character, provided guidance for living, exposed sin, maintained order in society, and pointed to the need for a Savior. Paul wrote that "the law was our guardian until Christ came" (Galatians 3:24).',
-          'God also gave extensive case laws covering civil, moral, and ceremonial matters. These laws showed that all of life is sacred to God—He cares about worship, justice, property, relationships, and even rest.',
-          'The covenant at Sinai was ratified with blood (Exodus 24), foreshadowing the new covenant in Christ\'s blood.'
-        ],
-        quote: {
-          text: 'Now if you obey me fully and keep my covenant, then out of all nations you will be my treasured possession. Although the whole earth is mine, you will be for me a kingdom of priests and a holy nation.',
-          reference: 'Exodus 19:5-6'
+          text: 'I have come down to rescue them.',
+          reference: 'Exodus 3:8'
         }
       },
       {
-        heading: 'The Tabernacle: God\'s Dwelling Place',
+        heading: 'The Plagues and Passover',
         paragraphs: [
-          'Exodus 25-40 focuses on the tabernacle—a portable tent where God would dwell among His people. God gave Moses detailed instructions for its construction, furnishings, priesthood, and worship.',
-          'The tabernacle had three areas: the outer courtyard (with the bronze altar and bronze laver), the Holy Place (with the table of showbread, golden lampstand, and altar of incense), and the Most Holy Place (containing the Ark of the Covenant).',
-          'Every detail pointed to Christ. The bronze altar speaks of sacrifice for sin. The laver speaks of cleansing. The bread points to Jesus, the Bread of Life. The lampstand to Jesus, the Light of the World. The incense to prayer through our High Priest.',
-          'The Ark of the Covenant, containing the Law, Aaron\'s rod, and manna, was covered by the mercy seat where God\'s presence dwelt. Once a year, on the Day of Atonement, the high priest entered with blood to make atonement for sin.',
-          'When the tabernacle was completed, God\'s glory filled it. God had come to dwell with His people. This foreshadows the incarnation—"The Word became flesh and made his dwelling among us" (John 1:14, literally "tabernacled" among us).'
+          'God sends ten plagues to judge Egypt and reveal His supremacy.',
+          'The Passover becomes the defining act of redemption, pointing forward to Christ.'
         ]
       },
       {
-        heading: 'The Golden Calf: Covenant Broken',
+        heading: 'The Covenant at Sinai',
         paragraphs: [
-          'While Moses was on Mount Sinai receiving the Law, the people grew impatient. They made a golden calf and worshiped it, saying, "These are your gods, Israel, who brought you up out of Egypt!"',
-          'This was a catastrophic violation of the covenant—especially the first two commandments. God threatened to destroy Israel, but Moses interceded. God relented but sent a plague on the people.',
-          'Moses broke the stone tablets, symbolizing the broken covenant. The Levites executed 3,000 people who refused to repent. Yet God showed mercy—He renewed the covenant and gave Moses new tablets.',
-          'This episode shows human sinfulness, the severity of idolatry, the need for an intercessor (pointing to Christ), and God\'s willingness to forgive repentant sinners.'
-        ],
-        illustration: 'Aaron\'s weak leadership (making the golden calf) contrasts with his later role as high priest. God can redeem and use even those who have failed greatly.'
+          'God gives Israel the Law, forming them into a holy nation.',
+          'The tabernacle instructions reveal God’s desire to dwell among His people.'
+        ]
       }
     ],
     keyTakeaways: [
-      'God is faithful to His covenant promises',
-      'God redeems His people through the blood of a lamb (Passover)',
-      'The Law reveals God\'s holiness and our need for salvation',
-      'The tabernacle shows God\'s desire to dwell with His people',
-      'Every element of Exodus points forward to Christ',
-      'God provides for His people in the wilderness of life'
+      'God rescues His people with power and purpose',
+      'Passover foreshadows Christ’s sacrifice',
+      'The Law reveals God’s holiness and Israel’s calling'
     ],
     furtherStudy: [
-      'Read Exodus 3-4 for Moses\'s call and commission',
-      'Study Exodus 12 on Passover and its fulfillment in Christ',
-      'Explore Hebrews 9-10 on how the tabernacle points to Jesus',
-      'Compare Exodus 19-20 with Matthew 5-7 (Old Law vs. New Teaching)'
+      'Read Exodus 1–15 for the deliverance narrative',
+      'Study Exodus 20 for the Ten Commandments',
+      'Explore Hebrews 8–10 for Christ as the fulfillment of the sacrificial system'
     ],
     crossReferences: [
-      'Exodus 3 (Burning bush and God\'s name revealed)',
-      'Exodus 12 (The Passover)',
-      'Exodus 14 (Red Sea crossing)',
-      'Exodus 20 (Ten Commandments)',
-      'Exodus 25-40 (Tabernacle instructions)',
-      'John 1:14, 29 (Jesus tabernacles among us; Lamb of God)',
-      'Hebrews 9-10 (Tabernacle fulfilled in Christ)',
-      '1 Corinthians 5:7 (Christ our Passover)'
+      'John 1:29 (Jesus the Lamb of God)',
+      '1 Corinthians 5:7 (Christ our Passover)',
+      'Hebrews 9 (Christ and the tabernacle)'
     ]
   },
+
   {
-    id: 'matthew-overview',
-    category: 'books',
-    subcategory: 'gospels',
-    title: 'Matthew: The King Has Come',
-    subtitle: 'Jesus as the Promised Messiah and King of the Jews',
-    introduction: 'Matthew presents Jesus as the long-awaited Jewish Messiah, the King descended from David. Written primarily for a Jewish audience, Matthew demonstrates how Jesus fulfills Old Testament prophecies and establishes His kingdom.',
+    id: 'psalms-overview',
+    category: 'book-overview',
+    title: 'Psalms: The Bible’s Prayer Book',
+    subtitle: 'Worship, Lament, Praise, and the Heart of God’s People',
+    introduction:
+      'The Psalms are the inspired songs and prayers of God’s people. They express every human emotion—joy, sorrow, fear, hope—and teach us how to worship honestly.',
     sections: [
       {
-        heading: 'Author and Purpose',
+        heading: 'A Book of Worship',
         paragraphs: [
-          'Matthew, also called Levi, was a tax collector before Jesus called him to discipleship. His Gospel was likely written between AD 50-70, before the destruction of Jerusalem.',
-          'Matthew wrote to convince Jewish readers that Jesus is the promised Messiah. He quotes the Old Testament more than any other Gospel (over 60 direct quotations) and uses phrases like "this was to fulfill what was spoken by the prophet."',
-          'The Gospel emphasizes Jesus\'s royal lineage, His teaching authority, and the nature of His kingdom. Matthew wants readers to recognize Jesus as King and submit to His authority.'
-        ],
-        quote: {
-          text: 'This is a record of the ancestors of Jesus the Messiah, a descendant of David and of Abraham.',
-          reference: 'Matthew 1:1 (NLT)'
-        }
-      },
-      {
-        heading: 'The Genealogy and Birth of the King',
-        paragraphs: [
-          'Matthew opens with Jesus\'s genealogy, tracing His descent from Abraham through David to Joseph. This establishes Jesus\'s legal right to David\'s throne and His identity as the "son of Abraham" in whom all nations would be blessed.',
-          'The genealogy includes four women (unusual for Jewish genealogies): Tamar, Rahab, Ruth, and Bathsheba. All had scandalous or Gentile backgrounds, foreshadowing that Jesus\'s kingdom would include the marginalized and all nations.',
-          'Jesus\'s birth fulfilled Isaiah 7:14—the virgin would conceive and bear a son called Immanuel ("God with us"). Jesus\'s conception by the Holy Spirit shows He is both fully God and fully man.',
-          'The visit of the Magi (wise men from the East) shows Gentiles worshiping the Jewish King, while Herod and Jerusalem were troubled. This foreshadows Israel\'s rejection and the Gentiles\' acceptance of Jesus.'
+          'The Psalms were Israel’s hymnal, used in temple worship and personal devotion.',
+          'They teach us to bring our whole selves before God.'
         ]
       },
       {
-        heading: 'Preparation for Ministry',
+        heading: 'Messianic Psalms',
         paragraphs: [
-          'John the Baptist prepared the way for Jesus, calling Israel to repent because "the kingdom of heaven is near." Jesus was baptized by John, though He had no sin to confess. This identified Jesus with sinners and inaugurated His public ministry.',
-          'At Jesus\'s baptism, the Father spoke: "This is my Son, whom I love; with him I am well pleased." The Spirit descended like a dove. This Trinitarian manifestation confirmed Jesus\'s identity as God\'s beloved Son.',
-          'Immediately, the Spirit led Jesus into the wilderness where Satan tempted Him for 40 days. Unlike Israel who failed in the wilderness, Jesus overcame every temptation by quoting Scripture. He proved to be the faithful Son where Israel failed.',
-          'These temptations attacked Jesus\'s identity ("If you are the Son of God..."), His mission (offering kingdoms without the cross), and His trust in the Father. Jesus\'s victory qualified Him to be our sympathetic High Priest (Hebrews 4:15).'
-        ],
-        quote: {
-          text: 'Jesus answered, "It is written: \'Man shall not live on bread alone, but on every word that comes from the mouth of God.\'"',
-          reference: 'Matthew 4:4'
-        }
-      },
-      {
-        heading: 'The Sermon on the Mount: Kingdom Ethics',
-        paragraphs: [
-          'Matthew 5-7 records Jesus\'s longest sermon, delivered on a mountainside (echoing Moses receiving the Law on Mount Sinai). Jesus teaches the ethics and character of His kingdom.',
-          'The Beatitudes (Matthew 5:3-12) describe kingdom citizens: poor in spirit, mourning over sin, meek, hungering for righteousness, merciful, pure in heart, peacemakers, and persecuted for righteousness. These reverse worldly values.',
-          'Jesus clarified the Law\'s true meaning, going beyond external actions to heart attitudes. Anger is like murder; lust is like adultery. He raised the standard impossibly high—showing that external morality isn\'t enough; we need heart transformation.',
-          'Jesus taught kingdom priorities: loving enemies, giving in secret, storing treasures in heaven, trusting God for provision, avoiding judgment, and treating others as we want to be treated (the Golden Rule).',
-          'He concluded with a warning: it\'s not enough to hear His words—we must put them into practice. Only those who build their lives on Jesus\'s teaching will stand in the judgment.'
-        ],
-        bulletPoints: [
-          'Kingdom citizens have transformed hearts, not just external morality',
-          'True righteousness exceeds that of the Pharisees',
-          'Love for enemies shows we are children of our Father',
-          'Prayer should be private, simple, and trusting',
-          'We cannot serve both God and money',
-          'We will be judged by whether we obeyed Jesus\'s teaching'
+          'Many psalms point forward to Jesus—His suffering, kingship, and victory.',
+          'Psalm 22 and Psalm 110 are especially significant.'
         ]
       },
       {
-        heading: 'Miracles and Authority',
+        heading: 'Honest Prayer',
         paragraphs: [
-          'Matthew records numerous miracles demonstrating Jesus\'s authority: healing lepers, paralytics, and the blind; casting out demons; calming storms; raising the dead; feeding thousands with a few loaves and fish.',
-          'These miracles showed Jesus\'s compassion and proved His identity as Messiah. Isaiah prophesied that Messiah would heal the blind, deaf, and lame—and Jesus did exactly that.',
-          'Jesus also demonstrated authority over the Sabbath, sin (forgiving the paralytic), nature (calming storms), and demons. His authority amazed crowds: "He taught as one who had authority, not as their teachers of the law."',
-          'The religious leaders recognized Jesus\'s authority but attributed it to Satan. Jesus warned this blasphemy against the Holy Spirit was unforgivable—not because God won\'t forgive, but because those who reject the Spirit\'s testimony about Jesus cannot be saved.'
+          'The psalms include lament, confession, thanksgiving, and praise.',
+          'They show that God welcomes raw, honest prayer.'
         ]
-      },
+      }
+    ],
+    keyTakeaways: [
+      'The Psalms teach us how to pray and worship',
+      'They reveal Christ prophetically',
+      'They express the full range of human emotion before God'
+    ],
+    furtherStudy: [
+      'Study Psalm 23, 51, and 103',
+      'Compare Psalm 22 with the crucifixion accounts',
+      'Explore Psalm 1 and 119 on God’s Word'
+    ],
+    crossReferences: [
+      'Matthew 27 (fulfillment of Psalm 22)',
+      'Hebrews 1 (use of Psalms about Christ)'
+    ]
+  },
+
+  {
+    id: 'proverbs-overview',
+    category: 'book-overview',
+    title: 'Proverbs: Wisdom for Everyday Life',
+    subtitle: 'Living with Godly Skill in a Broken World',
+    introduction:
+      'Proverbs is a collection of wise sayings that teach practical, godly living. It shows how to apply God’s truth to daily decisions, relationships, and character.',
+    sections: [
       {
-        heading: 'Parables of the Kingdom',
+        heading: 'The Fear of the Lord',
         paragraphs: [
-          'Matthew 13 contains seven parables about the kingdom of heaven. Jesus taught in parables to reveal truth to believers while hiding it from hard-hearted people.',
-          'The Parable of the Sower shows that people respond differently to the gospel—some reject it immediately, others accept it temporarily but fall away, others are choked by worldly concerns, and some bear fruit abundantly.',
-          'The Parable of the Weeds teaches that the kingdom contains both genuine believers and false professors. They will grow together until the judgment, when angels will separate them.',
-          'Other parables reveal that the kingdom starts small but grows large (mustard seed), permeates everything (leaven), is worth any sacrifice (hidden treasure, pearl), and will involve final judgment (dragnet).',
-          'These parables teach that the kingdom has already begun but awaits future consummation. We live in the "already but not yet" of God\'s kingdom.'
+          'The foundation of wisdom is reverence for God.',
+          'Wisdom is not merely intelligence but moral and spiritual insight.'
         ],
         quote: {
-          text: 'The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and then in his joy went and sold all he had and bought that field.',
-          reference: 'Matthew 13:44'
+          text: 'The fear of the LORD is the beginning of wisdom.',
+          reference: 'Proverbs 9:10'
         }
       },
       {
-        heading: 'Peter\'s Confession and the Church',
+        heading: 'Wisdom vs. Folly',
         paragraphs: [
-          'When Jesus asked His disciples, "Who do you say I am?" Peter declared, "You are the Messiah, the Son of the living God." Jesus pronounced Peter blessed because this was revealed by the Father.',
-          'Jesus said He would build His church on this rock (Peter\'s confession of Christ), and the gates of hell would not prevail against it. He gave the keys of the kingdom to the church—authority to proclaim the gospel and declare who is in the kingdom.',
-          'Immediately after, Jesus predicted His death and resurrection. Peter rebuked Him—showing he still didn\'t understand that Messiah must suffer. Jesus called Peter "Satan" for tempting Him to avoid the cross.',
-          'Jesus taught that following Him requires self-denial and taking up one\'s cross. We must lose our lives to save them. Nothing profits us if we gain the world but lose our souls.'
+          'Proverbs contrasts the wise person who follows God with the fool who rejects Him.',
+          'These paths lead to radically different outcomes.'
         ]
       },
       {
-        heading: 'The Passion Week',
+        heading: 'Practical Instruction',
         paragraphs: [
-          'Matthew 21-28 narrates Jesus\'s final week. He entered Jerusalem on a donkey (fulfilling Zechariah 9:9), cleansed the temple, debated religious leaders, and taught in parables condemning Israel\'s leaders.',
-          'Jesus prophesied Jerusalem\'s destruction and taught about His second coming. He warned disciples to watch and be ready, for the Son of Man would come at an unexpected hour.',
-          'At the Last Supper, Jesus instituted Communion: "This is my body... This is my blood of the covenant, which is poured out for many for the forgiveness of sins." He identified Judas as His betrayer.',
-          'In Gethsemane, Jesus prayed in agony, "My Father, if it is possible, may this cup be taken from me. Yet not as I will, but as you will." He submitted to the Father\'s will, even unto death.',
-          'Jesus was arrested, tried before Jewish and Roman authorities, mocked, beaten, and crucified. At His death, the temple curtain tore from top to bottom—God had opened access to His presence through Christ\'s sacrifice.',
-          'On the third day, Jesus rose from the dead. Angels announced, "He is not here; he has risen!" Jesus appeared to His disciples, proving His resurrection.'
+          'Proverbs addresses speech, work, money, relationships, purity, and integrity.',
+          'It teaches that godly character leads to blessing.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Wisdom begins with fearing God',
+      'Proverbs offers practical guidance for daily life',
+      'Wisdom leads to blessing; folly leads to destruction'
+    ],
+    furtherStudy: [
+      'Read Proverbs 1–9 for the foundation of wisdom',
+      'Study Proverbs 31 for the virtuous life',
+      'Compare James (NT wisdom book) with Proverbs'
+    ],
+    crossReferences: [
+      'James 1:5 (God gives wisdom)',
+      'Matthew 7:24–27 (wise and foolish builders)'
+    ]
+  },
+
+  {
+    id: 'isaiah-overview',
+    category: 'book-overview',
+    title: 'Isaiah: The Gospel of the Old Testament',
+    subtitle: 'Judgment, Hope, and the Coming Messiah',
+    introduction:
+      'Isaiah is one of the most theologically rich books in Scripture. It reveals God’s holiness, Israel’s sin, and the promise of a coming Savior who will bring redemption to the world.',
+    sections: [
+      {
+        heading: 'The Holy God',
+        paragraphs: [
+          'Isaiah’s vision of God’s holiness in chapter 6 is one of the most powerful scenes in Scripture.',
+          'God’s holiness exposes human sin and reveals our need for cleansing.'
         ],
         quote: {
-          text: 'Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.',
-          reference: 'Matthew 28:19-20'
+          text: 'Holy, holy, holy is the LORD Almighty.',
+          reference: 'Isaiah 6:3'
         }
+      },
+      {
+        heading: 'Judgment and Exile',
+        paragraphs: [
+          'Isaiah warns Judah of coming judgment because of idolatry and injustice.',
+          'Yet even in judgment, God promises restoration.'
+        ]
+      },
+      {
+        heading: 'The Suffering Servant',
+        paragraphs: [
+          'Isaiah 53 gives a detailed prophecy of the Messiah’s suffering and atoning death.',
+          'This chapter is foundational for understanding Christ’s sacrifice.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Isaiah reveals God’s holiness and humanity’s sin',
+      'The book contains powerful Messianic prophecies',
+      'God promises both judgment and restoration'
+    ],
+    furtherStudy: [
+      'Study Isaiah 6, 9, 40, and 53',
+      'Compare Isaiah 53 with the Gospels',
+      'Explore Isaiah’s prophecies of the new creation (Isaiah 65–66)'
+    ],
+    crossReferences: [
+      'Matthew 1:23 (Immanuel prophecy)',
+      'John 12:41 (Isaiah saw Christ’s glory)',
+      'Acts 8:32–35 (Isaiah 53 explained)'
+    ]
+  },
+
+  {
+    id: 'daniel-overview',
+    category: 'book-overview',
+    title: 'Daniel: Faithfulness in Exile',
+    subtitle: 'God’s Sovereignty Over Kingdoms and History',
+    introduction:
+      'Daniel combines inspiring stories of faith with powerful visions of God’s rule over history. It shows that God is sovereign even when His people live in exile.',
+    sections: [
+      {
+        heading: 'Faith Under Pressure',
+        paragraphs: [
+          'Daniel and his friends remain faithful in a pagan empire.',
+          'Stories like the fiery furnace and lions’ den show God’s power to rescue.'
+        ]
+      },
+      {
+        heading: 'God Over Nations',
+        paragraphs: [
+          'Daniel interprets dreams revealing God’s control over world empires.',
+          'Earthly kingdoms rise and fall, but God’s kingdom endures forever.'
+        ]
+      },
+      {
+        heading: 'Messianic Prophecy',
+        paragraphs: [
+          'Daniel contains key prophecies about the coming Messiah and God’s eternal kingdom.',
+          'The “Son of Man” vision in Daniel 7 is fulfilled in Jesus.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God is sovereign over history and nations',
+      'Faithfulness is possible even in hostile environments',
+      'Daniel contains important Messianic prophecies'
+    ],
+    furtherStudy: [
+      'Read Daniel 1–6 for narrative stories',
+      'Study Daniel 7 for the Son of Man prophecy',
+      'Compare Daniel’s visions with Revelation'
+    ],
+    crossReferences: [
+      'Matthew 24:15 (Daniel’s prophecy)',
+      'Revelation 1 (Son of Man imagery)'
+    ]
+  },
+
+  {
+    id: 'matthew-overview',
+    category: 'book-overview',
+    title: 'Matthew: Jesus the Promised King',
+    subtitle: 'The Fulfillment of Old Testament Prophecy',
+    introduction:
+      'Matthew presents Jesus as the long-awaited Messiah and King. Written with strong Jewish emphasis, it shows how Jesus fulfills the Law and the Prophets.',
+    sections: [
+      {
+        heading: 'Jesus the Messiah',
+        paragraphs: [
+          'Matthew begins with a genealogy proving Jesus is the Son of David.',
+          'He fulfills prophecy through His birth, ministry, and mission.'
+        ]
+      },
+      {
+        heading: 'The Kingdom of Heaven',
+        paragraphs: [
+          'Matthew emphasizes Jesus’ teaching on the kingdom.',
+          'The Sermon on the Mount reveals kingdom ethics.'
+        ]
       },
       {
         heading: 'The Great Commission',
         paragraphs: [
-          'Matthew ends with the Great Commission. Jesus declared, "All authority in heaven and on earth has been given to me." Based on this authority, He commands His disciples to make disciples of all nations.',
-          'This involves going, baptizing, and teaching obedience to everything Jesus commanded. The mission is global ("all nations"), comprehensive ("all I have commanded"), and empowered by Jesus\'s presence ("I am with you always").',
-          'The Gospel that began with "Immanuel—God with us" ends with Jesus\'s promise to be with His disciples always. The King has established His kingdom and will return to consummate it.'
+          'Matthew ends with Jesus sending His disciples to make disciples of all nations.',
+          'This mission continues today.'
         ]
       }
     ],
     keyTakeaways: [
-      'Jesus is the promised Messiah and King descended from David',
-      'He fulfills Old Testament prophecies and establishes God\'s kingdom',
-      'Kingdom ethics require heart transformation, not just external obedience',
-      'Jesus has all authority in heaven and earth',
-      'The church is commissioned to make disciples of all nations',
-      'Jesus is Immanuel—God with us—and promises to be with us always'
+      'Jesus is the promised King and Messiah',
+      'Matthew highlights fulfillment of prophecy',
+      'The book emphasizes discipleship and the kingdom'
     ],
     furtherStudy: [
-      'Compare Matthew\'s genealogy (1:1-17) with Luke\'s (3:23-38)',
-      'Study the Sermon on the Mount (Matthew 5-7) in depth',
-      'Read Isaiah 53 alongside Matthew 26-27 to see prophecy fulfilled',
-      'Explore how Matthew\'s parables (ch. 13) explain the kingdom'
+      'Study Matthew 5–7 (Sermon on the Mount)',
+      'Compare Matthew’s birth narrative with Luke’s',
+      'Explore Matthew’s use of Old Testament prophecy'
     ],
     crossReferences: [
-      'Matthew 5-7 (Sermon on the Mount)',
-      'Matthew 13 (Parables of the kingdom)',
-      'Matthew 16:13-20 (Peter\'s confession)',
-      'Matthew 26-28 (Passion, death, and resurrection)',
-      'Matthew 28:18-20 (Great Commission)',
-      'Isaiah 7:14 (Virgin birth prophecy)',
-      'Isaiah 53 (Suffering Servant)',
-      'Zechariah 9:9 (Triumphal entry prophecy)'
+      'Isaiah 7:14 (Immanuel)',
+      'Micah 5:2 (Bethlehem prophecy)',
+      'Matthew 28:18–20 (Great Commission)'
     ]
   },
-  {
-    id: 'mark-overview',
-    category: 'books',
-    subcategory: 'gospels',
-    title: 'Mark: The Suffering Servant',
-    subtitle: 'Jesus as the Powerful Yet Suffering Son of God',
-    introduction: 'Mark is the shortest and likely the earliest Gospel, written with energy and urgency. It presents Jesus as the powerful Son of God who came not to be served, but to serve and give His life as a ransom for many.',
-    sections: [
-      {
-        heading: 'Author, Audience, and Style',
-        paragraphs: [
-          'John Mark, companion of Peter and Barnabas, wrote this Gospel likely in Rome around AD 65-70. Early church tradition says Mark recorded Peter\'s eyewitness testimony about Jesus.',
-          'Mark wrote for a Roman/Gentile audience. He explains Jewish customs, translates Aramaic phrases, and uses Latin terms. Unlike Matthew, he doesn\'t emphasize Jesus\'s Jewish credentials or quote the Old Testament extensively.',
-          'Mark\'s style is fast-paced and action-oriented. He uses "immediately" 42 times, creating a sense of urgency. His Gospel is vivid and detailed, likely reflecting Peter\'s memories of events.',
-          'The key verse summarizes Mark\'s message: "For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many" (Mark 10:45).'
-        ],
-        quote: {
-          text: 'The beginning of the good news about Jesus the Messiah, the Son of God.',
-          reference: 'Mark 1:1'
-        }
-      },
-      {
-        heading: 'The Powerful Ministry of Jesus',
-        paragraphs: [
-          'Mark begins with John the Baptist preparing the way for Jesus. At Jesus\'s baptism, the heavens were "torn open"—Mark uses violent language to show God breaking into human history.',
-          'The Spirit immediately drove Jesus into the wilderness to be tempted. After overcoming temptation, Jesus began preaching: "The time has come. The kingdom of God has come near. Repent and believe the good news!"',
-          'Mark emphasizes Jesus\'s powerful actions more than His teaching. In rapid succession, Jesus calls disciples, casts out demons, heals Peter\'s mother-in-law, cleanses a leper, heals a paralytic, and commands nature.',
-          'The religious leaders immediately opposed Jesus. By Mark 3, they were plotting to kill Him. Jesus\'s authority challenged their power and exposed their hypocrisy.',
-          'Jesus appointed twelve apostles "that they might be with him and that he might send them out to preach and to have authority to drive out demons" (Mark 3:14-15). Ministry flows from relationship with Jesus.'
-        ],
-        bulletPoints: [
-          'Jesus\'s authority over demons showed His divine power',
-          'His healing demonstrated compassion and messianic identity',
-          'His forgiveness of sins claimed divine prerogative',
-          'His Sabbath miracles challenged legalistic traditions',
-          'His power over nature proved He is Lord of creation'
-        ]
-      },
-      {
-        heading: 'The Messianic Secret',
-        paragraphs: [
-          'Throughout Mark, Jesus repeatedly commands people not to tell others about Him. When He heals, He says, "Don\'t tell anyone." When demons recognize Him as God\'s Son, He silences them.',
-          'Why this "messianic secret"? Jesus wanted to avoid being labeled merely as a miracle-worker or political messiah. The crowds wanted a conquering king; Jesus came as a suffering servant.',
-          'Jesus would reveal His true identity only after the cross and resurrection. Then people would understand that Messiah must suffer before He reigns, die before He rises, and serve before He is glorified.',
-          'Peter\'s confession at Caesarea Philippi marks a turning point. Peter declared Jesus is the Messiah, but when Jesus predicted His death, Peter rebuked Him. Jesus sharply responded, "Get behind me, Satan! You do not have in mind the concerns of God, but merely human concerns."'
-        ],
-        quote: {
-          text: 'Then he called the crowd to him along with his disciples and said: "Whoever wants to be my disciple must deny themselves and take up their cross and follow me."',
-          reference: 'Mark 8:34'
-        }
-      },
-      {
-        heading: 'The Journey to Jerusalem',
-        paragraphs: [
-          'After Peter\'s confession, Jesus "resolutely set out for Jerusalem" (Luke 9:51). Mark records three predictions of His death and resurrection. Each time, the disciples failed to understand.',
-          'Jesus taught that greatness in His kingdom means servanthood. When James and John requested places of honor, Jesus asked, "Can you drink the cup I drink or be baptized with the baptism I am baptized with?" True discipleship requires sharing Christ\'s sufferings.',
-          'The Transfiguration (Mark 9) gave Peter, James, and John a preview of Jesus\'s glory. Moses and Elijah appeared, and the Father declared, "This is my Son, whom I love. Listen to him!" This confirmed Jesus is greater than Moses (the Law) and Elijah (the Prophets).',
-          'Jesus taught extensively about faith, prayer, marriage, wealth, and the cost of discipleship. When a rich young man asked about eternal life, Jesus told him to sell everything and follow Him. The man went away sad, showing that wealth can be an idol preventing salvation.'
-        ],
-        illustration: 'Blind Bartimaeus (Mark 10:46-52) demonstrates true faith. Despite being told to be quiet, he cried out louder, "Jesus, Son of David, have mercy on me!" Jesus stopped, called him, healed him, and commended his faith. Persistence in faith is rewarded.'
-      },
-      {
-        heading: 'The Final Week in Jerusalem',
-        paragraphs: [
-          'Jesus entered Jerusalem on a donkey while crowds shouted, "Hosanna! Blessed is he who comes in the name of the Lord!" This was a messianic claim—the King had arrived.',
-          'Jesus cleansed the temple, driving out merchants and moneychangers. He declared, "My house will be called a house of prayer for all nations, but you have made it a den of robbers." This challenged the corrupt religious establishment.',
-          'The religious leaders tried to trap Jesus with questions about taxes, resurrection, and the greatest commandment. Jesus answered brilliantly, silencing them and exposing their ignorance of Scripture.',
-          'Jesus warned the disciples about false messiahs, persecution, and the end times. He urged them to watch and be ready, for they didn\'t know when the Son of Man would return.',
-          'At the Last Supper, Jesus instituted the Lord\'s Supper: "This is my body... This is my blood of the covenant, which is poured out for many." He predicted Peter\'s denial and the disciples\' desertion.'
-        ]
-      },
-      {
-        heading: 'The Passion of Christ',
-        paragraphs: [
-          'In Gethsemane, Jesus prayed in deep anguish: "Abba, Father, everything is possible for you. Take this cup from me. Yet not what I will, but what you will." He submitted completely to the Father\'s will.',
-          'Jesus was betrayed by Judas, arrested, and abandoned by His disciples. Peter denied Him three times, just as Jesus predicted. The disciples who promised to die with Him all fled.',
-          'Jesus stood trial before the Sanhedrin. When asked if He was the Messiah, He declared, "I am. And you will see the Son of Man sitting at the right hand of the Mighty One and coming on the clouds of heaven." For this "blasphemy," He was condemned to death.',
-          'Before Pilate, Jesus remained mostly silent, fulfilling Isaiah 53:7: "He was oppressed and afflicted, yet he did not open his mouth." Pilate found no fault but gave in to the crowd\'s demands to crucify Jesus.',
-          'Jesus was mocked, beaten, and crucified between two criminals. At 3 PM, He cried out, "My God, my God, why have you forsaken me?" and died. The temple curtain tore from top to bottom—access to God was now open through Christ\'s sacrifice.',
-          'A Roman centurion, seeing how Jesus died, declared, "Surely this man was the Son of God!" The first person in Mark\'s Gospel to truly understand Jesus\'s identity was a Gentile soldier at the cross.'
-        ],
-        quote: {
-          text: 'And when the centurion, who stood there in front of Jesus, saw how he died, he said, "Surely this man was the Son of God!"',
-          reference: 'Mark 15:39'
-        }
-      },
-      {
-        heading: 'The Resurrection',
-        paragraphs: [
-          'On Sunday morning, women came to anoint Jesus\'s body. They found the stone rolled away and a young man (angel) who announced, "He has risen! He is not here. See the place where they laid him."',
-          'The angel instructed them to tell the disciples and Peter (mentioning Peter specifically shows Jesus had forgiven and restored him) that Jesus would meet them in Galilee.',
-          'Mark\'s Gospel ends abruptly at 16:8 in the earliest manuscripts. The women fled the tomb in fear and amazement. Scholars debate whether Mark intended this ending or if the original ending was lost.',
-          'The longer ending (verses 9-20) describes Jesus\'s appearances and the Great Commission but was likely added later. Regardless, Mark\'s message is clear: Jesus rose from the dead, conquered sin and death, and calls disciples to follow Him in suffering and service.'
-        ]
-      }
-    ],
-    keyTakeaways: [
-      'Jesus is the powerful Son of God who demonstrates divine authority',
-      'True discipleship requires taking up your cross and following Jesus',
-      'The Messiah must suffer before He reigns',
-      'Greatness in God\'s kingdom comes through servanthood',
-      'Jesus gave His life as a ransom for many',
-      'The resurrection vindicates Jesus and guarantees our hope'
-    ],
-    furtherStudy: [
-      'Compare Mark\'s fast-paced style with Matthew\'s and Luke\'s accounts',
-      'Study Isaiah 53 alongside Mark\'s passion narrative',
-      'Explore Mark 10:45 as the key verse for the entire Gospel',
-      'Read Mark in one sitting to experience its urgent, action-packed flow'
-    ],
-    crossReferences: [
-      'Mark 1:1-15 (Beginning of Jesus\'s ministry)',
-      'Mark 8:27-38 (Peter\'s confession and call to discipleship)',
-      'Mark 10:45 (Jesus came to serve and give His life)',
-      'Mark 14-15 (Passion narrative)',
-      'Mark 16:1-8 (The resurrection)',
-      'Isaiah 53 (Suffering Servant prophecy)',
-      'Philippians 2:5-11 (Christ\'s humility and exaltation)',
-      'Hebrews 12:2 (Jesus endured the cross for joy set before Him)'
-    ]
-  },
-  {
-    id: 'luke-overview',
-    category: 'books',
-    subcategory: 'gospels',
-    title: 'Luke: The Savior of All People',
-    subtitle: 'Jesus as the Compassionate Savior for Jews, Gentiles, Rich, Poor, Men, and Women',
-    introduction: 'Luke presents Jesus as the perfect Son of Man who brings salvation to all people. Written by a Gentile physician, Luke emphasizes Jesus\'s compassion, His concern for the marginalized, and the universal scope of His mission.',
-    sections: [
-      {
-        heading: 'Author and Purpose',
-        paragraphs: [
-          'Luke, a physician and companion of Paul, wrote this Gospel and Acts for Theophilus (meaning "lover of God"), possibly a Roman official investigating Christianity or a new believer needing instruction.',
-          'Luke wasn\'t an eyewitness but "carefully investigated everything from the beginning" and interviewed eyewitnesses. His Gospel is historically precise, mentioning specific rulers, dates, and places that have been verified by archaeology.',
-          'Luke wrote to show that Christianity is historically reliable, that Jesus is the Savior for all people, and that God\'s salvation plan includes Gentiles. His Gospel emphasizes prayer, the Holy Spirit, joy, and God\'s concern for the poor and outcast.',
-          'Luke is the longest Gospel and contains unique material found nowhere else, including several parables (Good Samaritan, Prodigal Son, Rich Man and Lazarus) and events (Zacchaeus, Emmaus road).'
-        ],
-        quote: {
-          text: 'Many have undertaken to draw up an account of the things that have been fulfilled among us, just as they were handed down to us by those who from the first were eyewitnesses and servants of the word.',
-          reference: 'Luke 1:1-2'
-        }
-      },
-      {
-        heading: 'The Birth Narratives',
-        paragraphs: [
-          'Luke provides the most detailed account of Jesus\'s birth. The angel Gabriel announced to Zechariah that his wife Elizabeth would bear John the Baptist, despite her old age. Zechariah doubted and was struck mute until John\'s birth.',
-          'Gabriel then appeared to Mary, announcing she would conceive by the Holy Spirit and bear God\'s Son. Mary\'s response—"I am the Lord\'s servant. May your word to me be fulfilled"—demonstrates remarkable faith and submission.',
-          'Mary\'s song (the Magnificat) praises God for keeping His promises, lifting up the humble, and bringing down the proud. God was working through a poor virgin from Nazareth to accomplish salvation.',
-          'Jesus was born in Bethlehem because Caesar Augustus called a census. Luke carefully notes historical details. The Savior of the world entered in poverty and obscurity.',
-          'Angels announced the birth to shepherds—the lowest social class. The gospel is first proclaimed to the poor and marginalized, a theme throughout Luke. The shepherds spread the news, glorifying God.'
-        ],
-        bulletPoints: [
-          'God keeps His promises despite impossible circumstances',
-          'The Holy Spirit enabled Jesus\'s conception',
-          'God exalts the humble and humbles the exalted',
-          'The gospel comes first to the poor and outcast',
-          'Jesus entered history at a specific time and place'
-        ]
-      },
-      {
-        heading: 'Jesus\'s Early Ministry',
-        paragraphs: [
-          'At age 12, Jesus amazed teachers in the temple with His understanding. When Mary and Joseph found Him, He said, "I had to be in my Father\'s house"—the first recorded words of Jesus show His awareness of His divine identity.',
-          'Luke traces Jesus\'s genealogy back to Adam (not just Abraham like Matthew), emphasizing that Jesus is the Savior for all humanity, not just Jews.',
-          'After His baptism and temptation, Jesus began preaching in synagogues. In Nazareth, He read Isaiah 61: "The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor... to proclaim freedom for the prisoners... recovery of sight for the blind, to set the oppressed free."',
-          'Jesus declared, "Today this scripture is fulfilled in your hearing." He claimed to be the Messiah anointed to bring good news to the poor and freedom to captives. When people questioned His credentials, Jesus said prophets are rejected in their hometowns. The crowd tried to kill Him, but He walked through them unharmed.'
-        ],
-        quote: {
-          text: 'The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor.',
-          reference: 'Luke 4:18'
-        }
-      },
-      {
-        heading: 'Ministry to the Marginalized',
-        paragraphs: [
-          'Luke emphasizes Jesus\'s compassion for those society rejected. He touched lepers (ritually unclean), ate with tax collectors and sinners (socially unacceptable), healed on the Sabbath (religiously controversial), and allowed women to follow Him (culturally shocking).',
-          'When a sinful woman washed Jesus\'s feet with her tears and perfume, the Pharisee host was scandalized. Jesus defended her, saying her many sins were forgiven because she loved much. Those forgiven little love little.',
-          'Jesus raised a widow\'s only son at Nain, showing compassion for her devastating loss. He healed a bent-over woman on the Sabbath, calling her "a daughter of Abraham." He invited Himself to Zacchaeus\'s house, declaring "salvation has come to this house."',
-          'Women played a prominent role in Luke\'s Gospel. Several women supported Jesus\'s ministry financially. Martha and Mary hosted Him. Women were last at the cross and first at the tomb. Luke shows Jesus valued women in a culture that didn\'t.'
-        ],
-        illustration: 'The Parable of the Good Samaritan (Luke 10:25-37) shows that love for neighbor transcends ethnic and religious boundaries. The despised Samaritan showed true compassion while the priest and Levite passed by. Jesus commands, "Go and do likewise."'
-      },
-      {
-        heading: 'Parables Unique to Luke',
-        paragraphs: [
-          'Luke records parables found nowhere else. The Prodigal Son (Luke 15:11-32) shows God\'s joy over repentant sinners. The younger son squandered his inheritance but returned to his father\'s embrace. The older brother represents self-righteous people who resent God\'s grace to sinners.',
-          'The Rich Man and Lazarus (Luke 16:19-31) warns that earthly wealth doesn\'t guarantee blessing in eternity. The rich man ignored poor Lazarus and ended in torment while Lazarus was comforted in Abraham\'s bosom. If people won\'t listen to Scripture, they won\'t be convinced even if someone rises from the dead.',
-          'The Persistent Widow (Luke 18:1-8) teaches us to pray persistently and not give up. If an unjust judge eventually grants justice, how much more will our loving Father answer those who cry to Him day and night?',
-          'The Pharisee and Tax Collector (Luke 18:9-14) contrasts self-righteousness with humble repentance. The Pharisee boasted of his goodness; the tax collector beat his breast, crying, "God, have mercy on me, a sinner!" Jesus said the tax collector went home justified. Those who exalt themselves will be humbled; those who humble themselves will be exalted.'
-        ]
-      },
-      {
-        heading: 'The Journey to Jerusalem',
-        paragraphs: [
-          'Luke 9:51 marks a turning point: "As the time approached for him to be taken up to heaven, Jesus resolutely set out for Jerusalem." The rest of Luke focuses on this journey to the cross.',
-          'Along the way, Jesus taught about discipleship, prayer, wealth, the kingdom, and the end times. He healed, cast out demons, and confronted religious hypocrisy.',
-          'Jesus warned, "Make every effort to enter through the narrow door, because many, I tell you, will try to enter and will not be able to" (Luke 13:24). Salvation requires response to Jesus, not just religious heritage or good works.',
-          'He taught that following Him requires counting the cost: "Whoever does not carry their cross and follow me cannot be my disciple" (Luke 14:27). Discipleship demands total commitment.'
-        ],
-        quote: {
-          text: 'Suppose one of you wants to build a tower. Won\'t you first sit down and estimate the cost to see if you have enough money to complete it?',
-          reference: 'Luke 14:28'
-        }
-      },
-      {
-        heading: 'Passion, Death, and Resurrection',
-        paragraphs: [
-          'Jesus entered Jerusalem to shouts of "Blessed is the king who comes in the name of the Lord!" He wept over the city, knowing it would reject Him and face judgment.',
-          'At the Last Supper, Jesus instituted Communion and predicted Peter\'s denial. In Gethsemane, He prayed so intensely that His sweat became like drops of blood. An angel strengthened Him as He submitted to the Father\'s will.',
-          'During His trials, Jesus was mocked, beaten, and condemned. On the cross, He prayed, "Father, forgive them, for they do not know what they are doing." He promised the repentant thief, "Today you will be with me in paradise."',
-          'Jesus cried out, "Father, into your hands I commit my spirit," and died. The centurion praised God, saying, "Surely this was a righteous man."',
-          'On resurrection morning, angels told the women, "He is not here; he has risen!" Peter ran to the tomb and found it empty.',
-          'Jesus appeared to two disciples on the road to Emmaus, explaining how all Scripture pointed to His suffering and glory. Their hearts burned as He opened the Scriptures. When He broke bread, they recognized Him.',
-          'Jesus appeared to the disciples in Jerusalem, showing them His hands and feet, and eating fish to prove He was physically raised. He opened their minds to understand Scripture and commissioned them as witnesses.',
-          'Luke ends with Jesus\'s ascension. He blessed the disciples and was taken up to heaven. They returned to Jerusalem with great joy, continually praising God in the temple.'
-        ]
-      }
-    ],
-    keyTakeaways: [
-      'Jesus is the Savior for all people—Jews and Gentiles, rich and poor, men and women',
-      'The gospel shows special concern for the marginalized and outcast',
-      'Prayer is essential for the Christian life',
-      'Wealth can be a spiritual danger; true treasure is found in God',
-      'Following Jesus requires counting the cost and total commitment',
-      'Jesus\'s death provides forgiveness; His resurrection guarantees hope'
-    ],
-    furtherStudy: [
-      'Read Luke\'s parables unique to his Gospel (chapters 10, 15, 16, 18)',
-      'Study the role of women in Luke\'s narrative',
-      'Explore Luke\'s emphasis on prayer (3:21, 5:16, 6:12, 9:18, 9:28, 11:1)',
-      'Continue into Acts to see how the story continues after Jesus\'s ascension'
-    ],
-    crossReferences: [
-      'Luke 1-2 (Birth narratives)',
-      'Luke 4:16-30 (Jesus\'s mission statement in Nazareth)',
-      'Luke 10:25-37 (Good Samaritan)',
-      'Luke 15:11-32 (Prodigal Son)',
-      'Luke 18:9-14 (Pharisee and tax collector)',
-      'Luke 22-24 (Passion, death, resurrection, ascension)',
-      'Isaiah 61:1-2 (Jesus\'s mission)',
-      'Acts 1 (Continuation of Luke\'s narrative)'
-    ]
-  },
+
   {
     id: 'john-overview',
-    category: 'books',
-    subcategory: 'gospels',
-    title: 'John: The Word Became Flesh',
-    subtitle: 'Jesus as the Eternal Son of God Who Brings Eternal Life',
-    introduction: 'John\'s Gospel is unique among the four Gospels. Written by "the disciple whom Jesus loved," it presents Jesus as the divine Son of God who offers eternal life to all who believe. John selects seven miraculous signs to prove Jesus\'s identity and includes profound theological teaching found nowhere else.',
+    category: 'book-overview',
+    title: 'John: The Gospel of Belief',
+    subtitle: 'Jesus the Son of God Revealed',
+    introduction:
+      'John’s Gospel presents Jesus as the eternal Son of God who became flesh to bring eternal life. It emphasizes belief, signs, and the identity of Christ.',
     sections: [
       {
-        heading: 'Author and Purpose',
+        heading: 'The Word Made Flesh',
         paragraphs: [
-          'The Apostle John, son of Zebedee and brother of James, wrote this Gospel likely in the AD 85-95 period. John was part of Jesus\'s inner circle (with Peter and James) and witnessed the Transfiguration, Gethsemane, and the crucifixion.',
-          'John explicitly states his purpose: "These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name" (John 20:31). His goal is evangelistic—to lead readers to saving faith.',
-          'Unlike the synoptic Gospels (Matthew, Mark, Luke), John doesn\'t follow a chronological timeline. He selects seven signs (miracles) and seven "I AM" statements to prove Jesus\'s deity. About 90% of John\'s material is unique to his Gospel.',
-          'John emphasizes key themes: belief/unbelief, light/darkness, life/death, above/below, Spirit/flesh, and Jesus\'s divine identity. His language is simple yet profoundly theological.'
+          'John opens with a profound theological statement: Jesus is the eternal Word who created all things.',
+          'He became flesh and dwelled among us.'
         ],
         quote: {
-          text: 'In the beginning was the Word, and the Word was with God, and the Word was God... The Word became flesh and made his dwelling among us.',
-          reference: 'John 1:1, 14'
+          text: 'In the beginning was the Word.',
+          reference: 'John 1:1'
         }
       },
       {
-        heading: 'The Prologue: The Word Became Flesh',
+        heading: 'Signs and Belief',
         paragraphs: [
-          'John begins not with Jesus\'s birth but with His eternal existence: "In the beginning was the Word, and the Word was with God, and the Word was God." This echoes Genesis 1:1 and declares Jesus\'s pre-existence and deity.',
-          'The "Word" (Greek: Logos) was the divine agent of creation—"all things were made through him." Jesus is not created; He is the Creator. He is "the life" and "the light of all mankind."',
-          'John the Baptist came to testify about the light. The true light was coming into the world—the world He created but which didn\'t recognize Him. His own people rejected Him.',
-          'Yet to all who received Him and believed in His name, He gave the right to become children of God—born not of human decision but of God.',
-          'The climax: "The Word became flesh and made his dwelling among us." God became man. John and other eyewitnesses beheld His glory—"glory as of the only Son from the Father, full of grace and truth."'
-        ],
-        bulletPoints: [
-          'Jesus is eternal—He existed "in the beginning"',
-          'Jesus is fully God—"the Word was God"',
-          'Jesus is the Creator of all things',
-          'Jesus is the source of life and light',
-          'Jesus became human while remaining fully divine',
-          'Believing in Jesus makes us children of God'
+          'John records seven signs that reveal Jesus’ divine identity.',
+          'These signs are written so that readers may believe.'
         ]
       },
       {
-        heading: 'The Seven Signs',
+        heading: 'I AM Statements',
         paragraphs: [
-          'John records seven miraculous signs that reveal Jesus\'s identity and glory: (1) Turning water to wine at Cana—showing His power over quality and foreshadowing new covenant joy; (2) Healing the official\'s son—power over distance; (3) Healing the paralytic at Bethesda—power over time (38 years sick); (4) Feeding the 5,000—power over quantity; (5) Walking on water—power over natural law; (6) Healing the man born blind—power over misfortune; (7) Raising Lazarus—power over death.',
-          'Each sign points to Jesus\'s divine nature and messianic identity. They demonstrate that Jesus has authority over all creation, illness, nature, and even death itself.',
-          'After the feeding miracle, Jesus declared, "I am the bread of life." After healing the blind man, He said, "I am the light of the world." Before raising Lazarus, He proclaimed, "I am the resurrection and the life."',
-          'The signs lead to belief for those with open hearts but harden the hearts of those determined not to believe. By John 12, many believed but wouldn\'t confess Jesus publicly for fear of the Pharisees.'
-        ],
-        quote: {
-          text: 'Jesus performed many other signs in the presence of his disciples, which are not recorded in this book. But these are written that you may believe.',
-          reference: 'John 20:30-31'
-        }
-      },
-      {
-        heading: 'The Seven "I AM" Statements',
-        paragraphs: [
-          'Jesus makes seven profound "I AM" declarations in John, each revealing an aspect of His identity and ministry: (1) "I am the bread of life" (6:35)—He satisfies spiritual hunger; (2) "I am the light of the world" (8:12)—He dispels darkness; (3) "I am the door" (10:9)—He is the only entrance to salvation; (4) "I am the good shepherd" (10:11)—He cares for and protects His flock; (5) "I am the resurrection and the life" (11:25)—He conquers death; (6) "I am the way, the truth, and the life" (14:6)—He is the exclusive path to God; (7) "I am the true vine" (15:1)—He is the source of spiritual life.',
-          'These statements echo God\'s self-revelation to Moses: "I AM WHO I AM" (Exodus 3:14). When Jesus said, "Before Abraham was born, I am!" (John 8:58), the Jews tried to stone Him for blasphemy because they understood He was claiming to be Yahweh.',
-          'In Gethsemane, when soldiers came to arrest Jesus and He said, "I am he," they drew back and fell to the ground (John 18:6)—a hint of His divine power even in His darkest hour.'
-        ],
-        illustration: 'Each "I AM" statement addresses a human need: hunger (bread), darkness (light), lostness (door/way), danger (shepherd), death (resurrection/life), and fruitlessness (vine). Jesus is the complete answer to every human need.'
-      },
-      {
-        heading: 'Encounters with Individuals',
-        paragraphs: [
-          'John focuses on Jesus\'s personal encounters more than the synoptic Gospels. Nicodemus, a Pharisee, came to Jesus at night. Jesus told him, "You must be born again." Spiritual birth requires God\'s Spirit, not human effort or religious credentials.',
-          'The Samaritan woman at the well had five failed marriages. Jesus offered her "living water"—eternal life that satisfies the soul. She believed and became the first evangelist to the Samaritans, who declared, "We know that this man really is the Savior of the world."',
-          'The woman caught in adultery was brought to Jesus by religious leaders hoping to trap Him. Jesus said, "Let any one of you who is without sin be the first to throw a stone." They all left. Jesus told her, "Neither do I condemn you. Go now and leave your life of sin." He offers both grace and transformation.',
-          'Jesus washed the disciples\' feet at the Last Supper, modeling servant leadership. When Peter objected, Jesus said, "Unless I wash you, you have no part with me." We must receive Jesus\'s cleansing to have fellowship with Him.',
-          'Thomas doubted the resurrection until he saw Jesus. When Jesus appeared, Thomas declared, "My Lord and my God!"—the clearest statement of Jesus\'s deity in the Gospels. Jesus replied, "Blessed are those who have not seen and yet have believed."'
-        ],
-        quote: {
-          text: 'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.',
-          reference: 'John 3:16'
-        }
-      },
-      {
-        heading: 'The Upper Room Discourse',
-        paragraphs: [
-          'John 13-17 records Jesus\'s final teaching to His disciples before the crucifixion. These chapters contain some of Scripture\'s most treasured promises and profound theology.',
-          'Jesus promised to prepare a place for His disciples in the Father\'s house and return to take them there. Thomas asked how to know the way. Jesus answered, "I am the way and the truth and the life. No one comes to the Father except through me."',
-          'Jesus promised to send "another Helper"—the Holy Spirit—who would teach them, remind them of Jesus\'s words, convict the world of sin, and guide them into all truth. The Spirit would glorify Jesus and make His presence real to believers.',
-          'Jesus gave a new command: "Love one another. As I have loved you, so you must love one another." This sacrificial love would be the mark of His disciples.',
-          'Using the metaphor of the vine and branches, Jesus taught that fruitfulness requires abiding in Him. "Apart from me you can do nothing." We must remain connected to Jesus, the source of life.',
-          'Jesus prayed His "High Priestly Prayer" (John 17), interceding for His disciples and all future believers. He prayed for their protection, sanctification, unity, and that they would be with Him in glory. Jesus is still interceding for us (Hebrews 7:25).'
-        ],
-        bulletPoints: [
-          'Jesus prepares a place for believers in heaven',
-          'The Holy Spirit continues Jesus\'s presence with believers',
-          'Love for one another marks true discipleship',
-          'Abiding in Christ is essential for fruitfulness',
-          'Jesus prays for believers\' unity and glorification',
-          'The world will hate believers as it hated Jesus'
-        ]
-      },
-      {
-        heading: 'The Crucifixion and Resurrection',
-        paragraphs: [
-          'John\'s account of the crucifixion emphasizes Jesus\'s sovereignty. When arrested, Jesus declared, "I am he," and the soldiers fell back. He told Pilate, "You would have no power over me if it were not given to you from above." Jesus was in control even in apparent defeat.',
-          'From the cross, Jesus entrusted His mother to John\'s care, showing compassion in agony. He declared, "I am thirsty," fulfilling Psalm 69:21. Finally, He said, "It is finished"—the work of redemption was complete.',
-          'John notes that Jesus\'s legs weren\'t broken (fulfilling Exodus 12:46—the Passover lamb\'s bones weren\'t broken) and that His side was pierced (fulfilling Zechariah 12:10). Blood and water flowed out, symbolizing cleansing from sin.',
-          'On resurrection morning, Mary Magdalene found the empty tomb. Peter and John ran to investigate. John saw the grave clothes lying there and believed.',
-          'Jesus appeared to Mary, calling her name. She recognized Him and clung to Him. Jesus said, "Do not hold on to me, for I have not yet ascended to the Father," then commissioned her as an apostle to the apostles.',
-          'Jesus appeared to the disciples, showing them His hands and side. He breathed on them and said, "Receive the Holy Spirit," empowering them for mission.',
-          'After Thomas\'s confession, John writes that Jesus did many other signs, "but these are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name."'
-        ],
-        quote: {
-          text: 'Jesus said to her, "I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die."',
-          reference: 'John 11:25-26'
-        }
-      },
-      {
-        heading: 'Epilogue: Restoration and Commission',
-        paragraphs: [
-          'John 21 records Jesus\'s appearance to seven disciples at the Sea of Galilee. After a fruitless night of fishing, Jesus told them to cast their net on the right side. They caught 153 fish—a miraculous catch like at their first calling.',
-          'Jesus prepared breakfast for them, showing His risen, physical body. Then He restored Peter, who had denied Him three times. Three times Jesus asked, "Do you love me?" Three times Peter affirmed his love. Jesus commissioned him: "Feed my sheep."',
-          'Jesus predicted Peter\'s martyrdom: "When you are old you will stretch out your hands, and someone else will dress you and lead you where you do not want to go." Peter would die for Jesus, reversing his earlier denial.',
-          'When Peter asked about John\'s fate, Jesus said, "If I want him to remain alive until I return, what is that to you? You must follow me." We must focus on our own calling, not compare ourselves to others.',
-          'John concludes, "Jesus did many other things as well. If every one of them were written down, I suppose that even the whole world would not have room for the books that would be written." The Gospels give us what we need to believe, but Jesus\'s full glory exceeds all books.'
+          'Jesus makes seven “I AM” declarations, revealing His divine nature.',
+          'These echo God’s name revealed to Moses.'
         ]
       }
     ],
     keyTakeaways: [
-      'Jesus is the eternal Word who became flesh—fully God and fully man',
-      'Eternal life comes through believing in Jesus as the Son of God',
-      'The seven signs prove Jesus\'s divine identity and power',
-      'The "I AM" statements reveal Jesus as Yahweh, meeting every human need',
-      'The Holy Spirit continues Jesus\'s presence with believers',
-      'Love for one another is the mark of true discipleship'
+      'John emphasizes Jesus’ divinity',
+      'Belief is central to the Gospel’s purpose',
+      'The book contains unique teachings and signs'
     ],
     furtherStudy: [
-      'Read John 1:1-18 (the Prologue) carefully to understand Jesus\'s deity',
-      'Study the seven "I AM" statements and what they reveal about Jesus',
-      'Meditate on John 13-17 (Upper Room Discourse) for deep theology',
-      'Explore how Old Testament passages are fulfilled in John\'s Gospel'
+      'Study John 1, 3, 10, and 17',
+      'Explore the seven signs and seven I AM statements',
+      'Compare John with the Synoptic Gospels'
     ],
     crossReferences: [
-      'John 1:1-18 (The Word became flesh)',
-      'John 3:1-21 (Nicodemus and new birth)',
-      'John 4:1-42 (Samaritan woman)',
-      'John 6:35 (Bread of life)',
-      'John 11:1-44 (Raising of Lazarus)',
-      'John 13-17 (Upper Room Discourse)',
-      'John 20:30-31 (Purpose statement)',
-      'Genesis 1:1; Exodus 3:14 (Background to John\'s Christology)'
+      'Exodus 3:14 (I AM)',
+      'John 20:31 (purpose of the Gospel)'
     ]
   },
+
   {
     id: 'acts-overview',
-    category: 'books',
-    subcategory: 'history',
-    title: 'Acts: The Church Empowered',
-    subtitle: 'The Holy Spirit Spreads the Gospel from Jerusalem to Rome',
-    introduction: 'Acts is the sequel to Luke\'s Gospel, recording how the Holy Spirit empowered the apostles to spread the gospel from Jerusalem to the ends of the earth. It shows the church\'s birth at Pentecost, growth despite persecution, and expansion to the Gentile world.',
+    category: 'book-overview',
+    title: 'Acts: The Birth of the Church',
+    subtitle: 'The Holy Spirit Empowers God’s People for Mission',
+    introduction:
+      'Acts records the explosive growth of the early church through the power of the Holy Spirit. It shows how the gospel spread from Jerusalem to the ends of the earth.',
     sections: [
       {
-        heading: 'Author and Purpose',
+        heading: 'Pentecost and the Spirit',
         paragraphs: [
-          'Luke wrote Acts as a continuation of his Gospel, both addressed to Theophilus. Acts covers approximately 30 years (AD 30-62), from Jesus\'s ascension to Paul\'s imprisonment in Rome.',
-          'Luke\'s purpose is to show how God fulfilled Jesus\'s promise that His disciples would be witnesses "in Jerusalem, and in all Judea and Samaria, and to the ends of the earth" (Acts 1:8). This verse provides the book\'s outline.',
-          'Acts demonstrates that Christianity is not a Jewish sect but a global movement for all peoples. It records the transition from a predominantly Jewish church to a Gentile-majority church.',
-          'Luke carefully documents historical details—rulers, places, events—that have been verified by archaeology. Acts is historically reliable testimony to Christianity\'s origins.'
-        ],
-        quote: {
-          text: 'But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.',
-          reference: 'Acts 1:8'
-        }
-      },
-      {
-        heading: 'Pentecost: Birth of the Church',
-        paragraphs: [
-          'After Jesus\'s ascension, 120 disciples waited in Jerusalem for the promised Holy Spirit. On the Day of Pentecost (50 days after Passover), the Spirit came with the sound of violent wind and tongues of fire.',
-          'The disciples began speaking in other languages as the Spirit enabled them. Jews from every nation heard the gospel in their own languages—a reversal of Babel\'s confusion.',
-          'Peter preached boldly: Jesus of Nazareth, whom you crucified, God raised from the dead and made Lord and Christ. The crowd was "cut to the heart" and asked, "What shall we do?"',
-          'Peter replied, "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit." About 3,000 people believed and were baptized.',
-          'The early church devoted themselves to the apostles\' teaching, fellowship, breaking bread, and prayer. They shared possessions, praised God, and enjoyed favor with all people. The Lord added to their number daily.'
-        ],
-        bulletPoints: [
-          'The Holy Spirit came at Pentecost as Jesus promised',
-          'Speaking in tongues showed the gospel is for all nations',
-          'Peter\'s sermon focused on Jesus\'s death and resurrection',
-          'Salvation requires repentance, faith, and baptism',
-          'The early church was characterized by devotion, generosity, and growth'
+          'Acts begins with the outpouring of the Holy Spirit.',
+          'The Spirit empowers believers for witness and mission.'
         ]
       },
       {
-        heading: 'Witness in Jerusalem (Acts 1-7)',
+        heading: 'The Mission Expands',
         paragraphs: [
-          'The apostles performed signs and wonders. Peter healed a lame beggar at the temple gate, then preached to the astonished crowd. The religious leaders arrested Peter and John but couldn\'t deny the miracle.',
-          'When threatened to stop preaching, Peter and John replied, "We cannot help speaking about what we have seen and heard." Later, when arrested again, Peter declared, "We must obey God rather than human beings!"',
-          'The church faced internal challenges too. Ananias and Sapphira lied about their donation and died under God\'s judgment. This sobering event produced holy fear and showed God takes sin seriously.',
-          'As the church grew, the apostles appointed seven deacons to handle food distribution, freeing the apostles to focus on prayer and preaching. One deacon, Stephen, performed great wonders.',
-          'When accused of blasphemy, Stephen delivered a powerful speech reviewing Israel\'s history of rejecting God\'s messengers. He accused the religious leaders of betraying and murdering Jesus. Enraged, they stoned Stephen to death.',
-          'Stephen\'s martyrdom scattered the church but spread the gospel. As he died, he prayed, "Lord Jesus, receive my spirit" and "Lord, do not hold this sin against them"—echoing Jesus\'s words from the cross.'
-        ],
-        quote: {
-          text: 'Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.',
-          reference: 'Acts 4:12'
-        }
-      },
-      {
-        heading: 'Witness in Judea and Samaria (Acts 8-12)',
-        paragraphs: [
-          'Persecution scattered believers throughout Judea and Samaria. Philip preached in Samaria (traditionally hated by Jews), and many believed. Peter and John came to pray for them to receive the Holy Spirit.',
-          'An angel directed Philip to a desert road where he met an Ethiopian eunuch reading Isaiah 53. Philip explained that the passage spoke of Jesus and baptized the eunuch—the gospel was reaching Africa.',
-          'Meanwhile, Saul of Tarsus was zealously persecuting Christians. On the road to Damascus, the risen Jesus appeared to him in blinding light: "Saul, Saul, why do you persecute me?" Saul was converted and became Paul, the greatest missionary in church history.',
-          'God gave Peter a vision of unclean animals and commanded him to eat, showing that Gentiles were now included in God\'s people. Peter preached to Cornelius (a Roman centurion) and his household. The Holy Spirit fell on them, and they were baptized—the first Gentile converts.',
-          'King Herod killed James (John\'s brother) and imprisoned Peter. But an angel freed Peter from prison the night before his execution. Herod later died under God\'s judgment for accepting worship.'
-        ],
-        illustration: 'Paul\'s conversion shows no one is beyond God\'s reach. The greatest persecutor became the greatest missionary. God can transform anyone\'s heart and redirect their life for His purposes.'
-      },
-      {
-        heading: 'Paul\'s Missionary Journeys (Acts 13-20)',
-        paragraphs: [
-          'The church at Antioch, led by the Spirit, sent Paul and Barnabas on the first missionary journey. They preached in synagogues throughout modern-day Turkey, establishing churches despite opposition.',
-          'In Lystra, people tried to worship Paul and Barnabas as gods after a healing miracle. Later, a mob stoned Paul and left him for dead. Yet he got up and continued preaching—showing remarkable courage and commitment.',
-          'The Jerusalem Council (Acts 15) addressed whether Gentiles must follow Jewish law to be saved. The apostles concluded that salvation is by grace through faith alone, not by keeping the Law. Gentiles didn\'t need to become Jews first.',
-          'Paul\'s second journey included Timothy joining the team, the Macedonian vision calling them to Europe, Lydia\'s conversion in Philippi, Paul and Silas being imprisoned and freed by earthquake, and churches planted in Thessalonica, Berea, Athens, and Corinth.',
-          'In Athens, Paul preached at the Areopagus about the "unknown god," declaring that God made all nations and set times and places for them to seek Him. Some mocked, but others believed.',
-          'Paul\'s third journey focused on Ephesus, where he taught for three years. The gospel spread so powerfully that people burned their magic books. A riot broke out when silversmiths feared losing business from making idols.',
-          'Throughout these journeys, Paul faced beatings, stonings, shipwrecks, imprisonments, and constant danger. Yet he pressed on, driven by love for Christ and passion to preach the gospel where Christ wasn\'t known.'
-        ],
-        quote: {
-          text: 'For we cannot help speaking about what we have seen and heard.',
-          reference: 'Acts 4:20'
-        }
-      },
-      {
-        heading: 'To the Ends of the Earth: Paul\'s Journey to Rome (Acts 21-28)',
-        paragraphs: [
-          'Despite warnings, Paul went to Jerusalem. He was arrested after false accusations and nearly killed by a mob. The Roman commander rescued him and allowed him to address the crowd.',
-          'Paul testified about his conversion and call to preach to Gentiles. The crowd erupted in rage. The commander planned to flog Paul, but Paul revealed his Roman citizenship, which protected him from such treatment.',
-          'Paul appeared before the Sanhedrin, then before Felix, Festus, and King Agrippa. To each, he testified about Jesus and the resurrection. Agrippa said, "Do you think that in such a short time you can persuade me to be a Christian?"',
-          'When Paul appealed to Caesar (his right as a Roman citizen), he was sent to Rome. The ship encountered a violent storm. Paul encouraged everyone, saying an angel told him they\'d all survive. The ship wrecked but all 276 people reached land safely on Malta.',
-          'On Malta, a viper bit Paul\'s hand but he suffered no harm. The islanders concluded he was a god. Paul healed many people and preached the gospel.',
-          'Acts ends with Paul under house arrest in Rome for two years, preaching the kingdom of God and teaching about Jesus "with all boldness and without hindrance." The gospel had reached the capital of the Roman Empire.',
-          'Luke ends abruptly, perhaps because his purpose was accomplished—the gospel had spread from Jerusalem to Rome—or because he wrote before Paul\'s trial. Tradition says Paul was eventually martyred in Rome, but his legacy lives on through his letters and the churches he planted.'
+          'The gospel spreads through preaching, miracles, and persecution.',
+          'Peter and Paul become key leaders in the movement.'
         ]
       },
       {
-        heading: 'Key Themes in Acts',
+        heading: 'The Gospel to the Nations',
         paragraphs: [
-          'Acts emphasizes the Holy Spirit\'s work throughout. The Spirit empowers witness, guides missionaries, performs miracles, and grows the church. Christianity is not human effort but Spirit-driven movement.',
-          'Prayer is essential in Acts. The church prayed before choosing Matthias, before Pentecost, after threats, before appointing deacons, before sending missionaries, and in every crisis. Prayer releases God\'s power.',
-          'The resurrection is central to every sermon in Acts. Christianity stands or falls on whether Jesus rose from the dead. The apostles were eyewitnesses of the resurrection and couldn\'t stop testifying about it.',
-          'Persecution doesn\'t stop the gospel—it spreads it. Stephen\'s death scattered believers who preached everywhere. Paul\'s imprisonments resulted in guards and officials hearing the gospel. God uses suffering to advance His kingdom.',
-          'The gospel is for all people—Jews and Gentiles, rich and poor, slaves and free, religious and pagans. God shows no favoritism. Anyone who fears Him and does what is right is acceptable to Him.'
+          'Acts ends with Paul preaching in Rome.',
+          'The mission continues through the church today.'
         ]
       }
     ],
     keyTakeaways: [
-      'The Holy Spirit empowers believers to be bold witnesses for Christ',
-      'The gospel spread from Jerusalem to Rome despite intense persecution',
-      'God accepts people from all nations through faith in Jesus',
-      'The church grows through Spirit-led mission, not human effort',
-      'Persecution cannot stop God\'s purposes—it advances them',
-      'Prayer, preaching, and dependence on the Spirit characterized the early church'
+      'The Holy Spirit empowers the church',
+      'Acts shows the gospel spreading across the world',
+      'The book emphasizes unity, mission, and boldness'
     ],
     furtherStudy: [
-      'Read Acts 1-2 on Pentecost and the church\'s birth',
-      'Study Paul\'s conversion (Acts 9, 22, 26) and how God transformed him',
-      'Explore the Jerusalem Council (Acts 15) on salvation by grace',
-      'Trace Paul\'s three missionary journeys on a map'
+      'Study Acts 1–2 for the Spirit’s coming',
+      'Read Acts 9 for Paul’s conversion',
+      'Explore Acts 15 for the Jerusalem Council'
     ],
     crossReferences: [
-      'Acts 1:8 (Jesus\'s promise and the book\'s outline)',
-      'Acts 2:1-41 (Pentecost)',
-      'Acts 4:12 (No other name for salvation)',
-      'Acts 9:1-19 (Paul\'s conversion)',
-      'Acts 15:1-35 (Jerusalem Council)',
-      'Acts 17:16-34 (Paul in Athens)',
-      'Acts 28:30-31 (Gospel reaches Rome)',
-      'Luke 24:44-49 (Jesus\'s promise fulfilled in Acts)'
+      'Matthew 28:18–20 (mission)',
+      'Joel 2:28–32 (Spirit prophecy)'
     ]
   },
   {
     id: 'romans-overview',
-    category: 'books',
-    subcategory: 'pauline_epistles',
-    title: 'Romans: The Gospel of God',
-    subtitle: 'Paul\'s Systematic Presentation of Salvation by Grace Through Faith',
-    introduction: 'Romans is Paul\'s masterpiece—the most systematic and comprehensive presentation of the gospel in Scripture. Written to believers in Rome whom Paul hadn\'t met, Romans explains how God saves sinners by grace through faith in Christ and transforms them by the Spirit.',
+    category: 'book-overview',
+    title: 'Romans: The Gospel Explained',
+    subtitle: 'Paul’s Masterpiece on Salvation, Faith, and God’s Righteousness',
+    introduction:
+      'Romans is Paul’s most comprehensive explanation of the gospel. It reveals humanity’s universal need for salvation, God’s righteousness revealed through faith, and the transforming power of the Spirit.',
     sections: [
       {
-        heading: 'Author, Date, and Occasion',
+        heading: 'Humanity’s Need for Salvation',
         paragraphs: [
-          'Paul wrote Romans around AD 57 from Corinth during his third missionary journey. He planned to visit Rome on his way to Spain and wrote this letter to introduce himself and his gospel message.',
-          'The Roman church included both Jewish and Gentile believers, which created tensions. Paul addresses both groups, showing how the gospel unites them in Christ.',
-          'Romans is the longest and most theological of Paul\'s letters. It influenced Augustine\'s conversion, sparked Martin Luther\'s Reformation, and transformed John Wesley\'s heart. No book has had greater impact on Christian theology.',
-          'Paul\'s theme: "I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile. For in the gospel the righteousness of God is revealed—a righteousness that is by faith from first to last" (Romans 1:16-17).'
+          'Paul begins by demonstrating that all people—Jew and Gentile—are guilty before God.',
+          'Sin has corrupted every part of humanity, leaving us unable to save ourselves.'
         ],
         quote: {
-          text: 'For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes.',
-          reference: 'Romans 1:16'
+          text: 'For all have sinned and fall short of the glory of God.',
+          reference: 'Romans 3:23'
         }
       },
       {
-        heading: 'Universal Condemnation (Romans 1-3)',
+        heading: 'Justification by Faith',
         paragraphs: [
-          'Paul begins by showing that all humanity is under God\'s wrath. The Gentiles are guilty because creation reveals God\'s existence and power, yet they rejected Him and worshiped idols. God gave them over to increasing depravity.',
-          'The Jews are also guilty. Though they have the Law, they don\'t keep it. Having the Law doesn\'t save anyone—it only exposes sin. "There is no one righteous, not even one" (Romans 3:10).',
-          'Paul quotes Psalm 14 to show universal sinfulness: "All have turned away, they have together become worthless; there is no one who does good, not even one." Jew and Gentile alike stand condemned before God.',
-          'The Law\'s purpose was not to save but to reveal sin. Paul writes, "Through the law we become conscious of our sin" (Romans 3:20). The Law is like a mirror showing we\'re dirty but unable to clean us.',
-          'This section demonstrates that no one can be saved by works, religious heritage, or moral effort. Everyone needs God\'s grace.'
-        ],
-        bulletPoints: [
-          'All people are sinners and under God\'s wrath',
-          'Creation reveals God, leaving humanity without excuse',
-          'Having the Law doesn\'t save—it exposes sin',
-          'No one can boast before God based on their works',
-          'Everyone needs the righteousness that comes from God'
+          'Paul explains that righteousness comes not through works, but through faith in Jesus Christ.',
+          'Abraham becomes the model of faith, showing that salvation has always been by grace.'
         ]
       },
       {
-        heading: 'Justification by Faith (Romans 3-5)',
+        heading: 'Life in the Spirit',
         paragraphs: [
-          'Paul\'s answer to universal condemnation is the gospel: "But now apart from the law the righteousness of God has been made known... This righteousness is given through faith in Jesus Christ to all who believe" (Romans 3:21-22).',
-          'Justification means God declares believers righteous based on Christ\'s work, not their own. It\'s a legal verdict—God credits Christ\'s righteousness to us and removes our guilt. We are "justified freely by his grace through the redemption that came by Christ Jesus" (Romans 3:24).',
-          'God presented Christ as a sacrifice of atonement (propitiation) through His blood. This demonstrates God\'s justice (sin is punished) and His love (He provided the sacrifice). God is both "just and the one who justifies those who have faith in Jesus" (Romans 3:26).',
-          'Abraham is Paul\'s prime example. God credited Abraham\'s faith as righteousness before he was circumcised. Salvation has always been by faith, not works or rituals. Abraham is the father of all who believe, both Jews and Gentiles.',
-          'Romans 5 contrasts Adam and Christ. Through Adam\'s disobedience, sin and death entered the world, affecting all humanity. Through Christ\'s obedience, grace and life are available to all who believe. Where sin increased, grace increased all the more.',
-          'Justification produces wonderful results: peace with God, access to grace, hope of glory, joy in suffering (which produces perseverance, character, and hope), and the Holy Spirit\'s love poured into our hearts.'
-        ],
-        quote: {
-          text: 'Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ.',
-          reference: 'Romans 5:1'
-        }
-      },
-      {
-        heading: 'Sanctification: Dead to Sin, Alive in Christ (Romans 6-8)',
-        paragraphs: [
-          'Some might ask: If grace increases where sin increases, should we keep sinning? Paul responds emphatically: "By no means! We are those who have died to sin; how can we live in it any longer?"',
-          'In baptism, believers are united with Christ in His death and resurrection. Our old self was crucified with Christ so we might live a new life. Sin no longer has dominion over us; we are "slaves to righteousness."',
-          'Romans 7 describes the struggle with sin. Paul confesses, "I do not understand what I do. For what I want to do I do not do, but what I hate I do." Even after conversion, believers struggle with indwelling sin.',
-          'Yet the Law is holy, righteous, and good. The problem isn\'t the Law but our sinful nature. Paul cries out, "What a wretched man I am! Who will rescue me from this body that is subject to death?" His answer: "Thanks be to God, who delivers me through Jesus Christ our Lord!"',
-          'Romans 8 is one of Scripture\'s mountain peaks. "There is now no condemnation for those who are in Christ Jesus." The Spirit liberates believers from the law of sin and death. He enables us to live according to the Spirit, not the flesh.',
-          'The Spirit testifies that we are God\'s children and heirs with Christ. Present sufferings are nothing compared to future glory. Creation awaits redemption. The Spirit helps our weakness and intercedes with groans too deep for words.',
-          'Nothing can separate believers from God\'s love in Christ—not tribulation, distress, persecution, famine, nakedness, danger, sword, death, life, angels, demons, present, future, powers, height, depth, or anything in all creation. We are "more than conquerors through him who loved us."'
-        ],
-        illustration: 'Romans 8:28 promises, "And we know that in all things God works for the good of those who love him, who have been called according to his purpose." God sovereignly weaves even difficult circumstances into His good purposes for His children.'
-      },
-      {
-        heading: 'God\'s Plan for Israel (Romans 9-11)',
-        paragraphs: [
-          'Paul grieves that most Jews have rejected their Messiah. Yet God\'s word hasn\'t failed. Not all descended from Israel are truly Israel—only those chosen by God according to His sovereign purpose.',
-          'God has mercy on whom He wills. He hardened Pharaoh\'s heart and has every right to shape vessels for honor or dishonor. Yet humans are responsible for their choices—Israel\'s stumbling was due to pursuing righteousness by works, not faith.',
-          'Israel\'s rejection isn\'t total or final. A remnant believes (like Paul himself). Israel\'s stumbling brought salvation to Gentiles, which will provoke Israel to jealousy. When "the full number of the Gentiles has come in," all Israel will be saved.',
-          'Paul marvels at God\'s wisdom: "Oh, the depth of the riches of the wisdom and knowledge of God! How unsearchable his judgments, and his paths beyond tracing out!" God\'s plans are perfect, even when mysterious.'
+          'Romans 8 describes the Spirit-filled life—freedom from condemnation, adoption as God’s children, and hope for future glory.',
+          'The Spirit empowers believers to live in obedience and victory.'
         ]
       },
       {
-        heading: 'Practical Application (Romans 12-16)',
+        heading: 'God’s Plan for Israel',
         paragraphs: [
-          'Paul urges believers to offer their bodies as living sacrifices—holy and pleasing to God. Don\'t conform to the world but be transformed by renewing your mind. Test and approve God\'s will.',
-          'Believers have different gifts—prophecy, service, teaching, encouragement, giving, leadership, mercy. Use your gifts faithfully. Love must be sincere. Honor others above yourself. Share with those in need. Bless persecutors. Live in harmony.',
-          'Overcome evil with good. Don\'t repay evil for evil. Leave vengeance to God. If your enemy is hungry, feed him; if thirsty, give him drink. Heap burning coals on his head by showing unexpected kindness.',
-          'Submit to governing authorities, which God has established. Pay taxes, give respect, and honor to whom honor is due. Let love be your only debt. Love fulfills all the Law.',
-          'Accept those whose faith is weak without quarreling over disputable matters. Whether you eat or don\'t eat certain foods, do it for the Lord. Don\'t let your freedom cause another to stumble. The kingdom of God is not about food and drink but righteousness, peace, and joy in the Holy Spirit.',
-          'Paul plans to visit Rome on his way to Spain. He commends Phoebe, greets many believers by name, and warns against divisive people. He closes with a doxology praising God for revealing the mystery of the gospel to all nations.'
-        ],
-        quote: {
-          text: 'Therefore, I urge you, brothers and sisters, in view of God\'s mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship.',
-          reference: 'Romans 12:1'
-        }
+          'Romans 9–11 explores God’s faithfulness to Israel.',
+          'Paul reveals that God is not finished with His covenant people.'
+        ]
       }
     ],
     keyTakeaways: [
-      'All people are sinners under God\'s wrath and cannot save themselves',
-      'God justifies believers by grace through faith in Jesus Christ',
-      'Christ\'s death satisfied God\'s justice and demonstrated His love',
-      'The Holy Spirit empowers believers to live holy lives',
-      'Nothing can separate believers from God\'s love in Christ',
-      'The gospel transforms how we think, relate, and live'
+      'All people need salvation',
+      'We are justified by faith, not works',
+      'The Spirit empowers believers for holy living',
+      'God remains faithful to His promises'
     ],
     furtherStudy: [
-      'Read Romans 3:21-26 on justification multiple times until you grasp it',
-      'Memorize Romans 8:28-39 for assurance of salvation',
-      'Study the Adam-Christ contrast in Romans 5:12-21',
-      'Explore how Romans refutes common objections to the gospel'
+      'Study Romans 3–5 on justification',
+      'Read Romans 8 for life in the Spirit',
+      'Explore Romans 9–11 on Israel’s future'
     ],
     crossReferences: [
-      'Romans 1:16-17 (Theme of the letter)',
-      'Romans 3:21-26 (Justification explained)',
-      'Romans 5:1-11 (Results of justification)',
-      'Romans 6:1-14 (Dead to sin, alive in Christ)',
-      'Romans 8:1-39 (Life in the Spirit; nothing separates from God\'s love)',
-      'Romans 12:1-2 (Living sacrifice)',
-      'Genesis 15:6 (Abraham\'s faith credited as righteousness)',
-      'Galatians 3 (Parallel teaching on justification by faith)'
+      'Genesis 15:6 (Abraham’s faith)',
+      'Galatians 2:16 (justification by faith)',
+      'Romans 8 (life in the Spirit)'
+    ]
+  },
+
+  {
+    id: 'revelation-overview',
+    category: 'book-overview',
+    title: 'Revelation: The Triumph of the Lamb',
+    subtitle: 'Hope, Judgment, and the Ultimate Victory of Christ',
+    introduction:
+      'Revelation is the final book of the Bible, revealing the ultimate victory of Jesus Christ. It offers hope to believers, warning to the wicked, and assurance that God will make all things new.',
+    sections: [
+      {
+        heading: 'Christ the Glorified King',
+        paragraphs: [
+          'Revelation opens with a breathtaking vision of the risen Christ.',
+          'Jesus stands among His churches, sovereign and glorious.'
+        ],
+        quote: {
+          text: 'I am the Alpha and the Omega.',
+          reference: 'Revelation 1:8'
+        }
+      },
+      {
+        heading: 'Judgment and Spiritual Warfare',
+        paragraphs: [
+          'Revelation reveals the spiritual battle behind world events.',
+          'God judges evil, vindicates His people, and defeats Satan.'
+        ]
+      },
+      {
+        heading: 'The New Creation',
+        paragraphs: [
+          'The book ends with the promise of a new heaven and new earth.',
+          'God will dwell with His people, wipe away every tear, and end death forever.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Jesus is the victorious King',
+      'God will judge evil and vindicate His people',
+      'Believers can live with hope in God’s final victory'
+    ],
+    furtherStudy: [
+      'Study Revelation 1 for Christ’s glory',
+      'Read Revelation 4–5 for heavenly worship',
+      'Explore Revelation 21–22 for the new creation'
+    ],
+    crossReferences: [
+      'Isaiah 65–66 (new creation)',
+      '1 Corinthians 15 (resurrection victory)',
+      'Matthew 24 (end times teaching)'
     ]
   }
 ];
 
-// HISTORICAL CONTEXT STUDY CONTENT
-export const historyStudyArticles: StudyArticle[] = [];
+export const historicalContextArticles: StudyArticle[] = [
+  {
+    id: 'ancient-near-east-context',
+    category: 'historical-context',
+    title: 'The Ancient Near East: The World of the Old Testament',
+    subtitle: 'Understanding the Cultures, Empires, and Geography Surrounding Israel',
+    introduction:
+      'The Old Testament did not emerge in a vacuum. Israel lived among powerful nations, diverse cultures, and complex political landscapes. Understanding the Ancient Near East (ANE) helps us read Scripture with clarity and depth.',
+    sections: [
+      {
+        heading: 'Geographical Setting',
+        paragraphs: [
+          'The ANE includes Mesopotamia, Egypt, Canaan, and surrounding regions. These lands formed the cradle of civilization.',
+          'Israel’s location—between Egypt and Mesopotamia—placed it at the crossroads of trade, culture, and military conflict.'
+        ],
+        illustration:
+          'Israel’s central location explains why so many empires fought over it.'
+      },
+      {
+        heading: 'Major Empires',
+        paragraphs: [
+          'Egypt, Assyria, Babylon, and Persia shaped Israel’s history.',
+          'Each empire influenced Israel politically, culturally, and religiously.'
+        ],
+        bulletPoints: [
+          'Egypt — Israel’s place of slavery and early formation',
+          'Assyria — destroyed the northern kingdom',
+          'Babylon — exiled Judah',
+          'Persia — allowed the Jews to return'
+        ]
+      },
+      {
+        heading: 'Cultural Background',
+        paragraphs: [
+          'The ANE world was polytheistic, with gods tied to nature and territory.',
+          'Israel’s monotheism stood in stark contrast to surrounding nations.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The ANE provides essential background for understanding the Old Testament',
+      'Israel lived among powerful and often hostile nations',
+      'God’s covenant people were called to be distinct from surrounding cultures'
+    ],
+    furtherStudy: [
+      'Study maps of the Ancient Near East',
+      'Compare Israel’s laws with ANE law codes like Hammurabi',
+      'Explore archaeological findings from Egypt and Mesopotamia'
+    ],
+    crossReferences: [
+      'Genesis 10–11 (origins of nations)',
+      '2 Kings 17 (Assyrian conquest)',
+      'Ezra 1 (Persian decree)'
+    ]
+  },
 
-// PROPHECY & FULFILLMENT STUDY CONTENT
-export const prophecyStudyArticles: StudyArticle[] = [];
+  {
+    id: 'exodus-historical-context',
+    category: 'historical-context',
+    title: 'The Historical Background of the Exodus',
+    subtitle: 'Egypt, Slavery, and God’s Deliverance in Historical Perspective',
+    introduction:
+      'The Exodus is one of the most defining events in Scripture. Understanding Egypt’s culture, politics, and religion helps illuminate the power and purpose of God’s deliverance.',
+    sections: [
+      {
+        heading: 'Israel in Egypt',
+        paragraphs: [
+          'Israel settled in Egypt during Joseph’s time, likely during the Middle Kingdom or Second Intermediate Period.',
+          'Over time, a new Pharaoh arose who did not know Joseph and enslaved the Israelites.'
+        ]
+      },
+      {
+        heading: 'Egyptian Religion and Power',
+        paragraphs: [
+          'Egypt was a deeply religious society with hundreds of gods.',
+          'The plagues directly confronted Egypt’s gods, showing Yahweh’s supremacy.'
+        ],
+        bulletPoints: [
+          'The Nile — considered sacred',
+          'Pharaoh — viewed as divine',
+          'Animals — often associated with gods'
+        ]
+      },
+      {
+        heading: 'Historical Evidence',
+        paragraphs: [
+          'While Egyptian records rarely mention defeats, archaeological and textual clues support the plausibility of the Exodus.',
+          'Semitic populations are known to have lived and worked in Egypt during this era.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The Exodus occurred in a real historical setting',
+      'The plagues were theological judgments on Egypt’s gods',
+      'Israel’s deliverance demonstrated God’s covenant faithfulness'
+    ],
+    furtherStudy: [
+      'Study Egyptian dynasties and timelines',
+      'Explore archaeological findings in the Nile Delta',
+      'Compare the plagues with Egyptian religious beliefs'
+    ],
+    crossReferences: [
+      'Exodus 1–15',
+      'Psalm 78:43–51',
+      'Acts 7:17–36'
+    ]
+  },
 
-// CHRISTIAN DOCTRINE STUDY CONTENT
-export const doctrineStudyArticles: StudyArticle[] = [];
+  {
+    id: 'babylonian-exile-context',
+    category: 'historical-context',
+    title: 'The Babylonian Exile',
+    subtitle: 'How Exile Shaped Israel’s Identity, Scripture, and Hope',
+    introduction:
+      'The Babylonian exile was a turning point in Israel’s history. It reshaped their theology, worship, and understanding of God’s promises.',
+    sections: [
+      {
+        heading: 'Fall of Jerusalem',
+        paragraphs: [
+          'In 586 BC, Babylon destroyed Jerusalem and the temple.',
+          'The exile fulfilled prophetic warnings from Jeremiah, Isaiah, and others.'
+        ]
+      },
+      {
+        heading: 'Life in Babylon',
+        paragraphs: [
+          'Exiles lived in Babylonian cities, working, farming, and raising families.',
+          'They faced pressure to assimilate but were called to remain faithful.'
+        ],
+        quote: {
+          text: 'Seek the peace and prosperity of the city to which I have carried you into exile.',
+          reference: 'Jeremiah 29:7'
+        }
+      },
+      {
+        heading: 'Theological Impact',
+        paragraphs: [
+          'Without the temple, Israel focused on Scripture, prayer, and synagogue worship.',
+          'The exile deepened their longing for a Messiah and restoration.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The exile was both judgment and purification',
+      'It strengthened Israel’s commitment to monotheism',
+      'It prepared the way for renewed hope in God’s promises'
+    ],
+    furtherStudy: [
+      'Read Daniel and Ezekiel for life in exile',
+      'Study Jeremiah 29 and Lamentations',
+      'Explore Persian policies under Cyrus'
+    ],
+    crossReferences: [
+      '2 Kings 25',
+      'Psalm 137',
+      'Ezra 1'
+    ]
+  },
+
+  {
+    id: 'intertestamental-period',
+    category: 'historical-context',
+    title: 'The Intertestamental Period',
+    subtitle: 'From Malachi to Matthew — 400 Years of Silence and Change',
+    introduction:
+      'The period between the Old and New Testaments was filled with political upheaval, cultural transformation, and spiritual development. These events prepared the world for the coming of Christ.',
+    sections: [
+      {
+        heading: 'Persian to Greek Rule',
+        paragraphs: [
+          'After Persia, Alexander the Great conquered the region, spreading Greek language and culture.',
+          'Hellenization deeply influenced Jewish life and thought.'
+        ]
+      },
+      {
+        heading: 'The Maccabean Revolt',
+        paragraphs: [
+          'When Antiochus IV desecrated the temple, the Jewish Maccabees revolted.',
+          'This led to a brief period of Jewish independence under the Hasmoneans.'
+        ]
+      },
+      {
+        heading: 'Rise of Rome',
+        paragraphs: [
+          'Rome eventually took control, setting the stage for the New Testament world.',
+          'Herod the Great ruled Judea under Roman authority.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Greek culture shaped the New Testament world',
+      'Jewish groups like Pharisees and Sadducees emerged',
+      'Rome’s rule created the political backdrop for Jesus’ ministry'
+    ],
+    furtherStudy: [
+      'Study the books of 1–2 Maccabees',
+      'Explore Jewish sects in the first century',
+      'Research Alexander the Great’s influence'
+    ],
+    crossReferences: [
+      'Daniel 8 (prophecy of Greek empire)',
+      'Luke 2 (Roman census)',
+      'John 10:22 (Feast of Dedication)'
+    ]
+  },
+
+  {
+    id: 'first-century-judea-context',
+    category: 'historical-context',
+    title: 'First-Century Judea',
+    subtitle: 'The Political and Religious World of Jesus',
+    introduction:
+      'Understanding the world Jesus lived in helps us grasp the tensions, expectations, and conflicts of the Gospels.',
+    sections: [
+      {
+        heading: 'Roman Occupation',
+        paragraphs: [
+          'Rome controlled Judea through governors like Pontius Pilate.',
+          'Heavy taxation and military presence created resentment among Jews.'
+        ]
+      },
+      {
+        heading: 'Jewish Religious Groups',
+        paragraphs: [
+          'Several groups shaped Jewish life:',
+          'Pharisees emphasized law and tradition; Sadducees controlled the temple; Essenes lived in isolation; Zealots sought violent revolt.'
+        ],
+        bulletPoints: [
+          'Pharisees — strict law-keepers',
+          'Sadducees — priestly aristocracy',
+          'Essenes — separatists',
+          'Zealots — revolutionaries'
+        ]
+      },
+      {
+        heading: 'Messianic Expectations',
+        paragraphs: [
+          'Many Jews expected a political Messiah to overthrow Rome.',
+          'Jesus’ spiritual kingdom challenged these expectations.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Jesus ministered in a politically tense environment',
+      'Jewish groups held differing beliefs and expectations',
+      'Rome’s rule shaped daily life and religious tensions'
+    ],
+    furtherStudy: [
+      'Study Josephus’ writings',
+      'Explore Herod’s building projects',
+      'Research Roman law and taxation'
+    ],
+    crossReferences: [
+      'Matthew 22:15–22 (taxes to Caesar)',
+      'Luke 23 (trial before Pilate)',
+      'Acts 5:34–39 (Gamaliel and Pharisees)'
+    ]
+  },
+
+  {
+    id: 'pharisees-sadducees-context',
+    category: 'historical-context',
+    title: 'Pharisees and Sadducees',
+    subtitle: 'Understanding the Religious Leaders of Jesus’ Time',
+    introduction:
+      'The Pharisees and Sadducees were influential groups in first-century Judaism. Their beliefs and conflicts with Jesus appear throughout the Gospels.',
+    sections: [
+      {
+        heading: 'Who Were the Pharisees?',
+        paragraphs: [
+          'The Pharisees emphasized strict obedience to the Law and oral traditions.',
+          'They believed in resurrection, angels, and the coming Messiah.'
+        ]
+      },
+      {
+        heading: 'Who Were the Sadducees?',
+        paragraphs: [
+          'The Sadducees were wealthy, priestly leaders who controlled the temple.',
+          'They rejected resurrection and held only to the written Torah.'
+        ]
+      },
+      {
+        heading: 'Their Conflict with Jesus',
+        paragraphs: [
+          'Jesus confronted both groups for hypocrisy and unbelief.',
+          'Their differing beliefs explain many Gospel debates.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Pharisees emphasized tradition; Sadducees emphasized temple authority',
+      'Their beliefs shaped their interactions with Jesus',
+      'Understanding them clarifies many Gospel passages'
+    ],
+    furtherStudy: [
+      'Study Matthew 23',
+      'Explore Acts 23:6–10 (Pharisees vs. Sadducees)',
+      'Research Second Temple Judaism'
+    ],
+    crossReferences: [
+      'Matthew 16:1–12',
+      'Mark 12:18–27',
+      'Acts 23:6–10'
+    ]
+  },
+
+  {
+    id: 'roman-empire-context',
+    category: 'historical-context',
+    title: 'The Roman Empire',
+    subtitle: 'The Political Power Behind the New Testament World',
+    introduction:
+      'The Roman Empire shaped the world in which Jesus and the apostles lived. Its roads, laws, and culture influenced the spread of the gospel.',
+    sections: [
+      {
+        heading: 'Pax Romana',
+        paragraphs: [
+          'Rome established a period of relative peace and stability.',
+          'This allowed for safe travel and communication across vast distances.'
+        ]
+      },
+      {
+        heading: 'Roman Law and Citizenship',
+        paragraphs: [
+          'Roman citizenship offered legal protections, which Paul used in his ministry.',
+          'Roman courts appear frequently in Acts.'
+        ]
+      },
+      {
+        heading: 'Infrastructure and Culture',
+        paragraphs: [
+          'Roman roads, cities, and trade routes helped spread Christianity rapidly.',
+          'Greek remained the common language, aiding communication.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Rome provided the infrastructure for rapid gospel expansion',
+      'Roman law shaped many events in Acts',
+      'The empire’s culture influenced early Christian communities'
+    ],
+    furtherStudy: [
+      'Study Acts 16, 22, and 25 (Paul and Roman law)',
+      'Research Roman roads and travel',
+      'Explore Roman religious practices'
+    ],
+    crossReferences: [
+      'Luke 2:1',
+      'Acts 25:10–12',
+      'Romans 13:1–7'
+    ]
+  },
+
+  {
+    id: 'second-temple-context',
+    category: 'historical-context',
+    title: 'Second Temple Judaism',
+    subtitle: 'The Religious World Between Exile and Messiah',
+    introduction:
+      'Second Temple Judaism refers to Jewish life from the rebuilding of the temple (516 BC) to its destruction in AD 70. This era shaped the beliefs and practices seen in the New Testament.',
+    sections: [
+      {
+        heading: 'Rebuilding the Temple',
+        paragraphs: [
+          'After returning from exile, the Jews rebuilt the temple under Zerubbabel.',
+          'This restored sacrificial worship and national identity.'
+        ]
+      },
+      {
+        heading: 'Synagogues and Scripture',
+        paragraphs: [
+          'Synagogues emerged as centers of teaching and prayer.',
+          'Scripture study became central to Jewish life.'
+        ]
+      },
+      {
+        heading: 'Messianic Hope',
+        paragraphs: [
+          'Prophets like Haggai and Zechariah fueled hope for a coming king.',
+          'This expectation intensified under foreign rule.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Second Temple Judaism shaped the world of Jesus',
+      'Synagogues became key centers of worship',
+      'Messianic expectations grew during this period'
+    ],
+    furtherStudy: [
+      'Study Ezra and Nehemiah',
+      'Explore writings of Josephus and Philo',
+      'Research Herod’s temple expansion'
+    ],
+    crossReferences: [
+      'Haggai 2',
+      'Zechariah 9',
+      'Luke 4:16–30'
+    ]
+  },
+
+  {
+    id: 'early-church-context',
+    category: 'historical-context',
+    title: 'The Early Church in the Roman World',
+    subtitle: 'Persecution, Growth, and the Spread of the Gospel',
+    introduction:
+      'The early church grew rapidly despite persecution. Understanding the social and political environment helps explain its resilience and expansion.',
+    sections: [
+      {
+        heading: 'Persecution and Opposition',
+        paragraphs: [
+          'Christians faced hostility from both Jews and Romans.',
+          'Nero’s persecution in AD 64 marked a turning point.'
+        ]
+      },
+      {
+        heading: 'House Churches',
+        paragraphs: [
+          'Believers met in homes for worship, teaching, and fellowship.',
+          'This intimate structure strengthened community bonds.'
+        ]
+      },
+      {
+        heading: 'Missionary Expansion',
+        paragraphs: [
+          'Paul and other apostles traveled widely, planting churches across the empire.',
+          'The gospel spread through trade routes, cities, and diaspora communities.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The early church grew despite persecution',
+      'House churches formed the backbone of Christian community',
+      'The Roman world enabled rapid missionary expansion'
+    ],
+    furtherStudy: [
+      'Study Acts 1–28',
+      'Research early Christian martyrs',
+      'Explore Roman religious and social structures'
+    ],
+    crossReferences: [
+      'Acts 2:42–47',
+      'Acts 8:1–4',
+      '1 Peter 4:12–19'
+    ]
+  }
+];
+export const prophecyFulfillmentArticles: StudyArticle[] = [
+  {
+    id: 'genesis-3-15-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The First Gospel: Genesis 3:15',
+    subtitle: 'The Promise of a Serpent-Crushing Savior',
+    introduction:
+      'Genesis 3:15 is often called the “Protoevangelium”—the first announcement of the gospel. Spoken in the midst of judgment, it reveals God’s plan to defeat evil through the offspring of the woman.',
+    sections: [
+      {
+        heading: 'The Context: The Fall of Humanity',
+        paragraphs: [
+          'After Adam and Eve sinned, God pronounced judgment on the serpent, the woman, and the man.',
+          'In the midst of judgment, God gave a promise of hope—a coming deliverer.'
+        ]
+      },
+      {
+        heading: 'The Prophecy',
+        paragraphs: [
+          'God declared that enmity would exist between the serpent and the woman, and between their offspring.',
+          'A future descendant of the woman would crush the serpent’s head, though He would be wounded in the process.'
+        ],
+        quote: {
+          text: 'He will crush your head, and you will strike his heel.',
+          reference: 'Genesis 3:15'
+        }
+      },
+      {
+        heading: 'Fulfillment in Christ',
+        paragraphs: [
+          'Jesus, born of a woman, came to destroy the works of the devil.',
+          'Through His death and resurrection, He dealt the decisive blow to Satan.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Genesis 3:15 is the first promise of a Redeemer',
+      'The serpent-crusher is ultimately Jesus Christ',
+      'God’s plan for salvation began immediately after the fall'
+    ],
+    furtherStudy: [
+      'Study Romans 5 for Adam–Christ parallels',
+      'Read Hebrews 2:14–15 on Christ defeating the devil',
+      'Explore Revelation 12 for cosmic conflict imagery'
+    ],
+    crossReferences: [
+      'Romans 16:20',
+      '1 John 3:8',
+      'Revelation 12'
+    ]
+  },
+
+  {
+    id: 'abrahamic-covenant-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The Abrahamic Covenant',
+    subtitle: 'God’s Promise of a Nation, Land, and Blessing to the World',
+    introduction:
+      'God’s covenant with Abraham forms the backbone of biblical prophecy. It promises land, descendants, and blessing for all nations through Abraham’s offspring.',
+    sections: [
+      {
+        heading: 'The Covenant Promises',
+        paragraphs: [
+          'God promised Abraham a great nation, a land, and worldwide blessing.',
+          'These promises were unconditional, grounded in God’s faithfulness.'
+        ],
+        quote: {
+          text: 'All peoples on earth will be blessed through you.',
+          reference: 'Genesis 12:3'
+        }
+      },
+      {
+        heading: 'The Offspring',
+        paragraphs: [
+          'While the covenant included physical descendants, Paul reveals that the ultimate “offspring” is Christ.',
+          'Through Jesus, the blessing extends to all nations.'
+        ]
+      },
+      {
+        heading: 'Fulfillment in Christ',
+        paragraphs: [
+          'Jesus fulfills the covenant by bringing salvation to Jews and Gentiles.',
+          'Believers become Abraham’s spiritual descendants through faith.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The Abrahamic Covenant is foundational to biblical prophecy',
+      'Jesus is the promised offspring who blesses all nations',
+      'Believers share in Abraham’s promises through faith'
+    ],
+    furtherStudy: [
+      'Study Genesis 12, 15, and 17',
+      'Read Galatians 3 for Paul’s interpretation',
+      'Explore Romans 4 on Abraham’s faith'
+    ],
+    crossReferences: [
+      'Galatians 3:16',
+      'Romans 4',
+      'Hebrews 6:13–20'
+    ]
+  },
+
+  {
+    id: 'passover-lamb-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The Passover Lamb',
+    subtitle: 'How the Exodus Foreshadows Christ’s Sacrifice',
+    introduction:
+      'The Passover event in Exodus is both historical and prophetic. The lamb’s blood that saved Israel from judgment points forward to Jesus, the true Passover Lamb.',
+    sections: [
+      {
+        heading: 'The First Passover',
+        paragraphs: [
+          'God instructed Israel to sacrifice a spotless lamb and apply its blood to their doorposts.',
+          'The blood protected them from the judgment that struck Egypt.'
+        ]
+      },
+      {
+        heading: 'Symbolism of the Lamb',
+        paragraphs: [
+          'The lamb had to be without blemish, symbolizing purity.',
+          'Its blood brought deliverance and life.'
+        ]
+      },
+      {
+        heading: 'Fulfillment in Christ',
+        paragraphs: [
+          'Jesus is identified as the Lamb of God who takes away the sin of the world.',
+          'His sacrificial death fulfills the Passover pattern.'
+        ],
+        quote: {
+          text: 'Christ, our Passover lamb, has been sacrificed.',
+          reference: '1 Corinthians 5:7'
+        }
+      }
+    ],
+    keyTakeaways: [
+      'Passover is a prophetic picture of Christ’s sacrifice',
+      'Jesus is the spotless Lamb who brings deliverance',
+      'The Exodus foreshadows the greater salvation in Christ'
+    ],
+    furtherStudy: [
+      'Study Exodus 12',
+      'Read John 1:29',
+      'Compare the crucifixion timing with Passover'
+    ],
+    crossReferences: [
+      'John 19:36',
+      'Revelation 5:6–10',
+      '1 Peter 1:18–19'
+    ]
+  },
+
+  {
+    id: 'suffering-servant-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'Isaiah 53: The Suffering Servant',
+    subtitle: 'The Most Detailed Prophecy of Christ’s Atoning Death',
+    introduction:
+      'Isaiah 53 provides a vivid description of the Messiah’s suffering, rejection, and sacrificial death. It is one of the clearest Old Testament prophecies fulfilled in Jesus.',
+    sections: [
+      {
+        heading: 'The Servant’s Suffering',
+        paragraphs: [
+          'Isaiah describes a servant who is despised, rejected, and pierced for our transgressions.',
+          'His suffering brings healing and peace to God’s people.'
+        ],
+        quote: {
+          text: 'He was pierced for our transgressions.',
+          reference: 'Isaiah 53:5'
+        }
+      },
+      {
+        heading: 'The Servant’s Innocence',
+        paragraphs: [
+          'The servant suffers not for His own sins but for the sins of others.',
+          'He remains silent before His accusers, like a lamb led to slaughter.'
+        ]
+      },
+      {
+        heading: 'Fulfillment in Christ',
+        paragraphs: [
+          'Jesus’ crucifixion matches Isaiah’s description with remarkable accuracy.',
+          'The New Testament repeatedly identifies Jesus as the Suffering Servant.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Isaiah 53 is a central prophecy of Christ’s atoning work',
+      'The servant suffers as a substitute for sinners',
+      'Jesus fulfills this prophecy through His death and resurrection'
+    ],
+    furtherStudy: [
+      'Read Isaiah 52:13–53:12',
+      'Study Acts 8:26–35',
+      'Explore 1 Peter 2:21–25'
+    ],
+    crossReferences: [
+      'Matthew 8:17',
+      'Acts 8:32–35',
+      '1 Peter 2:24'
+    ]
+  },
+
+  {
+    id: 'new-covenant-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The New Covenant',
+    subtitle: 'God’s Promise of a Transformed Heart and Forgiveness',
+    introduction:
+      'The prophets Jeremiah and Ezekiel foretold a new covenant in which God would write His law on the heart, forgive sins, and give His Spirit. Jesus inaugurated this covenant through His death.',
+    sections: [
+      {
+        heading: 'The Promise of a New Covenant',
+        paragraphs: [
+          'Jeremiah promised a covenant unlike the one made at Sinai.',
+          'It would bring internal transformation and full forgiveness.'
+        ],
+        quote: {
+          text: 'I will put my law in their minds and write it on their hearts.',
+          reference: 'Jeremiah 31:33'
+        }
+      },
+      {
+        heading: 'The Spirit’s Role',
+        paragraphs: [
+          'Ezekiel prophesied that God would give His people a new heart and His Spirit.',
+          'This points to regeneration and sanctification.'
+        ]
+      },
+      {
+        heading: 'Fulfillment in Christ',
+        paragraphs: [
+          'Jesus declared at the Last Supper that His blood established the new covenant.',
+          'Believers receive the Spirit as the covenant blessing.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The new covenant brings internal transformation',
+      'Jesus inaugurated the covenant through His blood',
+      'The Holy Spirit fulfills the promise of a new heart'
+    ],
+    furtherStudy: [
+      'Study Jeremiah 31:31–34',
+      'Read Ezekiel 36:25–27',
+      'Explore Hebrews 8–10'
+    ],
+    crossReferences: [
+      'Luke 22:20',
+      '2 Corinthians 3:6',
+      'Hebrews 8:6–13'
+    ]
+  },
+
+  {
+    id: 'messianic-psalms-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The Messianic Psalms',
+    subtitle: 'How the Psalms Point Forward to the Messiah',
+    introduction:
+      'Many psalms contain prophetic elements that point to the life, suffering, kingship, and victory of the Messiah. Jesus and the apostles frequently quoted these psalms as fulfilled in Him.',
+    sections: [
+      {
+        heading: 'Psalm 2: The King',
+        paragraphs: [
+          'Psalm 2 describes God’s anointed King ruling the nations.',
+          'The New Testament applies this directly to Jesus.'
+        ]
+      },
+      {
+        heading: 'Psalm 22: The Crucifixion',
+        paragraphs: [
+          'Psalm 22 vividly describes suffering that mirrors Jesus’ crucifixion.',
+          'Jesus quoted this psalm on the cross.'
+        ]
+      },
+      {
+        heading: 'Psalm 110: The Priest-King',
+        paragraphs: [
+          'Psalm 110 presents the Messiah as both King and eternal Priest.',
+          'Hebrews identifies Jesus as the fulfillment of this psalm.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The Psalms contain rich Messianic prophecy',
+      'Jesus fulfills the roles of King, Priest, and Suffering Servant',
+      'The New Testament frequently cites these psalms'
+    ],
+    furtherStudy: [
+      'Study Psalms 2, 22, and 110',
+      'Read Hebrews 5–7',
+      'Compare Gospel crucifixion accounts with Psalm 22'
+    ],
+    crossReferences: [
+      'Matthew 27:46',
+      'Acts 2:34–36',
+      'Hebrews 7'
+    ]
+  },
+
+  {
+    id: 'daniel-son-of-man-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'Daniel’s Son of Man',
+    subtitle: 'The Heavenly King Who Receives an Eternal Kingdom',
+    introduction:
+      'Daniel’s vision of the “Son of Man” is one of the most important Messianic prophecies. Jesus frequently used this title to describe Himself.',
+    sections: [
+      {
+        heading: 'The Vision',
+        paragraphs: [
+          'Daniel sees one like a Son of Man coming with the clouds of heaven.',
+          'He receives authority, glory, and an everlasting kingdom.'
+        ],
+        quote: {
+          text: 'His dominion is an everlasting dominion.',
+          reference: 'Daniel 7:14'
+        }
+      },
+      {
+        heading: 'Jesus and the Title',
+        paragraphs: [
+          'Jesus called Himself the Son of Man more than any other title.',
+          'He connected His identity to Daniel’s prophecy.'
+        ]
+      },
+      {
+        heading: 'Fulfillment',
+        paragraphs: [
+          'Jesus’ resurrection and ascension demonstrate His heavenly authority.',
+          'He will return in glory to fully establish His kingdom.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Daniel 7 reveals the Messiah as a divine, eternal King',
+      'Jesus identifies Himself as the Son of Man',
+      'The prophecy is fulfilled in Christ’s resurrection and return'
+    ],
+    furtherStudy: [
+      'Study Daniel 7',
+      'Read Matthew 26:64',
+      'Explore Revelation 1:12–18'
+    ],
+    crossReferences: [
+      'Matthew 26:64',
+      'Revelation 1:13',
+      'Acts 7:56'
+    ]
+  },
+
+  {
+    id: 'micah-5-2-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'The Birthplace of the Messiah',
+    subtitle: 'Micah’s Prophecy of Bethlehem',
+    introduction:
+      'Micah foretold that the Messiah would be born in Bethlehem, a small and seemingly insignificant town. This prophecy was fulfilled precisely in the birth of Jesus.',
+    sections: [
+      {
+        heading: 'The Prophecy',
+        paragraphs: [
+          'Micah declared that a ruler from ancient times would come from Bethlehem.',
+          'This ruler would shepherd God’s people Israel.'
+        ],
+        quote: {
+          text: 'But you, Bethlehem Ephrathah… out of you will come for me one who will be ruler over Israel.',
+          reference: 'Micah 5:2'
+        }
+      },
+      {
+        heading: 'Fulfillment in Jesus',
+        paragraphs: [
+          'Jesus was born in Bethlehem during the census under Caesar Augustus.',
+          'The religious leaders in Matthew 2 recognized this prophecy.'
+        ]
+      },
+      {
+        heading: 'Significance',
+        paragraphs: [
+          'Bethlehem connects Jesus to David’s royal line.',
+          'It shows God’s sovereignty in orchestrating historical events.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Micah accurately predicted the Messiah’s birthplace',
+      'Jesus’ birth fulfills this prophecy perfectly',
+      'God uses humble places to accomplish great purposes'
+    ],
+    furtherStudy: [
+      'Study Matthew 2',
+      'Read Luke 2:1–7',
+      'Explore David’s connection to Bethlehem'
+    ],
+    crossReferences: [
+      'Matthew 2:1–6',
+      'Luke 2:4–7',
+      'John 7:42'
+    ]
+  },
+
+  {
+    id: 'zechariah-messiah-prophecy',
+    category: 'prophecy-fulfillment',
+    title: 'Zechariah’s Messianic Prophecies',
+    subtitle: 'The Coming King, the Pierced One, and the Shepherd',
+    introduction:
+      'Zechariah contains several striking prophecies about the Messiah’s kingship, betrayal, suffering, and ultimate victory.',
+    sections: [
+      {
+        heading: 'The Humble King',
+        paragraphs: [
+          'Zechariah foretold a king riding into Jerusalem on a donkey.',
+          'Jesus fulfilled this prophecy during His triumphal entry.'
+        ],
+        quote: {
+          text: 'See, your king comes to you… gentle and riding on a donkey.',
+          reference: 'Zechariah 9:9'
+        }
+      },
+      {
+        heading: 'The Pierced One',
+        paragraphs: [
+          'Zechariah prophesied that Israel would look on the one they pierced.',
+          'John applies this directly to Jesus’ crucifixion.'
+        ]
+      },
+      {
+        heading: 'The Shepherd Struck',
+        paragraphs: [
+          'Zechariah predicted that the shepherd would be struck and the sheep scattered.',
+          'Jesus quoted this prophecy before His arrest.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Zechariah provides detailed Messianic prophecy',
+      'Jesus fulfills prophecies of kingship, betrayal, and suffering',
+      'The New Testament repeatedly cites Zechariah'
+    ],
+    furtherStudy: [
+      'Study Zechariah 9, 11, and 12',
+      'Read Matthew 21 and 26',
+      'Explore John 19:37'
+    ],
+    crossReferences: [
+      'Matthew 21:4–5',
+      'Matthew 26:31',
+      'John 19:37'
+    ]
+  },
+
+  {
+    id: 'new-testament-fulfillment-patterns',
+    category: 'prophecy-fulfillment',
+    title: 'Patterns of Fulfillment in the New Testament',
+    subtitle: 'How Jesus Completes the Law, Prophets, and Writings',
+    introduction:
+      'The New Testament presents Jesus as the fulfillment of the entire Old Testament—not only specific prophecies but also patterns, symbols, and institutions.',
+    sections: [
+      {
+        heading: 'Typology and Foreshadowing',
+        paragraphs: [
+          'Many Old Testament figures and events foreshadow Christ.',
+          'Examples include Adam, Moses, David, the temple, and the sacrificial system.'
+        ]
+      },
+      {
+        heading: 'Direct Prophecy',
+        paragraphs: [
+          'The New Testament cites numerous prophecies fulfilled in Jesus’ birth, ministry, death, and resurrection.',
+          'Matthew especially emphasizes fulfillment.'
+        ]
+      },
+      {
+        heading: 'Jesus’ Own Words',
+        paragraphs: [
+          'Jesus taught that all Scripture points to Him.',
+          'He fulfilled the Law and the Prophets through His life and mission.'
+        ],
+        quote: {
+          text: 'These are the very Scriptures that testify about me.',
+          reference: 'John 5:39'
+        }
+      }
+    ],
+    keyTakeaways: [
+      'Jesus fulfills both prophecy and typology',
+      'The entire Old Testament points to Christ',
+      'The New Testament authors interpret Scripture through the lens of Jesus'
+    ],
+    furtherStudy: [
+      'Study Luke 24:25–27, 44–49',
+      'Read Matthew’s fulfillment quotations',
+      'Explore Hebrews for typological fulfillment'
+    ],
+    crossReferences: [
+      'Luke 24:27',
+      'Matthew 5:17',
+      'Hebrews 10:1'
+    ]
+  }
+];
+export const christianDoctrineArticles: StudyArticle[] = [
+  {
+    id: 'doctrine-trinity',
+    category: 'christian-doctrine',
+    title: 'The Trinity',
+    subtitle: 'One God in Three Persons — Father, Son, and Holy Spirit',
+    introduction:
+      'The Trinity is one of the central doctrines of Christianity. God is one in essence and three in person: Father, Son, and Holy Spirit. Though mysterious, Scripture clearly reveals this truth.',
+    sections: [
+      {
+        heading: 'One God',
+        paragraphs: [
+          'The Bible teaches that there is only one God, eternal and unchanging.',
+          'This foundational truth distinguishes biblical faith from polytheism.'
+        ],
+        quote: {
+          text: 'Hear, O Israel: The LORD our God, the LORD is one.',
+          reference: 'Deuteronomy 6:4'
+        }
+      },
+      {
+        heading: 'Three Persons',
+        paragraphs: [
+          'The Father is God, the Son is God, and the Holy Spirit is God.',
+          'They are distinct persons, not merely modes or expressions.'
+        ]
+      },
+      {
+        heading: 'Unity and Diversity',
+        paragraphs: [
+          'The three persons share the same divine essence.',
+          'They work in perfect unity in creation, redemption, and sanctification.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'God is one in essence and three in person',
+      'The Trinity is revealed progressively in Scripture',
+      'Each person of the Trinity is fully God'
+    ],
+    furtherStudy: [
+      'Study John 1:1–14',
+      'Read Matthew 28:19',
+      'Explore 2 Corinthians 13:14'
+    ],
+    crossReferences: [
+      'Genesis 1:26',
+      'John 14–16',
+      'Matthew 28:19'
+    ]
+  },
+
+  {
+    id: 'doctrine-atonement',
+    category: 'christian-doctrine',
+    title: 'The Atonement',
+    subtitle: 'How Christ’s Sacrifice Reconciles Us to God',
+    introduction:
+      'The atonement explains how Jesus’ death deals with sin and restores our relationship with God. It is the heart of the gospel and the foundation of salvation.',
+    sections: [
+      {
+        heading: 'The Problem of Sin',
+        paragraphs: [
+          'Humanity is separated from God because of sin.',
+          'Sin brings guilt, corruption, and death.'
+        ]
+      },
+      {
+        heading: 'Christ’s Substitution',
+        paragraphs: [
+          'Jesus died in our place, bearing the penalty we deserved.',
+          'His sacrifice satisfies God’s justice and expresses His love.'
+        ],
+        quote: {
+          text: 'He himself bore our sins in his body on the cross.',
+          reference: '1 Peter 2:24'
+        }
+      },
+      {
+        heading: 'Reconciliation and Victory',
+        paragraphs: [
+          'Through the cross, believers are reconciled to God.',
+          'Christ also defeated Satan, sin, and death.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The atonement is central to salvation',
+      'Jesus died as our substitute',
+      'The cross brings forgiveness, reconciliation, and victory'
+    ],
+    furtherStudy: [
+      'Study Isaiah 53',
+      'Read Romans 3:21–26',
+      'Explore Hebrews 9–10'
+    ],
+    crossReferences: [
+      'Romans 5:6–11',
+      'Colossians 2:13–15',
+      'Hebrews 10:10–14'
+    ]
+  },
+
+  {
+    id: 'doctrine-justification',
+    category: 'christian-doctrine',
+    title: 'Justification by Faith',
+    subtitle: 'How God Declares Sinners Righteous Through Christ',
+    introduction:
+      'Justification is God’s legal declaration that a sinner is righteous through faith in Jesus Christ. It is based entirely on Christ’s righteousness, not our works.',
+    sections: [
+      {
+        heading: 'The Need for Justification',
+        paragraphs: [
+          'All people are guilty before God and unable to earn righteousness.',
+          'Justification addresses our legal standing before God.'
+        ]
+      },
+      {
+        heading: 'Christ’s Righteousness',
+        paragraphs: [
+          'Jesus lived a perfect life and died a sacrificial death.',
+          'His righteousness is credited to believers through faith.'
+        ],
+        quote: {
+          text: 'The righteous will live by faith.',
+          reference: 'Romans 1:17'
+        }
+      },
+      {
+        heading: 'Faith Alone',
+        paragraphs: [
+          'Justification is received by faith alone, apart from works.',
+          'Good works follow justification but do not contribute to it.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Justification is a legal declaration of righteousness',
+      'It is based on Christ’s righteousness, not our own',
+      'Faith alone receives the gift of justification'
+    ],
+    furtherStudy: [
+      'Study Romans 3–5',
+      'Read Galatians 2–3',
+      'Explore James 2 in context'
+    ],
+    crossReferences: [
+      'Romans 3:21–26',
+      'Galatians 2:16',
+      'Ephesians 2:8–9'
+    ]
+  },
+
+  {
+    id: 'doctrine-sanctification',
+    category: 'christian-doctrine',
+    title: 'Sanctification',
+    subtitle: 'Growing in Holiness Through the Spirit’s Power',
+    introduction:
+      'Sanctification is the lifelong process by which believers are transformed into the image of Christ. It is empowered by the Holy Spirit and grounded in the gospel.',
+    sections: [
+      {
+        heading: 'Positional Sanctification',
+        paragraphs: [
+          'Believers are set apart as holy at the moment of salvation.',
+          'This is a completed work based on Christ’s righteousness.'
+        ]
+      },
+      {
+        heading: 'Progressive Sanctification',
+        paragraphs: [
+          'Throughout life, believers grow in holiness through obedience and spiritual disciplines.',
+          'The Spirit empowers this growth.'
+        ],
+        quote: {
+          text: 'It is God who works in you to will and to act.',
+          reference: 'Philippians 2:13'
+        }
+      },
+      {
+        heading: 'Future Sanctification',
+        paragraphs: [
+          'At Christ’s return, believers will be fully perfected.',
+          'Sin will be removed completely.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Sanctification is both a position and a process',
+      'The Holy Spirit empowers spiritual growth',
+      'Believers will one day be fully perfected'
+    ],
+    furtherStudy: [
+      'Study Romans 6–8',
+      'Read Galatians 5:16–26',
+      'Explore 1 Thessalonians 4:1–8'
+    ],
+    crossReferences: [
+      'Romans 8:29',
+      '1 Thessalonians 5:23',
+      'Hebrews 12:14'
+    ]
+  },
+
+  {
+    id: 'doctrine-holy-spirit',
+    category: 'christian-doctrine',
+    title: 'The Holy Spirit',
+    subtitle: 'The Presence, Power, and Person of God in Believers',
+    introduction:
+      'The Holy Spirit is the third person of the Trinity. He regenerates, indwells, empowers, and guides believers in their walk with God.',
+    sections: [
+      {
+        heading: 'The Spirit’s Personhood',
+        paragraphs: [
+          'The Spirit is not a force but a divine person.',
+          'He speaks, teaches, grieves, and intercedes.'
+        ]
+      },
+      {
+        heading: 'The Spirit’s Work',
+        paragraphs: [
+          'The Spirit regenerates hearts, produces fruit, and gives spiritual gifts.',
+          'He empowers believers for mission and holiness.'
+        ],
+        quote: {
+          text: 'Walk by the Spirit, and you will not gratify the desires of the flesh.',
+          reference: 'Galatians 5:16'
+        }
+      },
+      {
+        heading: 'The Spirit’s Indwelling',
+        paragraphs: [
+          'Every believer receives the Spirit at conversion.',
+          'He remains with believers forever.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The Holy Spirit is fully God and fully personal',
+      'He empowers believers for holy living',
+      'He indwells every believer permanently'
+    ],
+    furtherStudy: [
+      'Study John 14–16',
+      'Read Acts 2',
+      'Explore Romans 8'
+    ],
+    crossReferences: [
+      'John 14:26',
+      'Acts 1:8',
+      'Romans 8:9–16'
+    ]
+  },
+
+  {
+    id: 'doctrine-scripture',
+    category: 'christian-doctrine',
+    title: 'The Doctrine of Scripture',
+    subtitle: 'God’s Inspired, Authoritative, and Sufficient Word',
+    introduction:
+      'Christians believe the Bible is the inspired Word of God—true, authoritative, and sufficient for faith and life. Scripture reveals God’s character, His will, and His plan of salvation.',
+    sections: [
+      {
+        heading: 'Inspiration',
+        paragraphs: [
+          'Scripture is breathed out by God through human authors.',
+          'It is fully divine and fully human.'
+        ],
+        quote: {
+          text: 'All Scripture is God-breathed.',
+          reference: '2 Timothy 3:16'
+        }
+      },
+      {
+        heading: 'Authority',
+        paragraphs: [
+          'Because Scripture is God’s Word, it carries ultimate authority.',
+          'Believers submit to its teachings in all areas of life.'
+        ]
+      },
+      {
+        heading: 'Sufficiency',
+        paragraphs: [
+          'The Bible contains everything needed for salvation and godly living.',
+          'No additional revelation is required.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Scripture is inspired by God',
+      'The Bible is authoritative and trustworthy',
+      'God’s Word is sufficient for faith and life'
+    ],
+    furtherStudy: [
+      'Study Psalm 19 and 119',
+      'Read 2 Peter 1:16–21',
+      'Explore Hebrews 4:12'
+    ],
+    crossReferences: [
+      'Psalm 119:105',
+      '2 Peter 1:20–21',
+      'Hebrews 4:12'
+    ]
+  },
+
+  {
+    id: 'doctrine-church',
+    category: 'christian-doctrine',
+    title: 'The Church',
+    subtitle: 'The People of God, the Body of Christ, and the Temple of the Spirit',
+    introduction:
+      'The church is not a building but the community of believers redeemed by Christ. It exists to worship God, proclaim the gospel, and build up the saints.',
+    sections: [
+      {
+        heading: 'The People of God',
+        paragraphs: [
+          'The church is God’s chosen people, called out from the world.',
+          'It includes all believers across time and place.'
+        ]
+      },
+      {
+        heading: 'The Body of Christ',
+        paragraphs: [
+          'Believers are united to Christ and to one another.',
+          'Each member has gifts to serve the body.'
+        ],
+        quote: {
+          text: 'You are the body of Christ, and each one of you is a part of it.',
+          reference: '1 Corinthians 12:27'
+        }
+      },
+      {
+        heading: 'The Temple of the Spirit',
+        paragraphs: [
+          'The Spirit dwells in the church collectively and in believers individually.',
+          'The church is called to holiness and unity.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The church is the community of God’s redeemed people',
+      'Believers are united as the body of Christ',
+      'The Spirit dwells within the church'
+    ],
+    furtherStudy: [
+      'Study Acts 2:42–47',
+      'Read Ephesians 4',
+      'Explore 1 Corinthians 12–14'
+    ],
+    crossReferences: [
+      'Ephesians 2:19–22',
+      '1 Corinthians 12',
+      'Matthew 16:18'
+    ]
+  },
+
+  {
+    id: 'doctrine-end-times',
+    category: 'christian-doctrine',
+    title: 'Eschatology',
+    subtitle: 'The Study of the Last Things — Christ’s Return and God’s Final Victory',
+    introduction:
+      'Eschatology examines the future according to Scripture: Christ’s return, the resurrection, judgment, and the new creation. While Christians differ on details, all agree on Christ’s ultimate victory.',
+    sections: [
+      {
+        heading: 'Christ’s Return',
+        paragraphs: [
+          'Jesus will return visibly, bodily, and gloriously.',
+          'His return will bring final judgment and restoration.'
+        ],
+        quote: {
+          text: 'This same Jesus… will come back in the same way you have seen him go.',
+          reference: 'Acts 1:11'
+        }
+      },
+      {
+        heading: 'Resurrection and Judgment',
+        paragraphs: [
+          'All people will be raised—believers to eternal life, unbelievers to judgment.',
+          'God will judge the world in righteousness.'
+        ]
+      },
+      {
+        heading: 'New Creation',
+        paragraphs: [
+          'God will create a new heaven and new earth where righteousness dwells.',
+          'Believers will live forever in God’s presence.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Jesus will return in glory',
+      'There will be a final resurrection and judgment',
+      'God will renew creation and dwell with His people forever'
+    ],
+    furtherStudy: [
+      'Study Matthew 24–25',
+      'Read 1 Thessalonians 4–5',
+      'Explore Revelation 21–22'
+    ],
+    crossReferences: [
+      '1 Corinthians 15',
+      'Revelation 21–22',
+      '2 Peter 3:10–13'
+    ]
+  },
+
+  {
+    id: 'doctrine-salvation',
+    category: 'christian-doctrine',
+    title: 'The Doctrine of Salvation',
+    subtitle: 'God’s Work of Rescuing, Redeeming, and Restoring Sinners',
+    introduction:
+      'Salvation is God’s gracious work of delivering sinners from sin and restoring them to fellowship with Him. It includes election, calling, regeneration, justification, sanctification, and glorification.',
+    sections: [
+      {
+        heading: 'God’s Initiative',
+        paragraphs: [
+          'Salvation begins with God’s sovereign grace.',
+          'He chooses, calls, and draws sinners to Himself.'
+        ]
+      },
+      {
+        heading: 'The Order of Salvation',
+        paragraphs: [
+          'Scripture describes a beautiful sequence: calling, regeneration, faith, justification, sanctification, and glorification.',
+          'Each part is God’s work from beginning to end.'
+        ],
+        quote: {
+          text: 'Those he justified, he also glorified.',
+          reference: 'Romans 8:30'
+        }
+      },
+      {
+        heading: 'The Goal of Salvation',
+        paragraphs: [
+          'The ultimate purpose is God’s glory and our eternal joy in Him.',
+          'Salvation restores what was lost in the fall.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'Salvation is entirely by God’s grace',
+      'It includes multiple aspects of God’s work',
+      'The goal is eternal fellowship with God'
+    ],
+    furtherStudy: [
+      'Study Romans 8:28–30',
+      'Read Ephesians 1',
+      'Explore John 3'
+    ],
+    crossReferences: [
+      'Ephesians 2:1–10',
+      'Romans 8:28–30',
+      'Titus 3:4–7'
+    ]
+  },
+
+  {
+    id: 'doctrine-kingdom-of-god',
+    category: 'christian-doctrine',
+    title: 'The Kingdom of God',
+    subtitle: 'God’s Reign Over Creation, Redemption, and the Future',
+    introduction:
+      'The kingdom of God is a central theme in Jesus’ teaching. It refers to God’s rule—present in Christ’s ministry, growing through the church, and fully realized at His return.',
+    sections: [
+      {
+        heading: 'The Present Kingdom',
+        paragraphs: [
+          'Jesus inaugurated the kingdom through His life, death, and resurrection.',
+          'Believers experience the kingdom through the Spirit’s work.'
+        ]
+      },
+      {
+        heading: 'The Growing Kingdom',
+        paragraphs: [
+          'The kingdom spreads as the gospel is proclaimed.',
+          'It transforms lives and communities.'
+        ],
+        quote: {
+          text: 'The kingdom of God is in your midst.',
+          reference: 'Luke 17:21'
+        }
+      },
+      {
+        heading: 'The Future Kingdom',
+        paragraphs: [
+          'The kingdom will be fully established when Christ returns.',
+          'All evil will be defeated, and God’s reign will be complete.'
+        ]
+      }
+    ],
+    keyTakeaways: [
+      'The kingdom is already present but not yet complete',
+      'Jesus is the King who inaugurates and fulfills the kingdom',
+      'Believers participate in the kingdom through mission and obedience'
+    ],
+    furtherStudy: [
+      'Study Matthew 5–7',
+      'Read Luke 17:20–37',
+      'Explore Revelation 11:15'
+    ],
+    crossReferences: [
+      'Matthew 6:33',
+      'Mark 1:15',
+      'Revelation 11:15'
+    ]
+  }
+];
+
 
 export const allStudyArticles = {
   names: namesStudyArticles,
   themes: themesStudyArticles,
-  books: booksStudyArticles,
-  history: historyStudyArticles,
-  prophecy: prophecyStudyArticles,
-  doctrine: doctrineStudyArticles
+  'book-overview': bookOverviewArticles,
+  'historical-context': historicalContextArticles,
+  'prophecy-fulfillment': prophecyFulfillmentArticles,
+  'christian-doctrine': christianDoctrineArticles
 };
 
 export function getStudyArticles(category: string): StudyArticle[] {
@@ -1446,10 +3426,35 @@ export function getStudyArticle(id: string): StudyArticle | undefined {
   const allArticles = [
     ...namesStudyArticles,
     ...themesStudyArticles,
-    ...booksStudyArticles,
-    ...historyStudyArticles,
-    ...prophecyStudyArticles,
-    ...doctrineStudyArticles
+    ...bookOverviewArticles,
+    ...historicalContextArticles,
+    ...prophecyFulfillmentArticles,
+    ...christianDoctrineArticles
   ];
   return allArticles.find(article => article.id === id);
+}
+
+// Helper function to get all articles as a flat array
+export function getAllArticles(): StudyArticle[] {
+  return [
+    ...namesStudyArticles,
+    ...themesStudyArticles,
+    ...bookOverviewArticles,
+    ...historicalContextArticles,
+    ...prophecyFulfillmentArticles,
+    ...christianDoctrineArticles
+  ];
+}
+
+// Helper function to get article count per category
+export function getCategoryStats() {
+  return {
+    names: namesStudyArticles.length,
+    themes: themesStudyArticles.length,
+    'book-overview': bookOverviewArticles.length,
+    'historical-context': historicalContextArticles.length,
+    'prophecy-fulfillment': prophecyFulfillmentArticles.length,
+    'christian-doctrine': christianDoctrineArticles.length,
+    total: getAllArticles().length
+  };
 }

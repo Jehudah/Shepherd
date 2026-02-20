@@ -2170,6 +2170,901 @@ export const wisdomThemeQuestions: Record<string, Question[]> = {
   ]
 };
 
+export const faithThemeQuestionsExtra: Record<string, Question[]> = {
+  'theme-faith-5': [
+    {
+      id: 'faith-5-q1',
+      type: 'multiple-choice',
+      question: 'What does Romans 10:17 say about how faith comes?',
+      options: ['By hearing the Word of Christ', 'By emotions', 'By miracles', 'By tradition'],
+      correctAnswer: 'By hearing the Word of Christ'
+    },
+    {
+      id: 'faith-5-q2',
+      type: 'multiple-choice',
+      question: 'What did Jesus say about faith the size of a mustard seed?',
+      options: ['Nothing will be impossible', 'It is too small', 'It is weak', 'It must be bigger'],
+      correctAnswer: 'Nothing will be impossible'
+    },
+    {
+      id: 'faith-5-q3',
+      type: 'multiple-choice',
+      question: 'What shield protects believers in spiritual warfare?',
+      options: ['The shield of faith', 'The shield of works', 'The shield of knowledge', 'The shield of emotions'],
+      correctAnswer: 'The shield of faith'
+    },
+    {
+      id: 'faith-5-q4',
+      type: 'multiple-choice',
+      question: 'What did Jesus say to the woman healed from bleeding?',
+      options: ['Your faith has made you well', 'You are lucky', 'You deserve this', 'You healed yourself'],
+      correctAnswer: 'Your faith has made you well'
+    },
+    {
+      id: 'faith-5-q5',
+      type: 'multiple-choice',
+      question: 'What does faith look to?',
+      options: ['God’s promises', 'Our feelings', 'Our strength', 'Our achievements'],
+      correctAnswer: 'God’s promises'
+    },
+    {
+      id: 'faith-5-q6',
+      type: 'multiple-choice',
+      question: 'What did the centurion believe Jesus could do?',
+      options: ['Heal with just a word', 'Only heal in person', 'Only heal Jews', 'Only heal slowly'],
+      correctAnswer: 'Heal with just a word'
+    },
+    {
+      id: 'faith-5-q7',
+      type: 'multiple-choice',
+      question: 'What does 2 Corinthians 5:7 say we walk by?',
+      options: ['Faith', 'Sight', 'Emotion', 'Tradition'],
+      correctAnswer: 'Faith'
+    },
+    {
+      id: 'faith-5-q8',
+      type: 'multiple-choice',
+      question: 'What does faith produce according to James 1?',
+      options: ['Perseverance', 'Pride', 'Fear', 'Doubt'],
+      correctAnswer: 'Perseverance'
+    },
+    {
+      id: 'faith-5-q9',
+      type: 'multiple-choice',
+      question: 'What did Jesus say to Jairus when his daughter died?',
+      options: ['Just believe', 'Give up', 'It’s too late', 'Try harder'],
+      correctAnswer: 'Just believe'
+    },
+    {
+      id: 'faith-5-q10',
+      type: 'multiple-choice',
+      question: 'What does faith look to for salvation?',
+      options: ['Christ alone', 'Our works', 'Our goodness', 'Our church'],
+      correctAnswer: 'Christ alone'
+    },
+    {
+      id: 'faith-5-q11',
+      type: 'multiple-choice',
+      question: 'What does Hebrews 12:2 call Jesus?',
+      options: ['The author and finisher of our faith', 'A good example only', 'A prophet', 'A teacher'],
+      correctAnswer: 'The author and finisher of our faith'
+    },
+    {
+      id: 'faith-5-q12',
+      type: 'multiple-choice',
+      question: 'What does faith overcome according to 1 John 5:4?',
+      options: ['The world', 'Only small problems', 'Nothing', 'Only fear'],
+      correctAnswer: 'The world'
+    }
+  ]
+};
+
+export const graceThemeQuestions: Record<string, Question[]> = {
+  'theme-grace-1': [
+    {
+      id: 'grace-1-q1',
+      type: 'multiple-choice',
+      question: 'What is grace?',
+      options: ['God’s unearned favor', 'A reward', 'Something we earn', 'A feeling'],
+      correctAnswer: 'God’s unearned favor'
+    },
+    {
+      id: 'grace-1-q2',
+      type: 'multiple-choice',
+      question: 'According to Ephesians 2:8, how are we saved?',
+      options: ['By grace through faith', 'By works', 'By effort', 'By religion'],
+      correctAnswer: 'By grace through faith'
+    },
+    {
+      id: 'grace-1-q3',
+      type: 'multiple-choice',
+      question: 'What does grace teach us according to Titus 2:12?',
+      options: ['To say no to ungodliness', 'To ignore sin', 'To do whatever we want', 'To judge others'],
+      correctAnswer: 'To say no to ungodliness'
+    },
+    {
+      id: 'grace-1-q4',
+      type: 'multiple-choice',
+      question: 'What does God’s grace do with our sins?',
+      options: ['Forgives and removes them', 'Ignores them', 'Punishes instantly', 'Remembers them'],
+      correctAnswer: 'Forgives and removes them'
+    },
+    {
+      id: 'grace-1-q5',
+      type: 'multiple-choice',
+      question: 'What did Paul say about God’s grace in 2 Corinthians 12:9?',
+      options: ['It is sufficient', 'It is limited', 'It is weak', 'It is temporary'],
+      correctAnswer: 'It is sufficient'
+    },
+    {
+      id: 'grace-1-q6',
+      type: 'multiple-choice',
+      question: 'What does grace produce in believers?',
+      options: ['Gratitude and obedience', 'Pride', 'Fear', 'Selfishness'],
+      correctAnswer: 'Gratitude and obedience'
+    },
+    {
+      id: 'grace-1-q7',
+      type: 'multiple-choice',
+      question: 'What does Romans 6:14 say we are not under?',
+      options: ['Law but under grace', 'Grace but under law', 'Sin', 'Judgment'],
+      correctAnswer: 'Law but under grace'
+    },
+    {
+      id: 'grace-1-q8',
+      type: 'multiple-choice',
+      question: 'What does grace do according to Acts 20:32?',
+      options: ['Builds us up', 'Weakens us', 'Confuses us', 'Divides us'],
+      correctAnswer: 'Builds us up'
+    },
+    {
+      id: 'grace-1-q9',
+      type: 'multiple-choice',
+      question: 'What does grace lead to?',
+      options: ['Good works', 'Sin', 'Pride', 'Selfishness'],
+      correctAnswer: 'Good works'
+    },
+    {
+      id: 'grace-1-q10',
+      type: 'multiple-choice',
+      question: 'What does Hebrews 4:16 invite us to do?',
+      options: ['Approach the throne of grace with confidence', 'Stay away from God', 'Hide our sins', 'Earn grace'],
+      correctAnswer: 'Approach the throne of grace with confidence'
+    },
+    {
+      id: 'grace-1-q11',
+      type: 'multiple-choice',
+      question: 'What does grace do with boasting?',
+      options: ['Eliminates it', 'Encourages it', 'Allows some', 'Requires it'],
+      correctAnswer: 'Eliminates it'
+    },
+    {
+      id: 'grace-1-q12',
+      type: 'multiple-choice',
+      question: 'What does grace remind us of?',
+      options: ['We depend fully on God', 'We are self-sufficient', 'We earn salvation', 'We are perfect'],
+      correctAnswer: 'We depend fully on God'
+    }
+  ]
+};
+
+export const hopeThemeQuestions: Record<string, Question[]> = {
+  'theme-hope-1': [
+    {
+      id: 'hope-1-q1',
+      type: 'multiple-choice',
+      question: 'What is biblical hope?',
+      options: ['Confident expectation', 'Wishful thinking', 'Luck', 'Positive feelings'],
+      correctAnswer: 'Confident expectation'
+    },
+    {
+      id: 'hope-1-q2',
+      type: 'multiple-choice',
+      question: 'What is our living hope according to 1 Peter 1:3?',
+      options: ['The resurrection of Jesus', 'Our success', 'Our strength', 'Our plans'],
+      correctAnswer: 'The resurrection of Jesus'
+    },
+    {
+      id: 'hope-1-q3',
+      type: 'multiple-choice',
+      question: 'What does hope anchor according to Hebrews 6:19?',
+      options: ['The soul', 'The mind', 'The body', 'The emotions'],
+      correctAnswer: 'The soul'
+    },
+    {
+      id: 'hope-1-q4',
+      type: 'multiple-choice',
+      question: 'What does Romans 8 say creation is waiting for?',
+      options: ['The redemption of our bodies', 'A new law', 'A new prophet', 'A new temple'],
+      correctAnswer: 'The redemption of our bodies'
+    },
+    {
+      id: 'hope-1-q5',
+      type: 'multiple-choice',
+      question: 'What does hope produce?',
+      options: ['Endurance', 'Fear', 'Doubt', 'Pride'],
+      correctAnswer: 'Endurance'
+    },
+    {
+      id: 'hope-1-q6',
+      type: 'multiple-choice',
+      question: 'What does hope not do according to Romans 5:5?',
+      options: ['Put us to shame', 'Fail', 'Grow', 'Strengthen'],
+      correctAnswer: 'Put us to shame'
+    },
+    {
+      id: 'hope-1-q7',
+      type: 'multiple-choice',
+      question: 'What does hope look forward to?',
+      options: ['Christ’s return', 'Earthly success', 'Comfort', 'Popularity'],
+      correctAnswer: 'Christ’s return'
+    },
+    {
+      id: 'hope-1-q8',
+      type: 'multiple-choice',
+      question: 'What does hope rest on?',
+      options: ['God’s promises', 'Our feelings', 'Our strength', 'Our works'],
+      correctAnswer: 'God’s promises'
+    },
+    {
+      id: 'hope-1-q9',
+      type: 'multiple-choice',
+      question: 'What does Paul call the hope of salvation?',
+      options: ['A helmet', 'A sword', 'A shield', 'A belt'],
+      correctAnswer: 'A helmet'
+    },
+    {
+      id: 'hope-1-q10',
+      type: 'multiple-choice',
+      question: 'What does hope encourage us to do?',
+      options: ['Persevere', 'Quit', 'Fear', 'Doubt'],
+      correctAnswer: 'Persevere'
+    },
+    {
+      id: 'hope-1-q11',
+      type: 'multiple-choice',
+      question: 'What does hope remind us of?',
+      options: ['Our future with Christ', 'Our past failures', 'Our weaknesses', 'Our fears'],
+      correctAnswer: 'Our future with Christ'
+    },
+    {
+      id: 'hope-1-q12',
+      type: 'multiple-choice',
+      question: 'What does hope strengthen?',
+      options: ['Faith', 'Fear', 'Doubt', 'Pride'],
+      correctAnswer: 'Faith'
+    }
+  ]
+};
+
+export const forgivenessThemeQuestions: Record<string, Question[]> = {
+  'theme-forgiveness-1': [
+    {
+      id: 'forgiveness-1-q1',
+      type: 'multiple-choice',
+      question: 'What does God do with our sins according to Psalm 103?',
+      options: ['Removes them far away', 'Keeps them', 'Reminds us of them', 'Punishes instantly'],
+      correctAnswer: 'Removes them far away'
+    },
+    {
+      id: 'forgiveness-1-q2',
+      type: 'multiple-choice',
+      question: 'What must we do to be forgiven according to 1 John 1:9?',
+      options: ['Confess our sins', 'Be perfect', 'Earn forgiveness', 'Hide our sins'],
+      correctAnswer: 'Confess our sins'
+    },
+    {
+      id: 'forgiveness-1-q3',
+      type: 'multiple-choice',
+      question: 'How many times should we forgive according to Jesus?',
+      options: ['Seventy times seven', 'Once', 'Twice', 'Only if they deserve it'],
+      correctAnswer: 'Seventy times seven'
+    },
+    {
+      id: 'forgiveness-1-q4',
+      type: 'multiple-choice',
+      question: 'What did Jesus pray on the cross?',
+      options: ['Father, forgive them', 'Father, punish them', 'Father, judge them', 'Father, ignore them'],
+      correctAnswer: 'Father, forgive them'
+    },
+    {
+      id: 'forgiveness-1-q5',
+      type: 'multiple-choice',
+      question: 'What does forgiveness bring?',
+      options: ['Freedom and peace', 'Bondage', 'Fear', 'Pride'],
+      correctAnswer: 'Freedom and peace'
+    },
+    {
+      id: 'forgiveness-1-q6',
+      type: 'multiple-choice',
+      question: 'What happens if we do not forgive others?',
+      options: ['God will not forgive us', 'Nothing', 'We grow stronger', 'We become righteous'],
+      correctAnswer: 'God will not forgive us'
+    },
+    {
+      id: 'forgiveness-1-q7',
+      type: 'multiple-choice',
+      question: 'What story did Jesus tell to teach forgiveness?',
+      options: ['The Unforgiving Servant', 'The Good Samaritan', 'The Prodigal Son', 'The Lost Sheep'],
+      correctAnswer: 'The Unforgiving Servant'
+    },
+    {
+      id: 'forgiveness-1-q8',
+      type: 'multiple-choice',
+      question: 'What does forgiveness reflect?',
+      options: ['God’s character', 'Weakness', 'Fear', 'Avoidance'],
+      correctAnswer: 'God’s character'
+    },
+    {
+      id: 'forgiveness-1-q9',
+      type: 'multiple-choice',
+      question: 'What does forgiveness break?',
+      options: ['Bitterness', 'Love', 'Joy', 'Peace'],
+      correctAnswer: 'Bitterness'
+    },
+    {
+      id: 'forgiveness-1-q10',
+      type: 'multiple-choice',
+      question: 'What does Colossians 3:13 tell us to do?',
+      options: ['Forgive as the Lord forgave you', 'Hold grudges', 'Avoid people', 'Judge others'],
+      correctAnswer: 'Forgive as the Lord forgave you'
+    },
+    {
+      id: 'forgiveness-1-q11',
+      type: 'multiple-choice',
+      question: 'What does forgiveness require?',
+      options: ['Humility', 'Pride', 'Revenge', 'Anger'],
+      correctAnswer: 'Humility'
+    },
+    {
+      id: 'forgiveness-1-q12',
+      type: 'multiple-choice',
+      question: 'What does forgiveness restore?',
+      options: ['Relationships', 'Pride', 'Distance', 'Division'],
+      correctAnswer: 'Relationships'
+    }
+  ]
+};
+
+export const holinessThemeQuestions: Record<string, Question[]> = {
+  'theme-holiness-1': [
+    {
+      id: 'holiness-1-q1',
+      type: 'multiple-choice',
+      question: 'What does God call us to be?',
+      options: ['Holy', 'Popular', 'Powerful', 'Famous'],
+      correctAnswer: 'Holy'
+    },
+    {
+      id: 'holiness-1-q2',
+      type: 'multiple-choice',
+      question: 'What is holiness?',
+      options: ['Being set apart for God', 'Being perfect in ourselves', 'Being religious', 'Being strict'],
+      correctAnswer: 'Being set apart for God'
+    },
+    {
+      id: 'holiness-1-q3',
+      type: 'multiple-choice',
+      question: 'Who empowers holiness?',
+      options: ['The Holy Spirit', 'Our strength', 'Our rules', 'Our emotions'],
+      correctAnswer: 'The Holy Spirit'
+    },
+    {
+      id: 'holiness-1-q4',
+      type: 'multiple-choice',
+      question: 'What vision shows God’s holiness clearly?',
+      options: ['Isaiah 6', 'Genesis 1', 'Exodus 20', 'Psalm 23'],
+      correctAnswer: 'Isaiah 6'
+    },
+    {
+      id: 'holiness-1-q5',
+      type: 'multiple-choice',
+      question: 'What does holiness require?',
+      options: ['Obedience', 'Popularity', 'Comfort', 'Compromise'],
+      correctAnswer: 'Obedience'
+    },
+    {
+      id: 'holiness-1-q6',
+      type: 'multiple-choice',
+      question: 'What does Hebrews 12:14 say we should pursue?',
+      options: ['Holiness', 'Wealth', 'Fame', 'Comfort'],
+      correctAnswer: 'Holiness'
+    },
+    {
+      id: 'holiness-1-q7',
+      type: 'multiple-choice',
+      question: 'What does holiness reflect?',
+      options: ['God’s character', 'Our pride', 'Our strength', 'Our culture'],
+      correctAnswer: 'God’s character'
+    },
+      {
+        id: 'holiness-1-q8',
+        type: 'multiple-choice',
+        question: 'What does holiness produce?',
+        options: ['Purity and integrity', 'Fear', 'Pride', 'Confusion'],
+        correctAnswer: 'Purity and integrity'
+      },
+      {
+        id: 'holiness-1-q9',
+        type: 'multiple-choice',
+        question: 'What does 1 Peter 1:15 command believers to be?',
+        options: ['Holy in all you do', 'Holy only on Sundays', 'Strict', 'Perfect in yourself'],
+        correctAnswer: 'Holy in all you do'
+      },
+      {
+        id: 'holiness-1-q10',
+        type: 'multiple-choice',
+        question: 'What does holiness separate us from?',
+        options: ['Sin and worldliness', 'People', 'Work', 'Responsibility'],
+        correctAnswer: 'Sin and worldliness'
+      },
+      {
+        id: 'holiness-1-q11',
+        type: 'multiple-choice',
+        question: 'What does holiness draw us closer to?',
+        options: ['God', 'Ourselves', 'Popularity', 'Comfort'],
+        correctAnswer: 'God'
+      },
+      {
+        id: 'holiness-1-q12',
+        type: 'multiple-choice',
+        question: 'What is the ultimate goal of holiness?',
+        options: ['Becoming like Christ', 'Becoming perfect in ourselves', 'Being admired', 'Being strict'],
+        correctAnswer: 'Becoming like Christ'
+      }
+    ]
+  }
+};
+
+export const obedienceThemeQuestions: Record<string, Question[]> = {
+  'theme-obedience-1': [
+    {
+      id: 'obedience-1-q1',
+      type: 'multiple-choice',
+      question: 'What does Jesus say proves our love for Him?',
+      options: ['Keeping His commandments', 'Going to church', 'Knowing Scripture', 'Being religious'],
+      correctAnswer: 'Keeping His commandments'
+    },
+    {
+      id: 'obedience-1-q2',
+      type: 'multiple-choice',
+      question: 'What did Abraham show through obedience?',
+      options: ['Faith', 'Fear', 'Doubt', 'Pride'],
+      correctAnswer: 'Faith'
+    },
+    {
+      id: 'obedience-1-q3',
+      type: 'multiple-choice',
+      question: 'What does obedience bring according to Deuteronomy?',
+      options: ['Blessing', 'Curse', 'Confusion', 'Fear'],
+      correctAnswer: 'Blessing'
+    },
+    {
+      id: 'obedience-1-q4',
+      type: 'multiple-choice',
+      question: 'What does God desire more than sacrifice?',
+      options: ['Obedience', 'Money', 'Offerings', 'Fasting'],
+      correctAnswer: 'Obedience'
+    },
+    {
+      id: 'obedience-1-q5',
+      type: 'multiple-choice',
+      question: 'What did Jonah do at first?',
+      options: ['Disobeyed God', 'Obeyed immediately', 'Ignored Nineveh', 'Asked for a sign'],
+      correctAnswer: 'Disobeyed God'
+    },
+    {
+      id: 'obedience-1-q6',
+      type: 'multiple-choice',
+      question: 'What does obedience require?',
+      options: ['Trust', 'Fear', 'Pride', 'Strength'],
+      correctAnswer: 'Trust'
+    },
+    {
+      id: 'obedience-1-q7',
+      type: 'multiple-choice',
+      question: 'Who is the perfect example of obedience?',
+      options: ['Jesus', 'Moses', 'David', 'Paul'],
+      correctAnswer: 'Jesus'
+    },
+    {
+      id: 'obedience-1-q8',
+      type: 'multiple-choice',
+      question: 'What did Jesus do according to Philippians 2?',
+      options: ['Obeyed to the point of death', 'Disobeyed sometimes', 'Followed His own will', 'Avoided suffering'],
+      correctAnswer: 'Obeyed to the point of death'
+    },
+    {
+      id: 'obedience-1-q9',
+      type: 'multiple-choice',
+      question: 'What does obedience produce?',
+      options: ['Spiritual growth', 'Pride', 'Fear', 'Weakness'],
+      correctAnswer: 'Spiritual growth'
+    },
+    {
+      id: 'obedience-1-q10',
+      type: 'multiple-choice',
+      question: 'What does James say we must be?',
+      options: ['Doers of the Word', 'Hearers only', 'Silent', 'Observers'],
+      correctAnswer: 'Doers of the Word'
+    },
+    {
+      id: 'obedience-1-q11',
+      type: 'multiple-choice',
+      question: 'What does obedience show?',
+      options: ['Love for God', 'Fear of punishment', 'Desire for reward', 'Pride'],
+      correctAnswer: 'Love for God'
+    },
+    {
+      id: 'obedience-1-q12',
+      type: 'multiple-choice',
+      question: 'What does obedience lead to?',
+      options: ['Blessing and closeness to God', 'Distance', 'Confusion', 'Weakness'],
+      correctAnswer: 'Blessing and closeness to God'
+    }
+  ]
+};
+
+export const prayerThemeQuestions: Record<string, Question[]> = {
+  'theme-prayer-1': [
+    {
+      id: 'prayer-1-q1',
+      type: 'multiple-choice',
+      question: 'What is prayer?',
+      options: ['Talking with God', 'Talking to ourselves', 'Meditation only', 'A ritual'],
+      correctAnswer: 'Talking with God'
+    },
+    {
+      id: 'prayer-1-q2',
+      type: 'multiple-choice',
+      question: 'How often should we pray according to 1 Thessalonians 5:17?',
+      options: ['Without ceasing', 'Once a day', 'Only in trouble', 'Only in church'],
+      correctAnswer: 'Without ceasing'
+    },
+    {
+      id: 'prayer-1-q3',
+      type: 'multiple-choice',
+      question: 'What does prayer bring according to Philippians 4:6–7?',
+      options: ['Peace of God', 'Fear', 'Confusion', 'Pride'],
+      correctAnswer: 'Peace of God'
+    },
+    {
+      id: 'prayer-1-q4',
+      type: 'multiple-choice',
+      question: 'Who taught the Lord’s Prayer?',
+      options: ['Jesus', 'Moses', 'David', 'Paul'],
+      correctAnswer: 'Jesus'
+    },
+    {
+      id: 'prayer-1-q5',
+      type: 'multiple-choice',
+      question: 'What should we pray with according to James 1?',
+      options: ['Faith', 'Doubt', 'Fear', 'Anger'],
+      correctAnswer: 'Faith'
+    },
+    {
+      id: 'prayer-1-q6',
+      type: 'multiple-choice',
+      question: 'What does Jesus warn against in prayer?',
+      options: ['Empty repetition', 'Short prayers', 'Long prayers', 'Silent prayers'],
+      correctAnswer: 'Empty repetition'
+    },
+    {
+      id: 'prayer-1-q7',
+      type: 'multiple-choice',
+      question: 'What does God reward according to Matthew 6?',
+      options: ['Secret prayer', 'Public performance', 'Loudness', 'Length'],
+      correctAnswer: 'Secret prayer'
+    },
+    {
+      id: 'prayer-1-q8',
+      type: 'multiple-choice',
+      question: 'What does prayer require?',
+      options: ['Humility', 'Pride', 'Anger', 'Fear'],
+      correctAnswer: 'Humility'
+    },
+    {
+      id: 'prayer-1-q9',
+      type: 'multiple-choice',
+      question: 'What does Jesus say about asking?',
+      options: ['Ask and it will be given', 'Ask only once', 'Don’t ask too much', 'Ask only for spiritual things'],
+      correctAnswer: 'Ask and it will be given'
+    },
+    {
+      id: 'prayer-1-q10',
+      type: 'multiple-choice',
+      question: 'What does prayer align us with?',
+      options: ['God’s will', 'Our desires only', 'Our plans', 'Our emotions'],
+      correctAnswer: 'God’s will'
+    },
+    {
+      id: 'prayer-1-q11',
+      type: 'multiple-choice',
+      question: 'Who intercedes for us in prayer?',
+      options: ['The Holy Spirit', 'Angels only', 'Prophets', 'Priests'],
+      correctAnswer: 'The Holy Spirit'
+    },
+    {
+      id: 'prayer-1-q12',
+      type: 'multiple-choice',
+      question: 'What does prayer strengthen?',
+      options: ['Faith', 'Fear', 'Doubt', 'Pride'],
+      correctAnswer: 'Faith'
+    }
+  ]
+};
+
+export const repentanceThemeQuestions: Record<string, Question[]> = {
+  'theme-repentance-1': [
+    {
+      id: 'repentance-1-q1',
+      type: 'multiple-choice',
+      question: 'What is repentance?',
+      options: ['Turning from sin to God', 'Feeling bad only', 'Trying harder', 'Being religious'],
+      correctAnswer: 'Turning from sin to God'
+    },
+    {
+      id: 'repentance-1-q2',
+      type: 'multiple-choice',
+      question: 'What does repentance involve?',
+      options: ['A change of heart and direction', 'Just words', 'Just emotion', 'Just regret'],
+      correctAnswer: 'A change of heart and direction'
+    },
+    {
+      id: 'repentance-1-q3',
+      type: 'multiple-choice',
+      question: 'What did John the Baptist preach?',
+      options: ['Repent, for the kingdom is near', 'Be perfect', 'Follow traditions', 'Ignore sin'],
+      correctAnswer: 'Repent, for the kingdom is near'
+    },
+    {
+      id: 'repentance-1-q4',
+      type: 'multiple-choice',
+      question: 'What does repentance lead to?',
+      options: ['Forgiveness', 'Punishment', 'Fear', 'Distance'],
+      correctAnswer: 'Forgiveness'
+    },
+    {
+      id: 'repentance-1-q5',
+      type: 'multiple-choice',
+      question: 'What story shows repentance clearly?',
+      options: ['The Prodigal Son', 'The Good Samaritan', 'The Lost Sheep', 'The Rich Young Ruler'],
+      correctAnswer: 'The Prodigal Son'
+    },
+    {
+      id: 'repentance-1-q6',
+      type: 'multiple-choice',
+      question: 'What does God do when we repent?',
+      options: ['Forgives and restores', 'Rejects us', 'Punishes us', 'Ignores us'],
+      correctAnswer: 'Forgives and restores'
+    },
+    {
+      id: 'repentance-1-q7',
+      type: 'multiple-choice',
+      question: 'What does repentance require?',
+      options: ['Humility', 'Pride', 'Fear', 'Anger'],
+      correctAnswer: 'Humility'
+    },
+    {
+      id: 'repentance-1-q8',
+      type: 'multiple-choice',
+      question: 'What does godly sorrow produce?',
+      options: ['Repentance', 'Fear', 'Shame', 'Pride'],
+      correctAnswer: 'Repentance'
+    },
+    {
+      id: 'repentance-1-q9',
+      type: 'multiple-choice',
+      question: 'What does repentance bring according to Acts 3:19?',
+      options: ['Times of refreshing', 'Judgment', 'Fear', 'Confusion'],
+      correctAnswer: 'Times of refreshing'
+    },
+    {
+      id: 'repentance-1-q10',
+      type: 'multiple-choice',
+      question: 'What does God desire all people to do?',
+      options: ['Repent', 'Be perfect', 'Be religious', 'Be wealthy'],
+      correctAnswer: 'Repent'
+    },
+    {
+      id: 'repentance-1-q11',
+      type: 'multiple-choice',
+      question: 'What does repentance restore?',
+      options: ['Fellowship with God', 'Distance', 'Fear', 'Shame'],
+      correctAnswer: 'Fellowship with God'
+    },
+    {
+      id: 'repentance-1-q12',
+      type: 'multiple-choice',
+      question: 'What does repentance turn us away from?',
+      options: ['Sin', 'God', 'Holiness', 'Faith'],
+      correctAnswer: 'Sin'
+    }
+  ]
+};
+
+export const worshipThemeQuestions: Record<string, Question[]> = {
+  'theme-worship-1': [
+    {
+      id: 'worship-1-q1',
+      type: 'multiple-choice',
+      question: 'What is worship?',
+      options: ['Honoring God for who He is', 'Singing only', 'A ritual', 'A performance'],
+      correctAnswer: 'Honoring God for who He is'
+    },
+    {
+      id: 'worship-1-q2',
+      type: 'multiple-choice',
+      question: 'What does Jesus say true worshipers do?',
+      options: ['Worship in spirit and truth', 'Worship loudly', 'Worship emotionally', 'Worship perfectly'],
+      correctAnswer: 'Worship in spirit and truth'
+    },
+    {
+      id: 'worship-1-q3',
+      type: 'multiple-choice',
+      question: 'What is our spiritual act of worship according to Romans 12:1?',
+      options: ['Offering our bodies as a living sacrifice', 'Singing songs', 'Going to church', 'Fasting'],
+      correctAnswer: 'Offering our bodies as a living sacrifice'
+    },
+    {
+      id: 'worship-1-q4',
+      type: 'multiple-choice',
+      question: 'What does worship express?',
+      options: ['Love and devotion to God', 'Fear', 'Pride', 'Confusion'],
+      correctAnswer: 'Love and devotion to God'
+    },
+    {
+      id: 'worship-1-q5',
+      type: 'multiple-choice',
+      question: 'What book is filled with worship songs?',
+      options: ['Psalms', 'Proverbs', 'Genesis', 'Judges'],
+      correctAnswer: 'Psalms'
+    },
+    {
+      id: 'worship-1-q6',
+      type: 'multiple-choice',
+      question: 'What does worship require?',
+      options: ['A sincere heart', 'A perfect voice', 'A big crowd', 'A stage'],
+      correctAnswer: 'A sincere heart'
+    },
+    {
+      id: 'worship-1-q7',
+      type: 'multiple-choice',
+      question: 'What does Hebrews 13:15 say we should continually offer?',
+      options: ['A sacrifice of praise', 'Money', 'Fasting', 'Silence'],
+      correctAnswer: 'A sacrifice of praise'
+    },
+    {
+      id: 'worship-1-q8',
+      type: 'multiple-choice',
+      question: 'What does worship shape?',
+      options: ['Our priorities', 'Our fears', 'Our pride', 'Our doubts'],
+      correctAnswer: 'Our priorities'
+    },
+    {
+      id: 'worship-1-q9',
+      type: 'multiple-choice',
+      question: 'What does worship remind us of?',
+      options: ['God’s greatness', 'Our greatness', 'Our weakness', 'Our plans'],
+      correctAnswer: 'God’s greatness'
+    },
+    {
+      id: 'worship-1-q10',
+      type: 'multiple-choice',
+      question: 'What does worship lead to?',
+      options: ['Joy', 'Fear', 'Pride', 'Confusion'],
+      correctAnswer: 'Joy'
+    },
+    {
+      id: 'worship-1-q11',
+      type: 'multiple-choice',
+      question: 'What does worship include besides singing?',
+      options: ['Obedience, prayer, giving, serving', 'Only music', 'Only emotions', 'Only rituals'],
+      correctAnswer: 'Obedience, prayer, giving, serving'
+    },
+    {
+      id: 'worship-1-q12',
+      type: 'multiple-choice',
+      question: 'Who alone deserves worship?',
+      options: ['God', 'Angels', 'Leaders', 'Ourselves'],
+      correctAnswer: 'God'
+    }
+  ]
+};
+
+export const spiritualWarfareThemeQuestions: Record<string, Question[]> = {
+  'theme-warfare-1': [
+    {
+      id: 'warfare-1-q1',
+      type: 'multiple-choice',
+      question: 'Who is our struggle NOT against?',
+      options: ['Flesh and blood', 'Spiritual forces', 'The devil', 'Principalities'],
+      correctAnswer: 'Flesh and blood'
+    },
+    {
+      id: 'warfare-1-q2',
+      type: 'multiple-choice',
+      question: 'What should believers put on?',
+      options: ['The full armor of God', 'Their own strength', 'Fear', 'Doubt'],
+      correctAnswer: 'The full armor of God'
+    },
+    {
+      id: 'warfare-1-q3',
+      type: 'multiple-choice',
+      question: 'What extinguishes the flaming arrows of the evil one?',
+      options: ['The shield of faith', 'The helmet of salvation', 'The sword of the Spirit', 'The belt of truth'],
+      correctAnswer: 'The shield of faith'
+    },
+    {
+      id: 'warfare-1-q4',
+      type: 'multiple-choice',
+      question: 'What is the sword of the Spirit?',
+      options: ['The Word of God', 'Prayer', 'Faith', 'Truth'],
+      correctAnswer: 'The Word of God'
+    },
+    {
+      id: 'warfare-1-q5',
+      type: 'multiple-choice',
+      question: 'What does the enemy try to do?',
+      options: ['Steal, kill, and destroy', 'Bless', 'Encourage', 'Strengthen'],
+      correctAnswer: 'Steal, kill, and destroy'
+    },
+        {
+      id: 'warfare-1-q6',
+      type: 'multiple-choice',
+      question: 'What must believers do to resist the devil?',
+      options: ['Submit to God', 'Fight in their own strength', 'Ignore him', 'Fear him'],
+      correctAnswer: 'Submit to God'
+    },
+    {
+      id: 'warfare-1-q7',
+      type: 'multiple-choice',
+      question: 'What does James 4:7 promise?',
+      options: ['The devil will flee from you', 'The devil will overpower you', 'You will never struggle', 'You will be perfect'],
+      correctAnswer: 'The devil will flee from you'
+    },
+    {
+      id: 'warfare-1-q8',
+      type: 'multiple-choice',
+      question: 'What protects our minds in spiritual warfare?',
+      options: ['The helmet of salvation', 'The shield of faith', 'The belt of truth', 'The sandals of peace'],
+      correctAnswer: 'The helmet of salvation'
+    },
+    {
+      id: 'warfare-1-q9',
+      type: 'multiple-choice',
+      question: 'What is the belt of truth for?',
+      options: ['Holding everything together', 'Decoration', 'Defense only', 'Speed'],
+      correctAnswer: 'Holding everything together'
+    },
+    {
+      id: 'warfare-1-q10',
+      type: 'multiple-choice',
+      question: 'What does the enemy often use against believers?',
+      options: ['Lies and deception', 'Truth', 'Encouragement', 'Comfort'],
+      correctAnswer: 'Lies and deception'
+    },
+    {
+      id: 'warfare-1-q11',
+      type: 'multiple-choice',
+      question: 'How did Jesus defeat Satan in the wilderness?',
+      options: ['By quoting Scripture', 'By arguing', 'By ignoring him', 'By using angels'],
+      correctAnswer: 'By quoting Scripture'
+    },
+    {
+      id: 'warfare-1-q12',
+      type: 'multiple-choice',
+      question: 'What is our victory ultimately based on?',
+      options: ['Christ’s finished work', 'Our strength', 'Our knowledge', 'Our discipline'],
+      correctAnswer: 'Christ’s finished work'
+    }
+  ]
+}
+};
+
+
+
+
 // Export theme questions organized by theme
 export const allThemeQuestions = {
   'theme-love': loveThemeQuestions,

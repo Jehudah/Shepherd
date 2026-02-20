@@ -14,10 +14,10 @@ interface CharacterGuideProps {
 }
 
 const moodColors: Record<Mood, string[]> = {
-  encouraging: ['#DBEAFE', '#93C5FD'],
-  celebrating: ['#FEF3C7', '#FCD34D'],
-  teaching: ['#EDE9FE', '#C4B5FD'],
-  questioning: ['#D1FAE5', '#86EFAC'],
+  encouraging: ['#FFFFFF', '#FFFFFF'],
+  celebrating: ['#FFFFFF', '#FFFFFF'],
+  teaching: ['#FFFFFF', '#FFFFFF'],
+  questioning: ['#FFFFFF', '#FFFFFF'],
 };
 
 export default function CharacterGuide({

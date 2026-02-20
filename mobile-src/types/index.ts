@@ -107,6 +107,10 @@ export type RootStackParamList = {
   BibleBooks: undefined;
   StudyNames: undefined;
   StudyThemes: undefined;
+  StudyBooks: undefined;
+  StudyHistory: undefined;
+  StudyProphecy: undefined;
+  StudyDoctrine: undefined;
   StudyArticle: {
     category: string;
     articleId: string;

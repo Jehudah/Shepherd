@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: 60,
+    paddingTop: 12,
     paddingBottom: 16,
     backgroundColor: '#E8E3FF', // Light lilac
     borderBottomWidth: 1,
