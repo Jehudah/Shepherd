@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
@@ -42,6 +42,7 @@ interface OrderItem {
 export default function TimelineDragScreen({ route, navigation }: Props) {
   const { lessonId } = route.params;
   const { updateXP, completeLesson } = useStore();
+  const insets = useSafeAreaInsets();
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userOrder, setUserOrder] = useState<OrderItem[]>([]);
@@ -350,7 +351,7 @@ export default function TimelineDragScreen({ route, navigation }: Props) {
         </View>
 
         {/* Action Button */}
-        <View style={styles.actionContainer}>
+        <View style={[styles.actionContainer, { paddingBottom: insets.bottom + 16 }]}>
           {!isAnswered ? (
             <TouchableOpacity
               style={[
@@ -577,7 +578,8 @@ const styles = StyleSheet.create({
     color: '#DC2626',
   },
   actionContainer: {
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16,
     backgroundColor: '#E8E3FF',
     borderTopWidth: 1,
     borderTopColor: '#E5E7EB',

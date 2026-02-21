@@ -8,7 +8,7 @@ import {
   ActivityIndicator,
   Alert,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
@@ -47,6 +47,7 @@ interface Exercise {
 export default function ProgressiveVerseScreen({ route, navigation }: Props) {
   const { verseReference, category, lessonLevel } = route.params;
   const { updateXP, completeLesson } = useStore();
+  const insets = useSafeAreaInsets();
 
   const [loading, setLoading] = useState(true);
   const [verseData, setVerseData] = useState<BibleVerse | null>(null);
@@ -323,7 +324,7 @@ export default function ProgressiveVerseScreen({ route, navigation }: Props) {
   const exerciseTypeText = currentExercise.exerciseType === 'fill-blanks' ? 'Reveal Words' : 'Drag Words';
 
   return (
-    <SafeAreaView style={styles.container} edges={[]}>
+    <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
@@ -454,7 +455,7 @@ export default function ProgressiveVerseScreen({ route, navigation }: Props) {
       </ScrollView>
 
       {/* Action Button */}
-      <View style={styles.actionContainer}>
+      <View style={[styles.actionContainer, { paddingBottom: insets.bottom + 16 }]}>
         <TouchableOpacity
           style={[styles.actionButton, !allWordsCompleted() && styles.actionButtonDisabled]}
           onPress={handleNextExercise}
@@ -709,7 +710,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16,
     backgroundColor: '#E8E3FF',
     borderTopWidth: 1,
     borderTopColor: '#E5E7EB',

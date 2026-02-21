@@ -4,16 +4,30 @@
     "slug": "shepherd",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./mobile-src/assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "shepherd",
     "newArchEnabled": true,
+    "updates": {
+      "url": "https://u.expo.dev/9c6201bd-d4ce-447e-b8e5-fab6719975b9",
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.shepherd.app",
-      "buildNumber": "1.0.0"
+      "buildNumber": "1.0.0",
+      "icon": "./mobile-src/assets/icon.png"
     },
     "android": {
-      "package": "com.shepherd.app"
+      "package": "com.shepherd.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./mobile-src/assets/adaptive-icon.png",
+        "backgroundColor": "#F8F9FF"
+      }
     },
     "plugins": [],
     "extra": {

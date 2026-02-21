@@ -155,9 +155,10 @@ export const salvationVersesQuestions: Record<string, Question[]> = {
     {
       id: 'verses-salvation-2-q10',
       type: 'multiple-choice',
-      question: 'Where is "Everyone who calls on the name of the Lord" found?',
-      options: ['Romans 10:13', 'Acts 2:21', 'Joel 2:32', 'All of the above'],
-      correctAnswer: 'All of the above'
+      multiSelect: true,
+      question: 'Where is "Everyone who calls on the name of the Lord" found? (Select all that apply)',
+      options: ['Romans 10:13', 'Acts 2:21', 'Joel 2:32', 'Matthew 7:7'],
+      correctAnswer: ['Romans 10:13', 'Acts 2:21', 'Joel 2:32'],
     },
     {
       id: 'verses-salvation-2-q11',
