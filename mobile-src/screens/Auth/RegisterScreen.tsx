@@ -48,26 +48,24 @@ export default function RegisterScreen({ navigation }: Props) {
   const setUserProgress = useStore((state) => state.setUserProgress);
   const { show } = useToast();
 
+  // Stable callbacks with NO dependencies so they never recreate on re-render.
+  // Error states are only cleared on submit, never during typing —
+  // this prevents focus loss caused by prop reference changes on TextInput.
   const handleUsernameChange = useCallback((text: string) => {
     setUsername(text);
-    if (usernameError) setUsernameError('');
-  }, [usernameError]);
+  }, []);
 
   const handleEmailChange = useCallback((text: string) => {
     setEmail(text);
-    if (emailError) setEmailError('');
-  }, [emailError]);
+  }, []);
 
   const handlePasswordChange = useCallback((text: string) => {
     setPassword(text);
-    if (passwordError) setPasswordError('');
-    if (confirmPasswordError) setConfirmPasswordError('');
-  }, [passwordError, confirmPasswordError]);
+  }, []);
 
   const handleConfirmPasswordChange = useCallback((text: string) => {
     setConfirmPassword(text);
-    if (confirmPasswordError) setConfirmPasswordError('');
-  }, [confirmPasswordError]);
+  }, []);
 
   const getPasswordStrength = (pw: string): number => {
     if (!pw) return 0;
@@ -196,7 +194,7 @@ export default function RegisterScreen({ navigation }: Props) {
                   returnKeyType="next"
                   onSubmitEditing={() => emailRef.current?.focus()}
                   editable={!isLoading}
-                  textContentType="username"
+                  textContentType="none"
                 />
               </View>
               {usernameError ? <Text style={styles.errorText}>{usernameError}</Text> : null}
@@ -217,11 +215,10 @@ export default function RegisterScreen({ navigation }: Props) {
                   keyboardType="email-address"
                   autoCapitalize="none"
                   autoCorrect={false}
-                  autoComplete="email"
                   returnKeyType="next"
                   onSubmitEditing={() => passwordRef.current?.focus()}
                   editable={!isLoading}
-                  textContentType="emailAddress"
+                  textContentType="none"
                 />
               </View>
               {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
@@ -245,7 +242,7 @@ export default function RegisterScreen({ navigation }: Props) {
                   returnKeyType="next"
                   onSubmitEditing={() => confirmPasswordRef.current?.focus()}
                   editable={!isLoading}
-                  textContentType="newPassword"
+                  textContentType="none"
                 />
                 <TouchableOpacity
                   onPress={() => setShowPassword(v => !v)}
@@ -286,7 +283,7 @@ export default function RegisterScreen({ navigation }: Props) {
                   returnKeyType="done"
                   onSubmitEditing={handleRegister}
                   editable={!isLoading}
-                  textContentType="newPassword"
+                  textContentType="none"
                 />
                 <TouchableOpacity
                   onPress={() => setShowConfirmPassword(v => !v)}

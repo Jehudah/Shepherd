@@ -6,7 +6,7 @@ pluginManagement {
     "~/.nvm/versions/node/v18.17.0/bin/node",
     "/usr/local/bin/node",
     "/usr/bin/node"
-  ].find { new File(it).exists() } ?: "node"
+  ].find { new File(it.replaceFirst("~", System.getProperty("user.home"))).exists() } ?: "node"
 
   def reactNativeGradlePlugin = new File(
     providers.exec {
@@ -29,6 +29,7 @@ pluginManagement {
 plugins {
   id("com.facebook.react.settings")
   id("expo-autolinking-settings")
+  id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
 extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
