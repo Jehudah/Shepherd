@@ -1,0 +1,86 @@
+🐑 SHEPHERD APP - QUICK START COMMANDS
+
+📍 YOUR PROJECT LOCATION:
+C:\Users\JehudahOorebeekDenof\Documents\app\shphrd
+
+⚡ ESSENTIAL COMMANDS:
+
+1. First Time Setup:
+   npm install
+   (Takes 2-5 minutes, only needed once)
+
+2. Start App:
+   npm run dev
+   (Use the "Network" URL on your iPhone)
+
+3. Stop App:
+   Ctrl + C in terminal
+
+4. Build for Production:
+   npm run build
+
+📱 TESTING ON IPHONE:
+
+1. Make sure iPhone and computer on same WiFi
+2. Run "npm run dev"
+3. Look for "Network: http://192.168.x.x:5173/"
+4. Open that URL in Safari on iPhone
+5. Add to Home Screen for app experience
+
+📝 EDITING FILES:
+
+Questions:     src\data\questions.ts
+Themes:        src\data\expandedThemes.ts
+Bible Books:   src\data\bibleBooks.ts
+Lessons:       src\data\lessons.ts
+
+💡 TIPS:
+
+- Keep terminal open while app runs
+- Changes auto-reload in browser
+- Read error messages carefully
+- Save files before testing
+- Use VS Code for better editing
+
+📚 GUIDES:
+
+START_HERE.md      ← Begin here (absolute beginner)
+SETUP_GUIDE.md     ← Detailed setup instructions
+README_v2.md       ← Full documentation
+
+🆘 TROUBLESHOOTING:
+
+App won't start?
+→ Run: npm install
+→ Make sure in correct folder
+→ Restart terminal
+
+Can't access on iPhone?
+→ Check WiFi connection
+→ Try different network URL
+→ Disable firewall temporarily
+
+Changes not showing?
+→ Save the file
+→ Hard refresh browser (Ctrl+Shift+R)
+→ Restart dev server
+
+🎯 CURRENT STATUS:
+
+✅ 20+ Themes (unlocked, user choice)
+✅ 10 Bible Books (deep study)
+✅ 30+ Questions (more coming)
+✅ Character UI (Jesus & Woolly)
+✅ iPhone optimized
+✅ PWA ready
+
+📈 NEXT STEPS:
+
+1. Get app running on iPhone
+2. Test all features
+3. Add more questions (questions.ts)
+4. Customize themes
+5. Deploy to Netlify when ready
+
+---
+Made with ❤️ for Bible learners everywhere
