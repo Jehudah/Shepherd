@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Feather } from '@expo/vector-icons';
@@ -72,9 +72,11 @@ interface QuestionWithShuffled extends Question {
 export default function LessonPlayerScreen({ route, navigation }: Props) {
   const { category, subcategory, lessonId } = route.params;
   const { updateXP, completeLesson, updateStreak, startSession } = useStore();
+  const insets = useSafeAreaInsets();
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string>('');
+  const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -256,13 +258,30 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
 
   const handleAnswerSelect = (answer: string) => {
     if (isAnswered) return;
-    setSelectedAnswer(answer);
+    if (currentQuestion.multiSelect) {
+      setSelectedAnswers((prev) =>
+        prev.includes(answer) ? prev.filter((a) => a !== answer) : [...prev, answer]
+      );
+    } else {
+      setSelectedAnswer(answer);
+    }
   };
 
   const handleSubmit = () => {
-    if (!selectedAnswer || isAnswered) return;
+    if (isAnswered) return;
 
-    const correct = selectedAnswer === currentQuestion.correctAnswer;
+    let correct: boolean;
+    if (currentQuestion.multiSelect && Array.isArray(currentQuestion.correctAnswer)) {
+      if (selectedAnswers.length === 0) return;
+      const expected = currentQuestion.correctAnswer as string[];
+      correct =
+        selectedAnswers.length === expected.length &&
+        expected.every((a) => selectedAnswers.includes(a));
+    } else {
+      if (!selectedAnswer) return;
+      correct = selectedAnswer === currentQuestion.correctAnswer;
+    }
+
     setIsCorrect(correct);
     setIsAnswered(true);
 
@@ -280,6 +299,7 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
     if (currentQuestionIndex < questionsWithShuffledOptions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
       setSelectedAnswer('');
+      setSelectedAnswers([]);
       setIsAnswered(false);
       setIsCorrect(false);
     } else {
@@ -297,6 +317,7 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
         setWrongQuestions([]);
         setCurrentQuestionIndex((prev) => prev + 1);
         setSelectedAnswer('');
+        setSelectedAnswers([]);
         setIsAnswered(false);
         setIsCorrect(false);
       } else {
@@ -396,12 +417,21 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
 
         {/* Bottom 2/3: Answer Options */}
         <ScrollView style={styles.answersSection} contentContainerStyle={styles.answersContent}>
+          {currentQuestion.multiSelect && (
+            <Text style={styles.multiSelectHint}>Selecteer alle juiste antwoorden</Text>
+          )}
           <View style={styles.optionsContainer}>
           {((currentQuestion as QuestionWithShuffled).shuffledOptions || currentQuestion.options || []).map(
             (option: string, index: number) => {
-              const isSelected = selectedAnswer === option;
-              const showCorrect = isAnswered && option === currentQuestion.correctAnswer;
-              const showWrong = isAnswered && isSelected && !isCorrect;
+              const isMulti = !!currentQuestion.multiSelect;
+              const isSelected = isMulti
+                ? selectedAnswers.includes(option)
+                : selectedAnswer === option;
+              const correctArr = Array.isArray(currentQuestion.correctAnswer)
+                ? currentQuestion.correctAnswer
+                : [currentQuestion.correctAnswer];
+              const showCorrect = isAnswered && correctArr.includes(option);
+              const showWrong = isAnswered && isSelected && !correctArr.includes(option);
 
               return (
                 <TouchableOpacity
@@ -415,6 +445,14 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
                   onPress={() => handleAnswerSelect(option)}
                   disabled={isAnswered}
                 >
+                  {isMulti && (
+                    <Icon
+                      name={isSelected && !isAnswered ? 'check-square' : isAnswered && correctArr.includes(option) ? 'check-square' : 'square'}
+                      size={20}
+                      color={isAnswered && correctArr.includes(option) ? '#10B981' : isSelected ? '#3B82F6' : '#9CA3AF'}
+                      style={{ marginRight: 10 }}
+                    />
+                  )}
                   <Text
                     style={[
                       styles.optionText,
@@ -453,12 +491,15 @@ export default function LessonPlayerScreen({ route, navigation }: Props) {
       </View>
 
       {/* Action Button */}
-      <View style={styles.actionContainer}>
+      <View style={[styles.actionContainer, { paddingBottom: insets.bottom + 16 }]}>
         {!isAnswered ? (
           <TouchableOpacity
-            style={[styles.actionButton, !selectedAnswer && styles.actionButtonDisabled]}
+            style={[
+              styles.actionButton,
+              (currentQuestion.multiSelect ? selectedAnswers.length === 0 : !selectedAnswer) && styles.actionButtonDisabled,
+            ]}
             onPress={handleSubmit}
-            disabled={!selectedAnswer}
+            disabled={currentQuestion.multiSelect ? selectedAnswers.length === 0 : !selectedAnswer}
           >
             <Text style={styles.actionButtonText}>Submit</Text>
           </TouchableOpacity>
@@ -685,12 +726,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6B7280',
   },
+  multiSelectHint: {
+    fontSize: 13,
+    color: '#6B7280',
+    fontStyle: 'italic',
+    marginBottom: 10,
+    marginLeft: 2,
+  },
   actionContainer: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingTop: 16,
     backgroundColor: '#E8E3FF', // Light lilac
     borderTopWidth: 1,
     borderTopColor: '#E5E7EB',

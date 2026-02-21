@@ -24,6 +24,7 @@ export interface Question {
   question: string;
   options?: string[];
   correctAnswer: string | string[];
+  multiSelect?: boolean;
   explanation?: string;
   verse?: string;
   difficulty?: 1 | 2 | 3 | 4 | 5;

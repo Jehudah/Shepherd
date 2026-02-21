@@ -48,9 +48,10 @@ export const parablesQuestions: Record<string, Question[]> = {
     {
       id: 'parables-kingdom-1-q7',
       type: 'multiple-choice',
-      question: 'What does the harvest represent in the Parable of the Weeds?',
-      options: ['The end of the age', 'The coming of the Messiah', 'The day of Pentecost', 'Both A and C'],
-      correctAnswer: 'Both A and C'
+      multiSelect: true,
+      question: 'What does the harvest represent in the Parable of the Weeds? (Select all that apply)',
+      options: ['The end of the age', 'The coming of the Messiah', 'The day of Pentecost', 'The fulfillment of the Law'],
+      correctAnswer: ['The end of the age', 'The day of Pentecost'],
     },
     {
       id: 'parables-kingdom-1-q8',

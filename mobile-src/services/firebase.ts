@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  deleteUser,
   User as FirebaseUser
 } from 'firebase/auth';
 import {
@@ -49,15 +50,25 @@ export class AuthService {
       throw new Error('Username is required');
     }
 
-    // Check if username is already taken
-    const usernameExists = await this.checkUsernameExists(username);
-    if (usernameExists) {
-      throw new Error('Username already taken');
-    }
-
-    // Create Firebase auth user
+    // Create Firebase auth user first so subsequent Firestore reads are authenticated
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const { uid } = userCredential.user;
+
+    // Now check if username is already taken (requires authentication per Firestore rules)
+    let usernameExists: boolean;
+    try {
+      usernameExists = await this.checkUsernameExists(username);
+    } catch (e) {
+      // Clean up the auth account if the username check fails
+      await deleteUser(userCredential.user);
+      throw e;
+    }
+
+    if (usernameExists) {
+      // Clean up the auth account — username is taken
+      await deleteUser(userCredential.user);
+      throw new Error('Username already taken');
+    }
 
     // Create user profile
     const userProfile: UserProfile = {
@@ -70,10 +81,14 @@ export class AuthService {
     };
 
     // Save to Firestore
-    await setDoc(doc(db, USERS_COLLECTION, uid), userProfile);
-
-    // Initialize user progress
-    await this.initializeUserProgress(uid, email, username);
+    try {
+      await setDoc(doc(db, USERS_COLLECTION, uid), userProfile);
+      await this.initializeUserProgress(uid, email, username);
+    } catch (e) {
+      // Clean up the auth account if Firestore writes fail
+      await deleteUser(userCredential.user);
+      throw e;
+    }
 
     return userProfile;
   }
