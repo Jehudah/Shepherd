@@ -27,6 +27,7 @@ dist-ssr
 # SECURITY: Environment Variables & Secrets
 # ========================================
 .env
+.env.dev
 .env.local
 .env.development.local
 .env.test.local
@@ -74,4 +75,5 @@ android/build/
 # IMPORTANT: Keep these templates
 # ========================================
 !.env.template
+!.env.production.template
 !firebase-config.template.ts
