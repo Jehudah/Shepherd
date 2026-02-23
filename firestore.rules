@@ -3,6 +3,13 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // Feedback from the website — anyone can submit, nobody can read (admin only via console)
+    match /feedback/{feedbackId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+
     // Helper function - check if user is authenticated
     function isAuthenticated() {
       return request.auth != null;
